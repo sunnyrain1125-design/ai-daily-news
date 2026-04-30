@@ -396,6 +396,19 @@
         `;
       }
 
+      function renderContextPanel(title, summary, accentClass = "border-slate-200 bg-slate-50") {
+        return `
+          <article class="rounded-2xl border ${accentClass} p-6">
+            <div class="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              背景脈絡
+            </div>
+            <h4 class="text-xl font-semibold leading-8 text-slate-900">${escapeHtml(title)}</h4>
+            <p class="mt-4 text-[15px] leading-8 text-slate-600">${escapeHtml(summary)}</p>
+            <p class="mt-4 text-xs leading-6 text-slate-500">最近 24 小時若缺少足夠可信的新消息，本站會改以近期發展摘要補充閱讀背景。</p>
+          </article>
+        `;
+      }
+
       function renderCard(item, accentClass) {
         return `
           <article class="rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg">
@@ -449,11 +462,16 @@
         `;
       }
 
-      function fillList(elementId, items, accentClass, emptyMessage) {
+      function fillList(elementId, items, accentClass, emptyMessage, contextConfig) {
         const target = document.getElementById(elementId);
         const remainingItems = (items || []).slice(1);
 
         if (!remainingItems.length) {
+          if (contextConfig && !currentQuery && currentCompanyFilter === "all") {
+            target.innerHTML = renderContextPanel(contextConfig.title, contextConfig.summary, contextConfig.accentClass);
+            return;
+          }
+
           target.innerHTML = renderEmpty(emptyMessage);
           return;
         }
@@ -466,6 +484,16 @@
       let currentData = null;
       let currentCompanyFilter = "all";
       let currentQuery = "";
+      const defaultContextBriefs = {
+        topStory: "目前 AI 競爭主軸仍圍繞模型能力、推論成本、企業導入速度與監管調整。即使 24 小時內沒有頭條級新消息，最值得追的是各家平台如何把既有能力真正推進到產品與企業工作流程。",
+        technicalFocus: "近期技術競爭重點仍在更高效的推論、更長上下文、更可靠的多模態理解，以及在成本可控下維持穩定表現。",
+        toolFocus: "工具層面仍以代理工作流、自動化整合、企業 API 與團隊協作場景為主，市場正在驗證哪些 AI 功能能持續留在日常工作流程中。",
+        industryFocus: "產業層面最值得觀察的仍是平台合作、資本支出、定價策略與法規調整，這些因素會一起影響 AI 商業化節奏。",
+        editorPicks: "淡新聞日往往代表市場正在消化前一輪發布的內容。這時更適合回頭觀察各家公司是否把先前承諾逐步轉成實際產品、合作與採用成果。",
+        technicalBreakthroughs: "技術突破的近期主線仍是模型效率、推論延遲、上下文能力與多模態可靠度，這些變化會直接影響下一波產品體驗與部署成本。",
+        toolApplications: "工具應用面仍在驗證哪些功能真的能持續被使用。從客服、內容生產到企業知識工具，重點已從能不能做轉向能不能穩定用。",
+        industryImpact: "產業影響面目前仍由平台競爭、企業採用速度與監管節奏共同推動。即使當天新聞較少，這三條線仍是判斷市場下一步的核心。"
+      };
 
       function normalizeCompanyKey(item) {
         const text = `${item.company || ""} ${item.title || ""}`.toLowerCase();
@@ -537,6 +565,8 @@
         const technical = filterItems(data.categories?.technicalBreakthroughs || []);
         const applications = filterItems(data.categories?.toolApplications || []);
         const industry = filterItems(data.categories?.industryImpact || []);
+        const contextBriefs = { ...defaultContextBriefs, ...(data.contextBriefs || {}) };
+        const showContextFallback = !currentQuery && currentCompanyFilter === "all";
         const topStory = industry[0] || technical[0] || applications[0] || null;
         const editorPicks = buildEditorPicks({
           technical,
@@ -556,17 +586,65 @@
         document.getElementById("applicationCount").textContent = applications.length;
         document.getElementById("industryCount").textContent = industry.length;
 
-        document.getElementById("topStory").innerHTML = renderSpotlight(topStory, "border-rose-200");
-        document.getElementById("technicalSpotlight").innerHTML = renderSpotlight(technical[0], "border-cyan-300/15");
-        document.getElementById("applicationsSpotlight").innerHTML = renderSpotlight(applications[0], "border-emerald-300/15");
-        document.getElementById("industrySpotlight").innerHTML = renderSpotlight(industry[0], "border-orange-300/15");
+        document.getElementById("topStory").innerHTML = topStory
+          ? renderSpotlight(topStory, "border-rose-200")
+          : showContextFallback
+            ? renderContextPanel("目前整體發展到哪裡", contextBriefs.topStory, "border-rose-200 bg-rose-50/60")
+            : renderEmpty("目前篩選條件下沒有符合的頭條。");
+        document.getElementById("technicalSpotlight").innerHTML = technical[0]
+          ? renderSpotlight(technical[0], "border-cyan-300/15")
+          : showContextFallback
+            ? renderContextPanel("技術焦點近況", contextBriefs.technicalFocus, "border-sky-200 bg-sky-50/60")
+            : renderEmpty("目前篩選條件下沒有符合的技術焦點。");
+        document.getElementById("applicationsSpotlight").innerHTML = applications[0]
+          ? renderSpotlight(applications[0], "border-emerald-300/15")
+          : showContextFallback
+            ? renderContextPanel("工具焦點近況", contextBriefs.toolFocus, "border-emerald-200 bg-emerald-50/60")
+            : renderEmpty("目前篩選條件下沒有符合的工具焦點。");
+        document.getElementById("industrySpotlight").innerHTML = industry[0]
+          ? renderSpotlight(industry[0], "border-orange-300/15")
+          : showContextFallback
+            ? renderContextPanel("產業焦點近況", contextBriefs.industryFocus, "border-orange-200 bg-orange-50/60")
+            : renderEmpty("目前篩選條件下沒有符合的產業焦點。");
         document.getElementById("editorPicks").innerHTML = editorPicks.length
           ? editorPicks.map((item) => renderCompactCard(item, "bg-slate-200 text-slate-700")).join("")
-          : renderEmpty("目前沒有額外的編輯選讀內容。");
+          : showContextFallback
+            ? renderContextPanel("編輯選讀背景", contextBriefs.editorPicks, "border-slate-200 bg-slate-50")
+            : renderEmpty("目前篩選條件下沒有額外的編輯選讀內容。");
 
-        fillList("technicalList", technical, "bg-sky-100 text-sky-700", "最近 24 小時內尚未整理出明確技術突破。");
-        fillList("applicationsList", applications, "bg-emerald-100 text-emerald-700", "最近 24 小時內尚未整理出新的工具應用亮點。");
-        fillList("industryList", industry, "bg-orange-100 text-orange-700", "最近 24 小時內尚未整理出新的產業影響焦點。");
+        fillList(
+          "technicalList",
+          technical,
+          "bg-sky-100 text-sky-700",
+          "最近 24 小時內尚未整理出明確技術突破。",
+          {
+            title: "技術突破近期脈絡",
+            summary: contextBriefs.technicalBreakthroughs,
+            accentClass: "border-sky-200 bg-sky-50/60"
+          }
+        );
+        fillList(
+          "applicationsList",
+          applications,
+          "bg-emerald-100 text-emerald-700",
+          "最近 24 小時內尚未整理出新的工具應用亮點。",
+          {
+            title: "工具應用近期脈絡",
+            summary: contextBriefs.toolApplications,
+            accentClass: "border-emerald-200 bg-emerald-50/60"
+          }
+        );
+        fillList(
+          "industryList",
+          industry,
+          "bg-orange-100 text-orange-700",
+          "最近 24 小時內尚未整理出新的產業影響焦點。",
+          {
+            title: "產業影響近期脈絡",
+            summary: contextBriefs.industryImpact,
+            accentClass: "border-orange-200 bg-orange-50/60"
+          }
+        );
 
         updateFilterSummary({
           technical,

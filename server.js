@@ -65,6 +65,16 @@ const defaultData = {
   last24hWindow: null,
   headline: "AI 每日新聞尚未生成",
   summary: "系統已啟動，等待第一次自動更新。",
+  contextBriefs: {
+    topStory: "目前 AI 競爭主軸仍圍繞模型能力、推論成本、企業導入速度與監管調整，沒有明顯新消息時，最值得關注的是各大平台如何把既有模型更穩定地推進到產品與企業工作流程中。",
+    technicalFocus: "近期技術競爭重點集中在更高效的推論、更長上下文、更可靠的多模態理解，以及讓模型在成本可控下維持穩定表現。",
+    toolFocus: "工具層面的主戰場仍是代理工作流、自動化整合、企業 API 與團隊協作場景，市場正持續從展示型功能轉向可長期落地的生產工具。",
+    industryFocus: "產業層面目前最值得追蹤的是雲端平台、模型公司與企業客戶之間的合作方式，以及資本支出、定價策略與法規走向如何影響 AI 商業化。",
+    editorPicks: "如果今天缺少密集的新訊號，代表市場可能正處於消化前一輪發布的階段；這時更適合觀察各家公司是否把既有承諾轉成實際產品、合作或採用成果。",
+    technicalBreakthroughs: "技術突破的近期主線仍是模型效率、推論延遲、上下文能力與多模態可靠度，這些方向會直接影響下一波產品體驗與部署成本。",
+    toolApplications: "工具應用面仍在驗證哪些 AI 功能真的能持續留在工作流程中。從客服、內容生產到企業內部知識工具，重點已經從『能不能做』轉向『能不能穩定用』。",
+    industryImpact: "產業影響面目前仍由平台競爭、企業採用速度與監管節奏共同推動。即使當天新聞較少，這三條線仍是判斷市場下一步的核心。"
+  },
   categories: {
     technicalBreakthroughs: [],
     toolApplications: [],
@@ -228,6 +238,8 @@ function buildPrompt() {
     "industryImpact 代表投資、合作、政策、法規、市場競爭、商業策略與產業影響。",
     "每個分類請挑選 2 到 5 則最值得關注的新聞。",
     "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
+    "另外請額外提供 contextBriefs 物件，內容是當某個版位或分類在最近 24 小時內沒有足夠新聞時，可顯示的背景脈絡摘要。",
+    "contextBriefs 每個欄位請用 2 到 4 句繁體中文，清楚說明目前整體發展到哪裡、正在觀察什麼，不要假裝成今天的新訊，也不要寫成空泛口號。",
     "title 請精煉到像新聞標題，不要超過 40 個中文字。",
     "summary 請用 1 到 2 句交代事件本身，不要塞太多背景。",
     "whyItMatters 請用 1 句說明對 AI 產業、開發者或市場的重要性。",
@@ -244,6 +256,16 @@ function buildPrompt() {
     `JSON 結構必須完全符合這個樣式：${JSON.stringify({
       headline: "字串",
       summary: "字串",
+      contextBriefs: {
+        topStory: "字串",
+        technicalFocus: "字串",
+        toolFocus: "字串",
+        industryFocus: "字串",
+        editorPicks: "字串",
+        technicalBreakthroughs: "字串",
+        toolApplications: "字串",
+        industryImpact: "字串"
+      },
       categories: {
         technicalBreakthroughs: [
           {
@@ -267,10 +289,34 @@ function buildSchema() {
   return {
     type: "object",
     additionalProperties: false,
-    required: ["headline", "summary", "categories"],
+    required: ["headline", "summary", "contextBriefs", "categories"],
     properties: {
       headline: { type: "string" },
       summary: { type: "string" },
+      contextBriefs: {
+        type: "object",
+        additionalProperties: false,
+        required: [
+          "topStory",
+          "technicalFocus",
+          "toolFocus",
+          "industryFocus",
+          "editorPicks",
+          "technicalBreakthroughs",
+          "toolApplications",
+          "industryImpact"
+        ],
+        properties: {
+          topStory: { type: "string" },
+          technicalFocus: { type: "string" },
+          toolFocus: { type: "string" },
+          industryFocus: { type: "string" },
+          editorPicks: { type: "string" },
+          technicalBreakthroughs: { type: "string" },
+          toolApplications: { type: "string" },
+          industryImpact: { type: "string" }
+        }
+      },
       categories: {
         type: "object",
         additionalProperties: false,
@@ -313,6 +359,17 @@ function buildItemArraySchema() {
   };
 }
 
+function normalizeContextBriefs(contextBriefs = {}) {
+  const normalized = {};
+
+  for (const [key, fallback] of Object.entries(defaultData.contextBriefs)) {
+    const value = String(contextBriefs[key] || "").trim();
+    normalized[key] = value || fallback;
+  }
+
+  return normalized;
+}
+
 async function sanitizePayload(payload) {
   const dedupedCategories = dedupeAcrossCategories({
       technicalBreakthroughs: await normalizeItems(payload.categories?.technicalBreakthroughs || []),
@@ -326,6 +383,7 @@ async function sanitizePayload(payload) {
     last24hWindow: "最近 24 小時",
     headline: payload.headline || defaultData.headline,
     summary: payload.summary || defaultData.summary,
+    contextBriefs: normalizeContextBriefs(payload.contextBriefs),
     categories: dedupedCategories
   };
 }
