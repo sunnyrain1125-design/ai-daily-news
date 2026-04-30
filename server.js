@@ -144,11 +144,29 @@ function formatArchiveDate(date = new Date()) {
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
-function buildHistoryMeta(payload, archiveDate) {
+function formatArchiveTimestamp(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: timezone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23"
+  }).formatToParts(date);
+
+  const get = (type) => parts.find((part) => part.type === type)?.value || "00";
+  return `${get("year")}-${get("month")}-${get("day")}T${get("hour")}-${get("minute")}-${get("second")}`;
+}
+
+function buildHistoryMeta(payload, archiveKey) {
+  const archiveDate = String(payload.generatedAt || "").slice(0, 10) || formatArchiveDate();
   return {
+    id: archiveKey,
     date: archiveDate,
-    label: archiveDate,
-    path: `./history/${archiveDate}.json`,
+    label: payload.generatedAtLocal || archiveDate,
+    path: `./history/${archiveKey}.json`,
     headline: payload.headline,
     generatedAt: payload.generatedAt,
     generatedAtLocal: payload.generatedAtLocal
@@ -156,18 +174,18 @@ function buildHistoryMeta(payload, archiveDate) {
 }
 
 async function writeHistorySnapshot(payload) {
-  const archiveDate = formatArchiveDate(new Date(payload.generatedAt || Date.now()));
-  const archivePath = path.join(historyDir, `${archiveDate}.json`);
+  const archiveTimestamp = formatArchiveTimestamp(new Date(payload.generatedAt || Date.now()));
+  const archivePath = path.join(historyDir, `${archiveTimestamp}.json`);
 
   await fs.writeFile(archivePath, JSON.stringify(payload, null, 2), "utf8");
 
   const index = await readHistoryIndex();
-  const nextItems = index.items.filter((item) => item.date !== archiveDate);
-  nextItems.unshift(buildHistoryMeta(payload, archiveDate));
-  nextItems.sort((a, b) => b.date.localeCompare(a.date));
+  const nextItems = index.items.filter((item) => item.id !== archiveTimestamp);
+  nextItems.unshift(buildHistoryMeta(payload, archiveTimestamp));
+  nextItems.sort((a, b) => String(b.generatedAt || "").localeCompare(String(a.generatedAt || "")));
 
   await writeHistoryIndex({
-    latest: archiveDate,
+    latest: archiveTimestamp,
     items: nextItems
   });
 }
@@ -210,6 +228,15 @@ async function readStoredNews() {
 }
 
 async function writeStoredNews(payload) {
+  const existing = await readStoredNews();
+  const payloadStoryCount = countStories(payload);
+  const existingStoryCount = countStories(existing);
+
+  if (payloadStoryCount === 0 && existingStoryCount > 0) {
+    console.warn(`Generated dataset had no visible stories. Keeping previous dataset from ${existing.generatedAt || "unknown time"}.`);
+    return existing;
+  }
+
   if (!isVercel) {
     await writeLocalJson(payload);
     await writeHistorySnapshot(payload);
@@ -217,12 +244,14 @@ async function writeStoredNews(payload) {
 
   if (useBlob) {
     await writeBlobJson(payload);
-    return;
+    return payload;
   }
 
   if (isVercel) {
     throw new Error("Vercel deployment requires BLOB_READ_WRITE_TOKEN or another external datastore.");
   }
+
+  return payload;
 }
 
 function buildPrompt() {
@@ -369,6 +398,14 @@ function normalizeContextBriefs(contextBriefs = {}) {
   }
 
   return normalized;
+}
+
+function countStories(payload) {
+  const categories = payload?.categories || {};
+  return ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
+    const items = Array.isArray(categories[key]) ? categories[key] : [];
+    return sum + items.length;
+  }, 0);
 }
 
 async function sanitizePayload(payload) {
@@ -595,8 +632,7 @@ async function refreshNews(force = false) {
 
   activeRefreshPromise = (async () => {
     const payload = await generateNewsDigest();
-    await writeStoredNews(payload);
-    return payload;
+    return await writeStoredNews(payload);
   })();
 
   try {
