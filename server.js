@@ -449,8 +449,19 @@ async function bootstrap() {
   const cliRefresh = process.argv.includes("--refresh");
 
   if (cliRefresh) {
-    await refreshNews(true);
-    console.log("News refresh completed.");
+    try {
+      await refreshNews(true);
+      console.log("News refresh completed.");
+    } catch (error) {
+      const existing = await readStoredNews();
+      if (existing?.generatedAt) {
+        console.warn(`News refresh failed, keeping previous dataset from ${existing.generatedAt}.`);
+        console.warn(error.message);
+        return { shouldStartServer: false };
+      }
+
+      throw error;
+    }
     return { shouldStartServer: false };
   }
 
