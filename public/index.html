@@ -61,7 +61,7 @@
       <div class="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-orange-200/25 blur-3xl"></div>
     </div>
 
-    <main class="relative mx-auto max-w-7xl px-6 py-8 lg:px-10 lg:py-10">
+    <main class="relative mx-auto max-w-7xl px-6 py-8 lg:px-10 lg:py-12">
       <header class="animate-fade-rise opacity-0">
         <div class="mb-6 flex flex-wrap items-center gap-3">
           <span class="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-4 py-2 text-xs uppercase tracking-[0.3em] text-sky-700">
@@ -85,35 +85,45 @@
         </div>
 
         <section class="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
-          <div class="rounded-[2rem] border border-slate-200 bg-white/85 p-7 shadow-glow backdrop-blur">
-            <p class="mb-3 font-display text-sm uppercase tracking-[0.35em] text-slate-500">AI Intel Briefing</p>
-            <h1 class="max-w-4xl font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
-              每天一頁，掌握 AI 產業最新 24 小時
-            </h1>
-            <p id="headline" class="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          <div class="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-glow backdrop-blur">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <p class="mb-3 font-display text-sm uppercase tracking-[0.35em] text-slate-500">AI Intel Briefing</p>
+                <h1 class="max-w-4xl font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
+                  每天一頁，掌握 AI 產業最新 24 小時
+                </h1>
+              </div>
+              <div class="min-w-[220px] rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
+                <p class="font-display text-xs uppercase tracking-[0.25em] text-slate-500">Editor&apos;s Note</p>
+                <p class="mt-3 text-sm leading-7 text-slate-600">
+                  以最近 24 小時最值得注意的 AI 產業動態為主，偏重技術、產品與市場三個面向。
+                </p>
+              </div>
+            </div>
+            <p id="headline" class="mt-6 max-w-3xl text-xl leading-9 text-slate-700">
               正在整理 OpenAI、Anthropic、Google Gemini 與 Meta AI 的最新動態...
             </p>
-            <div class="mt-6 grid gap-4 sm:grid-cols-3">
-              <div class="rounded-2xl border border-sky-200 bg-sky-50 p-4">
+            <div class="mt-8 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-sky-200 bg-sky-50 p-5">
                 <p class="font-display text-xs uppercase tracking-[0.25em] text-sky-600">Technical</p>
-                <p id="technicalCount" class="mt-3 text-3xl font-bold text-slate-900">0</p>
-                <p class="mt-1 text-sm text-slate-500">技術突破</p>
+                <p id="technicalCount" class="mt-3 text-4xl font-bold text-slate-900">0</p>
+                <p class="mt-2 text-sm text-slate-500">技術突破</p>
               </div>
-              <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+              <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
                 <p class="font-display text-xs uppercase tracking-[0.25em] text-emerald-600">Applications</p>
-                <p id="applicationCount" class="mt-3 text-3xl font-bold text-slate-900">0</p>
-                <p class="mt-1 text-sm text-slate-500">工具應用</p>
+                <p id="applicationCount" class="mt-3 text-4xl font-bold text-slate-900">0</p>
+                <p class="mt-2 text-sm text-slate-500">工具應用</p>
               </div>
-              <div class="rounded-2xl border border-orange-200 bg-orange-50 p-4">
+              <div class="rounded-2xl border border-orange-200 bg-orange-50 p-5">
                 <p class="font-display text-xs uppercase tracking-[0.25em] text-orange-600">Industry</p>
-                <p id="industryCount" class="mt-3 text-3xl font-bold text-slate-900">0</p>
-                <p class="mt-1 text-sm text-slate-500">產業影響</p>
+                <p id="industryCount" class="mt-3 text-4xl font-bold text-slate-900">0</p>
+                <p class="mt-2 text-sm text-slate-500">產業影響</p>
               </div>
             </div>
           </div>
 
           <div class="grid gap-6">
-            <section class="rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-glow backdrop-blur">
+            <section class="rounded-[2rem] border border-slate-200 bg-white/90 p-7 shadow-glow backdrop-blur">
               <div class="flex items-center justify-between text-sm text-slate-500">
                 <span>Last Updated</span>
                 <span class="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sky-600">
@@ -121,7 +131,7 @@
                 </span>
               </div>
               <p id="updatedAt" class="mt-4 font-display text-2xl font-semibold text-slate-900">--</p>
-              <p id="summary" class="mt-4 text-sm leading-7 text-slate-600">
+              <p id="summary" class="mt-5 text-[15px] leading-8 text-slate-600">
                 系統正在讀取最新摘要，稍後會顯示今日 AI 產業重點。
               </p>
               <p id="freshnessNote" class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-xs leading-6 text-slate-500">
@@ -129,9 +139,9 @@
               </p>
             </section>
 
-            <section class="rounded-[2rem] border border-slate-200 bg-white/90 p-6 shadow-glow backdrop-blur">
+            <section class="rounded-[2rem] border border-slate-200 bg-white/90 p-7 shadow-glow backdrop-blur">
               <p class="font-display text-sm uppercase tracking-[0.25em] text-rose-500">Update Cadence</p>
-              <div class="mt-4 space-y-3 text-sm leading-7 text-slate-600">
+              <div class="mt-4 space-y-3 text-[15px] leading-8 text-slate-600">
                 <p>排程以台北時間早上 <span class="font-semibold text-slate-900">08:05</span> 為目標，避開 GitHub Actions 整點壅塞。</p>
                 <p>訊息涵蓋 OpenAI、Anthropic、Google Gemini、Meta AI 的最近 24 小時動態。</p>
                 <p class="text-slate-500">點上方「一鍵手動刷新」後，登入 GitHub 即可進入 workflow 頁面手動更新。</p>
@@ -141,34 +151,34 @@
         </section>
       </header>
 
-      <section class="mt-8 grid gap-6 lg:grid-cols-3">
-        <article class="animate-fade-rise rounded-[2rem] border border-sky-200 bg-white/90 p-6 shadow-glow opacity-0" style="animation-delay: .08s;">
+      <section class="mt-10 grid gap-6 lg:grid-cols-3">
+        <article class="animate-fade-rise rounded-[2rem] border border-sky-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .08s;">
           <div class="mb-5 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-sky-600">Featured Technical</p>
-              <h2 class="mt-2 text-2xl font-semibold text-slate-900">今日技術焦點</h2>
+              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">今日技術焦點</h2>
             </div>
             <div class="h-12 w-1 rounded-full bg-sky-500/70"></div>
           </div>
           <div id="technicalSpotlight"></div>
         </article>
 
-        <article class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-6 shadow-glow opacity-0" style="animation-delay: .16s;">
+        <article class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .16s;">
           <div class="mb-5 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-600">Featured Product</p>
-              <h2 class="mt-2 text-2xl font-semibold text-slate-900">今日工具焦點</h2>
+              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">今日工具焦點</h2>
             </div>
             <div class="h-12 w-1 rounded-full bg-emerald-500/70"></div>
           </div>
           <div id="applicationsSpotlight"></div>
         </article>
 
-        <article class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-6 shadow-glow opacity-0" style="animation-delay: .24s;">
+        <article class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .24s;">
           <div class="mb-5 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-600">Featured Market</p>
-              <h2 class="mt-2 text-2xl font-semibold text-slate-900">今日產業焦點</h2>
+              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">今日產業焦點</h2>
             </div>
             <div class="h-12 w-1 rounded-full bg-orange-500/70"></div>
           </div>
@@ -176,32 +186,32 @@
         </article>
       </section>
 
-      <section class="mt-10 grid gap-6 xl:grid-cols-3">
-        <div class="animate-fade-rise rounded-[2rem] border border-sky-200 bg-white/90 p-6 shadow-glow opacity-0" style="animation-delay: .3s;">
+      <section class="mt-12 grid gap-6 xl:grid-cols-3">
+        <div class="animate-fade-rise rounded-[2rem] border border-sky-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .3s;">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-sky-600">Technical Breakthroughs</p>
-              <h3 class="mt-2 text-2xl font-semibold text-slate-900">技術突破</h3>
+              <h3 class="mt-2 text-[28px] font-semibold text-slate-900">技術突破</h3>
             </div>
           </div>
           <div id="technicalList" class="space-y-4"></div>
         </div>
 
-        <div class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-6 shadow-glow opacity-0" style="animation-delay: .38s;">
+        <div class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .38s;">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-600">Tool Applications</p>
-              <h3 class="mt-2 text-2xl font-semibold text-slate-900">工具應用</h3>
+              <h3 class="mt-2 text-[28px] font-semibold text-slate-900">工具應用</h3>
             </div>
           </div>
           <div id="applicationsList" class="space-y-4"></div>
         </div>
 
-        <div class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-6 shadow-glow opacity-0" style="animation-delay: .46s;">
+        <div class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .46s;">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-600">Industry Impact</p>
-              <h3 class="mt-2 text-2xl font-semibold text-slate-900">產業影響</h3>
+              <h3 class="mt-2 text-[28px] font-semibold text-slate-900">產業影響</h3>
             </div>
           </div>
           <div id="industryList" class="space-y-4"></div>
@@ -234,14 +244,14 @@
         }
 
         return `
-          <div class="rounded-2xl border ${accent} bg-slate-50/80 p-5">
+          <div class="rounded-2xl border ${accent} bg-slate-50/80 p-6">
             <div class="mb-4 flex items-center justify-between gap-3">
               ${createBadge(item.company)}
               <span class="text-xs text-slate-500">${escapeHtml(item.publishedAt)}</span>
             </div>
-            <h4 class="text-xl font-semibold leading-8 text-slate-900">${escapeHtml(item.title)}</h4>
-            <p class="mt-3 text-sm leading-7 text-slate-600">${escapeHtml(item.summary)}</p>
-            <p class="mt-4 border-l-2 border-slate-200 pl-4 text-sm leading-7 text-slate-500">${escapeHtml(item.whyItMatters)}</p>
+            <h4 class="text-2xl font-semibold leading-9 text-slate-900">${escapeHtml(item.title)}</h4>
+            <p class="mt-4 text-[15px] leading-8 text-slate-600">${escapeHtml(item.summary)}</p>
+            <p class="mt-4 border-l-2 border-slate-200 pl-4 text-[15px] leading-8 text-slate-500">${escapeHtml(item.whyItMatters)}</p>
             <p class="mt-4 text-xs uppercase tracking-[0.22em] text-slate-500">Source</p>
             <a class="mt-1 inline-flex text-sm text-sky-600 transition hover:text-sky-800" href="${escapeHtml(item.sourceUrl || "#")}" target="_blank" rel="noreferrer">
               ${escapeHtml(item.sourceName || "查看原文")}
@@ -252,14 +262,14 @@
 
       function renderCard(item, accentClass) {
         return `
-          <article class="rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg">
             <div class="mb-3 flex items-center justify-between gap-3">
               <span class="rounded-full ${accentClass} px-3 py-1 text-xs font-semibold">${escapeHtml(item.company || "未分類")}</span>
               <span class="text-xs text-slate-500">${escapeHtml(item.publishedAt || "")}</span>
             </div>
-            <h4 class="text-lg font-semibold leading-7 text-slate-900">${escapeHtml(item.title)}</h4>
-            <p class="mt-3 text-sm leading-7 text-slate-600">${escapeHtml(item.summary)}</p>
-            <p class="mt-3 border-l-2 border-slate-200 pl-4 text-sm leading-7 text-slate-500">${escapeHtml(item.whyItMatters)}</p>
+            <h4 class="text-xl font-semibold leading-8 text-slate-900">${escapeHtml(item.title)}</h4>
+            <p class="mt-4 text-[15px] leading-8 text-slate-600">${escapeHtml(item.summary)}</p>
+            <p class="mt-4 border-l-2 border-slate-200 pl-4 text-[15px] leading-8 text-slate-500">${escapeHtml(item.whyItMatters)}</p>
             <a
               href="${escapeHtml(item.sourceUrl || "#")}"
               target="_blank"
