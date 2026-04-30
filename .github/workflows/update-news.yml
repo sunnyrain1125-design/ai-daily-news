@@ -35,10 +35,10 @@ jobs:
       - name: Refresh AI daily news
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ secrets.GEMINI_MODEL || 'gemini-2.5-flash' }}
-          NEWS_TIMEZONE: ${{ secrets.NEWS_TIMEZONE || 'Asia/Taipei' }}
-          NEWS_CRON: ${{ secrets.NEWS_CRON || '0 8 * * *' }}
-          CRON_SECRET: ${{ secrets.CRON_SECRET || 'github-actions-refresh' }}
+          GEMINI_MODEL: gemini-2.5-flash
+          NEWS_TIMEZONE: Asia/Taipei
+          NEWS_CRON: 0 8 * * *
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: pnpm refresh
 
       - name: Commit updated data
