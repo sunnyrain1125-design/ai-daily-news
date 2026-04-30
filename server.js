@@ -18,6 +18,7 @@ const localDataPath = path.join(publicDir, "data.json");
 const blobPath = "ai-daily-news/data.json";
 const maxRetries = Number(process.env.GEMINI_MAX_RETRIES || 4);
 const retryBaseDelayMs = Number(process.env.GEMINI_RETRY_BASE_DELAY_MS || 5000);
+const sourceValidationTimeoutMs = Number(process.env.SOURCE_VALIDATION_TIMEOUT_MS || 8000);
 
 const defaultData = {
   generatedAt: null,
@@ -138,6 +139,7 @@ function buildPrompt() {
     "sourceUrl 必須是可直接點擊的原始文章、公告或官方文件頁面，不要填首頁，不要填虛構網址。",
     "sourceUrl 絕對不要使用 Google、Vertex AI Search、grounding-api-redirect 或任何搜尋結果中介跳轉網址。",
     "如果你只能取得中介跳轉網址，請改找原始新聞網站或官方網站的實際頁面連結。",
+    "請優先選擇原始新聞媒體或公司官方頁面，不要使用摘要站、轉載站、比價金融站、新聞聚合鏡像站作為 sourceUrl。",
     "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
     "如果某分類在近 24 小時內沒有足夠可信消息，陣列可為空，但不要捏造內容。",
@@ -214,12 +216,12 @@ function buildItemArraySchema() {
   };
 }
 
-function sanitizePayload(payload) {
+async function sanitizePayload(payload) {
   const dedupedCategories = dedupeAcrossCategories({
-    technicalBreakthroughs: normalizeItems(payload.categories?.technicalBreakthroughs || []),
-    toolApplications: normalizeItems(payload.categories?.toolApplications || []),
-    industryImpact: normalizeItems(payload.categories?.industryImpact || [])
-  });
+      technicalBreakthroughs: await normalizeItems(payload.categories?.technicalBreakthroughs || []),
+      toolApplications: await normalizeItems(payload.categories?.toolApplications || []),
+      industryImpact: await normalizeItems(payload.categories?.industryImpact || [])
+    });
 
   return {
     generatedAt: new Date().toISOString(),
@@ -231,10 +233,9 @@ function sanitizePayload(payload) {
   };
 }
 
-function normalizeItems(items) {
+async function normalizeItems(items) {
   const seen = new Set();
-
-  return items
+  const normalized = items
     .map((item) => ({
       title: String(item.title || "").trim(),
       company: String(item.company || "").trim(),
@@ -247,6 +248,7 @@ function normalizeItems(items) {
     .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl)
     .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
     .filter((item) => !isBlockedSourceUrl(item.sourceUrl))
+    .filter((item) => !isBlockedPublisher(item.sourceUrl))
     .filter((item) => {
       const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl)}`;
       if (seen.has(key)) {
@@ -255,6 +257,15 @@ function normalizeItems(items) {
       seen.add(key);
       return true;
     });
+
+  const validated = [];
+  for (const item of normalized) {
+    if (await isReachableSourceUrl(item.sourceUrl)) {
+      validated.push(item);
+    }
+  }
+
+  return validated;
 }
 
 function isBlockedSourceUrl(url) {
@@ -265,6 +276,46 @@ function isBlockedSourceUrl(url) {
     value.includes("google.com/url") ||
     value.includes("googleusercontent.com")
   );
+}
+
+function isBlockedPublisher(url) {
+  const value = String(url || "").toLowerCase();
+  return (
+    value.includes("biggo.finance") ||
+    value.includes("techflowpost.com") ||
+    value.includes("newsnow.co.uk")
+  );
+}
+
+async function isReachableSourceUrl(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), sourceValidationTimeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+      signal: controller.signal,
+      headers: {
+        "user-agent": "AI-Daily-News-Link-Validator/1.0"
+      }
+    });
+
+    if (!response.ok) {
+      return false;
+    }
+
+    const finalUrl = response.url || url;
+    if (isBlockedSourceUrl(finalUrl) || isBlockedPublisher(finalUrl)) {
+      return false;
+    }
+
+    return true;
+  } catch (_error) {
+    return false;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 function dedupeAcrossCategories(categories) {
@@ -341,7 +392,7 @@ async function generateNewsDigest() {
   });
 
   const parsed = extractJsonObject(response.text);
-  return sanitizePayload(parsed);
+  return await sanitizePayload(parsed);
 }
 
 async function withRetry(task) {
