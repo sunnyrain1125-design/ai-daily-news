@@ -25,7 +25,6 @@ const allowedSourceHosts = [
   "blog.google",
   "deepmind.google",
   "ai.google.dev",
-  "blog.google/technology",
   "about.fb.com",
   "engineering.fb.com",
   "meta.com",
@@ -44,7 +43,18 @@ const allowedSourceHosts = [
   "axios.com",
   "wsj.com",
   "ft.com",
-  "forbes.com"
+  "forbes.com",
+  "technews.tw",
+  "ithome.com.tw",
+  "inside.com.tw",
+  "digitimes.com",
+  "money.udn.com",
+  "ctee.com.tw",
+  "bnext.com.tw",
+  "meet.bnext.com.tw",
+  "businessweekly.com.tw",
+  "36kr.com",
+  "36kr.kr"
 ];
 
 const defaultData = {
@@ -166,7 +176,7 @@ function buildPrompt() {
     "sourceUrl 必須是可直接點擊的原始文章、公告或官方文件頁面，不要填首頁，不要填虛構網址。",
     "sourceUrl 絕對不要使用 Google、Vertex AI Search、grounding-api-redirect 或任何搜尋結果中介跳轉網址。",
     "如果你只能取得中介跳轉網址，請改找原始新聞網站或官方網站的實際頁面連結。",
-    "請只使用以下白名單來源或其官方子頁：OpenAI、Anthropic、Google 官方、Meta 官方、Reuters、AP、TechCrunch、The Verge、Wired、CNBC、Bloomberg、Ars Technica、VentureBeat、TechRadar、Seeking Alpha、CBS News、Axios、WSJ、Financial Times、Forbes。",
+    "請只使用以下白名單來源或其官方子頁：OpenAI、Anthropic、Google 官方、Meta 官方、Reuters、AP、TechCrunch、The Verge、Wired、CNBC、Bloomberg、Ars Technica、VentureBeat、TechRadar、Seeking Alpha、CBS News、Axios、WSJ、Financial Times、Forbes、TechNews 科技新報、iThome、INSIDE、DIGITIMES、經濟日報、工商時報、數位時代、Meet 創業小聚、商業周刊、36Kr。",
     "不要使用摘要站、轉載站、比價金融站、新聞聚合鏡像站作為 sourceUrl。",
     "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
