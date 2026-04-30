@@ -20,18 +20,19 @@
               body: ["Noto Sans TC", "sans-serif"]
             },
             colors: {
-              ink: "#060816",
-              panel: "#0d1328",
-              edge: "#1d2a52",
-              neon: "#6ee7ff",
-              mint: "#78f2b3",
-              ember: "#ff8a5b"
+              ink: "#040712",
+              panel: "#0b1120",
+              line: "#1a2648",
+              neon: "#69e2ff",
+              mint: "#71f0bc",
+              ember: "#ff9a62",
+              rose: "#ff6b8b"
             },
             boxShadow: {
-              glow: "0 0 0 1px rgba(110,231,255,.15), 0 30px 80px rgba(0,0,0,.45)"
+              glow: "0 0 0 1px rgba(105,226,255,.12), 0 24px 80px rgba(0,0,0,.38)"
             },
             animation: {
-              "fade-rise": "fadeRise .7s ease forwards"
+              "fade-rise": "fadeRise .75s ease forwards"
             },
             keyframes: {
               fadeRise: {
@@ -46,96 +47,151 @@
     <style>
       body {
         background:
-          radial-gradient(circle at top left, rgba(110, 231, 255, 0.08), transparent 28%),
-          radial-gradient(circle at 85% 15%, rgba(120, 242, 179, 0.08), transparent 24%),
-          linear-gradient(180deg, #05070f 0%, #09101f 55%, #04060d 100%);
+          radial-gradient(circle at 10% 10%, rgba(105, 226, 255, 0.1), transparent 28%),
+          radial-gradient(circle at 88% 18%, rgba(113, 240, 188, 0.08), transparent 24%),
+          radial-gradient(circle at 50% 100%, rgba(255, 154, 98, 0.08), transparent 24%),
+          linear-gradient(180deg, #03050c 0%, #08101d 55%, #03050b 100%);
       }
     </style>
   </head>
-  <body class="font-body text-slate-100 min-h-screen">
-    <div class="fixed inset-0 pointer-events-none overflow-hidden">
-      <div class="absolute -top-20 -left-16 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl"></div>
-      <div class="absolute top-1/3 right-0 h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-orange-400/10 blur-3xl"></div>
+  <body class="min-h-screen font-body text-slate-100">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"></div>
+      <div class="absolute top-1/4 right-0 h-80 w-80 rounded-full bg-emerald-400/10 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-orange-400/10 blur-3xl"></div>
     </div>
 
-    <main class="relative mx-auto max-w-7xl px-6 py-10 lg:px-10">
-      <header class="mb-10 animate-fade-rise opacity-0">
-        <div class="mb-5 inline-flex items-center gap-3 rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-xs tracking-[0.28em] text-cyan-200 uppercase">
-          <span class="h-2 w-2 rounded-full bg-mint shadow-[0_0_14px_rgba(120,242,179,.9)]"></span>
-          AI Daily News Monitor
+    <main class="relative mx-auto max-w-7xl px-6 py-8 lg:px-10 lg:py-10">
+      <header class="animate-fade-rise opacity-0">
+        <div class="mb-6 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-cyan-200">
+            <span class="h-2 w-2 rounded-full bg-mint shadow-[0_0_12px_rgba(113,240,188,.9)]"></span>
+            AI Daily News
+          </span>
+          <span id="status" class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-300">
+            Loading
+          </span>
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs text-slate-400">
+            GitHub Actions 每日自動更新
+          </span>
         </div>
-        <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <section>
-            <p class="mb-3 font-display text-sm uppercase tracking-[0.35em] text-slate-400">Last 24 Hours</p>
+
+        <section class="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+          <div class="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 shadow-glow backdrop-blur">
+            <p class="mb-3 font-display text-sm uppercase tracking-[0.35em] text-slate-400">AI Intel Briefing</p>
             <h1 class="max-w-4xl font-display text-4xl font-bold leading-tight text-white md:text-6xl">
-              AI 產業日報
+              每天一頁，掌握 AI 產業最新 24 小時
             </h1>
             <p id="headline" class="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-              正在讀取最新 AI 新聞摘要...
+              正在整理 OpenAI、Anthropic、Google Gemini 與 Meta AI 的最新動態...
             </p>
-          </section>
-          <section class="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glow backdrop-blur">
-            <div class="flex items-center justify-between text-sm text-slate-400">
-              <span>Last Updated</span>
-              <span id="status" class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-cyan-200">Loading</span>
+            <div class="mt-6 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-cyan-300/10 bg-cyan-300/5 p-4">
+                <p class="font-display text-xs uppercase tracking-[0.25em] text-cyan-200">Technical</p>
+                <p id="technicalCount" class="mt-3 text-3xl font-bold text-white">0</p>
+                <p class="mt-1 text-sm text-slate-400">技術突破</p>
+              </div>
+              <div class="rounded-2xl border border-emerald-300/10 bg-emerald-300/5 p-4">
+                <p class="font-display text-xs uppercase tracking-[0.25em] text-emerald-200">Applications</p>
+                <p id="applicationCount" class="mt-3 text-3xl font-bold text-white">0</p>
+                <p class="mt-1 text-sm text-slate-400">工具應用</p>
+              </div>
+              <div class="rounded-2xl border border-orange-300/10 bg-orange-300/5 p-4">
+                <p class="font-display text-xs uppercase tracking-[0.25em] text-orange-200">Industry</p>
+                <p id="industryCount" class="mt-3 text-3xl font-bold text-white">0</p>
+                <p class="mt-1 text-sm text-slate-400">產業影響</p>
+              </div>
             </div>
-            <p id="updatedAt" class="mt-4 font-display text-2xl font-semibold text-white">--</p>
-            <p id="summary" class="mt-4 leading-7 text-slate-300">
-              載入中，稍後將顯示技術突破、工具應用與產業影響三大面向。
-            </p>
-          </section>
-        </div>
+          </div>
+
+          <div class="grid gap-6">
+            <section class="rounded-[2rem] border border-white/10 bg-panel/80 p-6 shadow-glow backdrop-blur">
+              <div class="flex items-center justify-between text-sm text-slate-400">
+                <span>Last Updated</span>
+                <span class="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-cyan-200">
+                  Daily Brief
+                </span>
+              </div>
+              <p id="updatedAt" class="mt-4 font-display text-2xl font-semibold text-white">--</p>
+              <p id="summary" class="mt-4 text-sm leading-7 text-slate-300">
+                系統正在讀取最新摘要，稍後會顯示今日 AI 產業重點。
+              </p>
+            </section>
+
+            <section class="rounded-[2rem] border border-white/10 bg-panel/80 p-6 shadow-glow backdrop-blur">
+              <p class="font-display text-sm uppercase tracking-[0.25em] text-rose-200">Update Cadence</p>
+              <div class="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+                <p>排程以台北時間早上 <span class="font-semibold text-white">08:05</span> 為目標，避開 GitHub Actions 整點壅塞。</p>
+                <p>訊息涵蓋 OpenAI、Anthropic、Google Gemini、Meta AI 的最近 24 小時動態。</p>
+                <p class="text-slate-400">免費方案可能有少量延遲，但這已是最接近且較穩定的設定。</p>
+              </div>
+            </section>
+          </div>
+        </section>
       </header>
 
-      <section class="mb-10 grid gap-4 md:grid-cols-3">
-        <div class="rounded-2xl border border-cyan-300/15 bg-panel/75 p-5 backdrop-blur animate-fade-rise opacity-0" style="animation-delay: .1s;">
-          <p class="font-display text-sm uppercase tracking-[0.28em] text-cyan-200">Technical</p>
-          <p class="mt-3 text-3xl font-bold text-white" id="technicalCount">0</p>
-          <p class="mt-2 text-sm text-slate-400">模型、研究、晶片與基礎能力</p>
-        </div>
-        <div class="rounded-2xl border border-emerald-300/15 bg-panel/75 p-5 backdrop-blur animate-fade-rise opacity-0" style="animation-delay: .2s;">
-          <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-200">Applications</p>
-          <p class="mt-3 text-3xl font-bold text-white" id="applicationCount">0</p>
-          <p class="mt-2 text-sm text-slate-400">產品、代理流程、企業導入與 API</p>
-        </div>
-        <div class="rounded-2xl border border-orange-300/15 bg-panel/75 p-5 backdrop-blur animate-fade-rise opacity-0" style="animation-delay: .3s;">
-          <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-200">Industry</p>
-          <p class="mt-3 text-3xl font-bold text-white" id="industryCount">0</p>
-          <p class="mt-2 text-sm text-slate-400">投資、法規、合作與市場競爭</p>
-        </div>
+      <section class="mt-8 grid gap-6 lg:grid-cols-3">
+        <article class="animate-fade-rise rounded-[2rem] border border-cyan-300/15 bg-panel/85 p-6 shadow-glow opacity-0" style="animation-delay: .08s;">
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+              <p class="font-display text-sm uppercase tracking-[0.28em] text-cyan-200">Featured Technical</p>
+              <h2 class="mt-2 text-2xl font-semibold text-white">今日技術焦點</h2>
+            </div>
+            <div class="h-12 w-1 rounded-full bg-cyan-300/80"></div>
+          </div>
+          <div id="technicalSpotlight"></div>
+        </article>
+
+        <article class="animate-fade-rise rounded-[2rem] border border-emerald-300/15 bg-panel/85 p-6 shadow-glow opacity-0" style="animation-delay: .16s;">
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+              <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-200">Featured Product</p>
+              <h2 class="mt-2 text-2xl font-semibold text-white">今日工具焦點</h2>
+            </div>
+            <div class="h-12 w-1 rounded-full bg-emerald-300/80"></div>
+          </div>
+          <div id="applicationsSpotlight"></div>
+        </article>
+
+        <article class="animate-fade-rise rounded-[2rem] border border-orange-300/15 bg-panel/85 p-6 shadow-glow opacity-0" style="animation-delay: .24s;">
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+              <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-200">Featured Market</p>
+              <h2 class="mt-2 text-2xl font-semibold text-white">今日產業焦點</h2>
+            </div>
+            <div class="h-12 w-1 rounded-full bg-orange-300/80"></div>
+          </div>
+          <div id="industrySpotlight"></div>
+        </article>
       </section>
 
-      <section class="grid gap-6 xl:grid-cols-3">
-        <div class="rounded-3xl border border-cyan-300/15 bg-panel/85 p-6 shadow-glow backdrop-blur animate-fade-rise opacity-0" style="animation-delay: .35s;">
+      <section class="mt-10 grid gap-6 xl:grid-cols-3">
+        <div class="animate-fade-rise rounded-[2rem] border border-cyan-300/15 bg-panel/85 p-6 shadow-glow opacity-0" style="animation-delay: .3s;">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-cyan-200">Technical Breakthroughs</p>
-              <h2 class="mt-2 text-2xl font-semibold text-white">技術突破</h2>
+              <h3 class="mt-2 text-2xl font-semibold text-white">技術突破</h3>
             </div>
-            <div class="h-12 w-1 rounded-full bg-cyan-300/70"></div>
           </div>
           <div id="technicalList" class="space-y-4"></div>
         </div>
 
-        <div class="rounded-3xl border border-emerald-300/15 bg-panel/85 p-6 shadow-glow backdrop-blur animate-fade-rise opacity-0" style="animation-delay: .45s;">
+        <div class="animate-fade-rise rounded-[2rem] border border-emerald-300/15 bg-panel/85 p-6 shadow-glow opacity-0" style="animation-delay: .38s;">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-200">Tool Applications</p>
-              <h2 class="mt-2 text-2xl font-semibold text-white">工具應用</h2>
+              <h3 class="mt-2 text-2xl font-semibold text-white">工具應用</h3>
             </div>
-            <div class="h-12 w-1 rounded-full bg-emerald-300/70"></div>
           </div>
           <div id="applicationsList" class="space-y-4"></div>
         </div>
 
-        <div class="rounded-3xl border border-orange-300/15 bg-panel/85 p-6 shadow-glow backdrop-blur animate-fade-rise opacity-0" style="animation-delay: .55s;">
+        <div class="animate-fade-rise rounded-[2rem] border border-orange-300/15 bg-panel/85 p-6 shadow-glow opacity-0" style="animation-delay: .46s;">
           <div class="mb-6 flex items-center justify-between">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-200">Industry Impact</p>
-              <h2 class="mt-2 text-2xl font-semibold text-white">產業影響</h2>
+              <h3 class="mt-2 text-2xl font-semibold text-white">產業影響</h3>
             </div>
-            <div class="h-12 w-1 rounded-full bg-orange-300/70"></div>
           </div>
           <div id="industryList" class="space-y-4"></div>
         </div>
@@ -152,6 +208,37 @@
           .replaceAll("'", "&#039;");
       }
 
+      function createBadge(company) {
+        const label = escapeHtml(company || "未分類");
+        return `<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-slate-200">${label}</span>`;
+      }
+
+      function renderSpotlight(item, accent) {
+        if (!item) {
+          return `
+            <div class="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-5 text-sm leading-7 text-slate-400">
+              今天這個欄位還沒有足夠清晰的焦點新聞。
+            </div>
+          `;
+        }
+
+        return `
+          <div class="rounded-2xl border ${accent} bg-white/[0.03] p-5">
+            <div class="mb-4 flex items-center justify-between gap-3">
+              ${createBadge(item.company)}
+              <span class="text-xs text-slate-500">${escapeHtml(item.publishedAt)}</span>
+            </div>
+            <h4 class="text-xl font-semibold leading-8 text-white">${escapeHtml(item.title)}</h4>
+            <p class="mt-3 text-sm leading-7 text-slate-300">${escapeHtml(item.summary)}</p>
+            <p class="mt-4 border-l-2 border-white/10 pl-4 text-sm leading-7 text-slate-400">${escapeHtml(item.whyItMatters)}</p>
+            <p class="mt-4 text-xs uppercase tracking-[0.22em] text-slate-500">Source</p>
+            <a class="mt-1 inline-flex text-sm text-cyan-200 transition hover:text-white" href="${escapeHtml(item.sourceUrl || "#")}" target="_blank" rel="noreferrer">
+              ${escapeHtml(item.sourceName || "查看原文")}
+            </a>
+          </div>
+        `;
+      }
+
       function renderCard(item, accentClass) {
         return `
           <article class="rounded-2xl border border-white/8 bg-white/[0.03] p-5 transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:bg-white/[0.05]">
@@ -159,7 +246,7 @@
               <span class="rounded-full ${accentClass} px-3 py-1 text-xs font-semibold">${escapeHtml(item.company || "未分類")}</span>
               <span class="text-xs text-slate-500">${escapeHtml(item.publishedAt || "")}</span>
             </div>
-            <h3 class="text-lg font-semibold leading-7 text-white">${escapeHtml(item.title)}</h3>
+            <h4 class="text-lg font-semibold leading-7 text-white">${escapeHtml(item.title)}</h4>
             <p class="mt-3 text-sm leading-7 text-slate-300">${escapeHtml(item.summary)}</p>
             <p class="mt-3 border-l-2 border-white/10 pl-4 text-sm leading-7 text-slate-400">${escapeHtml(item.whyItMatters)}</p>
             <a
@@ -210,12 +297,16 @@
           document.getElementById("applicationCount").textContent = applications.length;
           document.getElementById("industryCount").textContent = industry.length;
 
+          document.getElementById("technicalSpotlight").innerHTML = renderSpotlight(technical[0], "border-cyan-300/15");
+          document.getElementById("applicationsSpotlight").innerHTML = renderSpotlight(applications[0], "border-emerald-300/15");
+          document.getElementById("industrySpotlight").innerHTML = renderSpotlight(industry[0], "border-orange-300/15");
+
           fillList("technicalList", technical, "bg-cyan-300/10 text-cyan-100", "最近 24 小時內尚未整理出明確技術突破。");
           fillList("applicationsList", applications, "bg-emerald-300/10 text-emerald-100", "最近 24 小時內尚未整理出新的工具應用亮點。");
           fillList("industryList", industry, "bg-orange-300/10 text-orange-100", "最近 24 小時內尚未整理出新的產業影響焦點。");
         } catch (error) {
           document.getElementById("headline").textContent = "資料載入失敗";
-          document.getElementById("summary").textContent = "請確認後端服務已啟動，或檢查 /data.json 是否可讀取。";
+          document.getElementById("summary").textContent = "請稍後重新整理，或確認 GitHub Pages 已完成部署。";
           document.getElementById("status").textContent = "Error";
         }
       }

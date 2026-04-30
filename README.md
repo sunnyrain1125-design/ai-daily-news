@@ -108,7 +108,7 @@ git push -u origin main
 
 ### 排程時間說明
 
-GitHub Actions 目前用 UTC cron 排程，已設成每天 `00:00 UTC`，也就是台北時間 `08:00`。
+GitHub Actions 已改成 timezone-aware schedule，目標是每天台北時間 `08:05` 自動更新。之所以不是 `08:00`，是因為 GitHub 官方說明整點是高負載時段，排程更容易延遲；將時間微幅錯開能降低延遲機率。
 
 注意：GitHub 官方有說明，`schedule` 工作流在高峰時段可能延遲，尤其整點更容易延誤，因此免費方案無法保證秒級或分鐘級精準 08:00。
 
