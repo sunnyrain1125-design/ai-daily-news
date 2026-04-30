@@ -189,49 +189,44 @@
         </section>
       </header>
 
-      <section class="mt-10 grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+      <section class="mt-10">
         <article class="animate-fade-rise rounded-[2rem] border border-slate-200 bg-white/95 p-8 shadow-glow opacity-0" style="animation-delay: .08s;">
           <div class="mb-6 flex items-start justify-between gap-4">
             <div>
               <p class="font-display text-sm uppercase tracking-[0.3em] text-rose-500">Top Story</p>
               <h2 class="mt-3 text-[34px] font-semibold leading-tight text-slate-900">今日頭條</h2>
               <p class="mt-3 max-w-2xl text-[15px] leading-8 text-slate-600">
-                以今天最值得優先閱讀的一則 AI 產業消息作為首頁主頭條，快速掌握真正的核心變化。
+                以兩則最值得優先閱讀的 AI 產業消息作為首頁主頭條，快速掌握真正的核心變化。
               </p>
             </div>
-            <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
-              Editor&apos;s Pick
-            </div>
           </div>
-          <div id="topStory"></div>
+          <div id="topStories" class="grid gap-6 lg:grid-cols-2"></div>
         </article>
-
-        <div class="grid gap-6">
-          <article class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .16s;">
-            <div class="mb-5 flex items-center justify-between">
-              <div>
-                <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-600">Secondary Story</p>
-                <h2 class="mt-2 text-[26px] font-semibold text-slate-900">工具焦點</h2>
-              </div>
-              <div class="h-12 w-1 rounded-full bg-emerald-500/70"></div>
-            </div>
-            <div id="applicationsSpotlight"></div>
-          </article>
-
-          <article class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .24s;">
-            <div class="mb-5 flex items-center justify-between">
-              <div>
-                <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-600">Secondary Story</p>
-                <h2 class="mt-2 text-[26px] font-semibold text-slate-900">產業焦點</h2>
-              </div>
-              <div class="h-12 w-1 rounded-full bg-orange-500/70"></div>
-            </div>
-            <div id="industrySpotlight"></div>
-          </article>
-        </div>
       </section>
 
-      <section class="mt-6 grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
+      <section class="mt-6 grid gap-6 xl:grid-cols-3">
+        <article class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .16s;">
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+              <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-600">Secondary Story</p>
+              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">工具焦點</h2>
+            </div>
+            <div class="h-12 w-1 rounded-full bg-emerald-500/70"></div>
+          </div>
+          <div id="applicationsSpotlight"></div>
+        </article>
+
+        <article class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .24s;">
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+              <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-600">Secondary Story</p>
+              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">產業焦點</h2>
+            </div>
+            <div class="h-12 w-1 rounded-full bg-orange-500/70"></div>
+          </div>
+          <div id="industrySpotlight"></div>
+        </article>
+
         <article class="animate-fade-rise rounded-[2rem] border border-sky-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .28s;">
           <div class="mb-5 flex items-center justify-between">
             <div>
@@ -241,16 +236,6 @@
             <div class="h-12 w-1 rounded-full bg-sky-500/70"></div>
           </div>
           <div id="technicalSpotlight"></div>
-        </article>
-
-        <article class="animate-fade-rise rounded-[2rem] border border-slate-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .32s;">
-          <div class="mb-5 flex items-center justify-between">
-            <div>
-              <p class="font-display text-sm uppercase tracking-[0.28em] text-slate-500">More To Watch</p>
-              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">編輯選讀</h2>
-            </div>
-          </div>
-          <div id="editorPicks" class="grid gap-4 md:grid-cols-2"></div>
         </article>
       </section>
 
@@ -409,6 +394,28 @@
         `;
       }
 
+      function renderTopStoryGrid(items, contextBriefs, showContextFallback) {
+        const stories = (items || []).slice(0, 2);
+
+        if (stories.length) {
+          const first = renderSpotlight(stories[0], "border-rose-200");
+          const second = stories[1]
+            ? renderSpotlight(stories[1], "border-rose-200")
+            : showContextFallback
+              ? renderContextPanel("第二則重點", contextBriefs.topStory, "border-rose-200 bg-rose-50/60")
+              : renderEmpty("目前沒有第二則符合條件的頭條。");
+
+          return `${first}${second}`;
+        }
+
+        if (showContextFallback) {
+          const contextCard = renderContextPanel("目前整體發展到哪裡", contextBriefs.topStory, "border-rose-200 bg-rose-50/60");
+          return `${contextCard}${contextCard}`;
+        }
+
+        return `${renderEmpty("目前篩選條件下沒有符合的頭條。")}${renderEmpty("目前沒有第二則符合條件的頭條。")}`;
+      }
+
       function renderCard(item, accentClass) {
         return `
           <article class="rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg">
@@ -489,7 +496,6 @@
         technicalFocus: "目前沒有足夠可信的新技術焦點，本站暫以近期技術脈絡補充閱讀背景。",
         toolFocus: "目前沒有足夠可信的新工具焦點，本站暫以近期工具脈絡補充閱讀背景。",
         industryFocus: "目前沒有足夠可信的新產業焦點，本站暫以近期產業脈絡補充閱讀背景。",
-        editorPicks: "目前沒有足夠可信的新編輯選讀，本站暫以近期脈絡補充閱讀背景。",
         technicalBreakthroughs: "目前沒有足夠可信的新技術突破，本站暫以近期技術脈絡補充閱讀背景。",
         toolApplications: "目前沒有足夠可信的新工具應用，本站暫以近期工具脈絡補充閱讀背景。",
         industryImpact: "目前沒有足夠可信的新產業影響，本站暫以近期產業脈絡補充閱讀背景。"
@@ -540,25 +546,6 @@
         document.getElementById("filterSummary").textContent = `目前顯示 ${total} 則新聞，篩選：${companyLabelMap[currentCompanyFilter]}${queryLabel}。`;
       }
 
-      function buildEditorPicks(groups) {
-        const picks = [];
-        const candidates = [
-          ...(groups.technical || []).slice(1, 3),
-          ...(groups.applications || []).slice(1, 3),
-          ...(groups.industry || []).slice(1, 3)
-        ];
-
-        const seen = new Set();
-        for (const item of candidates) {
-          const key = `${item.title}::${item.sourceUrl}`;
-          if (seen.has(key)) continue;
-          seen.add(key);
-          picks.push(item);
-        }
-
-        return picks.slice(0, 4);
-      }
-
       function renderDashboard(data) {
         currentData = data;
 
@@ -567,12 +554,16 @@
         const industry = filterItems(data.categories?.industryImpact || []);
         const contextBriefs = { ...defaultContextBriefs, ...(data.contextBriefs || {}) };
         const showContextFallback = !currentQuery && currentCompanyFilter === "all";
-        const topStory = industry[0] || technical[0] || applications[0] || null;
-        const editorPicks = buildEditorPicks({
-          technical,
-          applications,
-          industry
-        });
+        const topStories = [...industry, ...technical, ...applications];
+        const uniqueTopStories = [];
+        const topStorySeen = new Set();
+
+        for (const item of topStories) {
+          const key = `${item.title}::${item.sourceUrl}`;
+          if (topStorySeen.has(key)) continue;
+          topStorySeen.add(key);
+          uniqueTopStories.push(item);
+        }
 
         document.getElementById("headline").textContent = data.headline || "今日 AI 焦點";
         document.getElementById("updatedAt").textContent = data.generatedAtLocal || "尚未更新";
@@ -586,11 +577,7 @@
         document.getElementById("applicationCount").textContent = applications.length;
         document.getElementById("industryCount").textContent = industry.length;
 
-        document.getElementById("topStory").innerHTML = topStory
-          ? renderSpotlight(topStory, "border-rose-200")
-          : showContextFallback
-            ? renderContextPanel("目前整體發展到哪裡", contextBriefs.topStory, "border-rose-200 bg-rose-50/60")
-            : renderEmpty("目前篩選條件下沒有符合的頭條。");
+        document.getElementById("topStories").innerHTML = renderTopStoryGrid(uniqueTopStories, contextBriefs, showContextFallback);
         document.getElementById("technicalSpotlight").innerHTML = technical[0]
           ? renderSpotlight(technical[0], "border-cyan-300/15")
           : showContextFallback
@@ -606,11 +593,6 @@
           : showContextFallback
             ? renderContextPanel("產業焦點近況", contextBriefs.industryFocus, "border-orange-200 bg-orange-50/60")
             : renderEmpty("目前篩選條件下沒有符合的產業焦點。");
-        document.getElementById("editorPicks").innerHTML = editorPicks.length
-          ? editorPicks.map((item) => renderCompactCard(item, "bg-slate-200 text-slate-700")).join("")
-          : showContextFallback
-            ? renderContextPanel("編輯選讀背景", contextBriefs.editorPicks, "border-slate-200 bg-slate-50")
-            : renderEmpty("目前篩選條件下沒有額外的編輯選讀內容。");
 
         fillList(
           "technicalList",
