@@ -16,6 +16,8 @@ const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 const publicDir = path.join(__dirname, "public");
 const localDataPath = path.join(publicDir, "data.json");
 const blobPath = "ai-daily-news/data.json";
+const maxRetries = Number(process.env.GEMINI_MAX_RETRIES || 4);
+const retryBaseDelayMs = Number(process.env.GEMINI_RETRY_BASE_DELAY_MS || 5000);
 
 const defaultData = {
   generatedAt: null,
@@ -281,23 +283,52 @@ async function generateNewsDigest() {
     throw new Error("Missing GEMINI_API_KEY");
   }
 
-  const response = await genAI.models.generateContent({
-    model,
-    contents: [
-      "你是一位嚴謹的科技新聞研究員，回答時要以事實為基礎，避免超出來源內容的推測。",
-      buildPrompt()
-    ],
-    config: {
-      tools: [
-        {
-          googleSearch: {}
-        }
-      ]
-    }
+  const response = await withRetry(async () => {
+    return genAI.models.generateContent({
+      model,
+      contents: [
+        "你是一位嚴謹的科技新聞研究員，回答時要以事實為基礎，避免超出來源內容的推測。",
+        buildPrompt()
+      ],
+      config: {
+        tools: [
+          {
+            googleSearch: {}
+          }
+        ]
+      }
+    });
   });
 
   const parsed = extractJsonObject(response.text);
   return sanitizePayload(parsed);
+}
+
+async function withRetry(task) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= maxRetries; attempt += 1) {
+    try {
+      return await task();
+    } catch (error) {
+      lastError = error;
+
+      const retryable = [429, 500, 503].includes(error?.status);
+      if (!retryable || attempt === maxRetries) {
+        throw error;
+      }
+
+      const delayMs = retryBaseDelayMs * attempt;
+      console.warn(`Gemini request failed with status ${error.status}. Retrying in ${delayMs}ms (attempt ${attempt}/${maxRetries}).`);
+      await sleep(delayMs);
+    }
+  }
+
+  throw lastError;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function refreshNews(force = false) {
