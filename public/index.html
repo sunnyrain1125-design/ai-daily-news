@@ -657,6 +657,7 @@
         const latestDate = current?.generatedAt ? current.generatedAt.slice(0, 10) : "latest";
         const entries = [
           {
+            id: "current",
             date: latestDate,
             label: `最新資料 (${current?.generatedAtLocal || "目前版本"})`,
             path: "./data.json"
@@ -664,11 +665,33 @@
         ];
 
         for (const item of index.items || []) {
-          if (item.date === latestDate) continue;
+          if (item.path === "./data.json") continue;
           entries.push(item);
         }
 
         return entries;
+      }
+
+      function countStories(data) {
+        const categories = data?.categories || {};
+        return ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
+          const items = Array.isArray(categories[key]) ? categories[key] : [];
+          return sum + items.length;
+        }, 0);
+      }
+
+      async function findMostRecentNonEmptySnapshot(entries) {
+        for (const entry of entries) {
+          const snapshot = await loadSnapshot(entry.path);
+          if (countStories(snapshot) > 0) {
+            return {
+              entry,
+              snapshot
+            };
+          }
+        }
+
+        return null;
       }
 
       async function loadHistoryIndex() {
@@ -734,7 +757,20 @@
           historyEntries = buildHistoryEntries(current, historyIndex);
           populateDateSelect(historyEntries);
           bindControls();
-          renderDashboard(current);
+
+          let initialData = current;
+          let initialPath = "./data.json";
+
+          if (countStories(current) === 0) {
+            const fallback = await findMostRecentNonEmptySnapshot(historyEntries.slice(1));
+            if (fallback) {
+              initialData = fallback.snapshot;
+              initialPath = fallback.entry.path;
+            }
+          }
+
+          document.getElementById("dateSelect").value = initialPath;
+          renderDashboard(initialData);
         } catch (error) {
           document.getElementById("headline").textContent = "資料載入失敗";
           document.getElementById("summary").textContent = "請稍後重新整理，或確認 GitHub Pages 已完成部署。";
