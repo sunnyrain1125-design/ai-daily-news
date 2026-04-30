@@ -135,7 +135,9 @@ function buildPrompt() {
     "summary 請用 1 到 2 句交代事件本身，不要塞太多背景。",
     "whyItMatters 請用 1 句說明對 AI 產業、開發者或市場的重要性。",
     "sourceName 必須是具體媒體、公司官方部落格、官方文件站或研究機構名稱。",
-    "sourceUrl 必須是可直接點擊的文章或公告頁，不要填首頁，不要填虛構網址。",
+    "sourceUrl 必須是可直接點擊的原始文章、公告或官方文件頁面，不要填首頁，不要填虛構網址。",
+    "sourceUrl 絕對不要使用 Google、Vertex AI Search、grounding-api-redirect 或任何搜尋結果中介跳轉網址。",
+    "如果你只能取得中介跳轉網址，請改找原始新聞網站或官方網站的實際頁面連結。",
     "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
     "如果某分類在近 24 小時內沒有足夠可信消息，陣列可為空，但不要捏造內容。",
@@ -244,6 +246,7 @@ function normalizeItems(items) {
     }))
     .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl)
     .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
+    .filter((item) => !isBlockedSourceUrl(item.sourceUrl))
     .filter((item) => {
       const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl)}`;
       if (seen.has(key)) {
@@ -252,6 +255,16 @@ function normalizeItems(items) {
       seen.add(key);
       return true;
     });
+}
+
+function isBlockedSourceUrl(url) {
+  const value = String(url || "").toLowerCase();
+  return (
+    value.includes("vertexaisearch.cloud.google.com") ||
+    value.includes("grounding-api-redirect") ||
+    value.includes("google.com/url") ||
+    value.includes("googleusercontent.com")
+  );
 }
 
 function dedupeAcrossCategories(categories) {
