@@ -189,38 +189,68 @@
         </section>
       </header>
 
-      <section class="mt-10 grid gap-6 lg:grid-cols-3">
-        <article class="animate-fade-rise rounded-[2rem] border border-sky-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .08s;">
+      <section class="mt-10 grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+        <article class="animate-fade-rise rounded-[2rem] border border-slate-200 bg-white/95 p-8 shadow-glow opacity-0" style="animation-delay: .08s;">
+          <div class="mb-6 flex items-start justify-between gap-4">
+            <div>
+              <p class="font-display text-sm uppercase tracking-[0.3em] text-rose-500">Top Story</p>
+              <h2 class="mt-3 text-[34px] font-semibold leading-tight text-slate-900">今日頭條</h2>
+              <p class="mt-3 max-w-2xl text-[15px] leading-8 text-slate-600">
+                以今天最值得優先閱讀的一則 AI 產業消息作為首頁主頭條，快速掌握真正的核心變化。
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-500">
+              Editor&apos;s Pick
+            </div>
+          </div>
+          <div id="topStory"></div>
+        </article>
+
+        <div class="grid gap-6">
+          <article class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .16s;">
+            <div class="mb-5 flex items-center justify-between">
+              <div>
+                <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-600">Secondary Story</p>
+                <h2 class="mt-2 text-[26px] font-semibold text-slate-900">工具焦點</h2>
+              </div>
+              <div class="h-12 w-1 rounded-full bg-emerald-500/70"></div>
+            </div>
+            <div id="applicationsSpotlight"></div>
+          </article>
+
+          <article class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .24s;">
+            <div class="mb-5 flex items-center justify-between">
+              <div>
+                <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-600">Secondary Story</p>
+                <h2 class="mt-2 text-[26px] font-semibold text-slate-900">產業焦點</h2>
+              </div>
+              <div class="h-12 w-1 rounded-full bg-orange-500/70"></div>
+            </div>
+            <div id="industrySpotlight"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="mt-6 grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
+        <article class="animate-fade-rise rounded-[2rem] border border-sky-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .28s;">
           <div class="mb-5 flex items-center justify-between">
             <div>
-              <p class="font-display text-sm uppercase tracking-[0.28em] text-sky-600">Featured Technical</p>
-              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">今日技術焦點</h2>
+              <p class="font-display text-sm uppercase tracking-[0.28em] text-sky-600">Technical Focus</p>
+              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">技術焦點</h2>
             </div>
             <div class="h-12 w-1 rounded-full bg-sky-500/70"></div>
           </div>
           <div id="technicalSpotlight"></div>
         </article>
 
-        <article class="animate-fade-rise rounded-[2rem] border border-emerald-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .16s;">
+        <article class="animate-fade-rise rounded-[2rem] border border-slate-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .32s;">
           <div class="mb-5 flex items-center justify-between">
             <div>
-              <p class="font-display text-sm uppercase tracking-[0.28em] text-emerald-600">Featured Product</p>
-              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">今日工具焦點</h2>
+              <p class="font-display text-sm uppercase tracking-[0.28em] text-slate-500">More To Watch</p>
+              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">編輯選讀</h2>
             </div>
-            <div class="h-12 w-1 rounded-full bg-emerald-500/70"></div>
           </div>
-          <div id="applicationsSpotlight"></div>
-        </article>
-
-        <article class="animate-fade-rise rounded-[2rem] border border-orange-200 bg-white/90 p-7 shadow-glow opacity-0" style="animation-delay: .24s;">
-          <div class="mb-5 flex items-center justify-between">
-            <div>
-              <p class="font-display text-sm uppercase tracking-[0.28em] text-orange-600">Featured Market</p>
-              <h2 class="mt-2 text-[28px] font-semibold text-slate-900">今日產業焦點</h2>
-            </div>
-            <div class="h-12 w-1 rounded-full bg-orange-500/70"></div>
-          </div>
-          <div id="industrySpotlight"></div>
+          <div id="editorPicks" class="grid gap-4 md:grid-cols-2"></div>
         </article>
       </section>
 
@@ -389,6 +419,28 @@
         `;
       }
 
+      function renderCompactCard(item, accentClass) {
+        return `
+          <article class="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white">
+            <div class="mb-3 flex items-center justify-between gap-3">
+              <span class="rounded-full ${accentClass} px-3 py-1 text-xs font-semibold">${escapeHtml(item.company || "未分類")}</span>
+              <span class="text-xs text-slate-500">${escapeHtml(item.publishedAt || "")}</span>
+            </div>
+            <h4 class="text-lg font-semibold leading-8 text-slate-900">${escapeHtml(item.title)}</h4>
+            <p class="mt-3 text-sm leading-7 text-slate-600">${escapeHtml(item.summary)}</p>
+            <a
+              href="${escapeHtml(item.sourceUrl || "#")}"
+              target="_blank"
+              rel="noreferrer"
+              class="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-sky-700 transition hover:border-sky-200 hover:bg-sky-50 hover:text-sky-800"
+            >
+              閱讀來源
+              <span class="text-slate-500">${escapeHtml(item.sourceName || "查看原文")}</span>
+            </a>
+          </article>
+        `;
+      }
+
       function renderEmpty(message) {
         return `
           <div class="rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-500">
@@ -460,12 +512,37 @@
         document.getElementById("filterSummary").textContent = `目前顯示 ${total} 則新聞，篩選：${companyLabelMap[currentCompanyFilter]}${queryLabel}。`;
       }
 
+      function buildEditorPicks(groups) {
+        const picks = [];
+        const candidates = [
+          ...(groups.technical || []).slice(1, 3),
+          ...(groups.applications || []).slice(1, 3),
+          ...(groups.industry || []).slice(1, 3)
+        ];
+
+        const seen = new Set();
+        for (const item of candidates) {
+          const key = `${item.title}::${item.sourceUrl}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          picks.push(item);
+        }
+
+        return picks.slice(0, 4);
+      }
+
       function renderDashboard(data) {
         currentData = data;
 
         const technical = filterItems(data.categories?.technicalBreakthroughs || []);
         const applications = filterItems(data.categories?.toolApplications || []);
         const industry = filterItems(data.categories?.industryImpact || []);
+        const topStory = industry[0] || technical[0] || applications[0] || null;
+        const editorPicks = buildEditorPicks({
+          technical,
+          applications,
+          industry
+        });
 
         document.getElementById("headline").textContent = data.headline || "今日 AI 焦點";
         document.getElementById("updatedAt").textContent = data.generatedAtLocal || "尚未更新";
@@ -479,9 +556,13 @@
         document.getElementById("applicationCount").textContent = applications.length;
         document.getElementById("industryCount").textContent = industry.length;
 
+        document.getElementById("topStory").innerHTML = renderSpotlight(topStory, "border-rose-200");
         document.getElementById("technicalSpotlight").innerHTML = renderSpotlight(technical[0], "border-cyan-300/15");
         document.getElementById("applicationsSpotlight").innerHTML = renderSpotlight(applications[0], "border-emerald-300/15");
         document.getElementById("industrySpotlight").innerHTML = renderSpotlight(industry[0], "border-orange-300/15");
+        document.getElementById("editorPicks").innerHTML = editorPicks.length
+          ? editorPicks.map((item) => renderCompactCard(item, "bg-slate-200 text-slate-700")).join("")
+          : renderEmpty("目前沒有額外的編輯選讀內容。");
 
         fillList("technicalList", technical, "bg-sky-100 text-sky-700", "最近 24 小時內尚未整理出明確技術突破。");
         fillList("applicationsList", applications, "bg-emerald-100 text-emerald-700", "最近 24 小時內尚未整理出新的工具應用亮點。");
