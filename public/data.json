@@ -1,78 +1,32 @@
 {
-  "generatedAt": "2026-04-30T11:47:42.295Z",
-  "generatedAtLocal": "2026年4月30日 星期四 晚上7:47:42",
+  "generatedAt": "2026-04-30T12:39:16.554Z",
+  "generatedAtLocal": "2026年4月30日 星期四 晚上8:39:16",
   "last24hWindow": "最近 24 小時",
-  "headline": "AI巨頭最新動態：OpenAI達基礎設施里程碑，Anthropic估值飆升，Google Gemini強化文件處理，Meta上調AI支出，同時馬斯克再控OpenAI",
-  "summary": "過去24小時內，AI產業迎來多項重要發展。OpenAI提前實現了10 GW美國AI基礎設施容量目標，展現其在運算能力上的迅速擴張。Anthropic據傳正尋求9000億美元估值的新一輪融資，並面臨白宮對其Mythos模型擴大存取權限的資安疑慮。Google Gemini則推出直接生成多種文件格式的功能，提升用戶生產力，同時Google Cloud的AI解決方案營收強勁增長，對OpenAI構成競爭壓力。此外，伊隆·馬斯克在針對OpenAI的訴訟案中再次出庭作證，指控其偏離非營利初衷。Meta Platforms因大幅上調2026年AI資本支出預測，導致股價下跌。",
+  "headline": "科技巨頭Q1財報揭示AI投資與應用新局：Google成果豐碩，Meta上修AI資本支出，OpenAI駁斥算力疑慮",
+  "summary": "近24小時內，科技巨頭圍繞人工智慧的最新動態備受關注。Google在最新財報中展現AI戰略的豐碩成果，雲端營收顯著成長並宣布對外銷售TPU晶片，同時Gemini已大規模導入通用汽車。Meta儘管用戶成長未達預期，仍上修AI資本支出以加速資料中心建設及智慧眼鏡的AI代理進化。OpenAI則針對市場對其營收放緩可能影響算力擴張的質疑作出回應，強調「星際之門」計畫進展順利，已提前達成關鍵AI算力目標。",
   "categories": {
     "technicalBreakthroughs": [
       {
-        "title": "OpenAI 提前實現10 GW美國AI基礎設施里程碑",
+        "title": "OpenAI提前實現「星際之門」AI算力目標",
         "company": "OpenAI",
-        "summary": "OpenAI在Stargate計畫啟動一年後，已簽署10 GW美國AI運算容量合約，提前實現2029年的目標，過去90天內新增逾3 GW。",
-        "whyItMatters": "這項基礎設施擴張顯示OpenAI在AI運算能力上的積極布局與快速推進，對其模型訓練及服務規模化至關重要。",
-        "sourceName": "Seeking Alpha",
-        "sourceUrl": "https://seekingalpha.com/news/4096053-openai-tops-10-gw-us-ai-infrastructure-milestone-just-a-year-after-stargate-launch",
-        "publishedAt": "2026-04-30T04:16:00Z"
+        "summary": "OpenAI發文駁斥市場對其營收成長放緩可能影響算力擴張的疑慮，宣布其「星際之門」（Stargate）算力基礎設施計畫已取得重大進展，提前數年達成原定2029年的建設目標。",
+        "whyItMatters": "這顯示OpenAI在打造支撐未來大型AI模型訓練與部署的關鍵基礎設施上持續領先，對其長期競爭力至關重要。",
+        "sourceName": "anue鉅亨網",
+        "sourceUrl": "https://news.cnyes.com/news/id/5536555",
+        "publishedAt": "2026-04-30T07:38:00Z"
       }
     ],
     "toolApplications": [
       {
-        "title": "Google Gemini 新增直接生成與匯出多種文件功能",
+        "title": "Google Gemini大規模導入通用汽車",
         "company": "Google Gemini",
-        "summary": "Google Gemini現在允許用戶直接在聊天界面中生成並匯出包括Google Docs、PDF、Word等在內的多種文件格式，簡化了從構思到文件完成的工作流程。",
-        "whyItMatters": "此功能顯著提升了Gemini的實用性，減少了AI生成內容與實際應用之間的摩擦，有助於提高生產力。",
-        "sourceName": "TechRadar",
-        "sourceUrl": "https://www.techradar.com/pro/software/ai/gemini-can-now-generate-files-in-google-docs-pdf-word-with-just-a-prompt",
-        "publishedAt": "2026-04-30T08:00:00Z"
+        "summary": "通用汽車正透過OTA更新，將Google最新的Gemini人工智能助手引入美國約400萬輛配備「Google built-in」系統的2022款及以後的凱迪拉克、雪佛蘭、別克和GMC車型。",
+        "whyItMatters": "此舉標誌著對話式AI助手在車載系統中邁向大規模實際應用，提升駕駛者與車輛的互動體驗。",
+        "sourceName": "cnBeta.COM",
+        "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1423405.htm",
+        "publishedAt": "2026-04-30T03:00:00Z"
       }
     ],
-    "industryImpact": [
-      {
-        "title": "Anthropic 尋求9000億美元估值新一輪融資",
-        "company": "Anthropic",
-        "summary": "據報導，Anthropic正與投資者洽談新一輪融資，目標估值達9000億美元，可能超越競爭對手OpenAI的估值，公司年化營收已達300億美元。",
-        "whyItMatters": "這顯示投資者對Anthropic的強烈信心，並可能重塑AI新創公司的估值格局與市場競爭態勢。",
-        "sourceName": "The Korea Economic Daily Global",
-        "sourceUrl": "https://global.hankyung.com/finance/2026/04/30/202604301540306115",
-        "publishedAt": "2026-04-30T14:40:00Z"
-      },
-      {
-        "title": "白宮反對Anthropic擴大Mythos模型存取權限",
-        "company": "Anthropic",
-        "summary": "據報導，白宮因資安疑慮，反對Anthropic擴大其AI模型Mythos的存取權限，擔心該模型具備發動網路攻擊的潛力。",
-        "whyItMatters": "此事件凸顯了AI模型的安全風險及政府監管的介入，可能影響高能力AI模型的部署策略及產業的發展。",
-        "sourceName": "TechFlow News",
-        "sourceUrl": "https://www.techflowpost.com/article/detail_19194.html",
-        "publishedAt": "2026-04-29T19:30:32Z"
-      },
-      {
-        "title": "馬斯克於OpenAI訴訟案中再次出庭作證",
-        "company": "OpenAI",
-        "summary": "伊隆·馬斯克在針對OpenAI的訴訟中再次出庭作證，指控OpenAI及其領導人放棄了最初為人類福祉開發AI的非營利使命。",
-        "whyItMatters": "這場訴訟案對於OpenAI的治理結構、商業模式及AI倫理的定義具有深遠影響，也反映了AI產業內部的利益衝突。",
-        "sourceName": "Reuters",
-        "sourceUrl": "https://www.reuters.com/legal/elon-musk-return-witness-stand-cross-examination-openais-lawyer-2026-04-30/",
-        "publishedAt": "2026-04-30T01:00:00Z"
-      },
-      {
-        "title": "Meta 預期AI資本支出大幅上調股價下跌",
-        "company": "Meta AI",
-        "summary": "Meta Platforms因大幅調高2026年AI資本支出預測至1250億至1450億美元，遠超分析師預期，導致股價在盤後交易中下跌約7%。",
-        "whyItMatters": "此舉反映了Meta在AI領域的巨大投資承諾，但也引發市場對這些高額投資能否帶來足夠回報的擔憂，影響公司股價。",
-        "sourceName": "BigGo Finance",
-        "sourceUrl": "https://www.biggo.finance/news/meta-shares-slide-6-after-lifting-ai-spending-target-to-145-billion-4603912",
-        "publishedAt": "2026-04-29T20:39:00Z"
-      },
-      {
-        "title": "Google Cloud AI營收強勁增長對OpenAI構成壓力",
-        "company": "Google Gemini",
-        "summary": "Google Cloud在第一季度實現強勁營收增長，其中AI解決方案（包括Gemini 3）貢獻200億美元銷售額，這對OpenAI的市場地位構成競爭壓力。",
-        "whyItMatters": "這表明Google在企業級AI市場的競爭力日益增強，可能改變AI服務提供商的市場份額和競爭格局。",
-        "sourceName": "The Street",
-        "sourceUrl": "https://www.thestreet.com/personal-finance/google-gives-openai-20-billion-reasons-to-worry",
-        "publishedAt": "2026-04-30T08:00:00Z"
-      }
-    ]
+    "industryImpact": []
   }
 }
