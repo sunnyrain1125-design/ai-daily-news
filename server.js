@@ -491,6 +491,10 @@ function isAllowedSourceUrl(url) {
 }
 
 async function isReachableSourceUrl(url) {
+  if (!isAllowedSourceUrl(url) || isBlockedSourceUrl(url) || isBlockedPublisher(url)) {
+    return false;
+  }
+
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), sourceValidationTimeoutMs);
 
@@ -513,9 +517,13 @@ async function isReachableSourceUrl(url) {
       return false;
     }
 
+    if ([401, 403, 405, 406, 409, 429].includes(response.status) && isAllowedSourceUrl(finalUrl)) {
+      return true;
+    }
+
     return true;
   } catch (_error) {
-    return false;
+    return isAllowedSourceUrl(url);
   } finally {
     clearTimeout(timeout);
   }
