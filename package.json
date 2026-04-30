@@ -1,0 +1,19 @@
+{
+  "name": "ai-daily-news",
+  "version": "1.0.0",
+  "description": "Automated AI Daily News dashboard with scheduled search and categorization.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "refresh": "node server.js --refresh"
+  },
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "@vercel/blob": "^0.27.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "node-cron": "^3.0.3"
+  }
+}

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ai-daily-news
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
+    disk:
+      name: ai-daily-news-data
+      mountPath: /opt/render/project/src/public
+      sizeGB: 1
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: NEWS_TIMEZONE
+        value: Asia/Taipei
+      - key: NEWS_CRON
+        value: 0 8 * * *
+      - key: CRON_SECRET
+        generateValue: true
