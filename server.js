@@ -120,12 +120,21 @@ function buildPrompt() {
   return [
     "你是一個 AI 科技新聞編輯，請搜尋最近 24 小時內與以下主題直接相關的新聞：OpenAI、Anthropic、Google Gemini、Meta AI。",
     "請使用繁體中文輸出，並只保留近 24 小時內的重要消息。",
+    "寫作風格要像科技媒體晨報，語氣中性、資訊密度高，避免誇張、煽動、猜測式措辭。",
+    "如果估值、投資額、營收、時間或法規內容無法被可靠來源明確支持，就不要寫進去。",
+    "若同一事件有多篇報導，請優先選擇可信、資訊最完整的一篇，不要重複。",
     "請將每則新聞歸入以下其中一類：technicalBreakthroughs、toolApplications、industryImpact。",
     "technicalBreakthroughs 代表模型、研究、晶片、推論、基礎能力或技術突破。",
     "toolApplications 代表產品功能、代理工具、工作流程、自動化、API 或企業導入案例。",
     "industryImpact 代表投資、合作、政策、法規、市場競爭、商業策略與產業影響。",
     "每個分類請挑選 2 到 5 則最值得關注的新聞。",
     "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
+    "title 請精煉到像新聞標題，不要超過 40 個中文字。",
+    "summary 請用 1 到 2 句交代事件本身，不要塞太多背景。",
+    "whyItMatters 請用 1 句說明對 AI 產業、開發者或市場的重要性。",
+    "sourceName 必須是具體媒體、公司官方部落格、官方文件站或研究機構名稱。",
+    "sourceUrl 必須是可直接點擊的文章或公告頁，不要填首頁，不要填虛構網址。",
+    "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
     "如果某分類在近 24 小時內沒有足夠可信消息，陣列可為空，但不要捏造內容。",
     "請只輸出單一 JSON 物件，不要輸出 markdown code fence，不要加前言或結語。",
@@ -209,11 +218,36 @@ function sanitizePayload(payload) {
     headline: payload.headline || defaultData.headline,
     summary: payload.summary || defaultData.summary,
     categories: {
-      technicalBreakthroughs: payload.categories?.technicalBreakthroughs || [],
-      toolApplications: payload.categories?.toolApplications || [],
-      industryImpact: payload.categories?.industryImpact || []
+      technicalBreakthroughs: normalizeItems(payload.categories?.technicalBreakthroughs || []),
+      toolApplications: normalizeItems(payload.categories?.toolApplications || []),
+      industryImpact: normalizeItems(payload.categories?.industryImpact || [])
     }
   };
+}
+
+function normalizeItems(items) {
+  const seen = new Set();
+
+  return items
+    .map((item) => ({
+      title: String(item.title || "").trim(),
+      company: String(item.company || "").trim(),
+      summary: String(item.summary || "").trim(),
+      whyItMatters: String(item.whyItMatters || "").trim(),
+      sourceName: String(item.sourceName || "").trim(),
+      sourceUrl: String(item.sourceUrl || "").trim(),
+      publishedAt: String(item.publishedAt || "").trim()
+    }))
+    .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl)
+    .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
+    .filter((item) => {
+      const key = `${item.title}::${item.sourceUrl}`;
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
 }
 
 function extractJsonObject(text) {
