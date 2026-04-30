@@ -19,6 +19,33 @@ const blobPath = "ai-daily-news/data.json";
 const maxRetries = Number(process.env.GEMINI_MAX_RETRIES || 4);
 const retryBaseDelayMs = Number(process.env.GEMINI_RETRY_BASE_DELAY_MS || 5000);
 const sourceValidationTimeoutMs = Number(process.env.SOURCE_VALIDATION_TIMEOUT_MS || 8000);
+const allowedSourceHosts = [
+  "openai.com",
+  "anthropic.com",
+  "blog.google",
+  "deepmind.google",
+  "ai.google.dev",
+  "blog.google/technology",
+  "about.fb.com",
+  "engineering.fb.com",
+  "meta.com",
+  "reuters.com",
+  "apnews.com",
+  "techcrunch.com",
+  "theverge.com",
+  "wired.com",
+  "cnbc.com",
+  "bloomberg.com",
+  "arstechnica.com",
+  "venturebeat.com",
+  "techradar.com",
+  "seekingalpha.com",
+  "cbsnews.com",
+  "axios.com",
+  "wsj.com",
+  "ft.com",
+  "forbes.com"
+];
 
 const defaultData = {
   generatedAt: null,
@@ -139,7 +166,8 @@ function buildPrompt() {
     "sourceUrl 必須是可直接點擊的原始文章、公告或官方文件頁面，不要填首頁，不要填虛構網址。",
     "sourceUrl 絕對不要使用 Google、Vertex AI Search、grounding-api-redirect 或任何搜尋結果中介跳轉網址。",
     "如果你只能取得中介跳轉網址，請改找原始新聞網站或官方網站的實際頁面連結。",
-    "請優先選擇原始新聞媒體或公司官方頁面，不要使用摘要站、轉載站、比價金融站、新聞聚合鏡像站作為 sourceUrl。",
+    "請只使用以下白名單來源或其官方子頁：OpenAI、Anthropic、Google 官方、Meta 官方、Reuters、AP、TechCrunch、The Verge、Wired、CNBC、Bloomberg、Ars Technica、VentureBeat、TechRadar、Seeking Alpha、CBS News、Axios、WSJ、Financial Times、Forbes。",
+    "不要使用摘要站、轉載站、比價金融站、新聞聚合鏡像站作為 sourceUrl。",
     "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
     "如果某分類在近 24 小時內沒有足夠可信消息，陣列可為空，但不要捏造內容。",
@@ -249,6 +277,7 @@ async function normalizeItems(items) {
     .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
     .filter((item) => !isBlockedSourceUrl(item.sourceUrl))
     .filter((item) => !isBlockedPublisher(item.sourceUrl))
+    .filter((item) => isAllowedSourceUrl(item.sourceUrl))
     .filter((item) => {
       const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl)}`;
       if (seen.has(key)) {
@@ -285,6 +314,15 @@ function isBlockedPublisher(url) {
     value.includes("techflowpost.com") ||
     value.includes("newsnow.co.uk")
   );
+}
+
+function isAllowedSourceUrl(url) {
+  try {
+    const hostname = new URL(url).hostname.toLowerCase();
+    return allowedSourceHosts.some((allowed) => hostname === allowed || hostname.endsWith(`.${allowed}`));
+  } catch (_error) {
+    return false;
+  }
 }
 
 async function isReachableSourceUrl(url) {
