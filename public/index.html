@@ -93,6 +93,35 @@
           </div>
         </section>
 
+        <section class="mb-6 rounded-[2rem] border border-slate-200 bg-white/90 p-5 shadow-glow backdrop-blur">
+          <div class="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+            <div class="grid gap-4 md:grid-cols-2">
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-slate-700">日期切換</span>
+                <select id="dateSelect" class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none transition focus:border-sky-300">
+                  <option>載入中...</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="mb-2 block text-sm font-medium text-slate-700">關鍵字搜尋</span>
+                <input id="searchInput" type="search" placeholder="搜尋標題、摘要、來源..." class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-sky-300" />
+              </label>
+            </div>
+
+            <div>
+              <p class="mb-2 text-sm font-medium text-slate-700">公司篩選</p>
+              <div id="companyFilters" class="flex flex-wrap gap-2">
+                <button data-company="all" class="company-filter rounded-full border border-slate-200 bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-sky-700">全部</button>
+                <button data-company="openai" class="company-filter rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-sky-300 hover:text-sky-700">OpenAI</button>
+                <button data-company="anthropic" class="company-filter rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-sky-300 hover:text-sky-700">Anthropic</button>
+                <button data-company="google" class="company-filter rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-sky-300 hover:text-sky-700">Google Gemini</button>
+                <button data-company="meta" class="company-filter rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-sky-300 hover:text-sky-700">Meta AI</button>
+              </div>
+              <p id="filterSummary" class="mt-3 text-sm leading-7 text-slate-500">目前顯示全部內容。</p>
+            </div>
+          </div>
+        </section>
+
         <section class="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
           <div class="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-glow backdrop-blur">
             <div class="flex flex-wrap items-start justify-between gap-4">
@@ -380,34 +409,173 @@
         target.innerHTML = remainingItems.map((item) => renderCard(item, accentClass)).join("");
       }
 
+      const snapshotCache = new Map();
+      let historyEntries = [];
+      let currentData = null;
+      let currentCompanyFilter = "all";
+      let currentQuery = "";
+
+      function normalizeCompanyKey(item) {
+        const text = `${item.company || ""} ${item.title || ""}`.toLowerCase();
+        if (text.includes("openai")) return "openai";
+        if (text.includes("anthropic")) return "anthropic";
+        if (text.includes("gemini") || text.includes("google")) return "google";
+        if (text.includes("meta") || text.includes("facebook")) return "meta";
+        return "other";
+      }
+
+      function itemMatchesFilters(item) {
+        const companyOk = currentCompanyFilter === "all" || normalizeCompanyKey(item) === currentCompanyFilter;
+        if (!companyOk) return false;
+
+        if (!currentQuery) return true;
+
+        const haystack = `${item.title || ""} ${item.summary || ""} ${item.whyItMatters || ""} ${item.sourceName || ""} ${item.company || ""}`.toLowerCase();
+        return haystack.includes(currentQuery);
+      }
+
+      function filterItems(items) {
+        return (items || []).filter(itemMatchesFilters);
+      }
+
+      function setActiveCompanyButton() {
+        document.querySelectorAll(".company-filter").forEach((button) => {
+          const isActive = button.dataset.company === currentCompanyFilter;
+          button.className = isActive
+            ? "company-filter rounded-full border border-slate-200 bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-sky-700"
+            : "company-filter rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-sky-300 hover:text-sky-700";
+        });
+      }
+
+      function updateFilterSummary(filteredGroups) {
+        const total = Object.values(filteredGroups).reduce((sum, items) => sum + items.length, 0);
+        const companyLabelMap = {
+          all: "全部公司",
+          openai: "OpenAI",
+          anthropic: "Anthropic",
+          google: "Google Gemini",
+          meta: "Meta AI"
+        };
+        const queryLabel = currentQuery ? `，關鍵字「${currentQuery}」` : "";
+        document.getElementById("filterSummary").textContent = `目前顯示 ${total} 則新聞，篩選：${companyLabelMap[currentCompanyFilter]}${queryLabel}。`;
+      }
+
+      function renderDashboard(data) {
+        currentData = data;
+
+        const technical = filterItems(data.categories?.technicalBreakthroughs || []);
+        const applications = filterItems(data.categories?.toolApplications || []);
+        const industry = filterItems(data.categories?.industryImpact || []);
+
+        document.getElementById("headline").textContent = data.headline || "今日 AI 焦點";
+        document.getElementById("updatedAt").textContent = data.generatedAtLocal || "尚未更新";
+        document.getElementById("summary").textContent = data.summary || "目前沒有摘要。";
+        document.getElementById("status").textContent = data.generatedAt ? "Ready" : "Pending";
+        document.getElementById("freshnessNote").textContent = data.generatedAt
+          ? `本頁目前顯示的是最近一次成功更新的資料，最後更新時間為 ${data.generatedAtLocal}。`
+          : "目前尚未取得成功更新資料。";
+
+        document.getElementById("technicalCount").textContent = technical.length;
+        document.getElementById("applicationCount").textContent = applications.length;
+        document.getElementById("industryCount").textContent = industry.length;
+
+        document.getElementById("technicalSpotlight").innerHTML = renderSpotlight(technical[0], "border-cyan-300/15");
+        document.getElementById("applicationsSpotlight").innerHTML = renderSpotlight(applications[0], "border-emerald-300/15");
+        document.getElementById("industrySpotlight").innerHTML = renderSpotlight(industry[0], "border-orange-300/15");
+
+        fillList("technicalList", technical, "bg-sky-100 text-sky-700", "最近 24 小時內尚未整理出明確技術突破。");
+        fillList("applicationsList", applications, "bg-emerald-100 text-emerald-700", "最近 24 小時內尚未整理出新的工具應用亮點。");
+        fillList("industryList", industry, "bg-orange-100 text-orange-700", "最近 24 小時內尚未整理出新的產業影響焦點。");
+
+        updateFilterSummary({
+          technical,
+          applications,
+          industry
+        });
+      }
+
+      function buildHistoryEntries(current, index) {
+        const latestDate = current?.generatedAt ? current.generatedAt.slice(0, 10) : "latest";
+        const entries = [
+          {
+            date: latestDate,
+            label: `最新資料 (${current?.generatedAtLocal || "目前版本"})`,
+            path: "./data.json"
+          }
+        ];
+
+        for (const item of index.items || []) {
+          if (item.date === latestDate) continue;
+          entries.push(item);
+        }
+
+        return entries;
+      }
+
+      async function loadHistoryIndex() {
+        try {
+          const response = await fetch("./history/index.json", { cache: "no-store" });
+          if (!response.ok) {
+            return { items: [] };
+          }
+          return await response.json();
+        } catch (_error) {
+          return { items: [] };
+        }
+      }
+
+      function populateDateSelect(entries) {
+        const select = document.getElementById("dateSelect");
+        select.innerHTML = entries
+          .map((entry) => `<option value="${escapeHtml(entry.path)}">${escapeHtml(entry.label)}</option>`)
+          .join("");
+      }
+
+      async function loadSnapshot(pathname) {
+        if (snapshotCache.has(pathname)) {
+          return snapshotCache.get(pathname);
+        }
+
+        const response = await fetch(pathname, { cache: "no-store" });
+        const data = await response.json();
+        snapshotCache.set(pathname, data);
+        return data;
+      }
+
+      function bindControls() {
+        document.getElementById("dateSelect").addEventListener("change", async (event) => {
+          const selectedPath = event.target.value;
+          const data = await loadSnapshot(selectedPath);
+          renderDashboard(data);
+        });
+
+        document.getElementById("searchInput").addEventListener("input", (event) => {
+          currentQuery = event.target.value.trim().toLowerCase();
+          if (currentData) renderDashboard(currentData);
+        });
+
+        document.querySelectorAll(".company-filter").forEach((button) => {
+          button.addEventListener("click", () => {
+            currentCompanyFilter = button.dataset.company;
+            setActiveCompanyButton();
+            if (currentData) renderDashboard(currentData);
+          });
+        });
+
+        setActiveCompanyButton();
+      }
+
       async function loadNews() {
         try {
-          const response = await fetch("./data.json", { cache: "no-store" });
-          const data = await response.json();
+          const [current, historyIndex] = await Promise.all([
+            loadSnapshot("./data.json"),
+            loadHistoryIndex()
+          ]);
 
-          document.getElementById("headline").textContent = data.headline || "今日 AI 焦點";
-          document.getElementById("updatedAt").textContent = data.generatedAtLocal || "尚未更新";
-          document.getElementById("summary").textContent = data.summary || "目前沒有摘要。";
-          document.getElementById("status").textContent = data.generatedAt ? "Ready" : "Pending";
-          document.getElementById("freshnessNote").textContent = data.generatedAt
-            ? `本頁目前顯示的是最近一次成功更新的資料，最後更新時間為 ${data.generatedAtLocal}。`
-            : "目前尚未取得成功更新資料。";
-
-          const technical = data.categories?.technicalBreakthroughs || [];
-          const applications = data.categories?.toolApplications || [];
-          const industry = data.categories?.industryImpact || [];
-
-          document.getElementById("technicalCount").textContent = technical.length;
-          document.getElementById("applicationCount").textContent = applications.length;
-          document.getElementById("industryCount").textContent = industry.length;
-
-          document.getElementById("technicalSpotlight").innerHTML = renderSpotlight(technical[0], "border-cyan-300/15");
-          document.getElementById("applicationsSpotlight").innerHTML = renderSpotlight(applications[0], "border-emerald-300/15");
-          document.getElementById("industrySpotlight").innerHTML = renderSpotlight(industry[0], "border-orange-300/15");
-
-          fillList("technicalList", technical, "bg-sky-100 text-sky-700", "最近 24 小時內尚未整理出明確技術突破。");
-          fillList("applicationsList", applications, "bg-emerald-100 text-emerald-700", "最近 24 小時內尚未整理出新的工具應用亮點。");
-          fillList("industryList", industry, "bg-orange-100 text-orange-700", "最近 24 小時內尚未整理出新的產業影響焦點。");
+          historyEntries = buildHistoryEntries(current, historyIndex);
+          populateDateSelect(historyEntries);
+          bindControls();
+          renderDashboard(current);
         } catch (error) {
           document.getElementById("headline").textContent = "資料載入失敗";
           document.getElementById("summary").textContent = "請稍後重新整理，或確認 GitHub Pages 已完成部署。";

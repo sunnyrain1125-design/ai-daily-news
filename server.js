@@ -15,6 +15,8 @@ const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 
 const publicDir = path.join(__dirname, "public");
 const localDataPath = path.join(publicDir, "data.json");
+const historyDir = path.join(publicDir, "history");
+const historyIndexPath = path.join(historyDir, "index.json");
 const blobPath = "ai-daily-news/data.json";
 const maxRetries = Number(process.env.GEMINI_MAX_RETRIES || 4);
 const retryBaseDelayMs = Number(process.env.GEMINI_RETRY_BASE_DELAY_MS || 5000);
@@ -88,6 +90,7 @@ function formatTaipeiTime(date = new Date()) {
 
 async function ensurePublicDir() {
   await fs.mkdir(publicDir, { recursive: true });
+  await fs.mkdir(historyDir, { recursive: true });
 }
 
 async function readLocalJson() {
@@ -102,6 +105,61 @@ async function readLocalJson() {
 async function writeLocalJson(payload) {
   await ensurePublicDir();
   await fs.writeFile(localDataPath, JSON.stringify(payload, null, 2), "utf8");
+}
+
+async function readHistoryIndex() {
+  try {
+    const raw = await fs.readFile(historyIndexPath, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed.items) ? parsed : { items: [] };
+  } catch (_error) {
+    return { items: [] };
+  }
+}
+
+async function writeHistoryIndex(index) {
+  await ensurePublicDir();
+  await fs.writeFile(historyIndexPath, JSON.stringify(index, null, 2), "utf8");
+}
+
+function formatArchiveDate(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: timezone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+
+  const get = (type) => parts.find((part) => part.type === type)?.value || "00";
+  return `${get("year")}-${get("month")}-${get("day")}`;
+}
+
+function buildHistoryMeta(payload, archiveDate) {
+  return {
+    date: archiveDate,
+    label: archiveDate,
+    path: `./history/${archiveDate}.json`,
+    headline: payload.headline,
+    generatedAt: payload.generatedAt,
+    generatedAtLocal: payload.generatedAtLocal
+  };
+}
+
+async function writeHistorySnapshot(payload) {
+  const archiveDate = formatArchiveDate(new Date(payload.generatedAt || Date.now()));
+  const archivePath = path.join(historyDir, `${archiveDate}.json`);
+
+  await fs.writeFile(archivePath, JSON.stringify(payload, null, 2), "utf8");
+
+  const index = await readHistoryIndex();
+  const nextItems = index.items.filter((item) => item.date !== archiveDate);
+  nextItems.unshift(buildHistoryMeta(payload, archiveDate));
+  nextItems.sort((a, b) => b.date.localeCompare(a.date));
+
+  await writeHistoryIndex({
+    latest: archiveDate,
+    items: nextItems
+  });
 }
 
 async function readBlobJson() {
@@ -144,6 +202,7 @@ async function readStoredNews() {
 async function writeStoredNews(payload) {
   if (!isVercel) {
     await writeLocalJson(payload);
+    await writeHistorySnapshot(payload);
   }
 
   if (useBlob) {
