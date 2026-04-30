@@ -386,7 +386,7 @@ async function bootstrap() {
   if (cliRefresh) {
     await refreshNews(true);
     console.log("News refresh completed.");
-    return;
+    return { shouldStartServer: false };
   }
 
   try {
@@ -398,11 +398,16 @@ async function bootstrap() {
   }
 
   startLocalScheduler();
+  return { shouldStartServer: true };
 }
 
 if (require.main === module) {
   bootstrap()
-    .then(() => {
+    .then((result) => {
+      if (!result?.shouldStartServer) {
+        return;
+      }
+
       app.listen(port, "0.0.0.0", () => {
         console.log(`AI Daily News server running on http://0.0.0.0:${port}`);
       });

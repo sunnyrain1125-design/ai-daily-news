@@ -70,7 +70,53 @@ git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git push -u origin main
 ```
 
-## 4. Render 部署
+## 4. GitHub Actions + GitHub Pages 免費自動更新
+
+這個專案已包含：
+
+- `.github/workflows/update-news.yml`
+- `.github/workflows/deploy-pages.yml`
+
+用途如下：
+
+- `update-news.yml`：每天自動執行 `pnpm refresh`，更新 `public/data.json`，然後提交回 repo
+- `deploy-pages.yml`：每次 `main` 分支更新後，自動把 `public/` 部署到 GitHub Pages
+
+### 在 GitHub 設定 Secrets
+
+到 repo：
+
+`Settings` → `Secrets and variables` → `Actions`
+
+新增這些 repository secrets：
+
+- `GEMINI_API_KEY`
+- `GEMINI_MODEL`：`gemini-2.5-flash`
+- `NEWS_TIMEZONE`：`Asia/Taipei`
+- `NEWS_CRON`：`0 8 * * *`
+- `CRON_SECRET`：任意長亂數字串
+
+### 啟用 GitHub Pages
+
+到 repo：
+
+`Settings` → `Pages`
+
+在 `Build and deployment`：
+
+- `Source` 選 `GitHub Actions`
+
+### 排程時間說明
+
+GitHub Actions 目前用 UTC cron 排程，已設成每天 `00:00 UTC`，也就是台北時間 `08:00`。
+
+注意：GitHub 官方有說明，`schedule` 工作流在高峰時段可能延遲，尤其整點更容易延誤，因此免費方案無法保證秒級或分鐘級精準 08:00。
+
+### 手動更新
+
+你也可以到 GitHub repo 的 `Actions` 頁面，手動執行 `Update AI Daily News` workflow。
+
+## 5. Render 部署
 
 ### 建議方案
 
@@ -121,7 +167,7 @@ git push -u origin main
 
 這樣 redeploy 或重啟後，資料仍會保留。
 
-## 5. 部署完成後檢查
+## 6. 部署完成後檢查
 
 打開以下網址：
 
@@ -131,7 +177,7 @@ git push -u origin main
 
 如果首頁可以開、`/api/health` 顯示 `ok: true`，且 `/data.json` 有內容，就代表部署成功。
 
-## 6. 手動刷新
+## 7. 手動刷新
 
 如果你要手動觸發一次刷新，可以呼叫：
 
@@ -147,7 +193,7 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" \
   https://YOUR-SERVICE.onrender.com/api/refresh
 ```
 
-## 7. 重要安全提醒
+## 8. 重要安全提醒
 
 - 不要把 `.env` 上傳到 GitHub
 - 不要把 `GEMINI_API_KEY` 寫死在程式碼中

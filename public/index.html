@@ -194,7 +194,7 @@
 
       async function loadNews() {
         try {
-          const response = await fetch("/data.json", { cache: "no-store" });
+          const response = await fetch("./data.json", { cache: "no-store" });
           const data = await response.json();
 
           document.getElementById("headline").textContent = data.headline || "今日 AI 焦點";
