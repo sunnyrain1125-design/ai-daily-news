@@ -83,7 +83,7 @@
           <div class="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p class="font-display text-xs uppercase tracking-[0.3em] text-rose-500">Top Story</p>
-              <p class="mt-2 text-sm leading-7 text-slate-600">每日整理 OpenAI、Anthropic、Google Gemini、Meta AI 最近 24 小時最值得追蹤的新聞頭條。</p>
+              <p class="mt-2 text-sm leading-7 text-slate-600">每日整理 OpenAI、Anthropic、Google Gemini、Meta AI 最新與近期最值得追蹤的關鍵發展。</p>
             </div>
             <nav class="flex flex-wrap gap-2">
               <a href="#technical-section" class="rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-700 transition hover:bg-sky-100">技術突破</a>
@@ -128,13 +128,13 @@
               <div>
                 <p class="mb-3 font-display text-sm uppercase tracking-[0.35em] text-slate-500">AI Intel Briefing</p>
                 <h1 class="max-w-4xl font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
-                  每天一頁，掌握 AI 產業最新 24 小時
+                  每天一頁，掌握 AI 產業最新與近期關鍵發展
                 </h1>
               </div>
               <div class="min-w-[220px] rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
                 <p class="font-display text-xs uppercase tracking-[0.25em] text-slate-500">Editor&apos;s Note</p>
                 <p class="mt-3 text-sm leading-7 text-slate-600">
-                  以最近 24 小時最值得注意的 AI 產業動態為主，偏重技術、產品與市場三個面向。
+                  以最新消息為優先，並補入近期仍值得掌握的 AI 產業動態，偏重技術、產品與市場三個面向。
                 </p>
               </div>
             </div>
@@ -165,7 +165,7 @@
               <div class="flex items-center justify-between text-sm text-slate-500">
                 <span>Last Updated</span>
                 <span class="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sky-600">
-                  Daily Brief
+                  Editorial Brief
                 </span>
               </div>
               <p id="updatedAt" class="mt-4 font-display text-2xl font-semibold text-slate-900">--</p>
@@ -181,7 +181,7 @@
               <p class="font-display text-sm uppercase tracking-[0.25em] text-rose-500">Update Cadence</p>
               <div class="mt-4 space-y-3 text-[15px] leading-8 text-slate-600">
                 <p>排程以台北時間早上 <span class="font-semibold text-slate-900">08:05</span> 為目標，避開 GitHub Actions 整點壅塞。</p>
-                <p>訊息涵蓋 OpenAI、Anthropic、Google Gemini、Meta AI 的最近 24 小時動態。</p>
+                <p>訊息涵蓋 OpenAI、Anthropic、Google Gemini、Meta AI 的最新消息與近期仍具參考價值的重要發展。</p>
                 <p class="text-slate-500">網站前台不提供任何後台入口，更新由後台 GitHub Actions 自動執行與維護。</p>
               </div>
             </section>
@@ -404,7 +404,7 @@
             </div>
             <h4 class="text-xl font-semibold leading-8 text-slate-900">${escapeHtml(title)}</h4>
             <p class="mt-4 text-[15px] leading-8 text-slate-600">${escapeHtml(summary)}</p>
-            <p class="mt-4 text-xs leading-6 text-slate-500">最近 24 小時若缺少足夠可信的新消息，本站會改以近期發展摘要補充閱讀背景。</p>
+            <p class="mt-4 text-xs leading-6 text-slate-500">如果即時新消息不足，本站會改以近期仍具新聞價值的發展摘要補充閱讀背景。</p>
           </article>
         `;
       }
@@ -485,14 +485,14 @@
       let currentCompanyFilter = "all";
       let currentQuery = "";
       const defaultContextBriefs = {
-        topStory: "最近 24 小時內沒有足夠可信的新頭條，本站暫以近期整體脈絡補充閱讀背景。",
-        technicalFocus: "最近 24 小時內沒有足夠可信的新技術焦點，本站暫以近期技術脈絡補充閱讀背景。",
-        toolFocus: "最近 24 小時內沒有足夠可信的新工具焦點，本站暫以近期工具脈絡補充閱讀背景。",
-        industryFocus: "最近 24 小時內沒有足夠可信的新產業焦點，本站暫以近期產業脈絡補充閱讀背景。",
-        editorPicks: "最近 24 小時內沒有足夠可信的新編輯選讀，本站暫以近期脈絡補充閱讀背景。",
-        technicalBreakthroughs: "最近 24 小時內沒有足夠可信的新技術突破，本站暫以近期技術脈絡補充閱讀背景。",
-        toolApplications: "最近 24 小時內沒有足夠可信的新工具應用，本站暫以近期工具脈絡補充閱讀背景。",
-        industryImpact: "最近 24 小時內沒有足夠可信的新產業影響，本站暫以近期產業脈絡補充閱讀背景。"
+        topStory: "目前沒有足夠可信的新頭條，本站暫以近期整體脈絡補充閱讀背景。",
+        technicalFocus: "目前沒有足夠可信的新技術焦點，本站暫以近期技術脈絡補充閱讀背景。",
+        toolFocus: "目前沒有足夠可信的新工具焦點，本站暫以近期工具脈絡補充閱讀背景。",
+        industryFocus: "目前沒有足夠可信的新產業焦點，本站暫以近期產業脈絡補充閱讀背景。",
+        editorPicks: "目前沒有足夠可信的新編輯選讀，本站暫以近期脈絡補充閱讀背景。",
+        technicalBreakthroughs: "目前沒有足夠可信的新技術突破，本站暫以近期技術脈絡補充閱讀背景。",
+        toolApplications: "目前沒有足夠可信的新工具應用，本站暫以近期工具脈絡補充閱讀背景。",
+        industryImpact: "目前沒有足夠可信的新產業影響，本站暫以近期產業脈絡補充閱讀背景。"
       };
 
       function normalizeCompanyKey(item) {
@@ -616,7 +616,7 @@
           "technicalList",
           technical,
           "bg-sky-100 text-sky-700",
-          "最近 24 小時內尚未整理出明確技術突破。",
+          "目前尚未整理出明確技術突破。",
           {
             title: "技術突破近期脈絡",
             summary: contextBriefs.technicalBreakthroughs,
@@ -627,7 +627,7 @@
           "applicationsList",
           applications,
           "bg-emerald-100 text-emerald-700",
-          "最近 24 小時內尚未整理出新的工具應用亮點。",
+          "目前尚未整理出新的工具應用亮點。",
           {
             title: "工具應用近期脈絡",
             summary: contextBriefs.toolApplications,
@@ -638,7 +638,7 @@
           "industryList",
           industry,
           "bg-orange-100 text-orange-700",
-          "最近 24 小時內尚未整理出新的產業影響焦點。",
+          "目前尚未整理出新的產業影響焦點。",
           {
             title: "產業影響近期脈絡",
             summary: contextBriefs.industryImpact,

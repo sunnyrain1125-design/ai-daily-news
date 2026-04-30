@@ -227,8 +227,9 @@ async function writeStoredNews(payload) {
 
 function buildPrompt() {
   return [
-    "你是一個 AI 科技新聞編輯，請搜尋最近 24 小時內與以下主題直接相關的新聞：OpenAI、Anthropic、Google Gemini、Meta AI。",
-    "請使用繁體中文輸出，並只保留近 24 小時內的重要消息。",
+    "你是一個 AI 科技新聞編輯，請整理與以下主題直接相關的最新或近期重要發展：OpenAI、Anthropic、Google Gemini、Meta AI。",
+    "請使用繁體中文輸出，優先挑選最新消息；但若某個版位在最近 24 小時內沒有足夠強的內容，可以改選最近幾天到近兩週內仍具新聞價值、仍值得讀者掌握的重要進展。",
+    "不同版位不需要全部來自同一天或同一時間段，只要內容夠新、夠重要、仍適合放在今天首頁即可。",
     "寫作風格要像科技媒體晨報，語氣中性、資訊密度高，避免誇張、煽動、猜測式措辭。",
     "如果估值、投資額、營收、時間或法規內容無法被可靠來源明確支持，就不要寫進去。",
     "若同一事件有多篇報導，請優先選擇可信、資訊最完整的一篇，不要重複。",
@@ -238,7 +239,7 @@ function buildPrompt() {
     "industryImpact 代表投資、合作、政策、法規、市場競爭、商業策略與產業影響。",
     "每個分類請挑選 2 到 5 則最值得關注的新聞。",
     "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
-    "另外請額外提供 contextBriefs 物件，內容是當某個版位或分類在最近 24 小時內沒有足夠新聞時，可顯示的背景脈絡摘要。",
+    "另外請額外提供 contextBriefs 物件，內容是當某個版位或分類缺少足夠可用新聞時，可顯示的背景脈絡摘要。",
     "contextBriefs 每個欄位請用 2 到 4 句繁體中文，清楚說明目前整體發展到哪裡、正在觀察什麼，不要假裝成今天的新訊，也不要寫成空泛口號。",
     "title 請精煉到像新聞標題，不要超過 40 個中文字。",
     "summary 請用 1 到 2 句交代事件本身，不要塞太多背景。",
@@ -251,7 +252,7 @@ function buildPrompt() {
     "不要使用摘要站、轉載站、比價金融站、新聞聚合鏡像站作為 sourceUrl。",
     "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
-    "如果某分類在近 24 小時內沒有足夠可信消息，陣列可為空，但不要捏造內容。",
+    "如果某分類在近期也沒有足夠可信消息，陣列可為空，但不要捏造內容。",
     "請只輸出單一 JSON 物件，不要輸出 markdown code fence，不要加前言或結語。",
     `JSON 結構必須完全符合這個樣式：${JSON.stringify({
       headline: "字串",
@@ -380,7 +381,7 @@ async function sanitizePayload(payload) {
   return {
     generatedAt: new Date().toISOString(),
     generatedAtLocal: formatTaipeiTime(),
-    last24hWindow: "最近 24 小時",
+    last24hWindow: "近期與最新發展",
     headline: payload.headline || defaultData.headline,
     summary: payload.summary || defaultData.summary,
     contextBriefs: normalizeContextBriefs(payload.contextBriefs),
