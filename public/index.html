@@ -394,6 +394,10 @@
         `;
       }
 
+      function itemKey(item) {
+        return `${item?.title || ""}::${item?.sourceUrl || ""}`;
+      }
+
       function renderTopStoryGrid(items, contextBriefs, showContextFallback) {
         const stories = (items || []).slice(0, 2);
 
@@ -414,6 +418,21 @@
         }
 
         return `${renderEmpty("目前篩選條件下沒有符合的頭條。")}${renderEmpty("目前沒有第二則符合條件的頭條。")}`;
+      }
+
+      function takeFirstUnused(items, usedKeys) {
+        for (const item of items || []) {
+          const key = itemKey(item);
+          if (usedKeys.has(key)) continue;
+          usedKeys.add(key);
+          return item;
+        }
+
+        return null;
+      }
+
+      function filterUnused(items, usedKeys) {
+        return (items || []).filter((item) => !usedKeys.has(itemKey(item)));
       }
 
       function renderCard(item, accentClass) {
@@ -471,7 +490,7 @@
 
       function fillList(elementId, items, accentClass, emptyMessage, contextConfig) {
         const target = document.getElementById(elementId);
-        const remainingItems = (items || []).slice(1);
+        const remainingItems = items || [];
 
         if (!remainingItems.length) {
           if (contextConfig && !currentQuery && currentCompanyFilter === "all") {
@@ -557,6 +576,7 @@
         const topStories = [...industry, ...technical, ...applications];
         const uniqueTopStories = [];
         const topStorySeen = new Set();
+        const usedKeys = new Set();
 
         for (const item of topStories) {
           const key = `${item.title}::${item.sourceUrl}`;
@@ -564,6 +584,17 @@
           topStorySeen.add(key);
           uniqueTopStories.push(item);
         }
+
+        const selectedTopStories = uniqueTopStories.slice(0, 2);
+        selectedTopStories.forEach((item) => usedKeys.add(itemKey(item)));
+
+        const technicalSpotlightItem = takeFirstUnused(technical, usedKeys);
+        const applicationsSpotlightItem = takeFirstUnused(applications, usedKeys);
+        const industrySpotlightItem = takeFirstUnused(industry, usedKeys);
+
+        const technicalListItems = filterUnused(technical, usedKeys);
+        const applicationsListItems = filterUnused(applications, usedKeys);
+        const industryListItems = filterUnused(industry, usedKeys);
 
         document.getElementById("headline").textContent = data.headline || "今日 AI 焦點";
         document.getElementById("updatedAt").textContent = data.generatedAtLocal || "尚未更新";
@@ -577,26 +608,26 @@
         document.getElementById("applicationCount").textContent = applications.length;
         document.getElementById("industryCount").textContent = industry.length;
 
-        document.getElementById("topStories").innerHTML = renderTopStoryGrid(uniqueTopStories, contextBriefs, showContextFallback);
-        document.getElementById("technicalSpotlight").innerHTML = technical[0]
-          ? renderSpotlight(technical[0], "border-cyan-300/15")
+        document.getElementById("topStories").innerHTML = renderTopStoryGrid(selectedTopStories, contextBriefs, showContextFallback);
+        document.getElementById("technicalSpotlight").innerHTML = technicalSpotlightItem
+          ? renderSpotlight(technicalSpotlightItem, "border-cyan-300/15")
           : showContextFallback
             ? renderContextPanel("技術焦點近況", contextBriefs.technicalFocus, "border-sky-200 bg-sky-50/60")
             : renderEmpty("目前篩選條件下沒有符合的技術焦點。");
-        document.getElementById("applicationsSpotlight").innerHTML = applications[0]
-          ? renderSpotlight(applications[0], "border-emerald-300/15")
+        document.getElementById("applicationsSpotlight").innerHTML = applicationsSpotlightItem
+          ? renderSpotlight(applicationsSpotlightItem, "border-emerald-300/15")
           : showContextFallback
             ? renderContextPanel("工具焦點近況", contextBriefs.toolFocus, "border-emerald-200 bg-emerald-50/60")
             : renderEmpty("目前篩選條件下沒有符合的工具焦點。");
-        document.getElementById("industrySpotlight").innerHTML = industry[0]
-          ? renderSpotlight(industry[0], "border-orange-300/15")
+        document.getElementById("industrySpotlight").innerHTML = industrySpotlightItem
+          ? renderSpotlight(industrySpotlightItem, "border-orange-300/15")
           : showContextFallback
             ? renderContextPanel("產業焦點近況", contextBriefs.industryFocus, "border-orange-200 bg-orange-50/60")
             : renderEmpty("目前篩選條件下沒有符合的產業焦點。");
 
         fillList(
           "technicalList",
-          technical,
+          technicalListItems,
           "bg-sky-100 text-sky-700",
           "目前尚未整理出明確技術突破。",
           {
@@ -607,7 +638,7 @@
         );
         fillList(
           "applicationsList",
-          applications,
+          applicationsListItems,
           "bg-emerald-100 text-emerald-700",
           "目前尚未整理出新的工具應用亮點。",
           {
@@ -618,7 +649,7 @@
         );
         fillList(
           "industryList",
-          industry,
+          industryListItems,
           "bg-orange-100 text-orange-700",
           "目前尚未整理出新的產業影響焦點。",
           {
