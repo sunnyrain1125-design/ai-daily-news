@@ -213,17 +213,19 @@ function buildItemArraySchema() {
 }
 
 function sanitizePayload(payload) {
+  const dedupedCategories = dedupeAcrossCategories({
+    technicalBreakthroughs: normalizeItems(payload.categories?.technicalBreakthroughs || []),
+    toolApplications: normalizeItems(payload.categories?.toolApplications || []),
+    industryImpact: normalizeItems(payload.categories?.industryImpact || [])
+  });
+
   return {
     generatedAt: new Date().toISOString(),
     generatedAtLocal: formatTaipeiTime(),
     last24hWindow: "最近 24 小時",
     headline: payload.headline || defaultData.headline,
     summary: payload.summary || defaultData.summary,
-    categories: {
-      technicalBreakthroughs: normalizeItems(payload.categories?.technicalBreakthroughs || []),
-      toolApplications: normalizeItems(payload.categories?.toolApplications || []),
-      industryImpact: normalizeItems(payload.categories?.industryImpact || [])
-    }
+    categories: dedupedCategories
   };
 }
 
@@ -243,13 +245,38 @@ function normalizeItems(items) {
     .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl)
     .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
     .filter((item) => {
-      const key = `${item.title}::${item.sourceUrl}`;
+      const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl)}`;
       if (seen.has(key)) {
         return false;
       }
       seen.add(key);
       return true;
     });
+}
+
+function dedupeAcrossCategories(categories) {
+  const seen = new Set();
+  const result = {};
+
+  for (const [category, items] of Object.entries(categories)) {
+    result[category] = items.filter((item) => {
+      const key = `${fingerprint(item.title)}::${fingerprint(item.company)}`;
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
+  }
+
+  return result;
+}
+
+function fingerprint(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/https?:\/\//g, "")
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "");
 }
 
 function extractJsonObject(text) {
