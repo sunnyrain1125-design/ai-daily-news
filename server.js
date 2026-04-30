@@ -65,6 +65,7 @@ const defaultData = {
   last24hWindow: null,
   headline: "AI 每日新聞尚未生成",
   summary: "系統已啟動，等待第一次自動更新。",
+  topStories: [],
   contextBriefs: {
     topStory: "目前 AI 競爭主軸仍圍繞模型能力、推論成本、企業導入速度與監管調整，沒有明顯新消息時，最值得關注的是各大平台如何把既有模型更穩定地推進到產品與企業工作流程中。",
     technicalFocus: "近期技術競爭重點集中在更高效的推論、更長上下文、更可靠的多模態理解，以及讓模型在成本可控下維持穩定表現。",
@@ -262,13 +263,15 @@ function buildPrompt() {
     "寫作風格要像科技媒體晨報，語氣中性、資訊密度高，避免誇張、煽動、猜測式措辭。",
     "如果估值、投資額、營收、時間或法規內容無法被可靠來源明確支持，就不要寫進去。",
     "若同一事件有多篇報導，請優先選擇可信、資訊最完整的一篇，不要重複。",
-    "請將每則新聞歸入以下其中一類：technicalBreakthroughs、toolApplications、industryImpact。",
+    "請先額外挑出 2 則最值得放在首頁最上方的 topStories，這 2 則必須與三個分類中的其他新聞不同，不可重複。",
+    "其餘新聞再歸入以下其中一類：technicalBreakthroughs、toolApplications、industryImpact。",
     "technicalBreakthroughs 代表模型、研究、晶片、推論、基礎能力或技術突破。",
     "toolApplications 代表產品功能、代理工具、工作流程、自動化、API 或企業導入案例。",
     "industryImpact 代表投資、合作、政策、法規、市場競爭、商業策略與產業影響。",
-    "每個分類目標請挑選 2 到 5 則最值得關注的新聞，至少也要盡量補到 1 則。",
-    "只要近期有可信內容，就不要讓 technicalBreakthroughs、toolApplications、industryImpact 留空。",
-    "如果三個分類裡有某一類新聞相對較少，請優先從近期仍具新聞價值的發展中補足到至少 1 則，再追求分類完全平均。",
+    "每個分類目標請挑選 2 到 4 則最值得關注的新聞，至少要盡量補到 2 則。",
+    "只要近期有可信內容，就不要讓 technicalBreakthroughs、toolApplications、industryImpact 留空，也盡量不要只留 1 則。",
+    "整份輸出目標至少提供 8 則唯一新聞：2 則 topStories，加上三個分類各至少 2 則。",
+    "如果三個分類裡有某一類新聞相對較少，請優先從近期仍具新聞價值的發展中補足到至少 2 則，再追求分類完全平均。",
     "你需要以首頁可讀性為優先，寧可選擇稍早但仍有參考價值的可信發展，也不要讓整個分類空白。",
     "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
     "另外請額外提供 contextBriefs 物件，內容是當某個版位或分類缺少足夠可用新聞時，可顯示的背景脈絡摘要。",
@@ -289,6 +292,17 @@ function buildPrompt() {
     `JSON 結構必須完全符合這個樣式：${JSON.stringify({
       headline: "字串",
       summary: "字串",
+      topStories: [
+        {
+          title: "字串",
+          company: "字串",
+          summary: "字串",
+          whyItMatters: "字串",
+          sourceName: "字串",
+          sourceUrl: "https://example.com",
+          publishedAt: "2026-04-30T08:00:00Z"
+        }
+      ],
       contextBriefs: {
         topStory: "字串",
         technicalFocus: "字串",
@@ -322,10 +336,11 @@ function buildSchema() {
   return {
     type: "object",
     additionalProperties: false,
-    required: ["headline", "summary", "contextBriefs", "categories"],
+    required: ["headline", "summary", "topStories", "contextBriefs", "categories"],
     properties: {
       headline: { type: "string" },
       summary: { type: "string" },
+      topStories: buildItemArraySchema(),
       contextBriefs: {
         type: "object",
         additionalProperties: false,
@@ -404,19 +419,47 @@ function normalizeContextBriefs(contextBriefs = {}) {
 }
 
 function countStories(payload) {
+  const topStories = Array.isArray(payload?.topStories) ? payload.topStories : [];
   const categories = payload?.categories || {};
-  return ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
+  return topStories.length + ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
     const items = Array.isArray(categories[key]) ? categories[key] : [];
     return sum + items.length;
   }, 0);
 }
 
-async function sanitizePayload(payload) {
-  const dedupedCategories = dedupeAcrossCategories({
-      technicalBreakthroughs: await normalizeItems(payload.categories?.technicalBreakthroughs || []),
-      toolApplications: await normalizeItems(payload.categories?.toolApplications || []),
-      industryImpact: await normalizeItems(payload.categories?.industryImpact || [])
+function dedupeWholePayload(topStories, categories) {
+  const seen = new Set();
+  const dedupedTopStories = (topStories || []).filter((item) => {
+    const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  const dedupedCategories = {};
+  for (const [category, items] of Object.entries(categories)) {
+    dedupedCategories[category] = (items || []).filter((item) => {
+      const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
     });
+  }
+
+  return {
+    topStories: dedupedTopStories,
+    categories: dedupedCategories
+  };
+}
+
+async function sanitizePayload(payload) {
+  const normalizedTopStories = await normalizeItems(payload.topStories || []);
+  const dedupedCategories = dedupeAcrossCategories({
+    technicalBreakthroughs: await normalizeItems(payload.categories?.technicalBreakthroughs || []),
+    toolApplications: await normalizeItems(payload.categories?.toolApplications || []),
+    industryImpact: await normalizeItems(payload.categories?.industryImpact || [])
+  });
+  const dedupedPayload = dedupeWholePayload(normalizedTopStories, dedupedCategories);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -424,8 +467,9 @@ async function sanitizePayload(payload) {
     last24hWindow: "近期與最新發展",
     headline: payload.headline || defaultData.headline,
     summary: payload.summary || defaultData.summary,
+    topStories: dedupedPayload.topStories,
     contextBriefs: normalizeContextBriefs(payload.contextBriefs),
-    categories: dedupedCategories
+    categories: dedupedPayload.categories
   };
 }
 

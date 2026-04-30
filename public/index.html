@@ -571,21 +571,11 @@
         const technical = filterItems(data.categories?.technicalBreakthroughs || []);
         const applications = filterItems(data.categories?.toolApplications || []);
         const industry = filterItems(data.categories?.industryImpact || []);
+        const topStories = filterItems(data.topStories || []);
         const contextBriefs = { ...defaultContextBriefs, ...(data.contextBriefs || {}) };
         const showContextFallback = !currentQuery && currentCompanyFilter === "all";
-        const topStories = [...industry, ...technical, ...applications];
-        const uniqueTopStories = [];
-        const topStorySeen = new Set();
         const usedKeys = new Set();
-
-        for (const item of topStories) {
-          const key = `${item.title}::${item.sourceUrl}`;
-          if (topStorySeen.has(key)) continue;
-          topStorySeen.add(key);
-          uniqueTopStories.push(item);
-        }
-
-        const selectedTopStories = uniqueTopStories.slice(0, 2);
+        const selectedTopStories = topStories.slice(0, 2);
         selectedTopStories.forEach((item) => usedKeys.add(itemKey(item)));
 
         const technicalSpotlightItem = takeFirstUnused(technical, usedKeys);
