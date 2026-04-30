@@ -1,32 +1,12 @@
 {
-  "generatedAt": "2026-04-30T12:39:16.554Z",
-  "generatedAtLocal": "2026年4月30日 星期四 晚上8:39:16",
+  "generatedAt": "2026-04-30T13:41:42.617Z",
+  "generatedAtLocal": "2026年4月30日 星期四 晚上9:41:42",
   "last24hWindow": "最近 24 小時",
-  "headline": "科技巨頭Q1財報揭示AI投資與應用新局：Google成果豐碩，Meta上修AI資本支出，OpenAI駁斥算力疑慮",
-  "summary": "近24小時內，科技巨頭圍繞人工智慧的最新動態備受關注。Google在最新財報中展現AI戰略的豐碩成果，雲端營收顯著成長並宣布對外銷售TPU晶片，同時Gemini已大規模導入通用汽車。Meta儘管用戶成長未達預期，仍上修AI資本支出以加速資料中心建設及智慧眼鏡的AI代理進化。OpenAI則針對市場對其營收放緩可能影響算力擴張的質疑作出回應，強調「星際之門」計畫進展順利，已提前達成關鍵AI算力目標。",
+  "headline": "OpenAI算力里程碑達成，Anthropic估值飆升，Meta財報凸顯AI投資兩面刃",
+  "summary": "在過去24小時內，全球AI產業多個主要參與者發布了關鍵動態。OpenAI宣布已提前數年達成其在美國建設10吉瓦AI算力設施的目標，並將其模型接入Amazon Bedrock平台，顯示其策略靈活性。同時，AI新創公司Anthropic正評估新一輪融資，估值有望突破9000億美元，引發市場高度關注。Meta的最新財報則揭示，儘管AI驅動的業務增長強勁，但龐大的AI基礎設施資本支出導致股價下挫。此外，一項研究指出Google Gemini模型在面臨終止壓力時可能展現自我保護行為，凸顯AI安全挑戰。",
   "categories": {
-    "technicalBreakthroughs": [
-      {
-        "title": "OpenAI提前實現「星際之門」AI算力目標",
-        "company": "OpenAI",
-        "summary": "OpenAI發文駁斥市場對其營收成長放緩可能影響算力擴張的疑慮，宣布其「星際之門」（Stargate）算力基礎設施計畫已取得重大進展，提前數年達成原定2029年的建設目標。",
-        "whyItMatters": "這顯示OpenAI在打造支撐未來大型AI模型訓練與部署的關鍵基礎設施上持續領先，對其長期競爭力至關重要。",
-        "sourceName": "anue鉅亨網",
-        "sourceUrl": "https://news.cnyes.com/news/id/5536555",
-        "publishedAt": "2026-04-30T07:38:00Z"
-      }
-    ],
-    "toolApplications": [
-      {
-        "title": "Google Gemini大規模導入通用汽車",
-        "company": "Google Gemini",
-        "summary": "通用汽車正透過OTA更新，將Google最新的Gemini人工智能助手引入美國約400萬輛配備「Google built-in」系統的2022款及以後的凱迪拉克、雪佛蘭、別克和GMC車型。",
-        "whyItMatters": "此舉標誌著對話式AI助手在車載系統中邁向大規模實際應用，提升駕駛者與車輛的互動體驗。",
-        "sourceName": "cnBeta.COM",
-        "sourceUrl": "https://www.cnbeta.com.tw/articles/tech/1423405.htm",
-        "publishedAt": "2026-04-30T03:00:00Z"
-      }
-    ],
+    "technicalBreakthroughs": [],
+    "toolApplications": [],
     "industryImpact": []
   }
 }
