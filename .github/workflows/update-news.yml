@@ -39,6 +39,8 @@ jobs:
           GEMINI_MODEL: gemini-2.5-flash
           NEWS_TIMEZONE: Asia/Taipei
           NEWS_CRON: 0 8 * * *
+          NEWS_MAX_STORY_AGE_DAYS: 7
+          NEWS_MIN_VISIBLE_STORIES: 6
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: pnpm refresh
 

@@ -21,6 +21,8 @@ const blobPath = "ai-daily-news/data.json";
 const maxRetries = Number(process.env.GEMINI_MAX_RETRIES || 4);
 const retryBaseDelayMs = Number(process.env.GEMINI_RETRY_BASE_DELAY_MS || 5000);
 const sourceValidationTimeoutMs = Number(process.env.SOURCE_VALIDATION_TIMEOUT_MS || 8000);
+const maxStoryAgeDays = Number(process.env.NEWS_MAX_STORY_AGE_DAYS || 7);
+const minimumVisibleStories = Number(process.env.NEWS_MIN_VISIBLE_STORIES || 6);
 const allowedSourceHosts = [
   "openai.com",
   "anthropic.com",
@@ -92,6 +94,14 @@ const hasGemini = Boolean(process.env.GEMINI_API_KEY);
 const genAI = hasGemini ? new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY }) : null;
 
 let activeRefreshPromise = null;
+const storySections = [
+  "technicalFocus",
+  "toolFocus",
+  "industryFocus",
+  "technicalBreakthroughs",
+  "toolApplications",
+  "industryImpact"
+];
 
 app.use(express.json());
 app.use(express.static(publicDir));
@@ -135,6 +145,7 @@ async function readHistoryIndex() {
 
 async function readMostRecentNonEmptyHistorySnapshot() {
   const index = await readHistoryIndex();
+  let bestAvailable = null;
 
   for (const item of index.items || []) {
     if (!item?.path) continue;
@@ -144,8 +155,12 @@ async function readMostRecentNonEmptyHistorySnapshot() {
 
     try {
       const raw = await fs.readFile(snapshotPath, "utf8");
-      const parsed = JSON.parse(raw);
-      if (countStories(parsed) > 0) {
+      const parsed = pruneSnapshotStories(JSON.parse(raw));
+      const storyCount = countStories(parsed);
+      if (!bestAvailable && storyCount > 0) {
+        bestAvailable = parsed;
+      }
+      if (storyCount >= minimumVisibleStories) {
         return parsed;
       }
     } catch (_error) {
@@ -153,7 +168,7 @@ async function readMostRecentNonEmptyHistorySnapshot() {
     }
   }
 
-  return null;
+  return bestAvailable;
 }
 
 async function writeHistoryIndex(index) {
@@ -187,6 +202,15 @@ function formatArchiveTimestamp(date = new Date()) {
 
   const get = (type) => parts.find((part) => part.type === type)?.value || "00";
   return `${get("year")}-${get("month")}-${get("day")}T${get("hour")}-${get("minute")}-${get("second")}`;
+}
+
+function formatDateForPrompt(date = new Date()) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: timezone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(date);
 }
 
 function buildHistoryMeta(payload, archiveKey) {
@@ -257,12 +281,35 @@ async function readStoredNews() {
 }
 
 async function writeStoredNews(payload) {
-  const existing = await readStoredNews();
+  const existing = pruneSnapshotStories(await readStoredNews());
   const payloadStoryCount = countStories(payload);
   const existingStoryCount = countStories(existing);
 
+  if (payloadStoryCount < minimumVisibleStories) {
+    if (existingStoryCount >= minimumVisibleStories && existingStoryCount > payloadStoryCount) {
+      console.warn(`Generated dataset only had ${payloadStoryCount} visible stories. Keeping richer existing dataset with ${existingStoryCount} stories from ${existing.generatedAt || "unknown time"}.`);
+      if (!isVercel) {
+        await writeLocalJson(existing);
+      }
+      return existing;
+    }
+
+    if (!isVercel) {
+      const fallbackSnapshot = await readMostRecentNonEmptyHistorySnapshot();
+      const fallbackCount = countStories(fallbackSnapshot);
+      if (fallbackSnapshot && fallbackCount >= minimumVisibleStories && fallbackCount > payloadStoryCount) {
+        console.warn(`Generated dataset only had ${payloadStoryCount} visible stories. Restoring fuller recent snapshot with ${fallbackCount} stories from ${fallbackSnapshot.generatedAt || "unknown time"}.`);
+        await writeLocalJson(fallbackSnapshot);
+        return fallbackSnapshot;
+      }
+    }
+  }
+
   if (payloadStoryCount === 0 && existingStoryCount > 0) {
     console.warn(`Generated dataset had no visible stories. Keeping previous dataset from ${existing.generatedAt || "unknown time"}.`);
+    if (!isVercel) {
+      await writeLocalJson(existing);
+    }
     return existing;
   }
 
@@ -293,25 +340,30 @@ async function writeStoredNews(payload) {
 }
 
 function buildPrompt() {
+  const today = formatDateForPrompt(new Date());
+  const oldestAllowedDate = formatDateForPrompt(new Date(Date.now() - maxStoryAgeDays * 24 * 60 * 60 * 1000));
+
   return [
     "你是一個 AI 科技新聞編輯，請整理與以下主題直接相關的最新或近期重要發展：OpenAI、Anthropic、Google Gemini、Meta AI。",
-    "請使用繁體中文輸出，優先挑選最新消息；但若某個版位在最近 24 小時內沒有足夠強的內容，可以改選最近幾天到近兩週內仍具新聞價值、仍值得讀者掌握的重要進展。",
-    "不同版位不需要全部來自同一天或同一時間段，只要內容夠新、夠重要、仍適合放在今天首頁即可。",
+    `今天日期是 ${today}。請優先挑選今天、昨天或最近 3 天內的消息；若真的不足，可放寬到最近 ${maxStoryAgeDays} 天內，但不要使用早於 ${oldestAllowedDate} 的內容。`,
+    "你要產出的是一個內容充實的 AI 新知首頁資料池，而不是過度保守的稀疏摘要。",
     "寫作風格要像科技媒體晨報，語氣中性、資訊密度高，避免誇張、煽動、猜測式措辭。",
     "如果估值、投資額、營收、時間或法規內容無法被可靠來源明確支持，就不要寫進去。",
     "若同一事件有多篇報導，請優先選擇可信、資訊最完整的一篇，不要重複。",
-    "請先額外挑出 2 則最值得放在首頁最上方的 topStories，這 2 則必須與其他版位不同，不可重複。",
-    "請再額外挑出 3 則給首頁第二層焦點欄位，分別放入 technicalFocus、toolFocus、industryFocus，這 3 則也必須彼此不同，且不得與 topStories 或下方分類新聞重複。",
-    "最後其餘新聞再歸入以下三個分類：technicalBreakthroughs、toolApplications、industryImpact。",
+    "請不要直接替我分配首頁 topStories、focusStories 或 categories。",
+    "請改為輸出一個 stories 陣列，先建立一個足夠大的唯一新聞池，再由系統自行分配到首頁版位。",
+    "stories 陣列目標至少 8 則、最好 8 到 12 則，所有故事都必須彼此不同。",
+    "每則新聞都必須指定 section，section 只能是以下六種之一：technicalFocus、toolFocus、industryFocus、technicalBreakthroughs、toolApplications、industryImpact。",
+    "請盡量讓六種 section 每一種至少出現 1 則，只要近期有可信內容，就不要讓任何 section 缺席。",
+    "technicalFocus 代表當前最值得讀者優先理解的技術主線或核心技術事件。",
+    "toolFocus 代表當前最值得讀者優先理解的產品、代理工具或應用主線。",
+    "industryFocus 代表當前最值得讀者優先理解的商業、合作、投資、法規或市場主線。",
     "technicalBreakthroughs 代表模型、研究、晶片、推論、基礎能力或技術突破。",
     "toolApplications 代表產品功能、代理工具、工作流程、自動化、API 或企業導入案例。",
     "industryImpact 代表投資、合作、政策、法規、市場競爭、商業策略與產業影響。",
-    "每個分類目標請挑選 1 到 3 則最值得關注的新聞，至少要盡量補到 1 則。",
-    "只要近期有可信內容，就不要讓 technicalBreakthroughs、toolApplications、industryImpact 留空。",
-    "整份輸出目標至少提供 8 則唯一新聞：2 則 topStories、3 則 focusStories，以及三個分類各至少 1 則。",
-    "如果三個分類裡有某一類新聞相對較少，請優先從近期仍具新聞價值的發展中補足到至少 1 則，再追求分類完全平均。",
-    "你需要以首頁可讀性為優先，寧可選擇稍早但仍有參考價值的可信發展，也不要讓整個分類空白。",
-    "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
+    "如果某則內容只是背景整理，不算故事，就不要放進 stories。",
+    "你需要以首頁可讀性為優先，寧可選擇近期仍有價值的可信發展，也不要拿太舊的消息硬湊版位。",
+    "每則新聞請包含：section、title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
     "另外請額外提供 contextBriefs 物件，內容是當某個版位或分類缺少足夠可用新聞時，可顯示的背景脈絡摘要。",
     "contextBriefs 每個欄位請用 2 到 4 句繁體中文，清楚說明目前整體發展到哪裡、正在觀察什麼，不要假裝成今天的新訊，也不要寫成空泛口號。",
     "title 請精煉到像新聞標題，不要超過 40 個中文字。",
@@ -325,51 +377,22 @@ function buildPrompt() {
     "不要使用摘要站、轉載站、比價金融站、新聞聚合鏡像站作為 sourceUrl。",
     "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
-    "如果某分類在近期也沒有足夠可信消息，陣列可為空，但不要捏造內容。",
     "請只輸出單一 JSON 物件，不要輸出 markdown code fence，不要加前言或結語。",
     `JSON 結構必須完全符合這個樣式：${JSON.stringify({
       headline: "字串",
       summary: "字串",
-      topStories: [
+      stories: [
         {
+          section: "technicalFocus",
           title: "字串",
           company: "字串",
           summary: "字串",
           whyItMatters: "字串",
           sourceName: "字串",
           sourceUrl: "https://example.com",
-          publishedAt: "2026-04-30T08:00:00Z"
+          publishedAt: "2026-05-01T08:00:00Z"
         }
       ],
-      focusStories: {
-        technicalFocus: {
-          title: "字串",
-          company: "字串",
-          summary: "字串",
-          whyItMatters: "字串",
-          sourceName: "字串",
-          sourceUrl: "https://example.com",
-          publishedAt: "2026-04-30T08:00:00Z"
-        },
-        toolFocus: {
-          title: "字串",
-          company: "字串",
-          summary: "字串",
-          whyItMatters: "字串",
-          sourceName: "字串",
-          sourceUrl: "https://example.com",
-          publishedAt: "2026-04-30T08:00:00Z"
-        },
-        industryFocus: {
-          title: "字串",
-          company: "字串",
-          summary: "字串",
-          whyItMatters: "字串",
-          sourceName: "字串",
-          sourceUrl: "https://example.com",
-          publishedAt: "2026-04-30T08:00:00Z"
-        }
-      },
       contextBriefs: {
         topStory: "字串",
         technicalFocus: "字串",
@@ -379,113 +402,9 @@ function buildPrompt() {
         technicalBreakthroughs: "字串",
         toolApplications: "字串",
         industryImpact: "字串"
-      },
-      categories: {
-        technicalBreakthroughs: [
-          {
-            title: "字串",
-            company: "字串",
-            summary: "字串",
-            whyItMatters: "字串",
-            sourceName: "字串",
-            sourceUrl: "https://example.com",
-            publishedAt: "2026-04-30T08:00:00Z"
-          }
-        ],
-        toolApplications: [],
-        industryImpact: []
       }
     })}`
   ].join("\n");
-}
-
-function buildSchema() {
-  return {
-    type: "object",
-    additionalProperties: false,
-    required: ["headline", "summary", "topStories", "focusStories", "contextBriefs", "categories"],
-    properties: {
-      headline: { type: "string" },
-      summary: { type: "string" },
-      topStories: buildItemArraySchema(),
-      focusStories: {
-        type: "object",
-        additionalProperties: false,
-        required: ["technicalFocus", "toolFocus", "industryFocus"],
-        properties: {
-          technicalFocus: buildItemSchema(),
-          toolFocus: buildItemSchema(),
-          industryFocus: buildItemSchema()
-        }
-      },
-      contextBriefs: {
-        type: "object",
-        additionalProperties: false,
-        required: [
-          "topStory",
-          "technicalFocus",
-          "toolFocus",
-          "industryFocus",
-          "editorPicks",
-          "technicalBreakthroughs",
-          "toolApplications",
-          "industryImpact"
-        ],
-        properties: {
-          topStory: { type: "string" },
-          technicalFocus: { type: "string" },
-          toolFocus: { type: "string" },
-          industryFocus: { type: "string" },
-          editorPicks: { type: "string" },
-          technicalBreakthroughs: { type: "string" },
-          toolApplications: { type: "string" },
-          industryImpact: { type: "string" }
-        }
-      },
-      categories: {
-        type: "object",
-        additionalProperties: false,
-        required: ["technicalBreakthroughs", "toolApplications", "industryImpact"],
-        properties: {
-          technicalBreakthroughs: buildItemArraySchema(),
-          toolApplications: buildItemArraySchema(),
-          industryImpact: buildItemArraySchema()
-        }
-      }
-    }
-  };
-}
-
-function buildItemArraySchema() {
-  return {
-    type: "array",
-    items: buildItemSchema()
-  };
-}
-
-function buildItemSchema() {
-  return {
-    type: "object",
-    additionalProperties: false,
-    required: [
-      "title",
-      "company",
-      "summary",
-      "whyItMatters",
-      "sourceName",
-      "sourceUrl",
-      "publishedAt"
-    ],
-    properties: {
-      title: { type: "string" },
-      company: { type: "string" },
-      summary: { type: "string" },
-      whyItMatters: { type: "string" },
-      sourceName: { type: "string" },
-      sourceUrl: { type: "string" },
-      publishedAt: { type: "string" }
-    }
-  };
 }
 
 function normalizeContextBriefs(contextBriefs = {}) {
@@ -512,58 +431,44 @@ function countStories(payload) {
   }, 0);
 }
 
-function dedupeWholePayload(topStories, focusStories, categories) {
-  const seen = new Set();
-  const dedupedTopStories = (topStories || []).filter((item) => {
-    const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-
-  const dedupedFocusStories = {};
-  for (const [slot, item] of Object.entries(focusStories || {})) {
-    if (!item) {
-      dedupedFocusStories[slot] = null;
-      continue;
-    }
-
-    const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
-    if (seen.has(key)) {
-      dedupedFocusStories[slot] = null;
-      continue;
-    }
-
-    seen.add(key);
-    dedupedFocusStories[slot] = item;
+function isRecentStory(item, referenceMs = Date.now()) {
+  const publishedMs = Date.parse(String(item?.publishedAt || ""));
+  if (!Number.isFinite(publishedMs)) {
+    return false;
   }
 
-  const dedupedCategories = {};
-  for (const [category, items] of Object.entries(categories)) {
-    dedupedCategories[category] = (items || []).filter((item) => {
-      const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
+  const maxAgeMs = maxStoryAgeDays * 24 * 60 * 60 * 1000;
+  return publishedMs <= referenceMs && referenceMs - publishedMs <= maxAgeMs;
+}
+
+function pruneSnapshotStories(payload) {
+  if (!payload || typeof payload !== "object") {
+    return { ...defaultData };
   }
+
+  const topStories = (payload.topStories || []).filter((item) => isRecentStory(item));
+  const focusStories = {
+    technicalFocus: isRecentStory(payload.focusStories?.technicalFocus) ? payload.focusStories.technicalFocus : null,
+    toolFocus: isRecentStory(payload.focusStories?.toolFocus) ? payload.focusStories.toolFocus : null,
+    industryFocus: isRecentStory(payload.focusStories?.industryFocus) ? payload.focusStories.industryFocus : null
+  };
+  const categories = {
+    technicalBreakthroughs: (payload.categories?.technicalBreakthroughs || []).filter((item) => isRecentStory(item)),
+    toolApplications: (payload.categories?.toolApplications || []).filter((item) => isRecentStory(item)),
+    industryImpact: (payload.categories?.industryImpact || []).filter((item) => isRecentStory(item))
+  };
 
   return {
-    topStories: dedupedTopStories,
-    focusStories: dedupedFocusStories,
-    categories: dedupedCategories
+    ...payload,
+    topStories,
+    focusStories,
+    categories
   };
 }
 
 async function sanitizePayload(payload) {
-  const normalizedTopStories = await normalizeItems(payload.topStories || []);
-  const normalizedFocusStories = await normalizeFocusStories(payload.focusStories || {});
-  const dedupedCategories = dedupeAcrossCategories({
-    technicalBreakthroughs: await normalizeItems(payload.categories?.technicalBreakthroughs || []),
-    toolApplications: await normalizeItems(payload.categories?.toolApplications || []),
-    industryImpact: await normalizeItems(payload.categories?.industryImpact || [])
-  });
-  const dedupedPayload = dedupeWholePayload(normalizedTopStories, normalizedFocusStories, dedupedCategories);
+  const normalizedStories = await normalizeStories(payload.stories || collectLegacyStories(payload));
+  const dedupedPayload = assignStoriesToLayout(normalizedStories);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -572,31 +477,50 @@ async function sanitizePayload(payload) {
     headline: payload.headline || defaultData.headline,
     summary: payload.summary || defaultData.summary,
     topStories: dedupedPayload.topStories,
-    focusStories: {
-      technicalFocus: dedupedPayload.focusStories.technicalFocus || null,
-      toolFocus: dedupedPayload.focusStories.toolFocus || null,
-      industryFocus: dedupedPayload.focusStories.industryFocus || null
-    },
+    focusStories: dedupedPayload.focusStories,
     contextBriefs: normalizeContextBriefs(payload.contextBriefs),
     categories: dedupedPayload.categories
   };
 }
 
-async function normalizeFocusStories(focusStories = {}) {
-  const normalized = {};
+function collectLegacyStories(payload = {}) {
+  const legacyStories = [];
+  const pushLegacy = (item, section) => {
+    if (!item) return;
+    legacyStories.push({ ...item, section });
+  };
 
-  for (const key of ["technicalFocus", "toolFocus", "industryFocus"]) {
-    const items = await normalizeItems(focusStories[key] ? [focusStories[key]] : []);
-    normalized[key] = items[0] || null;
+  for (const item of payload.topStories || []) {
+    pushLegacy(item, "technicalFocus");
   }
 
-  return normalized;
+  const focusStories = payload.focusStories || {};
+  pushLegacy(focusStories.technicalFocus, "technicalFocus");
+  pushLegacy(focusStories.toolFocus, "toolFocus");
+  pushLegacy(focusStories.industryFocus, "industryFocus");
+
+  for (const item of payload.categories?.technicalBreakthroughs || []) {
+    pushLegacy(item, "technicalBreakthroughs");
+  }
+
+  for (const item of payload.categories?.toolApplications || []) {
+    pushLegacy(item, "toolApplications");
+  }
+
+  for (const item of payload.categories?.industryImpact || []) {
+    pushLegacy(item, "industryImpact");
+  }
+
+  return legacyStories;
 }
 
-async function normalizeItems(items) {
+async function normalizeStories(items) {
+  const now = Date.now();
+  const maxAgeMs = maxStoryAgeDays * 24 * 60 * 60 * 1000;
   const seen = new Set();
   const normalized = items
     .map((item) => ({
+      section: normalizeSection(item.section),
       title: String(item.title || "").trim(),
       company: String(item.company || "").trim(),
       summary: String(item.summary || "").trim(),
@@ -605,11 +529,16 @@ async function normalizeItems(items) {
       sourceUrl: String(item.sourceUrl || "").trim(),
       publishedAt: String(item.publishedAt || "").trim()
     }))
-    .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl)
+    .filter((item) => storySections.includes(item.section))
+    .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl && item.publishedAt)
     .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
     .filter((item) => !isBlockedSourceUrl(item.sourceUrl))
     .filter((item) => !isBlockedPublisher(item.sourceUrl))
     .filter((item) => isAllowedSourceUrl(item.sourceUrl))
+    .filter((item) => {
+      const publishedMs = Date.parse(item.publishedAt);
+      return Number.isFinite(publishedMs) && publishedMs <= now && now - publishedMs <= maxAgeMs;
+    })
     .filter((item) => {
       const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl)}`;
       if (seen.has(key)) {
@@ -626,7 +555,118 @@ async function normalizeItems(items) {
     }
   }
 
-  return validated;
+  return validated.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+}
+
+function normalizeSection(section) {
+  const value = String(section || "").trim();
+  if (storySections.includes(value)) return value;
+
+  const aliasMap = {
+    technical: "technicalFocus",
+    tools: "toolFocus",
+    industry: "industryFocus",
+    technicalBreakthrough: "technicalBreakthroughs",
+    toolApplication: "toolApplications",
+    industryImpact: "industryImpact"
+  };
+
+  return aliasMap[value] || value;
+}
+
+function assignStoriesToLayout(stories) {
+  const buckets = {
+    technicalFocus: [],
+    toolFocus: [],
+    industryFocus: [],
+    technicalBreakthroughs: [],
+    toolApplications: [],
+    industryImpact: []
+  };
+
+  for (const story of stories) {
+    buckets[story.section].push(stripSection(story));
+  }
+
+  const seen = new Set();
+  const topStories = [];
+  const focusStories = {
+    technicalFocus: null,
+    toolFocus: null,
+    industryFocus: null
+  };
+  const categories = {
+    technicalBreakthroughs: [],
+    toolApplications: [],
+    industryImpact: []
+  };
+
+  const takeNext = (sections) => {
+    for (const section of sections) {
+      const bucket = buckets[section] || [];
+      while (bucket.length) {
+        const item = bucket.shift();
+        const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        return item;
+      }
+    }
+    return null;
+  };
+
+  const withFallbackOrder = (preferredSections) => {
+    const allSections = [
+      "technicalFocus",
+      "toolFocus",
+      "industryFocus",
+      "technicalBreakthroughs",
+      "toolApplications",
+      "industryImpact"
+    ];
+    return [...new Set([...preferredSections, ...allSections])];
+  };
+
+  const firstTop = takeNext(["technicalFocus", "toolFocus", "industryFocus", "technicalBreakthroughs", "toolApplications", "industryImpact"]);
+  if (firstTop) topStories.push(firstTop);
+  const secondTop = takeNext(["industryFocus", "technicalFocus", "toolFocus", "industryImpact", "technicalBreakthroughs", "toolApplications"]);
+  if (secondTop) topStories.push(secondTop);
+
+  focusStories.technicalFocus = takeNext(withFallbackOrder(["technicalFocus", "technicalBreakthroughs"]));
+  focusStories.toolFocus = takeNext(withFallbackOrder(["toolFocus", "toolApplications"]));
+  focusStories.industryFocus = takeNext(withFallbackOrder(["industryFocus", "industryImpact"]));
+
+  categories.technicalBreakthroughs = collectRemaining(buckets, seen, withFallbackOrder(["technicalBreakthroughs", "technicalFocus"]), 3);
+  categories.toolApplications = collectRemaining(buckets, seen, withFallbackOrder(["toolApplications", "toolFocus"]), 3);
+  categories.industryImpact = collectRemaining(buckets, seen, withFallbackOrder(["industryImpact", "industryFocus"]), 3);
+
+  return {
+    topStories,
+    focusStories,
+    categories
+  };
+}
+
+function collectRemaining(buckets, seen, sections, limit) {
+  const items = [];
+  for (const section of sections) {
+    const bucket = buckets[section] || [];
+    while (bucket.length && items.length < limit) {
+      const item = bucket.shift();
+      const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      items.push(item);
+    }
+    if (items.length >= limit) break;
+  }
+  return items;
+}
+
+function stripSection(item) {
+  const clone = { ...item };
+  delete clone.section;
+  return clone;
 }
 
 function isBlockedSourceUrl(url) {
@@ -694,24 +734,6 @@ async function isReachableSourceUrl(url) {
   } finally {
     clearTimeout(timeout);
   }
-}
-
-function dedupeAcrossCategories(categories) {
-  const seen = new Set();
-  const result = {};
-
-  for (const [category, items] of Object.entries(categories)) {
-    result[category] = items.filter((item) => {
-      const key = `${fingerprint(item.title)}::${fingerprint(item.company)}`;
-      if (seen.has(key)) {
-        return false;
-      }
-      seen.add(key);
-      return true;
-    });
-  }
-
-  return result;
 }
 
 function fingerprint(value) {

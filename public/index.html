@@ -510,6 +510,7 @@
       let currentData = null;
       let currentCompanyFilter = "all";
       let currentQuery = "";
+      const storyMaxAgeDays = 7;
       const defaultContextBriefs = {
         topStory: "目前沒有足夠可信的新頭條，本站暫以近期整體脈絡補充閱讀背景。",
         technicalFocus: "目前沒有足夠可信的新技術焦點，本站暫以近期技術脈絡補充閱讀背景。",
@@ -529,7 +530,15 @@
         return "other";
       }
 
+      function isFreshStory(item) {
+        const publishedMs = Date.parse(String(item?.publishedAt || ""));
+        if (!Number.isFinite(publishedMs)) return false;
+        const maxAgeMs = storyMaxAgeDays * 24 * 60 * 60 * 1000;
+        return publishedMs <= Date.now() && Date.now() - publishedMs <= maxAgeMs;
+      }
+
       function itemMatchesFilters(item) {
+        if (!isFreshStory(item)) return false;
         const companyOk = currentCompanyFilter === "all" || normalizeCompanyKey(item) === currentCompanyFilter;
         if (!companyOk) return false;
 
@@ -686,14 +695,14 @@
       }
 
       function countStories(data) {
-        const topStories = Array.isArray(data?.topStories) ? data.topStories : [];
+        const topStories = (Array.isArray(data?.topStories) ? data.topStories : []).filter(isFreshStory);
         const focusStories = data?.focusStories || {};
         const focusCount = ["technicalFocus", "toolFocus", "industryFocus"].reduce((sum, key) => {
-          return focusStories[key] ? sum + 1 : sum;
+          return isFreshStory(focusStories[key]) ? sum + 1 : sum;
         }, 0);
         const categories = data?.categories || {};
         const categoryCount = ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
-          const items = Array.isArray(categories[key]) ? categories[key] : [];
+          const items = (Array.isArray(categories[key]) ? categories[key] : []).filter(isFreshStory);
           return sum + items.length;
         }, 0);
 
