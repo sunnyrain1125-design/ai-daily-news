@@ -22,6 +22,8 @@ const maxRetries = Number(process.env.GEMINI_MAX_RETRIES || 4);
 const retryBaseDelayMs = Number(process.env.GEMINI_RETRY_BASE_DELAY_MS || 5000);
 const sourceValidationTimeoutMs = Number(process.env.SOURCE_VALIDATION_TIMEOUT_MS || 8000);
 const maxStoryAgeDays = Number(process.env.NEWS_MAX_STORY_AGE_DAYS || 7);
+const topStoryAgeDays = Number(process.env.NEWS_TOP_STORY_AGE_DAYS || 3);
+const focusStoryAgeDays = Number(process.env.NEWS_FOCUS_STORY_AGE_DAYS || 4);
 const minimumVisibleStories = Number(process.env.NEWS_MIN_VISIBLE_STORIES || 6);
 const allowedSourceHosts = [
   "openai.com",
@@ -48,6 +50,19 @@ const allowedSourceHosts = [
   "wsj.com",
   "ft.com",
   "forbes.com",
+  "github.blog",
+  "news.microsoft.com",
+  "blogs.microsoft.com",
+  "microsoft.com",
+  "nvidia.com",
+  "semafor.com",
+  "fortune.com",
+  "businessinsider.com",
+  "tomshardware.com",
+  "siliconangle.com",
+  "techmeme.com",
+  "theinformation.com",
+  "fastcompany.com",
   "technews.tw",
   "ithome.com.tw",
   "inside.com.tw",
@@ -58,7 +73,10 @@ const allowedSourceHosts = [
   "meet.bnext.com.tw",
   "businessweekly.com.tw",
   "36kr.com",
-  "36kr.kr"
+  "36kr.kr",
+  "cnbeta.com.tw",
+  "cnbeta.com",
+  "anue.com.tw"
 ];
 
 const defaultData = {
@@ -369,6 +387,8 @@ function buildPrompt() {
     "technicalFocus 代表技術主線或核心技術事件；toolFocus 代表產品、代理工具或應用主線；industryFocus 代表商業、合作、投資、法規或市場主線；technicalBreakthroughs 代表模型、研究、晶片、推論或基礎能力突破；toolApplications 代表產品功能、工作流程、自動化、API 或企業導入；industryImpact 代表投資、合作、政策、法規、市場競爭與產業影響。",
     "請盡量讓六種欄位都有足夠候選故事。只要近期有可信內容，就不要讓某一類完全缺席。",
     "你需要以首頁可讀性為優先：寧可挑選近期仍重要的具體更新，也不要拿太舊的消息或空泛評論硬湊。",
+    "絕對不要用『技術焦點近況』『工具焦點近況』『產業焦點近況』『目前整體發展到哪裡』『背景脈絡』這類佔位式標題來冒充新聞。",
+    "如果某一類近期可信內容真的不足，請少輸出該類 stories，也不要捏造泛泛而談的故事。",
     "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt、priority、sectionTags。",
     "priority 請給 1 到 5 的整數，5 代表最適合上首頁。",
     "title 請精煉到像新聞標題，不要超過 40 個中文字。",
@@ -378,7 +398,7 @@ function buildPrompt() {
     "sourceUrl 必須是可直接點擊的原始文章、公告或官方文件頁面，不要填首頁，不要填虛構網址。",
     "sourceUrl 絕對不要使用 Google、Vertex AI Search、grounding-api-redirect 或任何搜尋結果中介跳轉網址。",
     "如果你只能取得中介跳轉網址，請改找原始新聞網站或官方網站的實際頁面連結。",
-    "請只使用以下白名單來源或其官方子頁：OpenAI、Anthropic、Google 官方、Meta 官方、Reuters、AP、TechCrunch、The Verge、Wired、CNBC、Bloomberg、Ars Technica、VentureBeat、TechRadar、Seeking Alpha、CBS News、Axios、WSJ、Financial Times、Forbes、TechNews 科技新報、iThome、INSIDE、DIGITIMES、經濟日報、工商時報、數位時代、Meet 創業小聚、商業周刊、36Kr。",
+    "請只使用以下白名單來源或其官方子頁：OpenAI、Anthropic、Google 官方、Meta 官方、GitHub Blog、Microsoft 官方、NVIDIA 官方、Reuters、AP、TechCrunch、The Verge、Wired、CNBC、Bloomberg、Ars Technica、VentureBeat、TechRadar、Seeking Alpha、CBS News、Axios、WSJ、Financial Times、Forbes、Semafor、Fortune、Business Insider、Tom's Hardware、SiliconANGLE、Fast Company、TechNews 科技新報、iThome、INSIDE、DIGITIMES、經濟日報、工商時報、數位時代、Meet 創業小聚、商業周刊、36Kr、鉅亨網、cnBeta。",
     "不要使用摘要站、轉載站、比價金融站、新聞聚合鏡像站作為 sourceUrl。",
     "publishedAt 請盡量用來源實際發佈時間，格式使用 ISO 8601。",
     "headline 請寫成一句新聞標題，summary 請寫成一段 80 到 140 字的總覽。",
@@ -533,6 +553,7 @@ async function normalizeStories(items) {
       publishedAt: String(item.publishedAt || "").trim(),
       priority: Number(item.priority || 3)
     }))
+    .filter((item) => !looksLikePlaceholderStory(item))
     .filter((item) => item.sectionTags.length > 0)
     .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl && item.publishedAt)
     .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
@@ -554,10 +575,12 @@ async function normalizeStories(items) {
 
   const validated = [];
   for (const item of normalized) {
-    if (await isReachableSourceUrl(item.sourceUrl)) {
+    const sourceState = await getSourceValidationState(item.sourceUrl);
+    if (sourceState.relaxedUsable) {
       validated.push({
         ...item,
-        priority: Math.max(1, Math.min(5, Number.isFinite(item.priority) ? Math.round(item.priority) : 3))
+        priority: Math.max(1, Math.min(5, Number.isFinite(item.priority) ? Math.round(item.priority) : 3)),
+        validationTier: sourceState.strictUsable ? "strict" : "relaxed"
       });
     }
   }
@@ -584,6 +607,35 @@ function normalizeSectionTags(values) {
       .map((value) => aliasMap[value] || value)
       .filter((value) => storySections.includes(value))
   )];
+}
+
+function looksLikePlaceholderStory(item) {
+  const title = String(item?.title || "").trim();
+  const summary = String(item?.summary || "").trim();
+  const why = String(item?.whyItMatters || "").trim();
+  const combined = `${title} ${summary} ${why}`.toLowerCase();
+
+  const titlePatterns = [
+    /背景脈絡/i,
+    /目前整體發展到哪裡/i,
+    /工具焦點近況/i,
+    /產業焦點近況/i,
+    /技術焦點近況/i,
+    /技術突破近期脈絡/i,
+    /工具應用近期脈絡/i,
+    /產業影響近期脈絡/i
+  ];
+
+  const summaryFragments = [
+    "目前沒有足夠可信",
+    "本站暫以近期",
+    "如果即時消息不足",
+    "補充閱讀背景",
+    "近期仍具新聞價值",
+    "背景整理"
+  ];
+
+  return titlePatterns.some((pattern) => pattern.test(title)) || summaryFragments.some((fragment) => combined.includes(fragment.toLowerCase()));
 }
 
 function assignStoriesToLayout(stories) {
@@ -620,15 +672,81 @@ function assignStoriesToLayout(stories) {
     return remaining.length ? stripStory(remaining.shift()) : null;
   };
 
-  topStories.push(...[takeStory(), takeStory()].filter(Boolean));
+  const takeRankedStory = ({ preferredTags = [], maxAgeDays = maxStoryAgeDays, requireStrict = false, allowCrossTagFallback = true } = {}) => {
+    const maxAgeMs = maxAgeDays * 24 * 60 * 60 * 1000;
+    const selectIndex = (matcher) =>
+      remaining.findIndex((story) => {
+        const publishedMs = Date.parse(String(story?.publishedAt || ""));
+        if (!Number.isFinite(publishedMs)) return false;
+        if (Date.now() - publishedMs > maxAgeMs) return false;
+        if (requireStrict && story.validationTier !== "strict") return false;
+        return matcher(story);
+      });
 
-  focusStories.toolFocus = takeStory(sectionFallbacks.toolFocus);
-  focusStories.industryFocus = takeStory(sectionFallbacks.industryFocus);
-  focusStories.technicalFocus = takeStory(sectionFallbacks.technicalFocus);
+    const byTags = preferredTags.length
+      ? selectIndex((story) => story.sectionTags.some((tag) => preferredTags.includes(tag)))
+      : selectIndex(() => true);
 
-  categories.technicalBreakthroughs = [takeStory(sectionFallbacks.technicalBreakthroughs)].filter(Boolean);
-  categories.toolApplications = [takeStory(sectionFallbacks.toolApplications)].filter(Boolean);
-  categories.industryImpact = [takeStory(sectionFallbacks.industryImpact)].filter(Boolean);
+    if (byTags !== -1) {
+      return stripStory(remaining.splice(byTags, 1)[0]);
+    }
+
+    if (!allowCrossTagFallback) {
+      return null;
+    }
+
+    const fallbackIndex = selectIndex(() => true);
+    if (fallbackIndex !== -1) {
+      return stripStory(remaining.splice(fallbackIndex, 1)[0]);
+    }
+
+    return null;
+  };
+
+  topStories.push(
+    ...[
+      takeRankedStory({ maxAgeDays: topStoryAgeDays, requireStrict: true }),
+      takeRankedStory({ maxAgeDays: topStoryAgeDays, requireStrict: true })
+    ].filter(Boolean)
+  );
+
+  focusStories.toolFocus = takeRankedStory({
+    preferredTags: sectionFallbacks.toolFocus,
+    maxAgeDays: focusStoryAgeDays,
+    requireStrict: true
+  });
+  focusStories.industryFocus = takeRankedStory({
+    preferredTags: sectionFallbacks.industryFocus,
+    maxAgeDays: focusStoryAgeDays,
+    requireStrict: true
+  });
+  focusStories.technicalFocus = takeRankedStory({
+    preferredTags: sectionFallbacks.technicalFocus,
+    maxAgeDays: focusStoryAgeDays,
+    requireStrict: true
+  });
+
+  categories.technicalBreakthroughs = [
+    takeRankedStory({
+      preferredTags: sectionFallbacks.technicalBreakthroughs,
+      maxAgeDays: maxStoryAgeDays,
+      requireStrict: false
+    })
+  ].filter(Boolean);
+  categories.toolApplications = [
+    takeRankedStory({
+      preferredTags: sectionFallbacks.toolApplications,
+      maxAgeDays: maxStoryAgeDays,
+      requireStrict: false
+    })
+  ].filter(Boolean);
+  categories.industryImpact = [
+    takeRankedStory({
+      preferredTags: sectionFallbacks.industryImpact,
+      maxAgeDays: maxStoryAgeDays,
+      requireStrict: false
+    })
+  ].filter(Boolean);
 
   const leftovers = remaining.map(stripStory);
   for (const item of leftovers) {
@@ -687,6 +805,7 @@ function latestPublishedAt(items = []) {
 function stripStory(story) {
   const clone = { ...story };
   delete clone.priority;
+  delete clone.validationTier;
   return clone;
 }
 
@@ -732,9 +851,9 @@ function isAllowedSourceUrl(url) {
   }
 }
 
-async function isReachableSourceUrl(url) {
+async function getSourceValidationState(url) {
   if (!isAllowedSourceUrl(url) || isBlockedSourceUrl(url) || isBlockedPublisher(url)) {
-    return false;
+    return { strictUsable: false, relaxedUsable: false };
   }
 
   const controller = new AbortController();
@@ -756,16 +875,30 @@ async function isReachableSourceUrl(url) {
     }
 
     if ([401, 403, 405, 406, 409, 429].includes(response.status) && isAllowedSourceUrl(finalUrl)) {
-      return true;
+      return { strictUsable: true, relaxedUsable: true };
+    }
+
+    if ([408, 425, 500, 502, 503, 504, 522, 524].includes(response.status) && isAllowedSourceUrl(finalUrl)) {
+      return { strictUsable: false, relaxedUsable: true };
+    }
+
+    if ([404, 410].includes(response.status)) {
+      return { strictUsable: false, relaxedUsable: false };
     }
 
     if (!response.ok) {
-      return false;
+      return {
+        strictUsable: false,
+        relaxedUsable: isAllowedSourceUrl(finalUrl)
+      };
     }
 
-    return true;
+    return { strictUsable: true, relaxedUsable: true };
   } catch (_error) {
-    return isAllowedSourceUrl(url);
+    return {
+      strictUsable: false,
+      relaxedUsable: isAllowedSourceUrl(url)
+    };
   } finally {
     clearTimeout(timeout);
   }
