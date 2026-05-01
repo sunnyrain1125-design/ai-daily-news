@@ -8,7 +8,7 @@ require("dotenv").config();
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const timezone = process.env.NEWS_TIMEZONE || "Asia/Taipei";
-const schedule = process.env.NEWS_CRON || "0 8 * * *";
+const schedule = process.env.NEWS_CRON || "*/5 * * * *";
 const isVercel = Boolean(process.env.VERCEL);
 const useBlob = Boolean(process.env.BLOB_READ_WRITE_TOKEN);
 const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
@@ -87,6 +87,15 @@ const defaultData = {
     technicalBreakthroughs: [],
     toolApplications: [],
     industryImpact: []
+  },
+  sectionUpdatedAt: {
+    topStories: null,
+    toolFocus: null,
+    industryFocus: null,
+    technicalFocus: null,
+    technicalBreakthroughs: null,
+    toolApplications: null,
+    industryImpact: null
   }
 };
 
@@ -346,26 +355,22 @@ function buildPrompt() {
   return [
     "你是一個 AI 科技新聞編輯，請整理與以下主題直接相關的最新或近期重要發展：OpenAI、Anthropic、Google Gemini、Meta AI。",
     `今天日期是 ${today}。請優先挑選今天、昨天或最近 3 天內的消息；若真的不足，可放寬到最近 ${maxStoryAgeDays} 天內，但不要使用早於 ${oldestAllowedDate} 的內容。`,
-    "你要產出的是一個內容充實的 AI 新知首頁資料池，而不是過度保守的稀疏摘要。",
+    "你要產出的是一個內容充實、可直接上首頁的 AI 新知新聞池。",
+    "不要輸出背景整理、趨勢總論、空泛分析或沒有具體事件的段落。",
+    "每一則 stories 項目都必須對應到一個真實、具體、可點擊來源的新聞、產品更新、官方公告、合作發布、投資新聞或技術更新。",
     "寫作風格要像科技媒體晨報，語氣中性、資訊密度高，避免誇張、煽動、猜測式措辭。",
     "如果估值、投資額、營收、時間或法規內容無法被可靠來源明確支持，就不要寫進去。",
     "若同一事件有多篇報導，請優先選擇可信、資訊最完整的一篇，不要重複。",
     "請不要直接替我分配首頁 topStories、focusStories 或 categories。",
-    "請改為輸出一個 stories 陣列，先建立一個足夠大的唯一新聞池，再由系統自行分配到首頁版位。",
-    "stories 陣列目標至少 8 則、最好 8 到 12 則，所有故事都必須彼此不同。",
-    "每則新聞都必須指定 section，section 只能是以下六種之一：technicalFocus、toolFocus、industryFocus、technicalBreakthroughs、toolApplications、industryImpact。",
-    "請盡量讓六種 section 每一種至少出現 1 則，只要近期有可信內容，就不要讓任何 section 缺席。",
-    "technicalFocus 代表當前最值得讀者優先理解的技術主線或核心技術事件。",
-    "toolFocus 代表當前最值得讀者優先理解的產品、代理工具或應用主線。",
-    "industryFocus 代表當前最值得讀者優先理解的商業、合作、投資、法規或市場主線。",
-    "technicalBreakthroughs 代表模型、研究、晶片、推論、基礎能力或技術突破。",
-    "toolApplications 代表產品功能、代理工具、工作流程、自動化、API 或企業導入案例。",
-    "industryImpact 代表投資、合作、政策、法規、市場競爭、商業策略與產業影響。",
-    "如果某則內容只是背景整理，不算故事，就不要放進 stories。",
-    "你需要以首頁可讀性為優先，寧可選擇近期仍有價值的可信發展，也不要拿太舊的消息硬湊版位。",
-    "每則新聞請包含：section、title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
-    "另外請額外提供 contextBriefs 物件，內容是當某個版位或分類缺少足夠可用新聞時，可顯示的背景脈絡摘要。",
-    "contextBriefs 每個欄位請用 2 到 4 句繁體中文，清楚說明目前整體發展到哪裡、正在觀察什麼，不要假裝成今天的新訊，也不要寫成空泛口號。",
+    "請改為輸出一個 stories 陣列，先建立足夠大的唯一新聞池，再由系統自行分配到首頁版位。",
+    "stories 陣列目標至少 12 則、最好 12 到 18 則，所有故事都必須彼此不同。",
+    "每則 stories 項目都必須提供 sectionTags，這是一個陣列，可包含 1 到 3 個標籤。標籤只能從以下六種中選：technicalFocus、toolFocus、industryFocus、technicalBreakthroughs、toolApplications、industryImpact。",
+    "sectionTags 的意思是：這則故事適合被放進哪些欄位，不是說它一定只屬於其中一類。",
+    "technicalFocus 代表技術主線或核心技術事件；toolFocus 代表產品、代理工具或應用主線；industryFocus 代表商業、合作、投資、法規或市場主線；technicalBreakthroughs 代表模型、研究、晶片、推論或基礎能力突破；toolApplications 代表產品功能、工作流程、自動化、API 或企業導入；industryImpact 代表投資、合作、政策、法規、市場競爭與產業影響。",
+    "請盡量讓六種欄位都有足夠候選故事。只要近期有可信內容，就不要讓某一類完全缺席。",
+    "你需要以首頁可讀性為優先：寧可挑選近期仍重要的具體更新，也不要拿太舊的消息或空泛評論硬湊。",
+    "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt、priority、sectionTags。",
+    "priority 請給 1 到 5 的整數，5 代表最適合上首頁。",
     "title 請精煉到像新聞標題，不要超過 40 個中文字。",
     "summary 請用 1 到 2 句交代事件本身，不要塞太多背景。",
     "whyItMatters 請用 1 句說明對 AI 產業、開發者或市場的重要性。",
@@ -383,26 +388,17 @@ function buildPrompt() {
       summary: "字串",
       stories: [
         {
-          section: "technicalFocus",
           title: "字串",
           company: "字串",
           summary: "字串",
           whyItMatters: "字串",
           sourceName: "字串",
           sourceUrl: "https://example.com",
-          publishedAt: "2026-05-01T08:00:00Z"
+          publishedAt: "2026-05-01T08:00:00Z",
+          priority: 5,
+          sectionTags: ["technicalFocus", "technicalBreakthroughs"]
         }
-      ],
-      contextBriefs: {
-        topStory: "字串",
-        technicalFocus: "字串",
-        toolFocus: "字串",
-        industryFocus: "字串",
-        editorPicks: "字串",
-        technicalBreakthroughs: "字串",
-        toolApplications: "字串",
-        industryImpact: "字串"
-      }
+      ]
     })}`
   ].join("\n");
 }
@@ -462,7 +458,12 @@ function pruneSnapshotStories(payload) {
     ...payload,
     topStories,
     focusStories,
-    categories
+    categories,
+    sectionUpdatedAt: buildSectionUpdatedAt({
+      topStories,
+      focusStories,
+      categories
+    })
   };
 }
 
@@ -479,36 +480,38 @@ async function sanitizePayload(payload) {
     topStories: dedupedPayload.topStories,
     focusStories: dedupedPayload.focusStories,
     contextBriefs: normalizeContextBriefs(payload.contextBriefs),
-    categories: dedupedPayload.categories
+    categories: dedupedPayload.categories,
+    sectionUpdatedAt: dedupedPayload.sectionUpdatedAt,
+    stories: normalizedStories.map(stripStoryForStorage)
   };
 }
 
 function collectLegacyStories(payload = {}) {
   const legacyStories = [];
-  const pushLegacy = (item, section) => {
+  const pushLegacy = (item, sectionTags) => {
     if (!item) return;
-    legacyStories.push({ ...item, section });
+    legacyStories.push({ ...item, sectionTags, priority: 3 });
   };
 
   for (const item of payload.topStories || []) {
-    pushLegacy(item, "technicalFocus");
+    pushLegacy(item, ["technicalFocus"]);
   }
 
   const focusStories = payload.focusStories || {};
-  pushLegacy(focusStories.technicalFocus, "technicalFocus");
-  pushLegacy(focusStories.toolFocus, "toolFocus");
-  pushLegacy(focusStories.industryFocus, "industryFocus");
+  pushLegacy(focusStories.technicalFocus, ["technicalFocus", "technicalBreakthroughs"]);
+  pushLegacy(focusStories.toolFocus, ["toolFocus", "toolApplications"]);
+  pushLegacy(focusStories.industryFocus, ["industryFocus", "industryImpact"]);
 
   for (const item of payload.categories?.technicalBreakthroughs || []) {
-    pushLegacy(item, "technicalBreakthroughs");
+    pushLegacy(item, ["technicalBreakthroughs"]);
   }
 
   for (const item of payload.categories?.toolApplications || []) {
-    pushLegacy(item, "toolApplications");
+    pushLegacy(item, ["toolApplications"]);
   }
 
   for (const item of payload.categories?.industryImpact || []) {
-    pushLegacy(item, "industryImpact");
+    pushLegacy(item, ["industryImpact"]);
   }
 
   return legacyStories;
@@ -520,16 +523,17 @@ async function normalizeStories(items) {
   const seen = new Set();
   const normalized = items
     .map((item) => ({
-      section: normalizeSection(item.section),
+      sectionTags: normalizeSectionTags(item.sectionTags || item.sections || item.section ? [item.section] : []),
       title: String(item.title || "").trim(),
       company: String(item.company || "").trim(),
       summary: String(item.summary || "").trim(),
       whyItMatters: String(item.whyItMatters || "").trim(),
       sourceName: String(item.sourceName || "").trim(),
       sourceUrl: String(item.sourceUrl || "").trim(),
-      publishedAt: String(item.publishedAt || "").trim()
+      publishedAt: String(item.publishedAt || "").trim(),
+      priority: Number(item.priority || 3)
     }))
-    .filter((item) => storySections.includes(item.section))
+    .filter((item) => item.sectionTags.length > 0)
     .filter((item) => item.title && item.summary && item.whyItMatters && item.sourceName && item.sourceUrl && item.publishedAt)
     .filter((item) => /^https?:\/\//i.test(item.sourceUrl))
     .filter((item) => !isBlockedSourceUrl(item.sourceUrl))
@@ -551,17 +555,20 @@ async function normalizeStories(items) {
   const validated = [];
   for (const item of normalized) {
     if (await isReachableSourceUrl(item.sourceUrl)) {
-      validated.push(item);
+      validated.push({
+        ...item,
+        priority: Math.max(1, Math.min(5, Number.isFinite(item.priority) ? Math.round(item.priority) : 3))
+      });
     }
   }
 
-  return validated.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  return validated.sort((a, b) => {
+    if (b.priority !== a.priority) return b.priority - a.priority;
+    return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
+  });
 }
 
-function normalizeSection(section) {
-  const value = String(section || "").trim();
-  if (storySections.includes(value)) return value;
-
+function normalizeSectionTags(values) {
   const aliasMap = {
     technical: "technicalFocus",
     tools: "toolFocus",
@@ -571,24 +578,16 @@ function normalizeSection(section) {
     industryImpact: "industryImpact"
   };
 
-  return aliasMap[value] || value;
+  return [...new Set(
+    (Array.isArray(values) ? values : [values])
+      .map((value) => String(value || "").trim())
+      .map((value) => aliasMap[value] || value)
+      .filter((value) => storySections.includes(value))
+  )];
 }
 
 function assignStoriesToLayout(stories) {
-  const buckets = {
-    technicalFocus: [],
-    toolFocus: [],
-    industryFocus: [],
-    technicalBreakthroughs: [],
-    toolApplications: [],
-    industryImpact: []
-  };
-
-  for (const story of stories) {
-    buckets[story.section].push(stripSection(story));
-  }
-
-  const seen = new Set();
+  const remaining = [...stories];
   const topStories = [];
   const focusStories = {
     technicalFocus: null,
@@ -600,73 +599,109 @@ function assignStoriesToLayout(stories) {
     toolApplications: [],
     industryImpact: []
   };
+  const sectionFallbacks = {
+    technicalFocus: ["technicalFocus", "technicalBreakthroughs"],
+    toolFocus: ["toolFocus", "toolApplications"],
+    industryFocus: ["industryFocus", "industryImpact"],
+    technicalBreakthroughs: ["technicalBreakthroughs", "technicalFocus"],
+    toolApplications: ["toolApplications", "toolFocus"],
+    industryImpact: ["industryImpact", "industryFocus"]
+  };
 
-  const takeNext = (sections) => {
-    for (const section of sections) {
-      const bucket = buckets[section] || [];
-      while (bucket.length) {
-        const item = bucket.shift();
-        const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
-        if (seen.has(key)) continue;
-        seen.add(key);
-        return item;
-      }
+  const takeStory = (preferredTags = []) => {
+    const matcher = preferredTags.length
+      ? (story) => story.sectionTags.some((tag) => preferredTags.includes(tag))
+      : () => true;
+    const index = remaining.findIndex(matcher);
+    if (index !== -1) {
+      return stripStory(remaining.splice(index, 1)[0]);
     }
-    return null;
+    if (!preferredTags.length) return null;
+    return remaining.length ? stripStory(remaining.shift()) : null;
   };
 
-  const withFallbackOrder = (preferredSections) => {
-    const allSections = [
-      "technicalFocus",
-      "toolFocus",
-      "industryFocus",
-      "technicalBreakthroughs",
-      "toolApplications",
-      "industryImpact"
-    ];
-    return [...new Set([...preferredSections, ...allSections])];
-  };
+  topStories.push(...[takeStory(), takeStory()].filter(Boolean));
 
-  const firstTop = takeNext(["technicalFocus", "toolFocus", "industryFocus", "technicalBreakthroughs", "toolApplications", "industryImpact"]);
-  if (firstTop) topStories.push(firstTop);
-  const secondTop = takeNext(["industryFocus", "technicalFocus", "toolFocus", "industryImpact", "technicalBreakthroughs", "toolApplications"]);
-  if (secondTop) topStories.push(secondTop);
+  focusStories.toolFocus = takeStory(sectionFallbacks.toolFocus);
+  focusStories.industryFocus = takeStory(sectionFallbacks.industryFocus);
+  focusStories.technicalFocus = takeStory(sectionFallbacks.technicalFocus);
 
-  focusStories.technicalFocus = takeNext(withFallbackOrder(["technicalFocus", "technicalBreakthroughs"]));
-  focusStories.toolFocus = takeNext(withFallbackOrder(["toolFocus", "toolApplications"]));
-  focusStories.industryFocus = takeNext(withFallbackOrder(["industryFocus", "industryImpact"]));
+  categories.technicalBreakthroughs = [takeStory(sectionFallbacks.technicalBreakthroughs)].filter(Boolean);
+  categories.toolApplications = [takeStory(sectionFallbacks.toolApplications)].filter(Boolean);
+  categories.industryImpact = [takeStory(sectionFallbacks.industryImpact)].filter(Boolean);
 
-  categories.technicalBreakthroughs = collectRemaining(buckets, seen, withFallbackOrder(["technicalBreakthroughs", "technicalFocus"]), 3);
-  categories.toolApplications = collectRemaining(buckets, seen, withFallbackOrder(["toolApplications", "toolFocus"]), 3);
-  categories.industryImpact = collectRemaining(buckets, seen, withFallbackOrder(["industryImpact", "industryFocus"]), 3);
+  const leftovers = remaining.map(stripStory);
+  for (const item of leftovers) {
+    const target = item.sectionTags.find((tag) => ["technicalBreakthroughs", "toolApplications", "industryImpact"].includes(tag));
+    if (target && categories[target].length < 2) {
+      categories[target].push(item);
+      continue;
+    }
+
+    const fallbackTarget =
+      categories.technicalBreakthroughs.length <= categories.toolApplications.length &&
+      categories.technicalBreakthroughs.length <= categories.industryImpact.length
+        ? "technicalBreakthroughs"
+        : categories.toolApplications.length <= categories.industryImpact.length
+          ? "toolApplications"
+          : "industryImpact";
+
+    if (categories[fallbackTarget].length < 2) {
+      categories[fallbackTarget].push(item);
+    }
+  }
 
   return {
     topStories,
     focusStories,
-    categories
+    categories,
+    sectionUpdatedAt: buildSectionUpdatedAt({
+      topStories,
+      focusStories,
+      categories
+    })
   };
 }
 
-function collectRemaining(buckets, seen, sections, limit) {
-  const items = [];
-  for (const section of sections) {
-    const bucket = buckets[section] || [];
-    while (bucket.length && items.length < limit) {
-      const item = bucket.shift();
-      const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      items.push(item);
-    }
-    if (items.length >= limit) break;
-  }
-  return items;
+function buildSectionUpdatedAt({ topStories, focusStories, categories }) {
+  return {
+    topStories: latestPublishedAt(topStories),
+    toolFocus: latestPublishedAt(focusStories.toolFocus ? [focusStories.toolFocus] : []),
+    industryFocus: latestPublishedAt(focusStories.industryFocus ? [focusStories.industryFocus] : []),
+    technicalFocus: latestPublishedAt(focusStories.technicalFocus ? [focusStories.technicalFocus] : []),
+    technicalBreakthroughs: latestPublishedAt(categories.technicalBreakthroughs),
+    toolApplications: latestPublishedAt(categories.toolApplications),
+    industryImpact: latestPublishedAt(categories.industryImpact)
+  };
 }
 
-function stripSection(item) {
-  const clone = { ...item };
-  delete clone.section;
+function latestPublishedAt(items = []) {
+  const timestamps = (items || [])
+    .map((item) => Date.parse(String(item?.publishedAt || "")))
+    .filter(Number.isFinite);
+
+  if (!timestamps.length) return null;
+  return new Date(Math.max(...timestamps)).toISOString();
+}
+
+function stripStory(story) {
+  const clone = { ...story };
+  delete clone.priority;
   return clone;
+}
+
+function stripStoryForStorage(story) {
+  return {
+    title: story.title,
+    company: story.company,
+    summary: story.summary,
+    whyItMatters: story.whyItMatters,
+    sourceName: story.sourceName,
+    sourceUrl: story.sourceUrl,
+    publishedAt: story.publishedAt,
+    priority: story.priority,
+    sectionTags: story.sectionTags
+  };
 }
 
 function isBlockedSourceUrl(url) {
