@@ -686,11 +686,18 @@
       }
 
       function countStories(data) {
+        const topStories = Array.isArray(data?.topStories) ? data.topStories : [];
+        const focusStories = data?.focusStories || {};
+        const focusCount = ["technicalFocus", "toolFocus", "industryFocus"].reduce((sum, key) => {
+          return focusStories[key] ? sum + 1 : sum;
+        }, 0);
         const categories = data?.categories || {};
-        return ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
+        const categoryCount = ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
           const items = Array.isArray(categories[key]) ? categories[key] : [];
           return sum + items.length;
         }, 0);
+
+        return topStories.length + focusCount + categoryCount;
       }
 
       async function findMostRecentNonEmptySnapshot(entries) {

@@ -133,6 +133,29 @@ async function readHistoryIndex() {
   }
 }
 
+async function readMostRecentNonEmptyHistorySnapshot() {
+  const index = await readHistoryIndex();
+
+  for (const item of index.items || []) {
+    if (!item?.path) continue;
+
+    const filename = String(item.path).replace("./history/", "");
+    const snapshotPath = path.join(historyDir, filename);
+
+    try {
+      const raw = await fs.readFile(snapshotPath, "utf8");
+      const parsed = JSON.parse(raw);
+      if (countStories(parsed) > 0) {
+        return parsed;
+      }
+    } catch (_error) {
+      continue;
+    }
+  }
+
+  return null;
+}
+
 async function writeHistoryIndex(index) {
   await ensurePublicDir();
   await fs.writeFile(historyIndexPath, JSON.stringify(index, null, 2), "utf8");
@@ -241,6 +264,15 @@ async function writeStoredNews(payload) {
   if (payloadStoryCount === 0 && existingStoryCount > 0) {
     console.warn(`Generated dataset had no visible stories. Keeping previous dataset from ${existing.generatedAt || "unknown time"}.`);
     return existing;
+  }
+
+  if (payloadStoryCount === 0 && existingStoryCount === 0 && !isVercel) {
+    const fallbackSnapshot = await readMostRecentNonEmptyHistorySnapshot();
+    if (fallbackSnapshot) {
+      console.warn(`Generated dataset had no visible stories and current dataset was empty. Restoring latest non-empty history snapshot from ${fallbackSnapshot.generatedAt || "unknown time"}.`);
+      await writeLocalJson(fallbackSnapshot);
+      return fallbackSnapshot;
+    }
   }
 
   if (!isVercel) {
@@ -643,10 +675,6 @@ async function isReachableSourceUrl(url) {
       }
     });
 
-    if (!response.ok) {
-      return false;
-    }
-
     const finalUrl = response.url || url;
     if (isBlockedSourceUrl(finalUrl) || isBlockedPublisher(finalUrl)) {
       return false;
@@ -654,6 +682,10 @@ async function isReachableSourceUrl(url) {
 
     if ([401, 403, 405, 406, 409, 429].includes(response.status) && isAllowedSourceUrl(finalUrl)) {
       return true;
+    }
+
+    if (!response.ok) {
+      return false;
     }
 
     return true;
