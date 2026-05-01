@@ -572,15 +572,25 @@
         const applications = filterItems(data.categories?.toolApplications || []);
         const industry = filterItems(data.categories?.industryImpact || []);
         const topStories = filterItems(data.topStories || []);
+        const focusStories = data.focusStories || {};
         const contextBriefs = { ...defaultContextBriefs, ...(data.contextBriefs || {}) };
         const showContextFallback = !currentQuery && currentCompanyFilter === "all";
         const usedKeys = new Set();
         const selectedTopStories = topStories.slice(0, 2);
         selectedTopStories.forEach((item) => usedKeys.add(itemKey(item)));
+        const technicalSpotlightItem = focusStories.technicalFocus && itemMatchesFilters(focusStories.technicalFocus)
+          ? focusStories.technicalFocus
+          : null;
+        const applicationsSpotlightItem = focusStories.toolFocus && itemMatchesFilters(focusStories.toolFocus)
+          ? focusStories.toolFocus
+          : null;
+        const industrySpotlightItem = focusStories.industryFocus && itemMatchesFilters(focusStories.industryFocus)
+          ? focusStories.industryFocus
+          : null;
 
-        const technicalSpotlightItem = takeFirstUnused(technical, usedKeys);
-        const applicationsSpotlightItem = takeFirstUnused(applications, usedKeys);
-        const industrySpotlightItem = takeFirstUnused(industry, usedKeys);
+        if (technicalSpotlightItem) usedKeys.add(itemKey(technicalSpotlightItem));
+        if (applicationsSpotlightItem) usedKeys.add(itemKey(applicationsSpotlightItem));
+        if (industrySpotlightItem) usedKeys.add(itemKey(industrySpotlightItem));
 
         const technicalListItems = filterUnused(technical, usedKeys);
         const applicationsListItems = filterUnused(applications, usedKeys);
@@ -594,9 +604,9 @@
           ? `本頁目前顯示的是最近一次成功更新的資料，最後更新時間為 ${data.generatedAtLocal}。`
           : "目前尚未取得成功更新資料。";
 
-        document.getElementById("technicalCount").textContent = technical.length;
-        document.getElementById("applicationCount").textContent = applications.length;
-        document.getElementById("industryCount").textContent = industry.length;
+        document.getElementById("technicalCount").textContent = technical.length + (technicalSpotlightItem ? 1 : 0);
+        document.getElementById("applicationCount").textContent = applications.length + (applicationsSpotlightItem ? 1 : 0);
+        document.getElementById("industryCount").textContent = industry.length + (industrySpotlightItem ? 1 : 0);
 
         document.getElementById("topStories").innerHTML = renderTopStoryGrid(selectedTopStories, contextBriefs, showContextFallback);
         document.getElementById("technicalSpotlight").innerHTML = technicalSpotlightItem

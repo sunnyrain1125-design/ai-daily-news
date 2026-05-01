@@ -66,6 +66,11 @@ const defaultData = {
   headline: "AI 每日新聞尚未生成",
   summary: "系統已啟動，等待第一次自動更新。",
   topStories: [],
+  focusStories: {
+    technicalFocus: null,
+    toolFocus: null,
+    industryFocus: null
+  },
   contextBriefs: {
     topStory: "目前 AI 競爭主軸仍圍繞模型能力、推論成本、企業導入速度與監管調整，沒有明顯新消息時，最值得關注的是各大平台如何把既有模型更穩定地推進到產品與企業工作流程中。",
     technicalFocus: "近期技術競爭重點集中在更高效的推論、更長上下文、更可靠的多模態理解，以及讓模型在成本可控下維持穩定表現。",
@@ -263,15 +268,16 @@ function buildPrompt() {
     "寫作風格要像科技媒體晨報，語氣中性、資訊密度高，避免誇張、煽動、猜測式措辭。",
     "如果估值、投資額、營收、時間或法規內容無法被可靠來源明確支持，就不要寫進去。",
     "若同一事件有多篇報導，請優先選擇可信、資訊最完整的一篇，不要重複。",
-    "請先額外挑出 2 則最值得放在首頁最上方的 topStories，這 2 則必須與三個分類中的其他新聞不同，不可重複。",
-    "其餘新聞再歸入以下其中一類：technicalBreakthroughs、toolApplications、industryImpact。",
+    "請先額外挑出 2 則最值得放在首頁最上方的 topStories，這 2 則必須與其他版位不同，不可重複。",
+    "請再額外挑出 3 則給首頁第二層焦點欄位，分別放入 technicalFocus、toolFocus、industryFocus，這 3 則也必須彼此不同，且不得與 topStories 或下方分類新聞重複。",
+    "最後其餘新聞再歸入以下三個分類：technicalBreakthroughs、toolApplications、industryImpact。",
     "technicalBreakthroughs 代表模型、研究、晶片、推論、基礎能力或技術突破。",
     "toolApplications 代表產品功能、代理工具、工作流程、自動化、API 或企業導入案例。",
     "industryImpact 代表投資、合作、政策、法規、市場競爭、商業策略與產業影響。",
-    "每個分類目標請挑選 2 到 4 則最值得關注的新聞，至少要盡量補到 2 則。",
-    "只要近期有可信內容，就不要讓 technicalBreakthroughs、toolApplications、industryImpact 留空，也盡量不要只留 1 則。",
-    "整份輸出目標至少提供 8 則唯一新聞：2 則 topStories，加上三個分類各至少 2 則。",
-    "如果三個分類裡有某一類新聞相對較少，請優先從近期仍具新聞價值的發展中補足到至少 2 則，再追求分類完全平均。",
+    "每個分類目標請挑選 1 到 3 則最值得關注的新聞，至少要盡量補到 1 則。",
+    "只要近期有可信內容，就不要讓 technicalBreakthroughs、toolApplications、industryImpact 留空。",
+    "整份輸出目標至少提供 8 則唯一新聞：2 則 topStories、3 則 focusStories，以及三個分類各至少 1 則。",
+    "如果三個分類裡有某一類新聞相對較少，請優先從近期仍具新聞價值的發展中補足到至少 1 則，再追求分類完全平均。",
     "你需要以首頁可讀性為優先，寧可選擇稍早但仍有參考價值的可信發展，也不要讓整個分類空白。",
     "每則新聞請包含：title、company、summary、whyItMatters、sourceName、sourceUrl、publishedAt。",
     "另外請額外提供 contextBriefs 物件，內容是當某個版位或分類缺少足夠可用新聞時，可顯示的背景脈絡摘要。",
@@ -303,6 +309,35 @@ function buildPrompt() {
           publishedAt: "2026-04-30T08:00:00Z"
         }
       ],
+      focusStories: {
+        technicalFocus: {
+          title: "字串",
+          company: "字串",
+          summary: "字串",
+          whyItMatters: "字串",
+          sourceName: "字串",
+          sourceUrl: "https://example.com",
+          publishedAt: "2026-04-30T08:00:00Z"
+        },
+        toolFocus: {
+          title: "字串",
+          company: "字串",
+          summary: "字串",
+          whyItMatters: "字串",
+          sourceName: "字串",
+          sourceUrl: "https://example.com",
+          publishedAt: "2026-04-30T08:00:00Z"
+        },
+        industryFocus: {
+          title: "字串",
+          company: "字串",
+          summary: "字串",
+          whyItMatters: "字串",
+          sourceName: "字串",
+          sourceUrl: "https://example.com",
+          publishedAt: "2026-04-30T08:00:00Z"
+        }
+      },
       contextBriefs: {
         topStory: "字串",
         technicalFocus: "字串",
@@ -336,11 +371,21 @@ function buildSchema() {
   return {
     type: "object",
     additionalProperties: false,
-    required: ["headline", "summary", "topStories", "contextBriefs", "categories"],
+    required: ["headline", "summary", "topStories", "focusStories", "contextBriefs", "categories"],
     properties: {
       headline: { type: "string" },
       summary: { type: "string" },
       topStories: buildItemArraySchema(),
+      focusStories: {
+        type: "object",
+        additionalProperties: false,
+        required: ["technicalFocus", "toolFocus", "industryFocus"],
+        properties: {
+          technicalFocus: buildItemSchema(),
+          toolFocus: buildItemSchema(),
+          industryFocus: buildItemSchema()
+        }
+      },
       contextBriefs: {
         type: "object",
         additionalProperties: false,
@@ -382,27 +427,31 @@ function buildSchema() {
 function buildItemArraySchema() {
   return {
     type: "array",
-    items: {
-      type: "object",
-      additionalProperties: false,
-      required: [
-        "title",
-        "company",
-        "summary",
-        "whyItMatters",
-        "sourceName",
-        "sourceUrl",
-        "publishedAt"
-      ],
-      properties: {
-        title: { type: "string" },
-        company: { type: "string" },
-        summary: { type: "string" },
-        whyItMatters: { type: "string" },
-        sourceName: { type: "string" },
-        sourceUrl: { type: "string" },
-        publishedAt: { type: "string" }
-      }
+    items: buildItemSchema()
+  };
+}
+
+function buildItemSchema() {
+  return {
+    type: "object",
+    additionalProperties: false,
+    required: [
+      "title",
+      "company",
+      "summary",
+      "whyItMatters",
+      "sourceName",
+      "sourceUrl",
+      "publishedAt"
+    ],
+    properties: {
+      title: { type: "string" },
+      company: { type: "string" },
+      summary: { type: "string" },
+      whyItMatters: { type: "string" },
+      sourceName: { type: "string" },
+      sourceUrl: { type: "string" },
+      publishedAt: { type: "string" }
     }
   };
 }
@@ -420,14 +469,18 @@ function normalizeContextBriefs(contextBriefs = {}) {
 
 function countStories(payload) {
   const topStories = Array.isArray(payload?.topStories) ? payload.topStories : [];
+  const focusStories = payload?.focusStories || {};
+  const focusCount = ["technicalFocus", "toolFocus", "industryFocus"].reduce((sum, key) => {
+    return focusStories[key] ? sum + 1 : sum;
+  }, 0);
   const categories = payload?.categories || {};
-  return topStories.length + ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
+  return topStories.length + focusCount + ["technicalBreakthroughs", "toolApplications", "industryImpact"].reduce((sum, key) => {
     const items = Array.isArray(categories[key]) ? categories[key] : [];
     return sum + items.length;
   }, 0);
 }
 
-function dedupeWholePayload(topStories, categories) {
+function dedupeWholePayload(topStories, focusStories, categories) {
   const seen = new Set();
   const dedupedTopStories = (topStories || []).filter((item) => {
     const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
@@ -435,6 +488,23 @@ function dedupeWholePayload(topStories, categories) {
     seen.add(key);
     return true;
   });
+
+  const dedupedFocusStories = {};
+  for (const [slot, item] of Object.entries(focusStories || {})) {
+    if (!item) {
+      dedupedFocusStories[slot] = null;
+      continue;
+    }
+
+    const key = `${fingerprint(item.title)}::${fingerprint(item.sourceUrl || item.company)}`;
+    if (seen.has(key)) {
+      dedupedFocusStories[slot] = null;
+      continue;
+    }
+
+    seen.add(key);
+    dedupedFocusStories[slot] = item;
+  }
 
   const dedupedCategories = {};
   for (const [category, items] of Object.entries(categories)) {
@@ -448,18 +518,20 @@ function dedupeWholePayload(topStories, categories) {
 
   return {
     topStories: dedupedTopStories,
+    focusStories: dedupedFocusStories,
     categories: dedupedCategories
   };
 }
 
 async function sanitizePayload(payload) {
   const normalizedTopStories = await normalizeItems(payload.topStories || []);
+  const normalizedFocusStories = await normalizeFocusStories(payload.focusStories || {});
   const dedupedCategories = dedupeAcrossCategories({
     technicalBreakthroughs: await normalizeItems(payload.categories?.technicalBreakthroughs || []),
     toolApplications: await normalizeItems(payload.categories?.toolApplications || []),
     industryImpact: await normalizeItems(payload.categories?.industryImpact || [])
   });
-  const dedupedPayload = dedupeWholePayload(normalizedTopStories, dedupedCategories);
+  const dedupedPayload = dedupeWholePayload(normalizedTopStories, normalizedFocusStories, dedupedCategories);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -468,9 +540,25 @@ async function sanitizePayload(payload) {
     headline: payload.headline || defaultData.headline,
     summary: payload.summary || defaultData.summary,
     topStories: dedupedPayload.topStories,
+    focusStories: {
+      technicalFocus: dedupedPayload.focusStories.technicalFocus || null,
+      toolFocus: dedupedPayload.focusStories.toolFocus || null,
+      industryFocus: dedupedPayload.focusStories.industryFocus || null
+    },
     contextBriefs: normalizeContextBriefs(payload.contextBriefs),
     categories: dedupedPayload.categories
   };
+}
+
+async function normalizeFocusStories(focusStories = {}) {
+  const normalized = {};
+
+  for (const key of ["technicalFocus", "toolFocus", "industryFocus"]) {
+    const items = await normalizeItems(focusStories[key] ? [focusStories[key]] : []);
+    normalized[key] = items[0] || null;
+  }
+
+  return normalized;
 }
 
 async function normalizeItems(items) {
