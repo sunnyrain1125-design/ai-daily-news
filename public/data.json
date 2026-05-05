@@ -13,27 +13,10 @@
       "sourceName": "OpenAI Official Blog",
       "sourceUrl": "https://openai.com/blog/introducing-advanced-account-security",
       "publishedAt": "2026-04-30T00:00:00Z"
-    },
-    {
-      "title": "OpenAI營收與用戶成長未達預期，IPO前景引發市場擔憂",
-      "company": "OpenAI",
-      "summary": "《華爾街日報》報導指出，OpenAI近期數月營收目標與ChatGPT用戶成長均未達內部預期，財務長對公司能否支撐龐大算力合約表示擔憂，對其預計年底的IPO構成挑戰。",
-      "whyItMatters": "此消息可能影響投資人對AI產業高估值的信心，並促使AI公司更注重商業化落地與財務紀律。",
-      "sourceName": "Forbes",
-      "sourceUrl": "https://www.forbes.com/sites/jemimamcevoy/2026/04/28/openai-misses-revenue-targets-bringing-shares-of-these-investors-down/",
-      "publishedAt": "2026-04-28T00:00:00Z"
     }
   ],
   "focusStories": {
-    "technicalFocus": {
-      "title": "OpenAI模型、Codex及託管代理服務整合至AWS Amazon Bedrock",
-      "company": "OpenAI",
-      "summary": "OpenAI宣布其模型、Codex編程代理及託管代理服務已上架至Amazon Bedrock，使AWS客戶能更便捷地存取並應用OpenAI的先進AI能力。",
-      "whyItMatters": "這項整合擴大了OpenAI模型的企業級應用生態，加劇了雲端AI服務市場的競爭，並為企業提供更多選擇。",
-      "sourceName": "OpenAI Official Blog",
-      "sourceUrl": "https://openai.com/blog/openai-models-codex-and-managed-agents-come-to-aws",
-      "publishedAt": "2026-04-28T00:00:00Z"
-    },
+    "technicalFocus": null,
     "toolFocus": null,
     "industryFocus": null
   },
@@ -56,7 +39,7 @@
     "topStories": "2026-04-30T00:00:00.000Z",
     "toolFocus": null,
     "industryFocus": null,
-    "technicalFocus": "2026-04-28T00:00:00.000Z",
+    "technicalFocus": null,
     "technicalBreakthroughs": null,
     "toolApplications": null,
     "industryImpact": null
