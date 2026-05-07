@@ -1,6 +1,15 @@
 {
-  "latest": "2026-05-01T21-11-54",
+  "latest": "2026-05-08T00-28-20",
   "items": [
+    {
+      "id": "2026-05-08T00-28-20",
+      "date": "2026-05-07",
+      "label": "2026年5月8日 星期五 凌晨12:28:20",
+      "path": "./history/2026-05-08T00-28-20.json",
+      "headline": "AI巨頭最新動態：OpenAI強化GPT-5.5 Instant與算力合作，Anthropic簽署SpaceX與Google天價協議，Google及Meta推進AI智能體開發",
+      "generatedAt": "2026-05-07T16:28:20.387Z",
+      "generatedAtLocal": "2026年5月8日 星期五 凌晨12:28:20"
+    },
     {
       "id": "2026-05-01T21-11-54",
       "date": "2026-05-01",
