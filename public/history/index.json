@@ -1,6 +1,15 @@
 {
-  "latest": "2026-05-11T04-10-26",
+  "latest": "2026-05-11T06-33-37",
   "items": [
+    {
+      "id": "2026-05-11T06-33-37",
+      "date": "2026-05-10",
+      "label": "2026年5月11日 星期一 清晨6:33:37",
+      "path": "./history/2026-05-11T06-33-37.json",
+      "headline": "AI 巨頭最新動態：Anthropic 估值飆升至兆元級，Google I/O 預期發布 Gemini 4 與 Android XR 眼鏡，OpenAI 模型更新與 Meta AI 組織變革受關注",
+      "generatedAt": "2026-05-10T22:33:37.378Z",
+      "generatedAtLocal": "2026年5月11日 星期一 清晨6:33:37"
+    },
     {
       "id": "2026-05-11T04-10-26",
       "date": "2026-05-10",
