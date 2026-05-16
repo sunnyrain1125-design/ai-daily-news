@@ -1,6 +1,15 @@
 {
-  "latest": "2026-05-16T07-42-33",
+  "latest": "2026-05-16T15-32-04",
   "items": [
+    {
+      "id": "2026-05-16T15-32-04",
+      "date": "2026-05-16",
+      "label": "2026年5月16日 星期六 下午3:32:04",
+      "path": "./history/2026-05-16T15-32-04.json",
+      "headline": "OpenAI、Anthropic、Google Gemini 與 Meta AI 近期 AI 發展與技術應用匯總",
+      "generatedAt": "2026-05-16T07:32:04.142Z",
+      "generatedAtLocal": "2026年5月16日 星期六 下午3:32:04"
+    },
     {
       "id": "2026-05-16T07-42-33",
       "date": "2026-05-15",
