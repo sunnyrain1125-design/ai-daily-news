@@ -1,6 +1,15 @@
 {
-  "latest": "2026-05-17T23-43-01",
+  "latest": "2026-05-18T03-51-13",
   "items": [
+    {
+      "id": "2026-05-18T03-51-13",
+      "date": "2026-05-17",
+      "label": "2026年5月18日 星期一 凌晨3:51:13",
+      "path": "./history/2026-05-18T03-51-13.json",
+      "headline": "AI 巨頭最新動態：OpenAI、Anthropic、Google Gemini、Meta AI 重點回顧",
+      "generatedAt": "2026-05-17T19:51:13.414Z",
+      "generatedAtLocal": "2026年5月18日 星期一 凌晨3:51:13"
+    },
     {
       "id": "2026-05-17T23-43-01",
       "date": "2026-05-17",
