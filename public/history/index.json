@@ -1,6 +1,15 @@
 {
-  "latest": "2026-05-24T20-00-44",
+  "latest": "2026-05-24T23-50-02",
   "items": [
+    {
+      "id": "2026-05-24T23-50-02",
+      "date": "2026-05-24",
+      "label": "2026年5月24日 星期日 晚上11:50:02",
+      "path": "./history/2026-05-24T23-50-02.json",
+      "headline": "AI 巨頭最新動態：Anthropic Claude 3.5 Sonnet 更新、OpenAI 強化企業客製化、Google Gemini 整合應用與 Meta AI 廣告創意工具",
+      "generatedAt": "2026-05-24T15:50:02.046Z",
+      "generatedAtLocal": "2026年5月24日 星期日 晚上11:50:02"
+    },
     {
       "id": "2026-05-24T20-00-44",
       "date": "2026-05-24",
