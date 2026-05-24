@@ -1,6 +1,15 @@
 {
-  "latest": "2026-05-24T16-10-46",
+  "latest": "2026-05-24T20-00-44",
   "items": [
+    {
+      "id": "2026-05-24T20-00-44",
+      "date": "2026-05-24",
+      "label": "2026年5月24日 星期日 晚上8:00:44",
+      "path": "./history/2026-05-24T20-00-44.json",
+      "headline": "AI巨頭最新動態：OpenAI IPO在即，Google Gemini發布多項Agent新功能，Anthropic實現盈利，Meta進行AI驅動裁員重組",
+      "generatedAt": "2026-05-24T12:00:44.942Z",
+      "generatedAtLocal": "2026年5月24日 星期日 晚上8:00:44"
+    },
     {
       "id": "2026-05-24T16-10-46",
       "date": "2026-05-24",
