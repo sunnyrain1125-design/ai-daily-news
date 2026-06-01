@@ -1,6 +1,15 @@
 {
-  "latest": "2026-06-02T03-00-00",
+  "latest": "2026-06-02T06-17-51",
   "items": [
+    {
+      "id": "2026-06-02T06-17-51",
+      "date": "2026-06-01",
+      "label": "2026年6月2日 星期二 清晨6:17:51",
+      "path": "./history/2026-06-02T06-17-51.json",
+      "headline": "AI巨頭新競賽：Anthropic啟動IPO與算力佈局，OpenAI展現具身智能和Agent OS，Google Gemini與Meta AI加速模型與硬體創新",
+      "generatedAt": "2026-06-01T22:17:51.800Z",
+      "generatedAtLocal": "2026年6月2日 星期二 清晨6:17:51"
+    },
     {
       "id": "2026-06-02T03-00-00",
       "date": "2026-06-01",
