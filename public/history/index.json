@@ -1,6 +1,15 @@
 {
-  "latest": "2026-06-11T02-39-34",
+  "latest": "2026-06-11T05-16-44",
   "items": [
+    {
+      "id": "2026-06-11T05-16-44",
+      "date": "2026-06-10",
+      "label": "2026年6月11日 星期四 清晨5:16:44",
+      "path": "./history/2026-06-11T05-16-44.json",
+      "headline": "AI巨頭競速：Anthropic發布Claude Fable 5並遞交IPO，OpenAI改造ChatGPT為超級應用，Google與Meta深化AI整合面臨監管挑戰",
+      "generatedAt": "2026-06-10T21:16:44.022Z",
+      "generatedAtLocal": "2026年6月11日 星期四 清晨5:16:44"
+    },
     {
       "id": "2026-06-11T02-39-34",
       "date": "2026-06-10",
