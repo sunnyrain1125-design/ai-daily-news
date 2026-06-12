@@ -1,6 +1,15 @@
 {
-  "latest": "2026-06-12T07-54-57",
+  "latest": "2026-06-12T11-55-32",
   "items": [
+    {
+      "id": "2026-06-12T11-55-32",
+      "date": "2026-06-12",
+      "label": "2026年6月12日 星期五 上午11:55:32",
+      "path": "./history/2026-06-12T11-55-32.json",
+      "headline": "AI巨頭競速：OpenAI與Anthropic模型發布、IPO戰，Google Gemini與Meta AI佈局升級",
+      "generatedAt": "2026-06-12T03:55:32.098Z",
+      "generatedAtLocal": "2026年6月12日 星期五 上午11:55:32"
+    },
     {
       "id": "2026-06-12T07-54-57",
       "date": "2026-06-11",
