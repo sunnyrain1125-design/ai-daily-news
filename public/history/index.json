@@ -1,6 +1,15 @@
 {
-  "latest": "2026-06-16T05-25-56",
+  "latest": "2026-06-16T07-18-52",
   "items": [
+    {
+      "id": "2026-06-16T07-18-52",
+      "date": "2026-06-15",
+      "label": "2026年6月16日 星期二 清晨7:18:52",
+      "path": "./history/2026-06-16T07-18-52.json",
+      "headline": "AI 巨頭近期動態：OpenAI、Anthropic、Google Gemini、Meta AI 技術與應用競速，Anthropic 新模型遭禁成焦點",
+      "generatedAt": "2026-06-15T23:18:52.320Z",
+      "generatedAtLocal": "2026年6月16日 星期二 清晨7:18:52"
+    },
     {
       "id": "2026-06-16T05-25-56",
       "date": "2026-06-15",
