@@ -1,6 +1,15 @@
 {
-  "latest": "2026-06-24T13-48-44",
+  "latest": "2026-06-24T16-47-59",
   "items": [
+    {
+      "id": "2026-06-24T16-47-59",
+      "date": "2026-06-24",
+      "label": "2026年6月24日 星期三 下午4:47:59",
+      "path": "./history/2026-06-24T16-47-59.json",
+      "headline": "OpenAI強化網絡安全AI、Anthropic將Claude融入Slack、Google Gemini擴展企業應用、Meta面臨AI監管與隱私挑戰",
+      "generatedAt": "2026-06-24T08:47:59.936Z",
+      "generatedAtLocal": "2026年6月24日 星期三 下午4:47:59"
+    },
     {
       "id": "2026-06-24T13-48-44",
       "date": "2026-06-24",
