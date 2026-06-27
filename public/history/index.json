@@ -1,6 +1,15 @@
 {
-  "latest": "2026-06-28T06-46-52",
+  "latest": "2026-06-28T07-46-54",
   "items": [
+    {
+      "id": "2026-06-28T07-46-54",
+      "date": "2026-06-27",
+      "label": "2026年6月28日 星期日 清晨7:46:54",
+      "path": "./history/2026-06-28T07-46-54.json",
+      "headline": "AI巨頭近期進展：OpenAI發布GPT-5.6受限，Anthropic模型解禁，Google Gemini強化Agent能力，Meta AI審核內容",
+      "generatedAt": "2026-06-27T23:46:54.032Z",
+      "generatedAtLocal": "2026年6月28日 星期日 清晨7:46:54"
+    },
     {
       "id": "2026-06-28T06-46-52",
       "date": "2026-06-27",
