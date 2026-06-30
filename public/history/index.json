@@ -1,6 +1,15 @@
 {
-  "latest": "2026-06-30T18-02-40",
+  "latest": "2026-06-30T20-22-36",
   "items": [
+    {
+      "id": "2026-06-30T20-22-36",
+      "date": "2026-06-30",
+      "label": "2026年6月30日 星期二 晚上8:22:36",
+      "path": "./history/2026-06-30T20-22-36.json",
+      "headline": "AI巨頭最新動態：OpenAI GPT-5.6受政府管制，Anthropic Claude模型登陸Azure，Google Gemini圖片生成免費開放，Meta AI審核自動化引關注",
+      "generatedAt": "2026-06-30T12:22:36.595Z",
+      "generatedAtLocal": "2026年6月30日 星期二 晚上8:22:36"
+    },
     {
       "id": "2026-06-30T18-02-40",
       "date": "2026-06-30",
