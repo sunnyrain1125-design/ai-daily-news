@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-01T07-50-02",
+  "latest": "2026-07-01T10-10-57",
   "items": [
+    {
+      "id": "2026-07-01T10-10-57",
+      "date": "2026-07-01",
+      "label": "2026年7月1日 星期三 上午10:10:57",
+      "path": "./history/2026-07-01T10-10-57.json",
+      "headline": "AI巨頭最新動態：OpenAI發布GPT-5.6 Sol預覽，Anthropic推出Claude Sonnet 5並進駐Slack，Google Gemini延遲3.5 Pro發布同時強化Spark代理",
+      "generatedAt": "2026-07-01T02:10:57.010Z",
+      "generatedAtLocal": "2026年7月1日 星期三 上午10:10:57"
+    },
     {
       "id": "2026-07-01T07-50-02",
       "date": "2026-06-30",
