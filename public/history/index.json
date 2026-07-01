@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-02T00-03-18",
+  "latest": "2026-07-02T02-09-13",
   "items": [
+    {
+      "id": "2026-07-02T02-09-13",
+      "date": "2026-07-01",
+      "label": "2026年7月2日 星期四 凌晨2:09:13",
+      "path": "./history/2026-07-02T02-09-13.json",
+      "headline": "2026年7月2日AI新知晨報：OpenAI發布GPT-5.6 Sol預覽，Anthropic推出Claude Sonnet 5與科學工作台，Google Gemini強化企業整合與本地代理能力，Meta AI加速內容審核自動化。",
+      "generatedAt": "2026-07-01T18:09:13.632Z",
+      "generatedAtLocal": "2026年7月2日 星期四 凌晨2:09:13"
+    },
     {
       "id": "2026-07-02T00-03-18",
       "date": "2026-07-01",
