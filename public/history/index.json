@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-07T21-52-01",
+  "latest": "2026-07-08T02-25-55",
   "items": [
+    {
+      "id": "2026-07-08T02-25-55",
+      "date": "2026-07-07",
+      "label": "2026年7月8日 星期三 凌晨2:25:55",
+      "path": "./history/2026-07-08T02-25-55.json",
+      "headline": "AI巨頭動態頻繁：OpenAI發表GPT-5.6系列、Anthropic釋出Sonnet 5、Meta開放算力租賃與Google預告Gemini 3.5 Pro",
+      "generatedAt": "2026-07-07T18:25:55.542Z",
+      "generatedAtLocal": "2026年7月8日 星期三 凌晨2:25:55"
+    },
     {
       "id": "2026-07-07T21-52-01",
       "date": "2026-07-07",
