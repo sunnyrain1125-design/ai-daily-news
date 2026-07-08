@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-08T07-04-50",
+  "latest": "2026-07-08T08-11-03",
   "items": [
+    {
+      "id": "2026-07-08T08-11-03",
+      "date": "2026-07-08",
+      "label": "2026年7月8日 星期三 上午8:11:03",
+      "path": "./history/2026-07-08T08-11-03.json",
+      "headline": "AI 巨頭新進展：OpenAI IPO 傳聞、Anthropic 模型更新、Google Gemini Pro 預告與 Meta 算力變現",
+      "generatedAt": "2026-07-08T00:11:03.312Z",
+      "generatedAtLocal": "2026年7月8日 星期三 上午8:11:03"
+    },
     {
       "id": "2026-07-08T07-04-50",
       "date": "2026-07-07",
