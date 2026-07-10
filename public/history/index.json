@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-10T09-16-43",
+  "latest": "2026-07-10T13-13-21",
   "items": [
+    {
+      "id": "2026-07-10T13-13-21",
+      "date": "2026-07-10",
+      "label": "2026年7月10日 星期五 下午1:13:21",
+      "path": "./history/2026-07-10T13-13-21.json",
+      "headline": "OpenAI推出GPT-5.6系列與GPT-Live，Meta啟動自研AI晶片生產，Google Gemini整合Android",
+      "generatedAt": "2026-07-10T05:13:21.419Z",
+      "generatedAtLocal": "2026年7月10日 星期五 下午1:13:21"
+    },
     {
       "id": "2026-07-10T09-16-43",
       "date": "2026-07-10",
