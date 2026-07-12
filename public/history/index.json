@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-13T01-41-59",
+  "latest": "2026-07-13T02-39-23",
   "items": [
+    {
+      "id": "2026-07-13T02-39-23",
+      "date": "2026-07-12",
+      "label": "2026年7月13日 星期一 凌晨2:39:23",
+      "path": "./history/2026-07-13T02-39-23.json",
+      "headline": "AI巨頭近期重大更新：OpenAI發布GPT-5.6系列與ChatGPT Work，Anthropic推Claude「Reflect」數位健康功能，Google Gemini 3.5 Pro預計月中亮相，Meta AI新模型Muse Spark 1.1與自研晶片Iris蓄勢待發。",
+      "generatedAt": "2026-07-12T18:39:23.249Z",
+      "generatedAtLocal": "2026年7月13日 星期一 凌晨2:39:23"
+    },
     {
       "id": "2026-07-13T01-41-59",
       "date": "2026-07-12",
