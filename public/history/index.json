@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-14T07-37-29",
+  "latest": "2026-07-14T09-04-17",
   "items": [
+    {
+      "id": "2026-07-14T09-04-17",
+      "date": "2026-07-14",
+      "label": "2026年7月14日 星期二 上午9:04:17",
+      "path": "./history/2026-07-14T09-04-17.json",
+      "headline": "OpenAI 推出 GPT-5.6 模型與 ChatGPT Work 代理，Anthropic 擴展 Claude Cowork，Google Gemini 預告 3.5 Pro 並強化應用整合，Meta 加碼 AI 晶片投資與基礎設施佈局",
+      "generatedAt": "2026-07-14T01:04:17.242Z",
+      "generatedAtLocal": "2026年7月14日 星期二 上午9:04:17"
+    },
     {
       "id": "2026-07-14T07-37-29",
       "date": "2026-07-13",
