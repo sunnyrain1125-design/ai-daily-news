@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-15T08-54-02",
+  "latest": "2026-07-15T11-57-02",
   "items": [
+    {
+      "id": "2026-07-15T11-57-02",
+      "date": "2026-07-15",
+      "label": "2026年7月15日 星期三 上午11:57:02",
+      "path": "./history/2026-07-15T11-57-02.json",
+      "headline": "OpenAI推出GPT-5.6系列與ChatGPT Work，Anthropic延長Fable模型存取權限，Google Gemini發布多項應用與開發者工具，Meta則推進AI晶片製造及雲服務拓展",
+      "generatedAt": "2026-07-15T03:57:02.441Z",
+      "generatedAtLocal": "2026年7月15日 星期三 上午11:57:02"
+    },
     {
       "id": "2026-07-15T08-54-02",
       "date": "2026-07-15",
