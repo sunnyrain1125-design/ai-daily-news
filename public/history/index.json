@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-18T01-46-48",
+  "latest": "2026-07-18T02-44-43",
   "items": [
+    {
+      "id": "2026-07-18T02-44-43",
+      "date": "2026-07-17",
+      "label": "2026年7月18日 星期六 凌晨2:44:43",
+      "path": "./history/2026-07-18T02-44-43.json",
+      "headline": "AI巨頭近期動態：OpenAI推出企業級Agent，Anthropic IPO進程加速，Google Gemini模型發布推遲，Meta AI自研芯片量產",
+      "generatedAt": "2026-07-17T18:44:43.042Z",
+      "generatedAtLocal": "2026年7月18日 星期六 凌晨2:44:43"
+    },
     {
       "id": "2026-07-18T01-46-48",
       "date": "2026-07-17",
