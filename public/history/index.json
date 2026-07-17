@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-18T03-52-47",
+  "latest": "2026-07-18T04-49-44",
   "items": [
+    {
+      "id": "2026-07-18T04-49-44",
+      "date": "2026-07-17",
+      "label": "2026年7月18日 星期六 凌晨4:49:44",
+      "path": "./history/2026-07-18T04-49-44.json",
+      "headline": "AI 巨頭動態：Anthropic IPO 準備、Google Gemini 模型延遲、Meta AI 發布 Llama 3 大模型",
+      "generatedAt": "2026-07-17T20:49:44.187Z",
+      "generatedAtLocal": "2026年7月18日 星期六 凌晨4:49:44"
+    },
     {
       "id": "2026-07-18T03-52-47",
       "date": "2026-07-17",
