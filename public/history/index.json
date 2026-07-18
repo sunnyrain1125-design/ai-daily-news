@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-19T03-50-04",
+  "latest": "2026-07-19T04-35-42",
   "items": [
+    {
+      "id": "2026-07-19T04-35-42",
+      "date": "2026-07-18",
+      "label": "2026年7月19日 星期日 凌晨4:35:42",
+      "path": "./history/2026-07-19T04-35-42.json",
+      "headline": "四大 AI 巨頭近期動態：OpenAI 領先 GPT-5 預覽，Anthropic Claude 4 迭代，Google Gemini 強化企業與邊緣應用，Meta Llama 4 持續開源創新",
+      "generatedAt": "2026-07-18T20:35:42.297Z",
+      "generatedAtLocal": "2026年7月19日 星期日 凌晨4:35:42"
+    },
     {
       "id": "2026-07-19T03-50-04",
       "date": "2026-07-18",
