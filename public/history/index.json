@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-18T12-10-59",
+  "latest": "2026-07-18T14-20-12",
   "items": [
+    {
+      "id": "2026-07-18T14-20-12",
+      "date": "2026-07-18",
+      "label": "2026年7月18日 星期六 下午2:20:12",
+      "path": "./history/2026-07-18T14-20-12.json",
+      "headline": "AI 巨頭競逐：OpenAI、Anthropic、Google Gemini、Meta AI 最新進展速覽",
+      "generatedAt": "2026-07-18T06:20:12.492Z",
+      "generatedAtLocal": "2026年7月18日 星期六 下午2:20:12"
+    },
     {
       "id": "2026-07-18T12-10-59",
       "date": "2026-07-18",
