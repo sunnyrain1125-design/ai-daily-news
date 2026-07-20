@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-20T15-58-00",
+  "latest": "2026-07-20T19-08-57",
   "items": [
+    {
+      "id": "2026-07-20T19-08-57",
+      "date": "2026-07-20",
+      "label": "2026年7月20日 星期一 晚上7:08:57",
+      "path": "./history/2026-07-20T19-08-57.json",
+      "headline": "AI巨頭近期動態：OpenAI推出企業客製服務，Anthropic強化Claude模型與安全研究，Google Gemini深化企業整合與邊緣AI，Meta AI發布Llama 3.5並拓展AI基礎設施。",
+      "generatedAt": "2026-07-20T11:08:57.468Z",
+      "generatedAtLocal": "2026年7月20日 星期一 晚上7:08:57"
+    },
     {
       "id": "2026-07-20T15-58-00",
       "date": "2026-07-20",
