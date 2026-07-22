@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-22T17-04-29",
+  "latest": "2026-07-22T19-17-44",
   "items": [
+    {
+      "id": "2026-07-22T19-17-44",
+      "date": "2026-07-22",
+      "label": "2026年7月22日 星期三 晚上7:17:44",
+      "path": "./history/2026-07-22T19-17-44.json",
+      "headline": "OpenAI、Anthropic、Google與Meta近期動態：Gemini新模型與AI晶片登場，OpenAI智能音箱與智能體用戶數大增，Anthropic達成和解並推新功能，Meta洽談算力出租",
+      "generatedAt": "2026-07-22T11:17:44.021Z",
+      "generatedAtLocal": "2026年7月22日 星期三 晚上7:17:44"
+    },
     {
       "id": "2026-07-22T17-04-29",
       "date": "2026-07-22",
