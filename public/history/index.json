@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-23T05-31-02",
+  "latest": "2026-07-23T06-37-45",
   "items": [
+    {
+      "id": "2026-07-23T06-37-45",
+      "date": "2026-07-22",
+      "label": "2026年7月23日 星期四 清晨6:37:45",
+      "path": "./history/2026-07-23T06-37-45.json",
+      "headline": "AI巨頭最新動態：OpenAI推出Presence、Anthropic強化Claude模型，Google Gemini深化應用，Meta發布Llama 4",
+      "generatedAt": "2026-07-22T22:37:45.482Z",
+      "generatedAtLocal": "2026年7月23日 星期四 清晨6:37:45"
+    },
     {
       "id": "2026-07-23T05-31-02",
       "date": "2026-07-22",
