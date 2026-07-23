@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-23T09-14-00",
+  "latest": "2026-07-23T12-39-56",
   "items": [
+    {
+      "id": "2026-07-23T12-39-56",
+      "date": "2026-07-23",
+      "label": "2026年7月23日 星期四 中午12:39:56",
+      "path": "./history/2026-07-23T12-39-56.json",
+      "headline": "AI巨頭最新動態：OpenAI算力投資激增、模型安全警鐘響起；Anthropic獲AMD百億級合作，Claude Opus 5發布；Google Gemini用戶數逼近10億；Meta AI推出最強Llama 3.1模型",
+      "generatedAt": "2026-07-23T04:39:56.909Z",
+      "generatedAtLocal": "2026年7月23日 星期四 中午12:39:56"
+    },
     {
       "id": "2026-07-23T09-14-00",
       "date": "2026-07-23",
