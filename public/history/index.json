@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-24T16-47-50",
+  "latest": "2026-07-24T18-51-32",
   "items": [
+    {
+      "id": "2026-07-24T18-51-32",
+      "date": "2026-07-24",
+      "label": "2026年7月24日 星期五 下午6:51:32",
+      "path": "./history/2026-07-24T18-51-32.json",
+      "headline": "AI巨頭最新動態：OpenAI推ChatGPT健康功能與企業代理，Google Gemini閃電模型GA並揭露3.5 Pro進展，Anthropic獲AMD巨額投資強化晶片供應，Meta AI更新Llama模型並預告智慧眼鏡產品線",
+      "generatedAt": "2026-07-24T10:51:32.132Z",
+      "generatedAtLocal": "2026年7月24日 星期五 下午6:51:32"
+    },
     {
       "id": "2026-07-24T16-47-50",
       "date": "2026-07-24",
