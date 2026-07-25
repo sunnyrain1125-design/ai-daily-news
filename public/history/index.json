@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-26T01-43-37",
+  "latest": "2026-07-26T02-42-53",
   "items": [
+    {
+      "id": "2026-07-26T02-42-53",
+      "date": "2026-07-25",
+      "label": "2026年7月26日 星期日 凌晨2:42:53",
+      "path": "./history/2026-07-26T02-42-53.json",
+      "headline": "AI巨頭最新動態：OpenAI強化企業與健康應用，Anthropic推Claude Opus 5並獲AMD巨額投資，Google Gemini新模型與Android深度整合",
+      "generatedAt": "2026-07-25T18:42:53.012Z",
+      "generatedAtLocal": "2026年7月26日 星期日 凌晨2:42:53"
+    },
     {
       "id": "2026-07-26T01-43-37",
       "date": "2026-07-25",
