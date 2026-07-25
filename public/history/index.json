@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-25T22-43-21",
+  "latest": "2026-07-25T23-49-25",
   "items": [
+    {
+      "id": "2026-07-25T23-49-25",
+      "date": "2026-07-25",
+      "label": "2026年7月25日 星期六 晚上11:49:25",
+      "path": "./history/2026-07-25T23-49-25.json",
+      "headline": "AI巨頭本週競相發布更新：OpenAI強化ChatGPT健康與語音，Anthropic推出Opus 5，Google Gemini代理服務降價，Meta AI擴展應用",
+      "generatedAt": "2026-07-25T15:49:25.670Z",
+      "generatedAtLocal": "2026年7月25日 星期六 晚上11:49:25"
+    },
     {
       "id": "2026-07-25T22-43-21",
       "date": "2026-07-25",
