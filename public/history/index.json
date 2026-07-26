@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-26T12-03-13",
+  "latest": "2026-07-26T14-45-27",
   "items": [
+    {
+      "id": "2026-07-26T14-45-27",
+      "date": "2026-07-26",
+      "label": "2026年7月26日 星期日 下午2:45:27",
+      "path": "./history/2026-07-26T14-45-27.json",
+      "headline": "AI巨頭最新動態：OpenAI強化ChatGPT健康與企業應用，Anthropic發布Claude Opus 5，Google Gemini月活躍用戶破9.5億並推企業級平台",
+      "generatedAt": "2026-07-26T06:45:27.807Z",
+      "generatedAtLocal": "2026年7月26日 星期日 下午2:45:27"
+    },
     {
       "id": "2026-07-26T12-03-13",
       "date": "2026-07-26",
