@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-26T08-15-11",
+  "latest": "2026-07-26T12-03-13",
   "items": [
+    {
+      "id": "2026-07-26T12-03-13",
+      "date": "2026-07-26",
+      "label": "2026年7月26日 星期日 中午12:03:13",
+      "path": "./history/2026-07-26T12-03-13.json",
+      "headline": "AI巨頭週報：Anthropic推出Opus 5大幅提升性價比，OpenAI發布企業級AI代理平台，Google Gemini強化AI代理與智慧家居整合，Meta AI應用藉Muse Spark 1.1升級多任務處理",
+      "generatedAt": "2026-07-26T04:03:13.790Z",
+      "generatedAtLocal": "2026年7月26日 星期日 中午12:03:13"
+    },
     {
       "id": "2026-07-26T08-15-11",
       "date": "2026-07-26",
