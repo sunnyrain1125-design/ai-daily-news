@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-29T18-10-21",
+  "latest": "2026-07-29T20-21-39",
   "items": [
+    {
+      "id": "2026-07-29T20-21-39",
+      "date": "2026-07-29",
+      "label": "2026年7月29日 星期三 晚上8:21:39",
+      "path": "./history/2026-07-29T20-21-39.json",
+      "headline": "AI巨頭最新動態：OpenAI面臨安全挑戰，Anthropic重申開源立場，Google Gemini推多項應用，Meta Muse Spark開放預覽",
+      "generatedAt": "2026-07-29T12:21:39.747Z",
+      "generatedAtLocal": "2026年7月29日 星期三 晚上8:21:39"
+    },
     {
       "id": "2026-07-29T18-10-21",
       "date": "2026-07-29",
