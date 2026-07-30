@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-30T08-16-53",
+  "latest": "2026-07-30T11-37-13",
   "items": [
+    {
+      "id": "2026-07-30T11-37-13",
+      "date": "2026-07-30",
+      "label": "2026年7月30日 星期四 上午11:37:13",
+      "path": "./history/2026-07-30T11-37-13.json",
+      "headline": "AI巨頭最新動態：OpenAI推出企業級語音平台，Google Gemini強化Mac與應用集成，Anthropic發布Claude Opus 5，Meta AI晶片計畫加速",
+      "generatedAt": "2026-07-30T03:37:13.862Z",
+      "generatedAtLocal": "2026年7月30日 星期四 上午11:37:13"
+    },
     {
       "id": "2026-07-30T08-16-53",
       "date": "2026-07-30",
