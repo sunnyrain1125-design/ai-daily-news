@@ -1,6 +1,15 @@
 {
-  "latest": "2026-07-30T20-59-13",
+  "latest": "2026-07-31T00-56-50",
   "items": [
+    {
+      "id": "2026-07-31T00-56-50",
+      "date": "2026-07-30",
+      "label": "2026年7月31日 星期五 凌晨12:56:50",
+      "path": "./history/2026-07-31T00-56-50.json",
+      "headline": "AI巨頭最新動態：Anthropic推出Opus 5，OpenAI強化GPT-5.6與AI應用，Google Gemini macOS版新增語音功能，Meta推進AI晶片自研",
+      "generatedAt": "2026-07-30T16:56:50.056Z",
+      "generatedAtLocal": "2026年7月31日 星期五 凌晨12:56:50"
+    },
     {
       "id": "2026-07-30T20-59-13",
       "date": "2026-07-30",
