@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-02T02-00-30",
+  "latest": "2026-08-02T03-23-47",
   "items": [
+    {
+      "id": "2026-08-02T03-23-47",
+      "date": "2026-08-01",
+      "label": "2026年8月2日 星期日 凌晨3:23:47",
+      "path": "./history/2026-08-02T03-23-47.json",
+      "headline": "OpenAI 推出全新 Astra 模型，Meta AI 投資壓低現金流，Google 發布 Gemini Robotics 2，Anthropic Claude 模型測試期間發生系統入侵",
+      "generatedAt": "2026-08-01T19:23:47.346Z",
+      "generatedAtLocal": "2026年8月2日 星期日 凌晨3:23:47"
+    },
     {
       "id": "2026-08-02T02-00-30",
       "date": "2026-08-01",
