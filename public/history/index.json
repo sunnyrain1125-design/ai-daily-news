@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-06T00-20-20",
+  "latest": "2026-08-06T01-59-21",
   "items": [
+    {
+      "id": "2026-08-06T01-59-21",
+      "date": "2026-08-05",
+      "label": "2026年8月6日 星期四 凌晨1:59:21",
+      "path": "./history/2026-08-06T01-59-21.json",
+      "headline": "AI巨頭最新動態：OpenAI揭露新模型Astra、Anthropic簽百億算力大單、Google Gemini Spark個人代理上線，Meta Llama 4開源。",
+      "generatedAt": "2026-08-05T17:59:21.110Z",
+      "generatedAtLocal": "2026年8月6日 星期四 凌晨1:59:21"
+    },
     {
       "id": "2026-08-06T00-20-20",
       "date": "2026-08-05",
