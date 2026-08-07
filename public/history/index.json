@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-07T13-22-21",
+  "latest": "2026-08-07T14-43-48",
   "items": [
+    {
+      "id": "2026-08-07T14-43-48",
+      "date": "2026-08-07",
+      "label": "2026年8月7日 星期五 下午2:43:48",
+      "path": "./history/2026-08-07T14-43-48.json",
+      "headline": "AI巨頭激戰：OpenAI ChatGPT免費功能擴展，Anthropic強化生物安全，Google Gemini Notebook全面升級，Meta Llama模型再進化",
+      "generatedAt": "2026-08-07T06:43:48.146Z",
+      "generatedAtLocal": "2026年8月7日 星期五 下午2:43:48"
+    },
     {
       "id": "2026-08-07T13-22-21",
       "date": "2026-08-07",
