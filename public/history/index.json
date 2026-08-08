@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-08T13-52-22",
+  "latest": "2026-08-08T14-39-58",
   "items": [
+    {
+      "id": "2026-08-08T14-39-58",
+      "date": "2026-08-08",
+      "label": "2026年8月8日 星期六 下午2:39:58",
+      "path": "./history/2026-08-08T14-39-58.json",
+      "headline": "AI巨頭最新動態：OpenAI模型與廣告升級、Anthropic自研晶片、Google Gemini整合Android、Meta AI安全挑戰",
+      "generatedAt": "2026-08-08T06:39:58.314Z",
+      "generatedAtLocal": "2026年8月8日 星期六 下午2:39:58"
+    },
     {
       "id": "2026-08-08T13-52-22",
       "date": "2026-08-08",
