@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-08T14-39-58",
+  "latest": "2026-08-08T15-36-19",
   "items": [
+    {
+      "id": "2026-08-08T15-36-19",
+      "date": "2026-08-08",
+      "label": "2026年8月8日 星期六 下午3:36:19",
+      "path": "./history/2026-08-08T15-36-19.json",
+      "headline": "AI巨頭最新動態：OpenAI更新GPT模型與ChatGPT功能，Anthropic進軍AI晶片，Google發布Gemini七月進展",
+      "generatedAt": "2026-08-08T07:36:19.872Z",
+      "generatedAtLocal": "2026年8月8日 星期六 下午3:36:19"
+    },
     {
       "id": "2026-08-08T14-39-58",
       "date": "2026-08-08",
