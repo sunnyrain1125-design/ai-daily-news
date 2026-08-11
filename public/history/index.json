@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-11T07-51-43",
+  "latest": "2026-08-11T08-58-13",
   "items": [
+    {
+      "id": "2026-08-11T08-58-13",
+      "date": "2026-08-11",
+      "label": "2026年8月11日 星期二 上午8:58:13",
+      "path": "./history/2026-08-11T08-58-13.json",
+      "headline": "AI大廠本週聚焦：OpenAI企業方案、Anthropic Fable 5、Gemini整合、Meta Llama 4",
+      "generatedAt": "2026-08-11T00:58:13.475Z",
+      "generatedAtLocal": "2026年8月11日 星期二 上午8:58:13"
+    },
     {
       "id": "2026-08-11T07-51-43",
       "date": "2026-08-10",
