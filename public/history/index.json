@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-11T19-03-43",
+  "latest": "2026-08-11T19-53-49",
   "items": [
+    {
+      "id": "2026-08-11T19-53-49",
+      "date": "2026-08-11",
+      "label": "2026年8月11日 星期二 晚上7:53:49",
+      "path": "./history/2026-08-11T19-53-49.json",
+      "headline": "AI巨头竞速：OpenAI、Anthropic、Google Gemini与Meta AI最新动态一览",
+      "generatedAt": "2026-08-11T11:53:49.939Z",
+      "generatedAtLocal": "2026年8月11日 星期二 晚上7:53:49"
+    },
     {
       "id": "2026-08-11T19-03-43",
       "date": "2026-08-11",
