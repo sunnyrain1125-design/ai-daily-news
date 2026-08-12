@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-12T13-50-32",
+  "latest": "2026-08-12T15-05-58",
   "items": [
+    {
+      "id": "2026-08-12T15-05-58",
+      "date": "2026-08-12",
+      "label": "2026年8月12日 星期三 下午3:05:58",
+      "path": "./history/2026-08-12T15-05-58.json",
+      "headline": "AI巨頭近期動態：OpenAI測試廣告與Daybreak模型上線AWS，Anthropic發布Sonnet 5模型更新，Google Gemini延遲3.5 Pro發布但用戶數突破9億，Meta AI推出Muse Spark並擴大與Nvidia合作。",
+      "generatedAt": "2026-08-12T07:05:58.312Z",
+      "generatedAtLocal": "2026年8月12日 星期三 下午3:05:58"
+    },
     {
       "id": "2026-08-12T13-50-32",
       "date": "2026-08-12",
