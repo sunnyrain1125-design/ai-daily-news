@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-13T07-35-18",
+  "latest": "2026-08-13T08-42-27",
   "items": [
+    {
+      "id": "2026-08-13T08-42-27",
+      "date": "2026-08-13",
+      "label": "2026年8月13日 星期四 上午8:42:27",
+      "path": "./history/2026-08-13T08-42-27.json",
+      "headline": "AI巨頭最新動態：OpenAI發布GPT-5.6更新與ChatGPT廣告測試，Anthropic推進IPO與算力合作，Google Gemini用戶破10億並深度整合Pixel設備，Meta推出本地AI模型並闡述開放AI願景",
+      "generatedAt": "2026-08-13T00:42:27.030Z",
+      "generatedAtLocal": "2026年8月13日 星期四 上午8:42:27"
+    },
     {
       "id": "2026-08-13T07-35-18",
       "date": "2026-08-12",
