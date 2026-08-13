@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-13T11-16-59",
+  "latest": "2026-08-13T13-13-52",
   "items": [
+    {
+      "id": "2026-08-13T13-13-52",
+      "date": "2026-08-13",
+      "label": "2026年8月13日 星期四 下午1:13:52",
+      "path": "./history/2026-08-13T13-13-52.json",
+      "headline": "AI巨頭最新動態：OpenAI更新GPT-5.6模型與高層變動，Anthropic部署浮水印，Google Gemini加速取代助理，Meta AI開放Muse Glimmer",
+      "generatedAt": "2026-08-13T05:13:52.158Z",
+      "generatedAtLocal": "2026年8月13日 星期四 下午1:13:52"
+    },
     {
       "id": "2026-08-13T11-16-59",
       "date": "2026-08-13",
