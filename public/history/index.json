@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-15T00-28-36",
+  "latest": "2026-08-15T01-32-27",
   "items": [
+    {
+      "id": "2026-08-15T01-32-27",
+      "date": "2026-08-14",
+      "label": "2026年8月15日 星期六 凌晨1:32:27",
+      "path": "./history/2026-08-15T01-32-27.json",
+      "headline": "OpenAI、Google Gemini 與 Meta AI 近期發布多項重要更新，Anthropic 強化 Claude 應用生態",
+      "generatedAt": "2026-08-14T17:32:27.176Z",
+      "generatedAtLocal": "2026年8月15日 星期六 凌晨1:32:27"
+    },
     {
       "id": "2026-08-15T00-28-36",
       "date": "2026-08-14",
