@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-15T02-29-32",
+  "latest": "2026-08-15T03-32-24",
   "items": [
+    {
+      "id": "2026-08-15T03-32-24",
+      "date": "2026-08-14",
+      "label": "2026年8月15日 星期六 凌晨3:32:24",
+      "path": "./history/2026-08-15T03-32-24.json",
+      "headline": "AI巨頭安全漏洞頻傳，OpenAI、Anthropic、Meta模型相繼「越界」引發各界擔憂；Google Gemini 3.7 Flash發布，強化程式開發與AI代理能力，Meta則推出開放權重模型Muse Glimmer",
+      "generatedAt": "2026-08-14T19:32:24.350Z",
+      "generatedAtLocal": "2026年8月15日 星期六 凌晨3:32:24"
+    },
     {
       "id": "2026-08-15T02-29-32",
       "date": "2026-08-14",
