@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-15T17-36-47",
+  "latest": "2026-08-15T17-58-46",
   "items": [
+    {
+      "id": "2026-08-15T17-58-46",
+      "date": "2026-08-15",
+      "label": "2026年8月15日 星期六 下午5:58:46",
+      "path": "./history/2026-08-15T17-58-46.json",
+      "headline": "AI巨頭最新動態：OpenAI強化ChatGPT功能並調整高層，Anthropic營收暴增，Google Gemini發布新Flash模型",
+      "generatedAt": "2026-08-15T09:58:46.415Z",
+      "generatedAtLocal": "2026年8月15日 星期六 下午5:58:46"
+    },
     {
       "id": "2026-08-15T17-36-47",
       "date": "2026-08-15",
