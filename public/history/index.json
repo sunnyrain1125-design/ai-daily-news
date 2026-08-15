@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-16T00-18-09",
+  "latest": "2026-08-16T00-45-51",
   "items": [
+    {
+      "id": "2026-08-16T00-45-51",
+      "date": "2026-08-15",
+      "label": "2026年8月16日 星期日 凌晨12:45:51",
+      "path": "./history/2026-08-16T00-45-51.json",
+      "headline": "OpenAI新模型Astra因資安風險暫緩發布，Google Gemini Flash持續迭代降價，Meta Muse Glimmer走向開源，Anthropic強化資料中心與內容浮水印",
+      "generatedAt": "2026-08-15T16:45:51.669Z",
+      "generatedAtLocal": "2026年8月16日 星期日 凌晨12:45:51"
+    },
     {
       "id": "2026-08-16T00-18-09",
       "date": "2026-08-15",
