@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-16T17-59-39",
+  "latest": "2026-08-16T18-32-50",
   "items": [
+    {
+      "id": "2026-08-16T18-32-50",
+      "date": "2026-08-16",
+      "label": "2026年8月16日 星期日 下午6:32:50",
+      "path": "./history/2026-08-16T18-32-50.json",
+      "headline": "OpenAI高管層變動與Astra模型安全疑慮浮現，Anthropic營收暴增加速IPO進程，Google Gemini用戶破10億並釋出3.7 Flash模型，Meta則推出開源AI模型Muse Glimmer",
+      "generatedAt": "2026-08-16T10:32:50.439Z",
+      "generatedAtLocal": "2026年8月16日 星期日 下午6:32:50"
+    },
     {
       "id": "2026-08-16T17-59-39",
       "date": "2026-08-16",
