@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-18T05-29-53",
+  "latest": "2026-08-18T06-21-44",
   "items": [
+    {
+      "id": "2026-08-18T06-21-44",
+      "date": "2026-08-17",
+      "label": "2026年8月18日 星期二 清晨6:21:44",
+      "path": "./history/2026-08-18T06-21-44.json",
+      "headline": "AI 巨頭週報：OpenAI、Anthropic、Google Gemini、Meta AI 最新進展總覽",
+      "generatedAt": "2026-08-17T22:21:44.645Z",
+      "generatedAtLocal": "2026年8月18日 星期二 清晨6:21:44"
+    },
     {
       "id": "2026-08-18T05-29-53",
       "date": "2026-08-17",
