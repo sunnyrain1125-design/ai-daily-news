@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-19T03-01-37",
+  "latest": "2026-08-19T03-36-07",
   "items": [
+    {
+      "id": "2026-08-19T03-36-07",
+      "date": "2026-08-18",
+      "label": "2026年8月19日 星期三 凌晨3:36:07",
+      "path": "./history/2026-08-19T03-36-07.json",
+      "headline": "AI 巨頭最新動態：OpenAI 推出 GPT-5.6 極速模式與 Linux 桌面應用，Anthropic 發布風險報告，Google DeepMind 揭示多項 Gemini 技術突破",
+      "generatedAt": "2026-08-18T19:36:07.138Z",
+      "generatedAtLocal": "2026年8月19日 星期三 凌晨3:36:07"
+    },
     {
       "id": "2026-08-19T03-01-37",
       "date": "2026-08-18",
