@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-18T16-06-18",
+  "latest": "2026-08-18T16-52-20",
   "items": [
+    {
+      "id": "2026-08-18T16-52-20",
+      "date": "2026-08-18",
+      "label": "2026年8月18日 星期二 下午4:52:20",
+      "path": "./history/2026-08-18T16-52-20.json",
+      "headline": "AI巨頭週報：Anthropic引入內容透かし，OpenAI加速GPT-5.6 Sol並擴展安全計劃，Google Gemini推出3.7 Flash模型並用戶突破新高，Meta開源Llama 4與Muse Spark 1.2。",
+      "generatedAt": "2026-08-18T08:52:20.154Z",
+      "generatedAtLocal": "2026年8月18日 星期二 下午4:52:20"
+    },
     {
       "id": "2026-08-18T16-06-18",
       "date": "2026-08-18",
