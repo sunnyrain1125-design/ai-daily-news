@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-18T21-52-36",
+  "latest": "2026-08-18T23-03-20",
   "items": [
+    {
+      "id": "2026-08-18T23-03-20",
+      "date": "2026-08-18",
+      "label": "2026年8月18日 星期二 晚上11:03:20",
+      "path": "./history/2026-08-18T23-03-20.json",
+      "headline": "AI巨頭動態速覽：OpenAI推青少年版ChatGPT及極速模式，Anthropic年收破650億美元，Google Gemini 3.7 Flash降價迎戰企業級市場，Meta AI發布本地代理模型Muse Glimmer",
+      "generatedAt": "2026-08-18T15:03:20.221Z",
+      "generatedAtLocal": "2026年8月18日 星期二 晚上11:03:20"
+    },
     {
       "id": "2026-08-18T21-52-36",
       "date": "2026-08-18",
