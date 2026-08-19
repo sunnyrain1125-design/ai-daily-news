@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-19T21-54-13",
+  "latest": "2026-08-19T22-32-38",
   "items": [
+    {
+      "id": "2026-08-19T22-32-38",
+      "date": "2026-08-19",
+      "label": "2026年8月19日 星期三 晚上10:32:38",
+      "path": "./history/2026-08-19T22-32-38.json",
+      "headline": "AI巨頭最新進展：Anthropic衝刺IPO與營收強勁，Google Gemini深度整合Chrome，Anthropic更新開發工具，Meta AI面臨兒童安全訴訟",
+      "generatedAt": "2026-08-19T14:32:38.978Z",
+      "generatedAtLocal": "2026年8月19日 星期三 晚上10:32:38"
+    },
     {
       "id": "2026-08-19T21-54-13",
       "date": "2026-08-19",
