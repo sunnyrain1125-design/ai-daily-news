@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-20T02-03-41",
+  "latest": "2026-08-20T02-51-00",
   "items": [
+    {
+      "id": "2026-08-20T02-51-00",
+      "date": "2026-08-19",
+      "label": "2026年8月20日 星期四 凌晨2:51:00",
+      "path": "./history/2026-08-20T02-51-00.json",
+      "headline": "AI 巨頭新進展：OpenAI 暫緩 Astra 模型、Anthropic 營收飆升、Google Gemini 擴展 Chrome 功能、Meta AI 推輕量級模型",
+      "generatedAt": "2026-08-19T18:51:00.884Z",
+      "generatedAtLocal": "2026年8月20日 星期四 凌晨2:51:00"
+    },
     {
       "id": "2026-08-20T02-03-41",
       "date": "2026-08-19",
