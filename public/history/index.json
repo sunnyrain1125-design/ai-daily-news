@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-21T01-17-02",
+  "latest": "2026-08-21T01-51-26",
   "items": [
+    {
+      "id": "2026-08-21T01-51-26",
+      "date": "2026-08-20",
+      "label": "2026年8月21日 星期五 凌晨1:51:26",
+      "path": "./history/2026-08-21T01-51-26.json",
+      "headline": "AI 巨頭競速：OpenAI 承諾零資料保留，Anthropic 營收飆升擬 IPO，Google 發布 Gemini 3.7 Flash 並強化機器人 AI，Meta 堅定開源策略釋出 Muse Glimmer",
+      "generatedAt": "2026-08-20T17:51:26.890Z",
+      "generatedAtLocal": "2026年8月21日 星期五 凌晨1:51:26"
+    },
     {
       "id": "2026-08-21T01-17-02",
       "date": "2026-08-20",
