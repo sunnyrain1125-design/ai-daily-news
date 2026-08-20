@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-20T19-19-49",
+  "latest": "2026-08-20T19-51-08",
   "items": [
+    {
+      "id": "2026-08-20T19-51-08",
+      "date": "2026-08-20",
+      "label": "2026年8月20日 星期四 晚上7:51:08",
+      "path": "./history/2026-08-20T19-51-08.json",
+      "headline": "AI 巨頭最新動態：OpenAI 減緩模型研發因安全考量，Anthropic 營收超車 OpenAI 並籌備 IPO，Google Gemini 新功能整合 Pixel 11，Meta AI 聚焦開源與端側模型",
+      "generatedAt": "2026-08-20T11:51:08.295Z",
+      "generatedAtLocal": "2026年8月20日 星期四 晚上7:51:08"
+    },
     {
       "id": "2026-08-20T19-19-49",
       "date": "2026-08-20",
