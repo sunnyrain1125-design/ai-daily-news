@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-23T05-26-50",
+  "latest": "2026-08-23T06-05-16",
   "items": [
+    {
+      "id": "2026-08-23T06-05-16",
+      "date": "2026-08-22",
+      "label": "2026年8月23日 星期日 清晨6:05:16",
+      "path": "./history/2026-08-23T06-05-16.json",
+      "headline": "AI巨頭動態：OpenAI強化模型安全與Mac應用，Anthropic布局IPO與自研晶片，Google Gemini深化Chrome整合及用戶基礎，Meta AI瞄準中小企業市場",
+      "generatedAt": "2026-08-22T22:05:16.452Z",
+      "generatedAtLocal": "2026年8月23日 星期日 清晨6:05:16"
+    },
     {
       "id": "2026-08-23T05-26-50",
       "date": "2026-08-22",
