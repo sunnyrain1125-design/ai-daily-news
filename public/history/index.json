@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-24T23-52-49",
+  "latest": "2026-08-25T00-29-14",
   "items": [
+    {
+      "id": "2026-08-25T00-29-14",
+      "date": "2026-08-24",
+      "label": "2026年8月25日 星期二 凌晨12:29:14",
+      "path": "./history/2026-08-25T00-29-14.json",
+      "headline": "AI巨頭動態速覽：OpenAI推青少年版ChatGPT、Anthropic衝刺IPO、Google Gemini強化企業整合、Meta闡述AI願景",
+      "generatedAt": "2026-08-24T16:29:14.910Z",
+      "generatedAtLocal": "2026年8月25日 星期二 凌晨12:29:14"
+    },
     {
       "id": "2026-08-24T23-52-49",
       "date": "2026-08-24",
