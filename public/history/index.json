@@ -1,6 +1,15 @@
 {
-  "latest": "2026-08-25T04-46-19",
+  "latest": "2026-08-25T05-14-59",
   "items": [
+    {
+      "id": "2026-08-25T05-14-59",
+      "date": "2026-08-24",
+      "label": "2026年8月25日 星期二 清晨5:14:59",
+      "path": "./history/2026-08-25T05-14-59.json",
+      "headline": "AI巨頭最新動態：OpenAI推企業GPT-5、Anthropic更新Claude 3.5、Google Gemini API開放、Meta Llama 4開源",
+      "generatedAt": "2026-08-24T21:14:59.148Z",
+      "generatedAtLocal": "2026年8月25日 星期二 清晨5:14:59"
+    },
     {
       "id": "2026-08-25T04-46-19",
       "date": "2026-08-24",
