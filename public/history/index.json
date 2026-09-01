@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-02T02-51-41",
+  "latest": "2026-09-02T05-29-22",
   "items": [
+    {
+      "id": "2026-09-02T05-29-22",
+      "date": "2026-09-01",
+      "label": "2026年9月2日 星期三 清晨5:29:22",
+      "path": "./history/2026-09-02T05-29-22.json",
+      "headline": "AI巨頭新動態：OpenAI強化ChatGPT醫療整合，Anthropic訓練安全遇挫擬上市，Google Gemini深度融入Android，Meta AI人員替代計畫受挫Llama 4問世",
+      "generatedAt": "2026-09-01T21:29:22.473Z",
+      "generatedAtLocal": "2026年9月2日 星期三 清晨5:29:22"
+    },
     {
       "id": "2026-09-02T02-51-41",
       "date": "2026-09-01",
