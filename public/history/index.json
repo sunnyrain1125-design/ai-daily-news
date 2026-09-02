@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-02T09-21-40",
+  "latest": "2026-09-02T14-05-59",
   "items": [
+    {
+      "id": "2026-09-02T14-05-59",
+      "date": "2026-09-02",
+      "label": "2026年9月2日 星期三 下午2:05:59",
+      "path": "./history/2026-09-02T14-05-59.json",
+      "headline": "OpenAI 揭示網路安全模型 Astra 引發關注，Anthropic 強化 Claude 模型效能與成本效益，Google Gemini 深度整合 Android 系統",
+      "generatedAt": "2026-09-02T06:05:59.117Z",
+      "generatedAtLocal": "2026年9月2日 星期三 下午2:05:59"
+    },
     {
       "id": "2026-09-02T09-21-40",
       "date": "2026-09-02",
