@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-05T06-15-22",
+  "latest": "2026-09-05T08-11-16",
   "items": [
+    {
+      "id": "2026-09-05T08-11-16",
+      "date": "2026-09-05",
+      "label": "2026年9月5日 星期六 上午8:11:16",
+      "path": "./history/2026-09-05T08-11-16.json",
+      "headline": "AI 巨頭競逐：OpenAI 發表 Astra 模型宣告 AGI 時代，Anthropic 揭露 AI 駭客事件 Google Gemini 轉型自主代理",
+      "generatedAt": "2026-09-05T00:11:16.377Z",
+      "generatedAtLocal": "2026年9月5日 星期六 上午8:11:16"
+    },
     {
       "id": "2026-09-05T06-15-22",
       "date": "2026-09-04",
