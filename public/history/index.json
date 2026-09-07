@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-08T03-17-05",
+  "latest": "2026-09-08T06-08-42",
   "items": [
+    {
+      "id": "2026-09-08T06-08-42",
+      "date": "2026-09-07",
+      "label": "2026年9月8日 星期二 清晨6:08:42",
+      "path": "./history/2026-09-08T06-08-42.json",
+      "headline": "AI 巨頭最新動態：OpenAI GPT-6 Astra 震撼登場，Anthropic IPO 時程底定，Google Gemini 功能再升級，Meta Connect 大會蓄勢待發",
+      "generatedAt": "2026-09-07T22:08:42.619Z",
+      "generatedAtLocal": "2026年9月8日 星期二 清晨6:08:42"
+    },
     {
       "id": "2026-09-08T03-17-05",
       "date": "2026-09-07",
