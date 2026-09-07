@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-07T06-22-54",
+  "latest": "2026-09-07T08-09-33",
   "items": [
+    {
+      "id": "2026-09-07T08-09-33",
+      "date": "2026-09-07",
+      "label": "2026年9月7日 星期一 上午8:09:33",
+      "path": "./history/2026-09-07T08-09-33.json",
+      "headline": "AI巨頭競逐前沿：OpenAI發布GPT-6 Astra，Anthropic、Google Gemini與Meta AI齊推新模型與企業安全",
+      "generatedAt": "2026-09-07T00:09:33.381Z",
+      "generatedAtLocal": "2026年9月7日 星期一 上午8:09:33"
+    },
     {
       "id": "2026-09-07T06-22-54",
       "date": "2026-09-06",
