@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-11T04-04-30",
+  "latest": "2026-09-11T06-32-07",
   "items": [
+    {
+      "id": "2026-09-11T06-32-07",
+      "date": "2026-09-10",
+      "label": "2026年9月11日 星期五 清晨6:32:07",
+      "path": "./history/2026-09-11T06-32-07.json",
+      "headline": "AI巨頭最新動態：OpenAI發布GPT-6 Astra，Anthropic揭駭客事件，Google Gemini擴展Windows平台",
+      "generatedAt": "2026-09-10T22:32:07.332Z",
+      "generatedAtLocal": "2026年9月11日 星期五 清晨6:32:07"
+    },
     {
       "id": "2026-09-11T04-04-30",
       "date": "2026-09-10",
