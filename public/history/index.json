@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-10T13-22-22",
+  "latest": "2026-09-10T17-54-34",
   "items": [
+    {
+      "id": "2026-09-10T17-54-34",
+      "date": "2026-09-10",
+      "label": "2026年9月10日 星期四 下午5:54:34",
+      "path": "./history/2026-09-10T17-54-34.json",
+      "headline": "AI巨頭最新動態：OpenAI發表GPT-6 Astra，Google推出Gemini Flash 3.8，Meta推出Muse AI助手，Anthropic披露安全事件",
+      "generatedAt": "2026-09-10T09:54:34.909Z",
+      "generatedAtLocal": "2026年9月10日 星期四 下午5:54:34"
+    },
     {
       "id": "2026-09-10T13-22-22",
       "date": "2026-09-10",
