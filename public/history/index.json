@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-14T03-45-50",
+  "latest": "2026-09-14T05-47-54",
   "items": [
+    {
+      "id": "2026-09-14T05-47-54",
+      "date": "2026-09-13",
+      "label": "2026年9月14日 星期一 清晨5:47:54",
+      "path": "./history/2026-09-14T05-47-54.json",
+      "headline": "AI巨頭競相創新：OpenAI發布GPT-6 Astra，Anthropic瞄準2兆美元IPO，Google Gemini強化企業AI代理，Meta AI加速自研晶片",
+      "generatedAt": "2026-09-13T21:47:54.228Z",
+      "generatedAtLocal": "2026年9月14日 星期一 清晨5:47:54"
+    },
     {
       "id": "2026-09-14T03-45-50",
       "date": "2026-09-13",
