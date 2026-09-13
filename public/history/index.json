@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-13T18-13-53",
+  "latest": "2026-09-13T22-25-01",
   "items": [
+    {
+      "id": "2026-09-13T22-25-01",
+      "date": "2026-09-13",
+      "label": "2026年9月13日 星期日 晚上10:25:01",
+      "path": "./history/2026-09-13T22-25-01.json",
+      "headline": "AI巨頭本週動態：OpenAI排除2026年IPO，Anthropic高管呼籲放緩AI開發，Google Gemini強化Workspace功能，Meta Muse AI助理正式上線",
+      "generatedAt": "2026-09-13T14:25:01.894Z",
+      "generatedAtLocal": "2026年9月13日 星期日 晚上10:25:01"
+    },
     {
       "id": "2026-09-13T18-13-53",
       "date": "2026-09-13",
