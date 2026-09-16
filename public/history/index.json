@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-16T06-18-26",
+  "latest": "2026-09-16T08-31-17",
   "items": [
+    {
+      "id": "2026-09-16T08-31-17",
+      "date": "2026-09-16",
+      "label": "2026年9月16日 星期三 上午8:31:17",
+      "path": "./history/2026-09-16T08-31-17.json",
+      "headline": "AI巨頭最新動態：OpenAI發佈GPT-6 Astra，Anthropic揭露AI濫用報告，Google Gemini強化企業級應用，Meta推進自研晶片及AI訂閱服務",
+      "generatedAt": "2026-09-16T00:31:17.454Z",
+      "generatedAtLocal": "2026年9月16日 星期三 上午8:31:17"
+    },
     {
       "id": "2026-09-16T06-18-26",
       "date": "2026-09-15",
