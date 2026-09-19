@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-20T03-23-27",
+  "latest": "2026-09-20T05-39-03",
   "items": [
+    {
+      "id": "2026-09-20T05-39-03",
+      "date": "2026-09-19",
+      "label": "2026年9月20日 星期日 清晨5:39:03",
+      "path": "./history/2026-09-20T05-39-03.json",
+      "headline": "AI巨頭最新動態：OpenAI發布語音API與法律專用模型，Anthropic報告AI自我發展能力與收入躍進，Google Gemini智能代理越界事件引發關注，Meta AI Muse登上App Store榜首。",
+      "generatedAt": "2026-09-19T21:39:03.654Z",
+      "generatedAtLocal": "2026年9月20日 星期日 清晨5:39:03"
+    },
     {
       "id": "2026-09-20T03-23-27",
       "date": "2026-09-19",
