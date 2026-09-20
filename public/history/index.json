@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-21T00-14-47",
+  "latest": "2026-09-21T02-53-05",
   "items": [
+    {
+      "id": "2026-09-21T02-53-05",
+      "date": "2026-09-20",
+      "label": "2026年9月21日 星期一 凌晨2:53:05",
+      "path": "./history/2026-09-21T02-53-05.json",
+      "headline": "AI巨頭最新動態：OpenAI發布GPT-6 Astra與圖像工具，Google Gemini強化語音及代理功能，Anthropic深耕金融與安全，Meta推出Muse AI助手",
+      "generatedAt": "2026-09-20T18:53:05.873Z",
+      "generatedAtLocal": "2026年9月21日 星期一 凌晨2:53:05"
+    },
     {
       "id": "2026-09-21T00-14-47",
       "date": "2026-09-20",
