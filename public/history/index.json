@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-24T23-15-49",
+  "latest": "2026-09-25T03-16-57",
   "items": [
+    {
+      "id": "2026-09-25T03-16-57",
+      "date": "2026-09-24",
+      "label": "2026年9月25日 星期五 凌晨3:16:57",
+      "path": "./history/2026-09-25T03-16-57.json",
+      "headline": "AI巨頭最新動態：Anthropic Claude主導26%內部研發，Google Gemini 4 Pro發布在即，Meta Connect聚焦AI眼鏡與Muse",
+      "generatedAt": "2026-09-24T19:16:57.516Z",
+      "generatedAtLocal": "2026年9月25日 星期五 凌晨3:16:57"
+    },
     {
       "id": "2026-09-24T23-15-49",
       "date": "2026-09-24",
