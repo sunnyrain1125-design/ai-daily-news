@@ -1,6 +1,15 @@
 {
-  "latest": "2026-09-25T06-32-37",
+  "latest": "2026-09-25T08-48-15",
   "items": [
+    {
+      "id": "2026-09-25T08-48-15",
+      "date": "2026-09-25",
+      "label": "2026年9月25日 星期五 上午8:48:15",
+      "path": "./history/2026-09-25T08-48-15.json",
+      "headline": "頂尖 AI 實驗室最新動態：OpenAI 推出 GPT-6 系列，Anthropic 發表 Claude Opus 5.5 並有生物學突破，Google Gemini 4 進入後期訓練，Meta Connect 聚焦 AI 應用與新硬體。",
+      "generatedAt": "2026-09-25T00:48:15.176Z",
+      "generatedAtLocal": "2026年9月25日 星期五 上午8:48:15"
+    },
     {
       "id": "2026-09-25T06-32-37",
       "date": "2026-09-24",
