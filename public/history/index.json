@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-02T09-37-23",
+  "latest": "2026-10-02T15-31-25",
   "items": [
+    {
+      "id": "2026-10-02T15-31-25",
+      "date": "2026-10-02",
+      "label": "2026年10月2日 星期五 下午3:31:25",
+      "path": "./history/2026-10-02T15-31-25.json",
+      "headline": "AI 巨頭激戰：OpenAI、Anthropic、Google Gemini 與 Meta AI 近期動態速覽",
+      "generatedAt": "2026-10-02T07:31:25.613Z",
+      "generatedAtLocal": "2026年10月2日 星期五 下午3:31:25"
+    },
     {
       "id": "2026-10-02T09-37-23",
       "date": "2026-10-02",
