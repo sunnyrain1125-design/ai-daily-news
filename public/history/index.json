@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-08T00-08-32",
+  "latest": "2026-10-08T05-17-50",
   "items": [
+    {
+      "id": "2026-10-08T05-17-50",
+      "date": "2026-10-07",
+      "label": "2026年10月8日 星期四 清晨5:17:50",
+      "path": "./history/2026-10-08T05-17-50.json",
+      "headline": "AI巨頭最新動態：Anthropic發佈Claude Haiku 5.5，OpenAI推出常時運行代理「dots」，Google Gemini免費版功能受限",
+      "generatedAt": "2026-10-07T21:17:50.994Z",
+      "generatedAtLocal": "2026年10月8日 星期四 清晨5:17:50"
+    },
     {
       "id": "2026-10-08T00-08-32",
       "date": "2026-10-07",
