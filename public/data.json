@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-10T22:25:22.598Z",
-  "generatedAtLocal": "2026年10月11日 星期日 清晨6:25:22",
+  "generatedAt": "2026-10-11T01:10:25.991Z",
+  "generatedAtLocal": "2026年10月11日 星期日 上午9:10:25",
   "last24hWindow": "近期與最新發展",
-  "headline": "OpenAI 推出 GPT-6.1 新模型與企業合作，Anthropic 強化 AI 政策並準備 IPO，Google 聚焦企業 AI 代理與邊緣運算，Meta AI 部署打擊濫用內容的新工具。",
-  "summary": "本週 AI 領域發展活躍，OpenAI 發布了成本效益更高的 GPT-6.1 Sol 和 Luna 模型，並宣布與 Atlassian 等企業擴大合作，同時在數學研究和 ChatGPT 廣告功能上取得進展。Anthropic 更新了 Claude 的使用政策，嚴格限制武器開發和濫用行為，並推出 Haiku 5.5 模型和多項企業級應用。Google Cloud 發表了統一的 Gemini 企業代理，並開源了邊緣 AI 推理引擎 ML Drift。Meta AI 則部署了新的 AI 工具來偵測和打擊兒童性虐待內容，並與 Sierra 共同提出個人 AI 代理協議標準。",
+  "headline": "AI 巨頭新進展：模型能力、安全部署與市場策略齊發",
+  "summary": "在過去一週內，OpenAI 推出搭載智能界面的 GPT-6 模型並更新安全防護，同時 Anthropic 發布了 Claude Haiku 5.5 模型並強化其使用政策。Google Gemini 方面，其最先進的 Gemini 4 Argon 模型進入限制發布階段，內部員工也正測試更強大的新版本。Meta 則重申了對 AI 基礎設施的巨額投資。這些動態顯示，四大科技巨頭在模型技術突破、產品應用拓展、安全規範制定及市場競爭策略上均有重要發展。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
