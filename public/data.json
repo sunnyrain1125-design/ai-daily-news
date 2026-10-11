@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-11T18:52:58.108Z",
-  "generatedAtLocal": "2026年10月12日 星期一 凌晨2:52:58",
+  "generatedAt": "2026-10-11T22:38:45.234Z",
+  "generatedAtLocal": "2026年10月12日 星期一 清晨6:38:45",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI推出GPT-6與新功能，Anthropic發布Haiku 5.5，Google調整Gemini訂閱策略，Meta聚焦Muse企業應用",
-  "summary": "在過去一週，主要AI科技公司紛紛公布重要進展。OpenAI推出GPT-6及智慧介面，並加強安全性與企業合作；Anthropic發布更具成本效益的Claude Haiku 5.5模型，同時更新了使用政策。Google則調整了Gemini服務的存取權限，使免費與訂閱用戶模型配置產生變化。Meta AI方面，其Muse平台正持續強化企業應用，並擴大基礎設施投資，顯示AI領域競爭與創新持續升溫。",
+  "headline": "AI巨頭近期動態：OpenAI推出GPT-6免費版，Anthropic加強AI安全，Google Gemini推企業代理，Meta參投虛擬生物學",
+  "summary": "OpenAI於10月7日開放GPT-6 Luna免費使用，並宣布營收預期大幅增長，同時加強水印技術符合歐盟規範。Anthropic則推出更快速實惠的Claude Haiku 5.5，並更新使用政策禁止武器開發，也因需求過大暫停免費創業計畫。Google Gemini推出企業代理平台，並調整個人用戶模型權限。Meta與Google DeepMind等則共同投資虛擬生物學計畫，加速AI在生命科學的應用。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
