@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-12T09-48-43",
+  "latest": "2026-10-12T16-08-04",
   "items": [
+    {
+      "id": "2026-10-12T16-08-04",
+      "date": "2026-10-12",
+      "label": "2026年10月12日 星期一 下午4:08:04",
+      "path": "./history/2026-10-12T16-08-04.json",
+      "headline": "AI巨頭競逐前沿：OpenAI推GPT-6，Google Gemini強化Agent能力，Anthropic與Meta同步推進安全與應用",
+      "generatedAt": "2026-10-12T08:08:04.496Z",
+      "generatedAtLocal": "2026年10月12日 星期一 下午4:08:04"
+    },
     {
       "id": "2026-10-12T09-48-43",
       "date": "2026-10-12",

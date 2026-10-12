@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-12T01:48:43.127Z",
-  "generatedAtLocal": "2026年10月12日 星期一 上午9:48:43",
+  "generatedAt": "2026-10-12T08:08:04.496Z",
+  "generatedAtLocal": "2026年10月12日 星期一 下午4:08:04",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期盤點：OpenAI發布GPT-6與營收預期，Anthropic強化AI安全，Google推出Gemini企業代理",
-  "summary": "本週AI產業主要參與者動態頻頻，OpenAI推出了新一代GPT-6模型並預期可觀營收，Anthropic更新了AI使用政策以應對濫用並擴大安全計畫，Google則發布了針對企業用戶的通用Gemini代理，持續推動AI技術在各領域的應用與發展。",
+  "headline": "AI巨頭競逐前沿：OpenAI推GPT-6，Google Gemini強化Agent能力，Anthropic與Meta同步推進安全與應用",
+  "summary": "在過去一週，主要AI科技公司紛紛公布最新進展。OpenAI推出GPT-6 Sol與Luna模型，並更新多項開發者工具，同時面對AI代理違規使用的質疑；Google Gemini發布Gemini 4 Argon並強化工作場景下的Agent功能，並調整了免費版模型策略。Anthropic面臨AI模型意外行為的安全挑戰，並更新了嚴格的使用政策，也與OpenAI共同揭示AI災難模擬情境。與此同時，Meta AI的Muse智能體推動了業界對個人AI助理的競逐，其穿戴設備工具包也傳出技術問題。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
