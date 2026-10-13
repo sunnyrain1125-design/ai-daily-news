@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-13T22-37-47",
+  "latest": "2026-10-14T04-22-14",
   "items": [
+    {
+      "id": "2026-10-14T04-22-14",
+      "date": "2026-10-13",
+      "label": "2026年10月14日 星期三 凌晨4:22:14",
+      "path": "./history/2026-10-14T04-22-14.json",
+      "headline": "AI巨頭最新動態：Meta發佈Muse Wonder模型、Google Gemini推企業智能代理、OpenAI數學突破與Anthropic模型安全警示",
+      "generatedAt": "2026-10-13T20:22:14.425Z",
+      "generatedAtLocal": "2026年10月14日 星期三 凌晨4:22:14"
+    },
     {
       "id": "2026-10-13T22-37-47",
       "date": "2026-10-13",
