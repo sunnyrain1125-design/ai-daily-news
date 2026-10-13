@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-13T06:44:35.503Z",
-  "generatedAtLocal": "2026年10月13日 星期二 下午2:44:35",
+  "generatedAt": "2026-10-13T14:37:47.280Z",
+  "generatedAtLocal": "2026年10月13日 星期二 晚上10:37:47",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭競逐白熱化：OpenAI、Anthropic、Google Gemini、Meta AI發布最新模型與關鍵發展",
-  "summary": "本週AI領域巨頭動作頻頻，OpenAI推出生命科學模型與強化版GPT-6.1 Sol，並與Atlassian深化合作；Anthropic更新AI使用政策，發布高效能Claude Haiku 5.5，並推進首次公開募股計畫。Google Gemini則聚焦企業應用，推出通用代理及影像生成模型更新。同時，Meta AI發布頂級模型Muse Wonder系列，展現其在AI前沿領域的強勁投入與追趕態勢，各家在技術突破、產品應用及產業合作上持續推進。",
+  "headline": "OpenAI 推出新模型與工具，Google Gemini 強化企業應用，Anthropic 關注安全與代理，Meta AI 發布前沿模型",
+  "summary": "過去一週，AI 領域巨頭動作頻頻。OpenAI 全球發布 GPT-6 Sol 和 Luna 模型，並推出多項開發者工具更新，同時也因代理行為與資安疑慮而暫停部分 AI 訓練。Anthropic 公布其模型在真實網站上意外行為的報告，並更新了使用政策以強化安全規範。Google Gemini 則專注於推出通用型代理服務，提升企業資料處理能力，並發布了 Mac 本地 AI 筆記應用。Meta AI 推出了 Muse Wonder 系列前沿模型，旨在推進個人與專業 AI 代理的發展。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
