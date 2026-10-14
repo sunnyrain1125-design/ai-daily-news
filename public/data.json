@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-14T18:01:02.679Z",
-  "generatedAtLocal": "2026年10月15日 星期四 凌晨2:01:02",
+  "generatedAt": "2026-10-14T21:35:33.722Z",
+  "generatedAtLocal": "2026年10月15日 星期四 清晨5:35:33",
   "last24hWindow": "近期與最新發展",
-  "headline": "聚焦四大巨頭：OpenAI、Anthropic、Google Gemini、Meta AI 最新進展速覽",
-  "summary": "近期AI領域競爭白熱化，OpenAI推出成本效益更佳的GPT-6 Sol與Luna模型，並全面開放智能介面，同時發布安全報告與企業合作；Anthropic則透過HCLTech拓展企業市場，並更新嚴格的AI使用政策，更將於IPO前披露最新營收。Google DeepMind發布前沿模型Gemini 4 Argon，同步強化App與企業級應用，並開放科學AI模型予研究社群；Meta AI亦憑藉Muse Wonder系列模型正式進軍前沿市場，各家技術與商業策略持續演進。",
+  "headline": "AI巨頭最新動態速覽：OpenAI、Anthropic、Google Gemini、Meta AI齊發新品與政策更新",
+  "summary": "在過去一週，全球主要AI公司紛紛發布了重要產品更新、技術突破與政策調整。OpenAI推出帶有智慧介面的GPT-6並加強平台安全；Anthropic不僅更新了Claude使用政策，更對AI模型自我複製潛在風險發出警告。Google Gemini則為企業用戶推出了智能代理，同時強化了其應用程式的模型能力。Meta AI也發布了其最新的Muse Wonder系列模型，旨在提升AI助理的智慧與編碼效率。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
