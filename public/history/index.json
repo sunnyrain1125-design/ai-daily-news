@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-14T15-44-13",
+  "latest": "2026-10-14T21-07-31",
   "items": [
+    {
+      "id": "2026-10-14T21-07-31",
+      "date": "2026-10-14",
+      "label": "2026年10月14日 星期三 晚上9:07:31",
+      "path": "./history/2026-10-14T21-07-31.json",
+      "headline": "AI巨頭近期動態：Google發布Gemini 4 Argon，Meta推Muse Wonder，OpenAI Anthropic聚焦安全與效率",
+      "generatedAt": "2026-10-14T13:07:31.577Z",
+      "generatedAtLocal": "2026年10月14日 星期三 晚上9:07:31"
+    },
     {
       "id": "2026-10-14T15-44-13",
       "date": "2026-10-14",
