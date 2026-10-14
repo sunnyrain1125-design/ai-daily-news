@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-14T10-13-44",
+  "latest": "2026-10-14T15-44-13",
   "items": [
+    {
+      "id": "2026-10-14T15-44-13",
+      "date": "2026-10-14",
+      "label": "2026年10月14日 星期三 下午3:44:13",
+      "path": "./history/2026-10-14T15-44-13.json",
+      "headline": "2026 年 10 月 AI 新知：Google Gemini 4 Argon 亮相，Meta Muse Wonder 追趕領先，Anthropic 關注 AI 安全與新模型",
+      "generatedAt": "2026-10-14T07:44:13.401Z",
+      "generatedAtLocal": "2026年10月14日 星期三 下午3:44:13"
+    },
     {
       "id": "2026-10-14T10-13-44",
       "date": "2026-10-14",
