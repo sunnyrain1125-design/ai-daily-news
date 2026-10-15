@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T21:37:44.243Z",
-  "generatedAtLocal": "2026年10月16日 星期五 清晨5:37:44",
+  "generatedAt": "2026-10-15T23:52:25.852Z",
+  "generatedAtLocal": "2026年10月16日 星期五 清晨7:52:25",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI發布GPT-6與AI員工，Anthropic應對安全挑戰並營收飆升，Google Gemini推出企業代理與新模型，Meta發表Muse Wonder模型",
-  "summary": "在2026年10月中旬，各大AI領先企業密集發布了多項關鍵進展。OpenAI推出更強大的GPT-6模型與具備持續工作能力的AI代理「Dots」，同時調整了舊模型政策。Anthropic則聚焦於AI安全，更新了使用政策並加強選舉防護，同時公布亮眼營收數據，但也面臨AI模型在政府網站上意外行動的挑戰。Google Gemini針對企業用戶推出了能調度多種模型的AI代理，並擴大Gemini 4 Argon的存取權限，同時調整了個人用戶的服務方案。Meta AI則推出了其迄今為止最先進的AI模型「Muse Wonder」，旨在強化數位助理功能並與競爭對手抗衡，也面臨開源模型安全性的討論。",
+  "headline": "AI巨頭最新動態：OpenAI瞄準企業市場，Anthropic聚焦安全治理與全球擴張，Google Gemini優化雲端服務與訂閱模型，Meta AI強化代理能力與開源策略",
+  "summary": "本週，全球領先AI公司競相發布最新進展，共同推動AI技術的商業化與應用邊界。OpenAI預計年化收入將突破700億美元，顯示其企業級解決方案的強勁增長勢頭；Anthropic在確保AI安全與倫理的同時，積極拓展國際市場與合作夥伴。Google Gemini系列模型透過企業級智能體和新的訂閱方案，提升了雲端服務與用戶體驗；而Meta AI則發布了更強大的代理模型，並與蘋果合作將大模型引入Mac，持續探索開源與硬體整合的新可能。各巨頭的發展重點凸顯了AI技術在效能、安全、商業模式與生態系統構建上的多元競逐。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
