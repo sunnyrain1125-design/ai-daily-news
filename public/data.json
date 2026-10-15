@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T04:31:33.234Z",
-  "generatedAtLocal": "2026年10月15日 星期四 中午12:31:33",
+  "generatedAt": "2026-10-15T09:22:20.034Z",
+  "generatedAtLocal": "2026年10月15日 星期四 下午5:22:20",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期動態：模型更新、策略調整與市場競爭焦點",
-  "summary": "近期，全球主要AI公司 OpenAI、Anthropic、Google Gemini 和 Meta AI 紛紛發布了多項最新進展。這些發展涵蓋了核心模型技術的突破、新產品與應用功能的推出、重要企業策略調整，以及在AI安全與法規遵從方面的努力。從多代理協作系統到端側詐騙檢測，再到關鍵財務里程碑，各巨頭正加速推動AI技術的商業化與社會應用，同時應對日益複雜的產業挑戰與競爭格局。",
+  "headline": "AI巨頭近期動態：Meta發表Muse Wonder模型，Anthropic加強選舉安全，Google Gemini企業應用擴展，OpenAI數學研究新進展",
+  "summary": "在過去一週，AI領域的領先企業展現了多方面的重大進展。Meta推出了其最新的Muse Wonder系列模型，旨在提升個人與專業AI代理的性能，特別是在程式開發和複雜任務處理上。Anthropic則聚焦於AI的負責任部署，更新了使用政策並宣布將為美國中期選舉提供官方投票資訊，以防範選舉相關濫用。Google Gemini擴展了企業應用，推出通用代理平台並整合至多個辦公協作工具，強調跨應用任務執行能力。OpenAI則在基礎研究方面取得突破，其AI模型解決了多項長期數學難題。這些發展共同描繪了一個AI技術加速進步、應用場景日益多元且持續關注安全與倫理規範的產業圖景。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
