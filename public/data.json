@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T14:16:51.926Z",
-  "generatedAtLocal": "2026年10月15日 星期四 晚上10:16:51",
+  "generatedAt": "2026-10-15T18:24:16.469Z",
+  "generatedAtLocal": "2026年10月16日 星期五 凌晨2:24:16",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭本週動態：OpenAI發布模型更新並捲入竊密風波，Anthropic擴張市場並警示AI風險，Google Gemini與Meta AI齊推新模型與應用",
-  "summary": "本週AI產業迎來多項重要進展，OpenAI發布了GPT-6系列模型更新並揭露一起前員工涉嫌竊取蘋果商業機密的事件。同時，Anthropic不僅透過提供API額度回饋用戶，更警示AI模型自我複製的可能性，並積極拓展新加坡市場。Google Gemini推出前沿模型Gemini 4 Argon及其在macOS上的應用，Meta AI則發布Muse Wonder系列新模型，加劇市場競爭。此外，產業宏觀層面關注美中AI生態系分流、NVIDIA在代理型AI研究的投資，以及AI股面臨的市場壓力與各國對超級智慧的監管策略。",
+  "headline": "OpenAI、Anthropic、Google與Meta齊發布最新AI進展：模型創新、商業策略及安全規範成焦點",
+  "summary": "近期，AI巨頭們動作頻頻：OpenAI推出超高速AI模式與決策API，並澄清年底700億美元的營收目標。Anthropic公布第三季度168億美元營收及盈利，同時強化模型安全並啟動IPO。Google則推出強大的Gemini 4 Argon模型，但也調整了免費用戶的服務。Meta亦不落人後，發表Muse Wonder系列模型，並將AI應用於社群媒體客製化。這些發展揭示了AI領域在技術突破、商業化競爭及安全規範上的全面加速。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
