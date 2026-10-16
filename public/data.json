@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T23:52:25.852Z",
-  "generatedAtLocal": "2026年10月16日 星期五 清晨7:52:25",
+  "generatedAt": "2026-10-16T02:44:46.691Z",
+  "generatedAtLocal": "2026年10月16日 星期五 上午10:44:46",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI瞄準企業市場，Anthropic聚焦安全治理與全球擴張，Google Gemini優化雲端服務與訂閱模型，Meta AI強化代理能力與開源策略",
-  "summary": "本週，全球領先AI公司競相發布最新進展，共同推動AI技術的商業化與應用邊界。OpenAI預計年化收入將突破700億美元，顯示其企業級解決方案的強勁增長勢頭；Anthropic在確保AI安全與倫理的同時，積極拓展國際市場與合作夥伴。Google Gemini系列模型透過企業級智能體和新的訂閱方案，提升了雲端服務與用戶體驗；而Meta AI則發布了更強大的代理模型，並與蘋果合作將大模型引入Mac，持續探索開源與硬體整合的新可能。各巨頭的發展重點凸顯了AI技術在效能、安全、商業模式與生態系統構建上的多元競逐。",
+  "headline": "AI巨頭最新動態：OpenAI強化語音與學術合作，AnthropicQ3獲利，Meta AI眼鏡出貨，Google/Meta/AMD共推資料中心標準",
+  "summary": "在過去一週，OpenAI透過ChatGPT語音助手升級及學術計畫，持續深化其技術與應用拓展。Anthropic在IPO前夕展現強勁財務表現，宣布第三季實現獲利。Meta的Ray-Ban AI眼鏡開始出貨，將AI助理帶入日常。同時，Google、Meta與AMD在開放運算峰會上，共同推動資料中心標準化，預示著AI基礎設施的新趨勢。微軟MXC執行容器的發布也將促進AI代理工具的安全性與效率。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
