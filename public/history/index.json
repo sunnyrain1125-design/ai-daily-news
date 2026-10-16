@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-16T15-34-33",
+  "latest": "2026-10-16T20-44-02",
   "items": [
+    {
+      "id": "2026-10-16T20-44-02",
+      "date": "2026-10-16",
+      "label": "2026年10月16日 星期五 晚上8:44:02",
+      "path": "./history/2026-10-16T20-44-02.json",
+      "headline": "AI巨頭戰火升級：Google Gemini 4 Argon與Meta Muse Wonder模型競發，Anthropic IPO估值承壓",
+      "generatedAt": "2026-10-16T12:44:02.718Z",
+      "generatedAtLocal": "2026年10月16日 星期五 晚上8:44:02"
+    },
     {
       "id": "2026-10-16T15-34-33",
       "date": "2026-10-16",
