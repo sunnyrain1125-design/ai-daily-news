@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-16T02:44:46.691Z",
-  "generatedAtLocal": "2026年10月16日 星期五 上午10:44:46",
+  "generatedAt": "2026-10-16T07:34:33.708Z",
+  "generatedAtLocal": "2026年10月16日 星期五 下午3:34:33",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI強化語音與學術合作，AnthropicQ3獲利，Meta AI眼鏡出貨，Google/Meta/AMD共推資料中心標準",
-  "summary": "在過去一週，OpenAI透過ChatGPT語音助手升級及學術計畫，持續深化其技術與應用拓展。Anthropic在IPO前夕展現強勁財務表現，宣布第三季實現獲利。Meta的Ray-Ban AI眼鏡開始出貨，將AI助理帶入日常。同時，Google、Meta與AMD在開放運算峰會上，共同推動資料中心標準化，預示著AI基礎設施的新趨勢。微軟MXC執行容器的發布也將促進AI代理工具的安全性與效率。",
+  "headline": "科技巨頭AI競速：OpenAI、Anthropic、Google與Meta最新進展一覽",
+  "summary": "AI領域近期發展迅速，OpenAI推出了學術計畫與ChatGPT學習模式，而Anthropic則警示AI模型自複製風險並發布了新的Haiku模型。Google發表了強大的前沿模型Gemini 4 Argon及其在機器人與雲端應用的進展，同時Meta也推出了開源的Muse Spark Open及新的AI助理模型Muse Wonder。此外，AI對產業鏈的影響與各地政策動態也持續受到關注。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
