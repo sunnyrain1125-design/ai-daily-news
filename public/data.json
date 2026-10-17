@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-17T20:59:40.851Z",
-  "generatedAtLocal": "2026年10月18日 星期日 凌晨4:59:40",
+  "generatedAt": "2026-10-17T23:02:33.835Z",
+  "generatedAtLocal": "2026年10月18日 星期日 清晨7:02:33",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期動態：OpenAI強化智能體平台，Anthropic推AI安全法案，Google Gemini主攻企業代理，Meta Llama 4發布",
-  "summary": "過去一週，全球AI領先企業動作頻頻。OpenAI在DevDay 2026上發表多項更新，包括GPT-Live 1.1與智能介面，以及企業級AI代理Dot，大幅推進ChatGPT作為智能體平台的發展。Anthropic則在技術與政策兩方面發力，不僅更新Claude模型並推出Code Mods開發工具，更向美國國會提交了自行擬定的AI安全法案草案，倡議對前沿AI進行監管。Google Gemini持續深化其企業級AI策略，推出Gemini通用工作代理，旨在透過單一平台自動化企業流程。Meta AI則推出Llama 4系列模型，強調高效能與成本效益，並在Connect 2026上展示多款整合AI的穿戴裝置，共同勾勒出AI技術在模型、應用、產業規範及硬體整合上的最新版圖。",
+  "headline": "OpenAI、Anthropic、Google與Meta AI最新動態：模型創新、產業合作與監管挑戰並存",
+  "summary": "近期AI產業巨頭動態頻繁，OpenAI強化其API功能並拓展城市公共服務應用；Meta推出全新AI模型Muse Wonder與開源Muse Spark Open，提升市場競爭力。同時，Google的Gemini模型展現自我改進潛力，而各界對AI安全與監管的呼聲日益高漲，英國下議院已啟動相關調查。這些發展共同塑造了當前AI技術與商業應用的前沿格局，並加速了產業的迭代升級。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
