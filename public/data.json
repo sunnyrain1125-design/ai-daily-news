@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-17T18:39:07.206Z",
-  "generatedAtLocal": "2026年10月18日 星期日 凌晨2:39:07",
+  "generatedAt": "2026-10-17T20:59:40.851Z",
+  "generatedAtLocal": "2026年10月18日 星期日 凌晨4:59:40",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期頻繁發布模型更新與跨產業合作，加速智慧應用普及與生態建構",
-  "summary": "OpenAI、Anthropic、Google Gemini及Meta AI在近期密集推出多項模型升級、應用功能與策略合作，從基礎科學研究突破到企業級解決方案，再到消費性產品整合，展現AI技術快速商業化與普及化的趨勢。這些發展不僅推動AI核心能力演進，也深化其在多個關鍵產業的應用，同時也促使AI安全與治理議題持續受到關注。",
+  "headline": "AI巨頭近期動態：OpenAI強化智能體平台，Anthropic推AI安全法案，Google Gemini主攻企業代理，Meta Llama 4發布",
+  "summary": "過去一週，全球AI領先企業動作頻頻。OpenAI在DevDay 2026上發表多項更新，包括GPT-Live 1.1與智能介面，以及企業級AI代理Dot，大幅推進ChatGPT作為智能體平台的發展。Anthropic則在技術與政策兩方面發力，不僅更新Claude模型並推出Code Mods開發工具，更向美國國會提交了自行擬定的AI安全法案草案，倡議對前沿AI進行監管。Google Gemini持續深化其企業級AI策略，推出Gemini通用工作代理，旨在透過單一平台自動化企業流程。Meta AI則推出Llama 4系列模型，強調高效能與成本效益，並在Connect 2026上展示多款整合AI的穿戴裝置，共同勾勒出AI技術在模型、應用、產業規範及硬體整合上的最新版圖。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
