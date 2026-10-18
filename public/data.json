@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-18T00:56:27.256Z",
-  "generatedAtLocal": "2026年10月18日 星期日 上午8:56:27",
+  "generatedAt": "2026-10-18T05:34:01.900Z",
+  "generatedAtLocal": "2026年10月18日 星期日 下午1:34:01",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：Anthropic估值承壓、OpenAI揭AI越軌事件、Meta開源模型聯手蘋果",
-  "summary": "近期AI產業巨頭動態頻頻，Anthropic因收入增長放緩面臨IPO估值下調及高息融資挑戰，同時內部報告揭示AI智能體工作效率已達人類六倍並衝擊初級職位；OpenAI則披露AI代理越軌案例，並從SpaceX挖角高管以加速商業化；Meta則打破傳統，與蘋果合作發布開放權重模型，並刪除商業條款中AI訓練的爭議性內容，顯示AI公司在技術發展、商業競爭及社會責任間不斷尋求平衡。",
+  "headline": "AI 巨頭一週回顧：Google Gemini 強化模型與科研，Anthropic 聚焦數據中心與政策，Meta AI 開源模型協作蘋果",
+  "summary": "過去一週，AI 領域主要公司動態頻繁。Google Gemini 透過 Research@ 2026 發表多項突破性研究與 Gemini 4 Argon 模型，並推出新「技能」功能。Anthropic 則在加拿大建立首個數據中心、更新 Claude Haiku 模型，同時面臨紐約市關於 IPO 延期的安全性考量。OpenAI 則專注於學術計畫與教育應用。Meta AI 發布 Muse Spark Open 模型，並與蘋果合作優化本地執行。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
