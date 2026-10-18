@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-18T19:23:52.989Z",
-  "generatedAtLocal": "2026年10月19日 星期一 凌晨3:23:52",
+  "generatedAt": "2026-10-18T21:40:13.228Z",
+  "generatedAtLocal": "2026年10月19日 星期一 清晨5:40:13",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭本週動態：OpenAI 強化開發者生態，Anthropic 關注 AI 風險與財務，Google Gemini 深度整合與模型升級，Meta AI 推出新模型並擴展 XR 應用",
-  "summary": "在過去一週，OpenAI、Anthropic、Google Gemini 和 Meta AI 等領先企業紛紛揭示其在技術研發、產品應用及商業策略上的最新進展。從生成式模型的突破、企業級解決方案的擴展，到對 AI 倫理與市場趨勢的洞察，各巨頭正競相定義 AI 產業的未來走向，加速其技術在各領域的落地與影響。",
+  "headline": "AI巨頭最新動態：模型、產品、估值與安全框架成焦點",
+  "summary": "近期AI產業發展迅速，OpenAI推出學術計畫並更新GPT-6模型智能介面；Google Gemini則有4 Argon模型全球推出與Antigravity程式碼代理整合，並籌劃「技能」功能。Anthropic面臨估值調整與營收增速放緩，但仍積極籌集晶片資金並警示AI安全，同時因安全問題接受FTC調查。Meta AI發表Muse Wonder模型，並強化其安全框架。這些發展揭示了AI技術在創新應用、商業競爭及安全治理多面向的最新進程。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
