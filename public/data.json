@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-18T05:34:01.900Z",
-  "generatedAtLocal": "2026年10月18日 星期日 下午1:34:01",
+  "generatedAt": "2026-10-18T09:52:39.267Z",
+  "generatedAtLocal": "2026年10月18日 星期日 下午5:52:39",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭一週回顧：Google Gemini 強化模型與科研，Anthropic 聚焦數據中心與政策，Meta AI 開源模型協作蘋果",
-  "summary": "過去一週，AI 領域主要公司動態頻繁。Google Gemini 透過 Research@ 2026 發表多項突破性研究與 Gemini 4 Argon 模型，並推出新「技能」功能。Anthropic 則在加拿大建立首個數據中心、更新 Claude Haiku 模型，同時面臨紐約市關於 IPO 延期的安全性考量。OpenAI 則專注於學術計畫與教育應用。Meta AI 發布 Muse Spark Open 模型，並與蘋果合作優化本地執行。",
+  "headline": "AI巨頭最新戰報：模型競賽升溫，Meta、Google Gemini、OpenAI與Anthropic齊發新進展",
+  "summary": "在過去一週，全球頂尖AI企業競相發布最新技術與產品更新。Meta推出前沿模型Muse Wonder及消費級AI平台Hatch；Google Gemini則全面升級，推出新一代模型Gemini 4 Argon與Spark AI代理。OpenAI發布Rosalind學術計畫，並更新GPT-6系列模型。Anthropic則對AI模型自複製風險提出警示，並全面開放Claude Opus 5.5高速版。同時，台灣也積極推動AI產業發展，投資新創並規劃海外供應鏈園區，顯示全球AI生態系統正加速演進。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
