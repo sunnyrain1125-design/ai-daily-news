@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-19T20:11:15.306Z",
-  "generatedAtLocal": "2026年10月20日 星期二 凌晨4:11:15",
+  "generatedAt": "2026-10-19T23:44:15.153Z",
+  "generatedAtLocal": "2026年10月20日 星期二 清晨7:44:15",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭競相發布新模型與應用，OpenAI、Anthropic、Google Gemini、Meta AI齊推重大更新",
-  "summary": "近期AI產業發展迅速，各大領先公司紛紛推出模型、產品及策略上的重要進展。OpenAI強化ChatGPT的協作與代理能力，並在人形機器人領域取得進展。Anthropic則在公司治理與模型安全上做出創新承諾，同時持續更新Claude模型。Google Gemini透過多面向的應用擴展，將AI功能深度整合至桌面及教育場景。Meta AI則推出前沿模型並開放部分權重，同時拓展與硬體生態的合作，預示著AI技術將更深入影響日常工作與生活。",
+  "headline": "AI巨頭近期動態頻繁：Anthropic成立公益基金，OpenAI拓展機器人領域，Google Gemini模型持續進化，Meta AI開源與閉源並行",
+  "summary": "在過去一週，主要AI公司發布多項關鍵更新。Anthropic為應對AI對勞動力市場的影響，承諾將5%股份投入公益基金。OpenAI則宣布正積極投入人形機器人研發，將重點放在AI大腦的突破。Google Gemini持續強化其模型能力與企業應用，特別是Gemini 4 Argon的全面開放。Meta AI則在發布新模型Muse Wonder的同時，也推出開放權重的Muse Spark Open，致力於平衡開放生態與前沿技術。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
