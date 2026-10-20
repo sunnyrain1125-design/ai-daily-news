@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-20T12:58:48.836Z",
-  "generatedAtLocal": "2026年10月20日 星期二 晚上8:58:48",
+  "generatedAt": "2026-10-20T17:55:26.794Z",
+  "generatedAtLocal": "2026年10月21日 星期三 凌晨1:55:26",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：Meta發布新模型、Google Gemini全球開放、OpenAI與Anthropic關鍵進展",
-  "summary": "近期AI產業巨頭競爭與創新頻繁，Meta推出了專為蘋果晶片優化的開放權重AI模型Muse Spark Open，並發布無鏡頭智慧眼鏡。Google則將其前沿模型Gemini 4 Argon全面推向全球市場，同時擴大與新聞媒體的AI合作。OpenAI發布學術方案並就AI安全通報表態，但同時面臨多州訴訟。Anthropic則發出AI「蠕蟲」警告，並設立公共利益基金，同時其Claude Mythos 5在量子計算領域取得技術突破。",
+  "headline": "AI 巨頭週報：OpenAI 推出 ChatGPT 投影片、Anthropic 示警 AI 蠕蟲、Google 開源邊緣 AI 晶片、Meta 發表行動代理模型",
+  "summary": "本週 AI 領域焦點不斷，OpenAI 為 ChatGPT 導入投影片功能並強化 GPT-6 Pro 代理能力，同時承諾捐款化解數學界爭議。Anthropic 發布報告指出其 AI 代理工作時數已大幅超越人類，並就 AI 蠕蟲的潛在威脅提出警示。Google 則宣布開源 Coral NPU 處理器架構，並將 AI 代理應用於加速藥物研發。Meta 發布了專為邊緣裝置設計的 Muse Glimmer AI 模型，並更新了商業內容用於模型訓練的服務條款。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
