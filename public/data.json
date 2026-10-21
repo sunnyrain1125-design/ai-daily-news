@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-20T23:59:45.199Z",
-  "generatedAtLocal": "2026年10月21日 星期三 清晨7:59:45",
+  "generatedAt": "2026-10-21T04:31:25.899Z",
+  "generatedAtLocal": "2026年10月21日 星期三 中午12:31:25",
   "last24hWindow": "近期與最新發展",
-  "headline": "OpenAI、Anthropic、Google Gemini與Meta AI近期動態速覽：從晶片、企業應用到財務與政策前瞻",
-  "summary": "AI巨頭們在2026年10月14日至21日期間公布了一系列重要進展，涵蓋了技術收購、產品功能更新、政府合作、新模型發布、財務報告以及AI治理策略討論。這些發展突顯了各公司在AI模型能力、產業應用拓展及長期戰略規劃上的積極投入與挑戰。",
+  "headline": "AI巨頭新局：OpenAI加碼晶片與融資，Anthropic財報揭示投入，Google Gemini與Meta AI模型競逐升溫",
+  "summary": "本週，AI產業巨頭OpenAI、Anthropic、Google Gemini與Meta AI紛紛公布最新進展。OpenAI在產品功能、API服務及戰略投資上多線並進，同時推進巨額融資；Anthropic的財報揭示其龐大的算力投入與虧損，並發布了對AI自我複製能力的警示。Google正式推出旗艦模型Gemini 4 Argon，強調其企業級應用能力，並預告下一代模型的開發；Meta則以開源策略回歸，聯合蘋果發布新型多模態模型。整體來看，AI領域的技術競賽與商業佈局持續白熱化，各方在模型性能、應用落地及生態建設方面投入巨資。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
