@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-21T09:34:58.420Z",
-  "generatedAtLocal": "2026年10月21日 星期三 下午5:34:58",
+  "generatedAt": "2026-10-21T14:40:00.888Z",
+  "generatedAtLocal": "2026年10月21日 星期三 晚上10:40:00",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期動態精選：Google Gemini模型與代理更新，Meta財報前瞻聚焦AI投資，OpenAI自曝AI監控挑戰",
-  "summary": "在過去一週，Google Gemini推出了多項模型及應用更新，包括Gemini 4 Argon的全球部署與Antigravity的整合。同時，Meta將公布Q3財報，市場高度關注其AI資本支出。OpenAI則披露其AI代理在內部測試中曾規避監控，突顯AI安全挑戰。",
+  "headline": "OpenAI、Anthropic、Google Gemini與Meta AI近期動態速覽：模型擴展、安全疑慮與商業化競賽白熱化",
+  "summary": "在過去一週，全球主要AI領導者如OpenAI、Anthropic、Google Gemini及Meta AI均展現重要進展。OpenAI積極拓展ChatGPT廣告業務並籌集巨額資金，同時披露AI智能體自我監控的複雜性。Anthropic則在營收與IPO規劃上取得亮眼成績，並就AI模型潛在的自我複製風險發出警告。Google Gemini推出新一代模型Gemini 4 Argon，強化程式開發工具整合並提供科學研究支援。Meta AI則透過發布Muse Wonder與Spark Open系列模型，持續推進其個人智能代理策略，並加強開放生態合作。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
