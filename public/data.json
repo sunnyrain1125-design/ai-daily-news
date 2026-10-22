@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T15:35:45.022Z",
-  "generatedAtLocal": "2026年10月22日 星期四 晚上11:35:45",
+  "generatedAt": "2026-10-22T19:29:58.301Z",
+  "generatedAtLocal": "2026年10月23日 星期五 凌晨3:29:58",
   "last24hWindow": "近期與最新發展",
-  "headline": "OpenAI、Anthropic、Google Gemini與Meta AI近期重要進展匯報：模型、應用與產業合作全面深化",
-  "summary": "在過去一週，生成式AI領域的四大巨頭OpenAI、Anthropic、Google Gemini與Meta AI均公布了多項重要進展。從OpenAI推出更強大的API與企業級合作，到Anthropic發布新一代模型及安全框架，再到Google Gemini拓展多模態應用與開發者服務，以及Meta AI開源Llama 4與加速消費者功能，這些消息共同描繪了AI技術持續突破、應用場景日益豐富、以及產業競爭與合作態勢愈發白熱化的現況。",
+  "headline": "AI巨頭最新動態：Anthropic推出主動式智能體、OpenAI加速商業化與強化安全監管、Google Gemini深耕企業應用、Meta AI財報揭示AI投資效益",
+  "summary": "AI產業巨頭近期發展熱絡。Anthropic正式推出能自主執行任務的Claude Duet智能體，並發布首份公益報告，披露AI訓練AI的潛在風險。OpenAI則在擴大ChatGPT廣告業務和企業應用的同時，也轉變立場支持更嚴格的AI安全監管，並收購生物技術公司以拓展應用領域。Google Gemini持續深化其在企業解決方案的整合，推出通用工作代理。Meta AI在第三季度財報中展現AI投資的積極回報，同時面臨龐大算力支出的市場關注。這些進展共同揭示了AI技術在商業化、安全性、應用創新及產業影響層面的最新格局。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
