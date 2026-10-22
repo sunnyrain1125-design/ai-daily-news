@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T05:27:24.741Z",
-  "generatedAtLocal": "2026年10月22日 星期四 下午1:27:24",
+  "generatedAt": "2026-10-22T15:35:45.022Z",
+  "generatedAtLocal": "2026年10月22日 星期四 晚上11:35:45",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI模型進駐Google Cloud、Anthropic財報揭示巨額虧損、Meta發布開源模型並調整政策",
-  "summary": "在過去一週，全球頂尖AI公司動作頻頻。OpenAI宣布其旗艦模型將透過Google Cloud提供給企業客戶，並正加速進行一輪高達300億美元的募資。Anthropic的首次公開募股文件揭露了上半年807億美元的淨虧損，同時積極向美國立法者提出AI安全法案。Google則全面開放其前沿模型Gemini 4 Argon給開發者使用。Meta推出針對Agent工作的新開源模型Muse Spark Open，並在出版商反彈後修改了其AI數據抓取條款，同時發布了穩健的第三季度財報，顯示對AI的巨大投資。這些發展涵蓋了技術合作、財務競爭、模型發布與監管策略等多個面向，預示著AI產業競爭與發展的新階段。",
+  "headline": "OpenAI、Anthropic、Google Gemini與Meta AI近期重要進展匯報：模型、應用與產業合作全面深化",
+  "summary": "在過去一週，生成式AI領域的四大巨頭OpenAI、Anthropic、Google Gemini與Meta AI均公布了多項重要進展。從OpenAI推出更強大的API與企業級合作，到Anthropic發布新一代模型及安全框架，再到Google Gemini拓展多模態應用與開發者服務，以及Meta AI開源Llama 4與加速消費者功能，這些消息共同描繪了AI技術持續突破、應用場景日益豐富、以及產業競爭與合作態勢愈發白熱化的現況。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
