@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T19:29:58.301Z",
-  "generatedAtLocal": "2026年10月23日 星期五 凌晨3:29:58",
+  "generatedAt": "2026-10-22T22:41:24.679Z",
+  "generatedAtLocal": "2026年10月23日 星期五 清晨6:41:24",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：Anthropic推出主動式智能體、OpenAI加速商業化與強化安全監管、Google Gemini深耕企業應用、Meta AI財報揭示AI投資效益",
-  "summary": "AI產業巨頭近期發展熱絡。Anthropic正式推出能自主執行任務的Claude Duet智能體，並發布首份公益報告，披露AI訓練AI的潛在風險。OpenAI則在擴大ChatGPT廣告業務和企業應用的同時，也轉變立場支持更嚴格的AI安全監管，並收購生物技術公司以拓展應用領域。Google Gemini持續深化其在企業解決方案的整合，推出通用工作代理。Meta AI在第三季度財報中展現AI投資的積極回報，同時面臨龐大算力支出的市場關注。這些進展共同揭示了AI技術在商業化、安全性、應用創新及產業影響層面的最新格局。",
+  "headline": "OpenAI與Anthropic發布多項AI代理及平台更新，Google Gemini強化企業應用與模型整合",
+  "summary": "在2026年10月16日至10月23日期間，OpenAI、Anthropic和Google Gemini均發布了重要的產品與技術進展。Anthropic推出主動式AI代理Claude Duet，可主動提醒並執行任務。OpenAI則更新了API政策，並與Google Cloud合作提供其模型。Google Gemini加強了針對小企業主和企業客戶的AI工具與服務，同時也在Model Garden中引入OpenAI模型，顯示業界在AI代理、平台整合及模型應用方面的激烈競爭與合作。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
