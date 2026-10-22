@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T00:43:59.288Z",
-  "generatedAtLocal": "2026年10月22日 星期四 上午8:43:59",
+  "generatedAt": "2026-10-22T05:27:24.741Z",
+  "generatedAtLocal": "2026年10月22日 星期四 下午1:27:24",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭最新動態：OpenAI、Anthropic、Google Gemini 與 Meta AI 近期發布關鍵技術、產品及策略進展",
-  "summary": "近期 AI 產業競爭激烈，OpenAI 宣布與 Google Cloud 合作並拓展 ChatGPT 廣告計畫，同時在安全和技術研究方面取得新發現。Anthropic 則致力於 AI 安全與社會影響，提撥巨額股份成立基金，並推出新產品。Google Gemini 持續深耕企業與車載應用，發布新模型並強化安全功能。Meta AI 則透過股權調整確保 AI 投資，並探索數據中心自動化。這些發展凸顯了 AI 技術的快速迭代與產業應用的廣泛拓展。",
+  "headline": "AI巨頭最新動態：OpenAI模型進駐Google Cloud、Anthropic財報揭示巨額虧損、Meta發布開源模型並調整政策",
+  "summary": "在過去一週，全球頂尖AI公司動作頻頻。OpenAI宣布其旗艦模型將透過Google Cloud提供給企業客戶，並正加速進行一輪高達300億美元的募資。Anthropic的首次公開募股文件揭露了上半年807億美元的淨虧損，同時積極向美國立法者提出AI安全法案。Google則全面開放其前沿模型Gemini 4 Argon給開發者使用。Meta推出針對Agent工作的新開源模型Muse Spark Open，並在出版商反彈後修改了其AI數據抓取條款，同時發布了穩健的第三季度財報，顯示對AI的巨大投資。這些發展涵蓋了技術合作、財務競爭、模型發布與監管策略等多個面向，預示著AI產業競爭與發展的新階段。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
