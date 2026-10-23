@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-23T11:21:42.726Z",
-  "generatedAtLocal": "2026年10月23日 星期五 晚上7:21:42",
+  "generatedAt": "2026-10-23T15:48:47.575Z",
+  "generatedAtLocal": "2026年10月23日 星期五 晚上11:48:47",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI估值波動、Anthropic IPO、Meta新模型與Google Cloud策略合作",
-  "summary": "近期AI產業巨頭動態頻繁，OpenAI在進行新一輪融資時調整了其估值目標，同時積極與各界合作推進AI安全與企業級應用。Anthropic則在市場不確定下堅持推進其首次公開募股，並推出新的AI代理工具。Meta則發布了具備前沿能力的新一代AI模型，試圖在技術競爭中保持領先。Google Cloud則透過與OpenAI的合作，持續擴展其平台上的AI模型選擇，提供企業更多元化的解決方案。",
+  "headline": "AI巨頭最新動態：OpenAI強化企業級代理功能，Anthropic力推安全路由，Google發布Gemini 4 Argon強化AI Agent，Meta主攻消費級個人化AI",
+  "summary": "過去一週，全球頂尖AI企業持續推進技術和產品策略。OpenAI透過更新ChatGPT Chrome擴充功能和推出GPT-6.1 Sol模型，強化了企業級AI代理和效率。Anthropic則在Claude Enterprise中引入先進的安全路由和反蒸餾防禦機制，強調AI安全。Google DeepMind發布了新一代AI模型Gemini 4 Argon，專注於複雜任務處理和AI Agent能力，並展示其在Minecraft等領域的應用。同時，Meta則聚焦於消費級個人AI Agent「Muse」及其配套模型，力求在社交生態和硬體整合中開闢新戰場。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,

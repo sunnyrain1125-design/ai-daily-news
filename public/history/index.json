@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-23T19-21-42",
+  "latest": "2026-10-23T23-48-47",
   "items": [
+    {
+      "id": "2026-10-23T23-48-47",
+      "date": "2026-10-23",
+      "label": "2026年10月23日 星期五 晚上11:48:47",
+      "path": "./history/2026-10-23T23-48-47.json",
+      "headline": "AI巨頭最新動態：OpenAI強化企業級代理功能，Anthropic力推安全路由，Google發布Gemini 4 Argon強化AI Agent，Meta主攻消費級個人化AI",
+      "generatedAt": "2026-10-23T15:48:47.575Z",
+      "generatedAtLocal": "2026年10月23日 星期五 晚上11:48:47"
+    },
     {
       "id": "2026-10-23T19-21-42",
       "date": "2026-10-23",
