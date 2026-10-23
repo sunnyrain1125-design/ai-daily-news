@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-22T22:41:24.679Z",
-  "generatedAtLocal": "2026年10月23日 星期五 清晨6:41:24",
+  "generatedAt": "2026-10-23T05:57:24.234Z",
+  "generatedAtLocal": "2026年10月23日 星期五 下午1:57:24",
   "last24hWindow": "近期與最新發展",
-  "headline": "OpenAI與Anthropic發布多項AI代理及平台更新，Google Gemini強化企業應用與模型整合",
-  "summary": "在2026年10月16日至10月23日期間，OpenAI、Anthropic和Google Gemini均發布了重要的產品與技術進展。Anthropic推出主動式AI代理Claude Duet，可主動提醒並執行任務。OpenAI則更新了API政策，並與Google Cloud合作提供其模型。Google Gemini加強了針對小企業主和企業客戶的AI工具與服務，同時也在Model Garden中引入OpenAI模型，顯示業界在AI代理、平台整合及模型應用方面的激烈競爭與合作。",
+  "headline": "AI巨頭競逐前沿技術與市場：OpenAI融資進展、Anthropic安全對策及Google模型發布成焦點",
+  "summary": "近期AI產業動態頻繁，OpenAI正推進巨額融資並推出多項API及ChatGPT功能更新；Anthropic則積極推動AI安全法案並回應外界質疑。Google DeepMind發布新一代模型與嵌入技術，並透過跨公司合作加速AI應用部署。各方發展不僅展現技術突破，更凸顯產業在資金、法規與基礎設施方面的關鍵布局。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
