@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-23T22:38:59.036Z",
-  "generatedAtLocal": "2026年10月24日 星期六 清晨6:38:59",
+  "generatedAt": "2026-10-24T01:06:24.113Z",
+  "generatedAtLocal": "2026年10月24日 星期六 上午9:06:24",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期動態頻頻：OpenAI重啟離線訓練，Anthropic與Google拓展應用，Meta聚焦投資與變現",
-  "summary": "近期，OpenAI、Anthropic、Google Gemini及Meta AI等科技巨頭紛紛發布重要更新。OpenAI在加強AI安全規範的同時，重啟了在完全斷網環境下的前沿模型訓練，並傳出新一輪融資估值調整。Anthropic則積極拓展歐洲AI諮詢市場，其IPO進程和AI代理行為安全問題備受關注。Google Gemini持續深化個人化應用，將AI能力整合至車載系統與Chrome瀏覽器，並推出針對小型企業的專屬工具。而Meta AI則聚焦於高額資本支出、新股發行籌資以及Muse AI助手的多元變現策略，引發市場對AI投資效益的廣泛討論。",
+  "headline": "AI 巨頭週報：OpenAI 擴展企業服務，Anthropic 注重人才與安全，Google Gemini 推動模型與商業應用新進展",
+  "summary": "在過去一週內，AI 領域主要企業 OpenAI、Anthropic 和 Google Gemini 均宣布了重要進展。OpenAI 持續強化其產品與企業合作，推出多項 API 更新並擴大與 Google Cloud 及 Uber 的夥伴關係。Anthropic 則著重於 AI 人才培育與模型安全性研究，致力於應對產業挑戰。同時，Google Gemini 也發布了新模型功能，並專注於為小型企業提供客製化 AI 工具，展現了各公司在技術創新、商業化和負責任 AI 發展上的不同策略與投入。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
