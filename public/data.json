@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-24T01:06:24.113Z",
-  "generatedAtLocal": "2026年10月24日 星期六 上午9:06:24",
+  "generatedAt": "2026-10-24T05:48:01.447Z",
+  "generatedAtLocal": "2026年10月24日 星期六 下午1:48:01",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭週報：OpenAI 擴展企業服務，Anthropic 注重人才與安全，Google Gemini 推動模型與商業應用新進展",
-  "summary": "在過去一週內，AI 領域主要企業 OpenAI、Anthropic 和 Google Gemini 均宣布了重要進展。OpenAI 持續強化其產品與企業合作，推出多項 API 更新並擴大與 Google Cloud 及 Uber 的夥伴關係。Anthropic 則著重於 AI 人才培育與模型安全性研究，致力於應對產業挑戰。同時，Google Gemini 也發布了新模型功能，並專注於為小型企業提供客製化 AI 工具，展現了各公司在技術創新、商業化和負責任 AI 發展上的不同策略與投入。",
+  "headline": "OpenAI、Anthropic、Google 及 Meta 近期 AI 發展動態速覽：從模型安全到企業應用百花齊放",
+  "summary": "OpenAI 近期強化模型訓練安全並深化與 Google Cloud 合作；Anthropic 則積極拓展企業 AI 諮詢與推出新代理產品。Google Gemini 推出小型企業工具，Meta AI 擴展日本市場應用並因數據條款引發爭議，顯示 AI 巨頭在技術、應用及市場策略上競爭激烈且多元發展。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
