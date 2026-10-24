@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-24T13:47:56.991Z",
-  "generatedAtLocal": "2026年10月24日 星期六 晚上9:47:56",
+  "generatedAt": "2026-10-24T17:02:48.334Z",
+  "generatedAtLocal": "2026年10月25日 星期日 凌晨1:02:48",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI 強制離線訓練強化安全，Anthropic 發表主動式代理人 Claude Duet，Google Gemini 擴展小型企業工具並調整訂閱制，Meta AI 助力廣告業務營收創新高",
-  "summary": "在過去一週，全球頂尖 AI 公司如 OpenAI、Anthropic、Google 及 Meta AI 均有重要進展。OpenAI 為確保模型安全，宣布將前沿模型轉為完全離線訓練；Anthropic 推出可主動執行任務的 AI 代理人 Claude Duet，並提出 AI 安全法案草案。Google Gemini 則針對小型企業推出一系列 AI 工具，同時調整了個人訂閱方案。Meta 在最新財報中，展現 AI 如何推動廣告業務成長，並成功將 Muse AI 代理產品商業化，為 AI 產業帶來一系列技術突破與市場策略更新。",
+  "headline": "AI巨頭競逐白熱化：OpenAI強化安全與募資，Anthropic推出AI代理，Google Gemini深化企業應用與翻譯能力",
+  "summary": "在過去一週，OpenAI、Anthropic、Google Gemini 和 Meta AI 等領先的 AI 公司發布了多項重要更新。OpenAI 在模型安全、企業應用和資本市場上採取行動，包括邊緣模型訓練全面改為離線模式、發布全新 Decisions API、擴展 ChatGPT Ads 市場，並傳出最新一輪融資估值調整的消息。Anthropic 則推出了專為職場設計的 AI 代理 Claude Duet，並更新了其 API，同時宣布將發行公共利益基金。Google Gemini 持續推進企業級 AI 代理、多模態翻譯功能，並發布了展示 AI 自主演進能力的 Chrysalis 專案。Meta AI 方面，其個人 AI 助理 Muse 取得了顯著的用戶採用率，顯示市場對個人化 AI 代理的需求持續增長。這些發展反映了 AI 領域在技術突破、產品應用、商業競爭和安全治理等多方面的快速演進。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
