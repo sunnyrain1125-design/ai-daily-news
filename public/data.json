@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-24T09:52:48.200Z",
-  "generatedAtLocal": "2026年10月24日 星期六 下午5:52:48",
+  "generatedAt": "2026-10-24T13:47:56.991Z",
+  "generatedAtLocal": "2026年10月24日 星期六 晚上9:47:56",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期焦點：OpenAI安全升級與估值調整，Anthropic財報揭露增長與挑戰，Meta AI強化基建與商業策略，Google Gemini深化應用與介面優化",
-  "summary": "在過去一週，全球AI巨頭動態頻繁。OpenAI 在經歷安全事件後重啟模型訓練，並調整最新融資估值。Anthropic 首度公開財務細節，顯示高速增長伴隨龐大計算成本。Meta AI 則積極擴建超級資料中心，並調整其 AI 商業條款以應對市場變化。Google Gemini 透過應用程式介面改版及政府專用解決方案，持續拓展其企業與消費市場版圖。這些發展共同勾勒出 AI 產業在技術推進、商業模式創新及市場競爭中的最新態勢。",
+  "headline": "AI巨頭最新動態：OpenAI 強制離線訓練強化安全，Anthropic 發表主動式代理人 Claude Duet，Google Gemini 擴展小型企業工具並調整訂閱制，Meta AI 助力廣告業務營收創新高",
+  "summary": "在過去一週，全球頂尖 AI 公司如 OpenAI、Anthropic、Google 及 Meta AI 均有重要進展。OpenAI 為確保模型安全，宣布將前沿模型轉為完全離線訓練；Anthropic 推出可主動執行任務的 AI 代理人 Claude Duet，並提出 AI 安全法案草案。Google Gemini 則針對小型企業推出一系列 AI 工具，同時調整了個人訂閱方案。Meta 在最新財報中，展現 AI 如何推動廣告業務成長，並成功將 Muse AI 代理產品商業化，為 AI 產業帶來一系列技術突破與市場策略更新。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
