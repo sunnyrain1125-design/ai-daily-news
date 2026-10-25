@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-25T07:32:03.964Z",
-  "generatedAtLocal": "2026年10月25日 星期日 下午3:32:03",
+  "generatedAt": "2026-10-25T12:45:09.220Z",
+  "generatedAtLocal": "2026年10月25日 星期日 晚上8:45:09",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭近期動態：OpenAI 恢復前沿模型訓練、Anthropic 擴展歐洲市場、Google Gemini 推出企業工具、Meta 發布新開源模型",
-  "summary": "本週 AI 產業主要參與者持續推進技術與市場策略。OpenAI 在安全事件後重啟模型訓練，並調整 API 服務；Anthropic 則積極佈局歐洲諮詢業，同時更新 API 政策。Google Gemini 持續強化企業應用功能，並發布新一代模型。Meta 則在開源 AI 模型方面取得重要進展。",
+  "headline": "AI 巨頭最新動態：OpenAI 推動企業應用與模型安全，Google Gemini 加強模型與開發工具",
+  "summary": "在過去一週，OpenAI 在模型安全、企業級應用與商業化方面持續推進，宣布多項產品更新與合作。Google Gemini 則聚焦於推出強大的新模型、提升開發者工具與擴展合作夥伴生態。這些發展共同揭示了大型 AI 公司在技術突破、應用落地及市場策略上的積極部署，共同塑造不斷演進的全球 AI 產業格局。本期新聞池將深入整理 OpenAI 和 Google Gemini 的最新重要進展。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
