@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-24T23:50:06.373Z",
-  "generatedAtLocal": "2026年10月25日 星期日 清晨7:50:06",
+  "generatedAt": "2026-10-25T01:58:37.309Z",
+  "generatedAtLocal": "2026年10月25日 星期日 上午9:58:37",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭新進展：OpenAI 推出強化版代理，Anthropic 加強模型安全，Google Gemini 整合生態，Meta AI 推進開源創新",
-  "summary": "本週 AI 領域競爭持續白熱化，各大科技巨頭紛紛發布最新進展。OpenAI 推出可自主完成複雜任務的強化版代理工具，提升企業自動化能力。Anthropic 發表其憲法式 AI 模型在安全性與可控性上的最新突破。Google 則深化 Gemini 與其雲端服務的整合，提供更全面的企業級解決方案。Meta AI 持續擴展 Llama 系列模型的開源生態，加速研究與應用創新。",
+  "headline": "AI巨頭動態速覽：OpenAI廣告業務擴張與多項技術發布，Meta聚焦AI變現，Anthropic模型安全性提升",
+  "summary": "本週AI領域波瀾不斷，OpenAI宣布ChatGPT廣告擴展至26國，並與Google Cloud、Uber達成合作，同時發布多項技術安全更新。Meta則披露了高達1450億美元的AI資本支出計畫，並透過Muse探索免廣告的訂閱與佣金模式。Anthropic也釋出最新的程式碼模型，並強調其新模型的攻擊可能性降低。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
