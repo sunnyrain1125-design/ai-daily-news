@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-25T12:45:09.220Z",
-  "generatedAtLocal": "2026年10月25日 星期日 晚上8:45:09",
+  "generatedAt": "2026-10-25T16:52:50.465Z",
+  "generatedAtLocal": "2026年10月26日 星期一 凌晨12:52:50",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭最新動態：OpenAI 推動企業應用與模型安全，Google Gemini 加強模型與開發工具",
-  "summary": "在過去一週，OpenAI 在模型安全、企業級應用與商業化方面持續推進，宣布多項產品更新與合作。Google Gemini 則聚焦於推出強大的新模型、提升開發者工具與擴展合作夥伴生態。這些發展共同揭示了大型 AI 公司在技術突破、應用落地及市場策略上的積極部署，共同塑造不斷演進的全球 AI 產業格局。本期新聞池將深入整理 OpenAI 和 Google Gemini 的最新重要進展。",
+  "headline": "AI巨頭最新動態：OpenAI融資目標破兆、Anthropic推自主代理、Google強化雲端AI、Meta開源多模態模型",
+  "summary": "近期AI產業迎來多項重要進展，包括OpenAI正推進巨額融資並將模型推向Google Cloud，同時強化舊有程式語言支援。Anthropic發表能離線作業的自主AI代理，並在蛋白質設計研究上取得突破。Google Cloud推出專為AI代理打造的運算引擎，Meta則開源其8160億參數多模態模型，並報告AI投資正帶動廣告營收成長。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
