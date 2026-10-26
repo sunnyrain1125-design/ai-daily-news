@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-26T00:08:14.536Z",
-  "generatedAtLocal": "2026年10月26日 星期一 上午8:08:14",
+  "generatedAt": "2026-10-26T04:45:08.517Z",
+  "generatedAtLocal": "2026年10月26日 星期一 中午12:45:08",
   "last24hWindow": "近期與最新發展",
-  "headline": "OpenAI、Anthropic、Google Gemini與Meta AI：近期關鍵進展總覽",
-  "summary": "在過去幾天，OpenAI、Anthropic、Google Gemini和Meta AI這四大AI巨頭均發布了多項重要更新與發展。這些進展涵蓋了模型技術的突破、新產品與功能的推出，以及對產業格局和安全規範的影響，顯示AI領域競爭日益激烈且不斷演進。各公司正積極擴大其AI生態系、提升模型能力，並嘗試多元的商業化策略，同時也在加強安全與倫理方面的考量。",
+  "headline": "AI巨頭最新動態：Anthropic自動模式上線、OpenAI進軍硬體、Google Gemini強化企業應用、Meta推出前沿模型與裝置端AI",
+  "summary": "本週AI產業主要巨頭持續推進其技術與產品戰略。Anthropic宣布Claude自動模式全面上線，大幅提升AI代理的自主運行能力，並更新了API和推出Claude Duet代理應用。OpenAI不僅在工程擴展和AI安全方面取得進展，更與Uber等企業深化合作，甚至開始佈局機器人硬體開發。Google Gemini則聚焦於個人化智慧、桌面應用整合、新的Skills功能取代Gems，並為中小企業推出專屬工具，同時發布了高性能模型Gemini 4 Argon。Meta AI則推出了前沿模型Muse Wonder系列，Muse AI應用用戶突破千萬，並持續推進其大規模AI超級集群建設與裝置端AI研究。各方競爭激烈，共同形塑AI技術的未來走向。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
