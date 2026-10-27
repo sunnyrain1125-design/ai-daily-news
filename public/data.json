@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-27T00:48:29.782Z",
-  "generatedAtLocal": "2026年10月27日 星期二 上午8:48:29",
+  "generatedAt": "2026-10-27T05:44:41.364Z",
+  "generatedAtLocal": "2026年10月27日 星期二 下午1:44:41",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭週報：OpenAI 模型更新與融資動向，Anthropic 代理新突破與 IPO 啟動，Google 和 Meta AI 應用擴展與財報焦點",
-  "summary": "近期，主要 AI 科技公司競相發布最新進展。OpenAI 推出了中階模型 GPT-6.1 Terra 並推進大規模融資；Anthropic 則在代理技術上取得突破，並正式啟動 IPO 進程；Google Gemini 擴展了車載應用；Meta AI 則在財報中顯示出其在 AI 領域的巨大投入與挑戰。這些發展共同塑造了當前快速演變的 AI 產業格局。",
+  "headline": "AI 巨頭最新動態：OpenAI 推出高效能模型與深化雲端合作，Anthropic IPO 文件揭露關鍵挑戰，Meta 尋求巨額融資",
+  "summary": "在 AI 領域快速發展的一週，OpenAI 發布具備進階視覺與電腦操作能力的 GPT-6.1 Terra 模型，並與 Google Cloud 擴大合作；Anthropic 提交 IPO 申請，揭露其在模型安全和資金投入上的挑戰；而 Meta 則積極尋求外部股權融資以支持其 AI 基礎設施建設。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
