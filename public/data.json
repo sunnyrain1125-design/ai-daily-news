@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-27T16:33:28.142Z",
-  "generatedAtLocal": "2026年10月28日 星期三 凌晨12:33:28",
+  "generatedAt": "2026-10-27T20:56:59.397Z",
+  "generatedAtLocal": "2026年10月28日 星期三 凌晨4:56:59",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭本週動態：OpenAI、Anthropic、Google Gemini 與 Meta AI 技術與市場新里程",
-  "summary": "本週 AI 領域多家領先企業發布多項關鍵進展。OpenAI 推出全新高效模型並強化企業級安全措施；Anthropic 啟動備受矚目的首次公開募股程序，揭示其快速增長與巨額投資；Google Gemini 持續推動其代理式 AI 架構與雲端應用合作；而 Meta AI 則在硬體基礎設施與個人化 AI 服務方面取得顯著用戶增長，同時深化與晶片巨頭的合作。這些發展共同勾勒出 AI 產業技術創新、市場競爭與商業化的最新圖景。",
+  "headline": "AI巨頭最新動態：OpenAI發布GPT-6.1 Terra模型，Anthropic尋求IPO，Meta與NVIDIA擴大AI合作",
+  "summary": "在AI領域的最新發展中，OpenAI推出旗艦模型GPT-6.1 Terra並深化與Oracle的合作，擴大ChatGPT在企業應用中的能力。Anthropic正積極推動首次公開募股（IPO），預計將大幅投資於AI運算資源。同時，Meta在最新財報中強調AI對廣告業務的助益，並獲得NVIDIA的30億美元投資，共同拓展其AI助理Muse的應用。Google DeepMind則持續聚焦於AI安全風險的研究，特別是應對AI謀劃行為的挑戰。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,

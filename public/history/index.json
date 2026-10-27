@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-28T00-33-28",
+  "latest": "2026-10-28T04-56-59",
   "items": [
+    {
+      "id": "2026-10-28T04-56-59",
+      "date": "2026-10-27",
+      "label": "2026年10月28日 星期三 凌晨4:56:59",
+      "path": "./history/2026-10-28T04-56-59.json",
+      "headline": "AI巨頭最新動態：OpenAI發布GPT-6.1 Terra模型，Anthropic尋求IPO，Meta與NVIDIA擴大AI合作",
+      "generatedAt": "2026-10-27T20:56:59.397Z",
+      "generatedAtLocal": "2026年10月28日 星期三 凌晨4:56:59"
+    },
     {
       "id": "2026-10-28T00-33-28",
       "date": "2026-10-27",
