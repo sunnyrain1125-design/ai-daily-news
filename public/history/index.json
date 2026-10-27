@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-27T13-44-41",
+  "latest": "2026-10-27T19-05-38",
   "items": [
+    {
+      "id": "2026-10-27T19-05-38",
+      "date": "2026-10-27",
+      "label": "2026年10月27日 星期二 晚上7:05:38",
+      "path": "./history/2026-10-27T19-05-38.json",
+      "headline": "AI巨頭動態：OpenAI GPT-6.1 Terra發布，Anthropic申請IPO，Google Gemini強化代理功能，Meta AI拓展應用",
+      "generatedAt": "2026-10-27T11:05:38.308Z",
+      "generatedAtLocal": "2026年10月27日 星期二 晚上7:05:38"
+    },
     {
       "id": "2026-10-27T13-44-41",
       "date": "2026-10-27",
