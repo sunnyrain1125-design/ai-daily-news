@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-28T18:31:40.109Z",
-  "generatedAtLocal": "2026年10月29日 星期四 凌晨2:31:40",
+  "generatedAt": "2026-10-28T22:48:58.190Z",
+  "generatedAtLocal": "2026年10月29日 星期四 清晨6:48:58",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭競相發力：OpenAI發布GPT-6.1 Terra，Anthropic啟動IPO，Google與Meta AI工具及基礎設施升級",
-  "summary": "OpenAI近日推出更高效的GPT-6.1 Terra模型，並與Google Cloud深化合作；Anthropic正式提交IPO申請，預計募資規模創紀錄，同時持續發布模型更新。Google Gemini在機器人與企業AI應用方面取得進展，而Meta AI則透過Muse系列模型強化廣告業務與個人智能體應用，並持續擴大AI基礎設施投資。整體而言，各家公司在技術突破、產品應用及商業策略上均有顯著動態，預示AI產業競爭持續升級。",
+  "headline": "OpenAI 推最新視覺模型，Anthropic 揭安全風險，Google 推出強大世界模型與資安專注 Gemini，Meta 規劃巨額 AI 投資並強化代理功能",
+  "summary": "本週 AI 巨頭動態頻繁，OpenAI 發布 GPT-6.1 Terra 提升視覺與成本效益，同時與 Oracle 擴大合作；Anthropic 在 IPO 申請中揭露模型訓練中斷與安全漏洞，其未發布模型展現生成漏洞能力；Google DeepMind 推出沉浸式世界模型 Genie 4，Gemini 4 Carbon 大幅強化網路安全能力；Meta AI 則宣布巨額基礎設施投資計畫，並在廣告平台引入更具行動力的 AI 助理。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
