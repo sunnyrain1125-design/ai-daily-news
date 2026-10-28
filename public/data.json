@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-28T00:23:46.909Z",
-  "generatedAtLocal": "2026年10月28日 星期三 上午8:23:46",
+  "generatedAt": "2026-10-28T12:41:55.631Z",
+  "generatedAtLocal": "2026年10月28日 星期三 晚上8:41:55",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI科學突破、Google Gemini應用擴展，Meta強化AI基礎建設",
-  "summary": "本週（10月21日至10月28日）AI領域焦點集中於OpenAI的數項科學發現、Google Gemini在產品整合與使用者體驗上的進展，以及Meta為其AI雄心籌集巨額資金。OpenAI宣佈其模型在數學、電腦科學及物理學上取得突破，並調整Custom GPTs策略。Google Gemini則將個人化智慧延伸至Android Auto，並推出針對中小企業的整合平台，同時在編碼基準測試中面臨挑戰。Meta則透過大規模籌資強化AI基礎設施，並持續優化其廣告AI工具。Anthropic則專注於AI安全立法倡議。",
+  "headline": "AI 巨頭新動向：Anthropic 籌備上市，Meta 大額融資，OpenAI 與 Google Gemini 產品更新不斷",
+  "summary": "近期 AI 產業發展加速，Anthropic 正式向 SEC 遞交 S-1 招股書，預計將成為市場焦點。Meta 則宣布最高 950 億美元融資，以強化其 AI 基礎設施及研究。同時，OpenAI 推出 GPT-6.1 Terra 模型並擴展 ChatGPT 廣告業務，而 Google Gemini 則更新 Android Bench 基準測試結果，並在企業應用及平台整合上持續進展。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
