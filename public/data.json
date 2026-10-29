@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-29T02:03:49.881Z",
-  "generatedAtLocal": "2026年10月29日 星期四 上午10:03:49",
+  "generatedAt": "2026-10-29T08:21:33.797Z",
+  "generatedAtLocal": "2026年10月29日 星期四 下午4:21:33",
   "last24hWindow": "近期與最新發展",
-  "headline": "生成式 AI 巨頭近期動態：模型更新、企業合作與策略性投資成焦點",
-  "summary": "過去一週，生成式 AI 領域的主要參與者 OpenAI、Anthropic、Google Gemini 和 Meta AI 均公布了重要進展。OpenAI 推出高效能模型 GPT-6.1 Terra 並深化與 ServiceNow、Oracle 的企業合作，同時 Uber 也全面導入 ChatGPT Work。Google Gemini 強化企業級 AI 管理功能，包括配額限制、私有伺服器託管及與 AlphaEvolve 的模型整合。Meta AI 則透過大規模股權發行籌措 AI 基礎設施資金，並與大學展開醫學科學研究合作，同時面對商業條款更新的產業反饋。這些發展反映了 AI 技術在性能提升、產業應用擴展及市場競爭策略上的多維度演進。",
+  "headline": "AI巨頭動態速覽：OpenAI、Anthropic、Google Gemini與Meta AI近期新進展",
+  "summary": "本週AI領域活動頻繁，OpenAI發布了新一代GPT模型的多模態能力提升，Anthropic則專注於提升其Claude模型的安全與效率。同時，Google Gemini在企業應用與硬體加速方面取得突破，而Meta AI則持續推進開源模型與其元宇宙生態的整合，各巨頭在技術突破、產品應用及產業合作上呈現多元發展態勢。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
