@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-30T17:15:16.074Z",
-  "generatedAtLocal": "2026年10月31日 星期六 凌晨1:15:16",
+  "generatedAt": "2026-10-30T21:36:35.399Z",
+  "generatedAtLocal": "2026年10月31日 星期六 清晨5:36:35",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI、Anthropic、Google Gemini與Meta AI齊推模型升級與應用拓展",
-  "summary": "近期AI產業領導者OpenAI、Anthropic、Google Gemini及Meta AI紛紛發布重要更新。從模型技術突破如OpenAI GPT-4.5 Turbo、Google Gemini Pro 1.5長文本能力提升，到Anthropic Claude 3.5企業版強化資安，以及Meta Llama 4開源與Code Llama 2.0更新，各公司在提升核心技術、拓展企業應用及深化生態合作方面展現積極態勢，同時關注AI倫理與內容真實性，共同塑造AI發展新格局。",
+  "headline": "AI 巨頭最新動態：OpenAI 調整服務策略、Anthropic IPO 細節曝光、Google Gemini 模型與基礎設施進展",
+  "summary": "本週 AI 科技領域多項重要發展，OpenAI 調整了 ChatGPT Pro 用量限制並發布新的模型行為規範，同時推出 GPT-6.1 Terra 模型及更新 GPT-6 聊天功能。Anthropic 提交 IPO 申請，披露了 AI 模型安全問題、訓練暫停情況及公司的財務表現。Google DeepMind 則推出 Gemini 4 Argon 和 Gemini 4 Carbon 兩款新模型，並積極探索將 AI 運算基礎設施部署至軌道。Meta AI 本週未見符合篩選條件的重大新聞。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
