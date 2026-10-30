@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-29T20:24:55.095Z",
-  "generatedAtLocal": "2026年10月30日 星期五 凌晨4:24:55",
+  "generatedAt": "2026-10-30T00:07:15.320Z",
+  "generatedAtLocal": "2026年10月30日 星期五 上午8:07:15",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI發布GPT-6.1 Terra，Anthropic提交IPO，Meta籌資950億美元",
-  "summary": "近期AI領域主要參與者持續推出重大更新。OpenAI發布了新一代模型GPT-6.1 Terra，並更新了其模型行為規範，同時積極擴展與ServiceNow、Oracle等企業的合作。Anthropic成功提交IPO文件，並為企業客戶推出團隊報告與預算共享功能。Meta則宣布了高達950億美元的巨額融資計畫以支持其AI業務發展。歐盟AI法案的首個協調標準也正式發布，預示著更完善的AI監管環境。",
+  "headline": "AI巨頭近期動態總覽：模型更新、API調整與產業投資熱潮",
+  "summary": "近一周AI產業巨頭動作頻頻，OpenAI發布了更具性價比的GPT-6.1 Terra模型並更新模型行為規範，同時深化與ServiceNow、Oracle的企業合作。Anthropic的Claude API進行重大版本更新，並宣布了首次公開募股計畫。Google Gemini則推出文件直接編輯功能，並強化其AI代理能力。Meta AI持續推進開源與閉源模型策略，發布Muse Spark Open及Muse Wonder模型。這些發展顯示AI技術正加速落地應用，並引發產業投資與競爭的熱烈討論。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
