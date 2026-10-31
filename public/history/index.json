@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-31T09-02-10",
+  "latest": "2026-10-31T14-56-34",
   "items": [
+    {
+      "id": "2026-10-31T14-56-34",
+      "date": "2026-10-31",
+      "label": "2026年10月31日 星期六 下午2:56:34",
+      "path": "./history/2026-10-31T14-56-34.json",
+      "headline": "AI巨頭最新動態：OpenAI發布GPT-6.1 Terra，Anthropic揭露IPO文件及資安挑戰，Google Gemini強化企業級能力，Meta AI推動Muse全球化與Llama生態",
+      "generatedAt": "2026-10-31T06:56:34.365Z",
+      "generatedAtLocal": "2026年10月31日 星期六 下午2:56:34"
+    },
     {
       "id": "2026-10-31T09-02-10",
       "date": "2026-10-31",
