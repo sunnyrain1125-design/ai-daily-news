@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-31T21-29-58",
+  "latest": "2026-11-01T01-54-28",
   "items": [
+    {
+      "id": "2026-11-01T01-54-28",
+      "date": "2026-10-31",
+      "label": "2026年11月1日 星期日 凌晨1:54:28",
+      "path": "./history/2026-11-01T01-54-28.json",
+      "headline": "AI 巨頭新進展：OpenAI 調降募資目標，Anthropic 公開 IPO 細節，Google 推出 Gemini 4 Carbon，Meta 加強 AI 基礎設施投資與隱私挑戰",
+      "generatedAt": "2026-10-31T17:54:28.199Z",
+      "generatedAtLocal": "2026年11月1日 星期日 凌晨1:54:28"
+    },
     {
       "id": "2026-10-31T21-29-58",
       "date": "2026-10-31",
