@@ -1,6 +1,15 @@
 {
-  "latest": "2026-10-31T05-36-35",
+  "latest": "2026-10-31T09-02-10",
   "items": [
+    {
+      "id": "2026-10-31T09-02-10",
+      "date": "2026-10-31",
+      "label": "2026年10月31日 星期六 上午9:02:10",
+      "path": "./history/2026-10-31T09-02-10.json",
+      "headline": "AI巨頭近期動態：OpenAI發布GPT-6.1 Terra，Anthropic申請IPO並深化AI Agent能力，Google推出Gemini 4 Carbon，Meta尋求950億美元增資",
+      "generatedAt": "2026-10-31T01:02:10.555Z",
+      "generatedAtLocal": "2026年10月31日 星期六 上午9:02:10"
+    },
     {
       "id": "2026-10-31T05-36-35",
       "date": "2026-10-30",

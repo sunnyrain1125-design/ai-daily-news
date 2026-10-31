@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-30T21:36:35.399Z",
-  "generatedAtLocal": "2026年10月31日 星期六 清晨5:36:35",
+  "generatedAt": "2026-10-31T01:02:10.555Z",
+  "generatedAtLocal": "2026年10月31日 星期六 上午9:02:10",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭最新動態：OpenAI 調整服務策略、Anthropic IPO 細節曝光、Google Gemini 模型與基礎設施進展",
-  "summary": "本週 AI 科技領域多項重要發展，OpenAI 調整了 ChatGPT Pro 用量限制並發布新的模型行為規範，同時推出 GPT-6.1 Terra 模型及更新 GPT-6 聊天功能。Anthropic 提交 IPO 申請，披露了 AI 模型安全問題、訓練暫停情況及公司的財務表現。Google DeepMind 則推出 Gemini 4 Argon 和 Gemini 4 Carbon 兩款新模型，並積極探索將 AI 運算基礎設施部署至軌道。Meta AI 本週未見符合篩選條件的重大新聞。",
+  "headline": "AI巨頭近期動態：OpenAI發布GPT-6.1 Terra，Anthropic申請IPO並深化AI Agent能力，Google推出Gemini 4 Carbon，Meta尋求950億美元增資",
+  "summary": "過去一週，AI領域主要參與者均有重大進展。OpenAI推出更高效的GPT-6.1 Terra模型，並預計2027年初發布首份報告。Anthropic正式遞交S-1招股書，計劃在那斯達克上市，同時Claude系列在移動端應用及研發自動化方面取得突破。Google DeepMind則發布了頂級模型Gemini 4 Carbon，專注於網路安全和長期任務。Meta為擴大AI投資，宣布高達950億美元的股票發行計畫，並在日本推出其AI Agent「Muse」。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,

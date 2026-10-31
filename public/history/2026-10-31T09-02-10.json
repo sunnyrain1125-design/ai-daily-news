@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-10-31T01:02:10.555Z",
+  "generatedAtLocal": "2026年10月31日 星期六 上午9:02:10",
+  "last24hWindow": "近期與最新發展",
+  "headline": "AI巨頭近期動態：OpenAI發布GPT-6.1 Terra，Anthropic申請IPO並深化AI Agent能力，Google推出Gemini 4 Carbon，Meta尋求950億美元增資",
+  "summary": "過去一週，AI領域主要參與者均有重大進展。OpenAI推出更高效的GPT-6.1 Terra模型，並預計2027年初發布首份報告。Anthropic正式遞交S-1招股書，計劃在那斯達克上市，同時Claude系列在移動端應用及研發自動化方面取得突破。Google DeepMind則發布了頂級模型Gemini 4 Carbon，專注於網路安全和長期任務。Meta為擴大AI投資，宣布高達950億美元的股票發行計畫，並在日本推出其AI Agent「Muse」。",
+  "topStories": [],
+  "focusStories": {
+    "technicalFocus": null,
+    "toolFocus": null,
+    "industryFocus": null
+  },
+  "contextBriefs": {
+    "topStory": "目前 AI 競爭主軸仍圍繞模型能力、推論成本、企業導入速度與監管調整，沒有明顯新消息時，最值得關注的是各大平台如何把既有模型更穩定地推進到產品與企業工作流程中。",
+    "technicalFocus": "近期技術競爭重點集中在更高效的推論、更長上下文、更可靠的多模態理解，以及讓模型在成本可控下維持穩定表現。",
+    "toolFocus": "工具層面的主戰場仍是代理工作流、自動化整合、企業 API 與團隊協作場景，市場正持續從展示型功能轉向可長期落地的生產工具。",
+    "industryFocus": "產業層面目前最值得追蹤的是雲端平台、模型公司與企業客戶之間的合作方式，以及資本支出、定價策略與法規走向如何影響 AI 商業化。",
+    "editorPicks": "如果今天缺少密集的新訊號，代表市場可能正處於消化前一輪發布的階段；這時更適合觀察各家公司是否把既有承諾轉成實際產品、合作或採用成果。",
+    "technicalBreakthroughs": "技術突破的近期主線仍是模型效率、推論延遲、上下文能力與多模態可靠度，這些方向會直接影響下一波產品體驗與部署成本。",
+    "toolApplications": "工具應用面仍在驗證哪些 AI 功能真的能持續留在工作流程中。從客服、內容生產到企業內部知識工具，重點已經從『能不能做』轉向『能不能穩定用』。",
+    "industryImpact": "產業影響面目前仍由平台競爭、企業採用速度與監管節奏共同推動。即使當天新聞較少，這三條線仍是判斷市場下一步的核心。"
+  },
+  "categories": {
+    "technicalBreakthroughs": [],
+    "toolApplications": [],
+    "industryImpact": []
+  },
+  "sectionUpdatedAt": {
+    "topStories": null,
+    "toolFocus": null,
+    "industryFocus": null,
+    "technicalFocus": null,
+    "technicalBreakthroughs": null,
+    "toolApplications": null,
+    "industryImpact": null
+  },
+  "stories": []
+}
