@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-31T17:54:28.199Z",
-  "generatedAtLocal": "2026年11月1日 星期日 凌晨1:54:28",
+  "generatedAt": "2026-10-31T21:00:16.989Z",
+  "generatedAtLocal": "2026年11月1日 星期日 清晨5:00:16",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭新進展：OpenAI 調降募資目標，Anthropic 公開 IPO 細節，Google 推出 Gemini 4 Carbon，Meta 加強 AI 基礎設施投資與隱私挑戰",
-  "summary": "近期 AI 領域巨頭動作頻繁，OpenAI 在面對市場疑慮之際調整了募資計畫，並持續擴展 ChatGPT 的整合應用；Anthropic 正式提交 IPO 申請文件，詳細揭露了高速成長下的財務狀況與潛在風險；Google Gemini 則發表了多項模型與產品更新，包含最強模型 Gemini 4 Carbon 和跨平台應用功能；Meta AI 持續推進 Muse 模型發展，並透過股權發行確保 AI 基礎設施投資，同時也面臨智慧眼鏡的隱私審查與信用評級調整。",
+  "headline": "AI巨頭最新動態：OpenAI推出GPT-6.1 Terra，Google發表Gemini 4 Carbon，Anthropic提交S-1文件揭露企業擴張策略",
+  "summary": "過去一週，主要AI公司持續推進其技術與產品戰略。OpenAI發表了具備視覺理解與應用互動能力的GPT-6.1 Terra模型，同時宣佈淘汰自訂GPTs並轉向插件生態。Google則推出了專注於網路安全與複雜任務的Gemini 4 Carbon，並更新了Gemini API定價策略。Anthropic提交了IPO申請S-1文件，揭示其在企業客戶擴展及安全研發上的投入與挑戰。Meta AI則持續在硬體整合與開源AI代理方面有所進展。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,

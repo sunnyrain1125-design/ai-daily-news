@@ -1,6 +1,15 @@
 {
-  "latest": "2026-11-01T01-54-28",
+  "latest": "2026-11-01T05-00-16",
   "items": [
+    {
+      "id": "2026-11-01T05-00-16",
+      "date": "2026-10-31",
+      "label": "2026年11月1日 星期日 清晨5:00:16",
+      "path": "./history/2026-11-01T05-00-16.json",
+      "headline": "AI巨頭最新動態：OpenAI推出GPT-6.1 Terra，Google發表Gemini 4 Carbon，Anthropic提交S-1文件揭露企業擴張策略",
+      "generatedAt": "2026-10-31T21:00:16.989Z",
+      "generatedAtLocal": "2026年11月1日 星期日 清晨5:00:16"
+    },
     {
       "id": "2026-11-01T01-54-28",
       "date": "2026-10-31",
