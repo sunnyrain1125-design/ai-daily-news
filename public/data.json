@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-02T01:28:05.593Z",
-  "generatedAtLocal": "2026年11月2日 星期一 上午9:28:05",
+  "generatedAt": "2026-11-02T08:10:05.865Z",
+  "generatedAtLocal": "2026年11月2日 星期一 下午4:10:05",
   "last24hWindow": "近期與最新發展",
-  "headline": "2026年11月2日AI產業晨報：OpenAI推出多款GPT-6模型與強化企業合作，Anthropic IPO進展受矚目並優化訂閱服務，Meta巨額融資推動AI基礎設施建設",
-  "summary": "近期AI巨頭動態頻繁，OpenAI發布GPT-6.1 Terra與Rosalind研究模型，並深化與Oracle、ServiceNow的合作，同時更新AI模型規範。Anthropic正式申請IPO，其招股書揭示了巨額算力承諾，並解除Claude Ultra訂閱的5小時使用限制。Meta則宣布大規模融資計畫，以加速其AI基礎設施及超級智能的發展。",
+  "headline": "AI巨頭競逐白熱化：OpenAI、Anthropic、Google Gemini與Meta AI近期重大發展匯總",
+  "summary": "在近期人工智慧領域的快速進展中，OpenAI透過GPT-6.1 Terra模型強化視覺與寫作能力，並更新模型規範以提升安全性。Anthropic則發布了更高效的Claude Haiku 5.5，同時在新加坡設立辦事處並更新其模型使用政策，引發對AI倫理的深入探討。Google Gemini推出新一代核心模型Gemini 4 Argon，並將Antigravity與更多技能整合至其應用生態系。Meta AI則透過高達950億美元的籌資計畫擴大AI基礎設施投資，並推出Muse Wonder系列模型，同時Llama 4持續以高效能和開放性推動產業創新。這些發展顯示各大AI領導者正從技術突破、產品應用及產業合作等多維度加速前進，預期將對AI產業帶來深遠影響。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
