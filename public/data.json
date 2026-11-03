@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-03T15:49:41.395Z",
-  "generatedAtLocal": "2026年11月3日 星期二 晚上11:49:41",
+  "generatedAt": "2026-11-03T21:20:11.417Z",
+  "generatedAtLocal": "2026年11月4日 星期三 清晨5:20:11",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭戰火再升級：OpenAI、Anthropic、Google Gemini、Meta AI 近期核心動態總覽",
-  "summary": "近期，OpenAI 發表了多項 API 更新與企業合作進展，Anthropic 則專注於其模型安全與自我改進潛力，Google Gemini 持續擴大其生態整合與終端應用，而 Meta AI 則在社群產品與時尚應用上展現新進展，各大 AI 領導者在技術、產品與產業應用方面競爭日益白熱化。",
+  "headline": "AI巨頭最新動態：Meta因數據抓取爭議延遲商業條款，Google發布Gemini 4新模型，OpenAI與Anthropic則面臨融資及上市挑戰",
+  "summary": "近期AI領域發生多項重要進展。Meta Platforms因數據抓取爭議推遲更新商業條款，同時也啟動了大規模的股權和債券募資計畫以擴展AI基礎設施。Google發布了Gemini 4 Argon的全球版，並宣布推出更強大的Gemini 4 Carbon。OpenAI則因市場擔憂下調了最新一輪融資目標，其競爭對手Anthropic在IPO文件中警告AI可能加速自我改進，並面臨投資者對估值的謹慎態度。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
