@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-05T09:22:04.837Z",
-  "generatedAtLocal": "2026年11月5日 星期四 下午5:22:04",
+  "generatedAt": "2026-11-05T17:31:49.482Z",
+  "generatedAtLocal": "2026年11月6日 星期五 凌晨1:31:49",
   "last24hWindow": "近期與最新發展",
-  "headline": "OpenAI發布生命科學AI模型與圖像生成突破，Anthropic擬IPO，Google Gemini推企業代理與新模型強化專業應用",
-  "summary": "近期AI巨頭動態頻繁，OpenAI發布了專為生命科學設計的GPT-6 Rosalind Research模型，並透過Images 2.6實現GIF動態圖生成，同時更新模型行為規範。Anthropic則準備進行首次公開募股，並發布了高效能小型模型Claude Haiku 5.5，同時更新了AI使用政策。Google Gemini在企業級應用方面有重要進展，推出通用工作代理，並強化與Salesforce的數據整合，同時發布專攻長週期工程及網路安全的Gemini 4 Carbon模型。",
+  "headline": "AI巨頭最新動態：OpenAI、Anthropic、Google Gemini關鍵進展一覽",
+  "summary": "近期AI產業巨頭動態頻繁，OpenAI發布生命科學研究模型與企業級AI代理，並強化AI訓練內容偏好設定；Anthropic則面臨程式碼擴展工具的安全挑戰。Google Gemini在模型發布與API更新方面亦有重要進展，揭示AI生成AI的加速能力。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
