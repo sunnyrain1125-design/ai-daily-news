@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-04T21:53:59.500Z",
-  "generatedAtLocal": "2026年11月5日 星期四 清晨5:53:59",
+  "generatedAt": "2026-11-05T09:22:04.837Z",
+  "generatedAtLocal": "2026年11月5日 星期四 下午5:22:04",
   "last24hWindow": "近期與最新發展",
-  "headline": "2026年11月5日AI晨報：OpenAI、Anthropic、Google Gemini與Meta AI近期重要動態速覽",
-  "summary": "本期AI晨報彙整了自2026年10月29日起至今日，人工智慧領域四大巨頭OpenAI、Anthropic、Google Gemini及Meta AI的最新關鍵進展。內容涵蓋模型技術突破、產品功能更新、重要產業合作與策略布局，為讀者呈現AI生態系在過去一週的脈動與創新，值得關注的事件包括多個新一代模型發表、企業級AI工具的強化，以及各大廠在AI安全與開源策略上的新方向。",
+  "headline": "OpenAI發布生命科學AI模型與圖像生成突破，Anthropic擬IPO，Google Gemini推企業代理與新模型強化專業應用",
+  "summary": "近期AI巨頭動態頻繁，OpenAI發布了專為生命科學設計的GPT-6 Rosalind Research模型，並透過Images 2.6實現GIF動態圖生成，同時更新模型行為規範。Anthropic則準備進行首次公開募股，並發布了高效能小型模型Claude Haiku 5.5，同時更新了AI使用政策。Google Gemini在企業級應用方面有重要進展，推出通用工作代理，並強化與Salesforce的數據整合，同時發布專攻長週期工程及網路安全的Gemini 4 Carbon模型。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
