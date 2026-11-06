@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-06T02:55:38.692Z",
-  "generatedAtLocal": "2026年11月6日 星期五 上午10:55:38",
+  "generatedAt": "2026-11-06T10:31:52.408Z",
+  "generatedAtLocal": "2026年11月6日 星期五 下午6:31:52",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI發布網路安全模型，Anthropic IPO面臨估值考驗，Google Gemini強化影音創作，Meta AI收購編碼新創",
-  "summary": "在過去一週，人工智慧領域的主要參與者發布了一系列重要更新。OpenAI推出了專注於網路安全的新模型並公布了強勁的季度營收，同時Anthropic的首次公開募股計畫因市場波動而面臨延期和估值壓力。Google Gemini則在影音生成與編輯功能上實現通用，並因其AI聊天機器人在青少年使用上的安全問題而面臨訴訟。Meta AI方面，其AI代理Muse獲得語音支援，並透過收購強化了編碼能力，但也面臨巴西法院對其AI訓練內容採集行為的禁令。",
+  "headline": "AI 巨頭週報：OpenAI 強化網絡安全，Anthropic IPO 估值承壓，Google Gemini 拓展多模態能力，Meta 調整數據策略",
+  "summary": "本週 AI 巨頭競相發布新進展。OpenAI 推出專注網絡安全的 GPT-6 Cyber 模型並調整資料中心策略。Anthropic IPO 面臨估值挑戰，上市日程或受影響。Google Gemini 強化影片生成能力，推出 Omni 1.2 Flash 並更新多項應用功能。Meta AI 則因法規壓力暫緩數據抓取條款，且美國資料中心擴建遇阻。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
