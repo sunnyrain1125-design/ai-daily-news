@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-06T17:40:58.552Z",
-  "generatedAtLocal": "2026年11月7日 星期六 凌晨1:40:58",
+  "generatedAt": "2026-11-06T22:26:17.784Z",
+  "generatedAtLocal": "2026年11月7日 星期六 清晨6:26:17",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期發展：OpenAI 模型與收購並行，Google Gemini 強化企業應用版圖",
-  "summary": "近期 AI 產業動態聚焦於 OpenAI 與 Google 的重要進展。OpenAI 密集發布多款新模型，包括專注網絡安全的 GPT-6 Cyber 與圖像生成模型 GPT-Image 2.6，同時透過收購與高層人事任命擴大影響力，並推出安全計畫。Google 則在 Gemini 模型系列上持續創新，推出 Gemini 4 Argon 及 Carbon，並將其企業服務與 Anthropic 及 OpenAI 模型整合，強化其在 AI 平台生態中的競爭力。",
+  "headline": "AI 巨頭最新動態：OpenAI 推出 GPT-6 Cyber 與收購強化編碼，Anthropic 擁抱個人理財與 IPO 挑戰，Google AI 學校政策引爭議，Meta 暫緩 AI 廣告條款",
+  "summary": "AI 產業近期發展活躍，OpenAI 發表了專業網路安全模型 GPT-6 Cyber 並收購 Pierre Computer 強化編碼能力；Anthropic 推出 Claude 個人理財服務，同時其 IPO 招股書揭露營收增長放緩，引發投資者疑慮。Google 針對 K-12 學校的 AI 工具實施預設關閉政策，但其 Search 功能仍深度整合 AI。Meta 因監管與出版商反彈，無限期暫停了具爭議的生成式 AI 廣告條款更新。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
