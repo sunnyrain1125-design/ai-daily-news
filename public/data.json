@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-05T22:49:17.962Z",
-  "generatedAtLocal": "2026年11月6日 星期五 清晨6:49:17",
+  "generatedAt": "2026-11-06T02:55:38.692Z",
+  "generatedAtLocal": "2026年11月6日 星期五 上午10:55:38",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭動態速覽：OpenAI強化企業級智能體與模型，Anthropic IPO進程受關注，Google Gemini加速模型部署與生態整合，Meta AI推出新一代模型並調整資料政策",
-  "summary": "近期AI產業主要參與者持續推進技術和產品發展。OpenAI發布了企業級智能體「dots」的正式可用性，並提升了ChatGPT Pro和Business Premium的配額，同時更新了模型行為規範。Anthropic在IPO進程中披露了其商業模式的B2B重心，並與美聯社達成內容授權協議。Google Gemini則在全球推出新一代模型Gemini 4 Argon，並預告更強大的Gemini 4 Carbon，同時加速AI代理和桌面應用整合。Meta AI推出了新的旗艦級模型Muse Wonder系列，並因資料使用條款更新引發出版商關注。",
+  "headline": "AI巨頭最新動態：OpenAI發布網路安全模型，Anthropic IPO面臨估值考驗，Google Gemini強化影音創作，Meta AI收購編碼新創",
+  "summary": "在過去一週，人工智慧領域的主要參與者發布了一系列重要更新。OpenAI推出了專注於網路安全的新模型並公布了強勁的季度營收，同時Anthropic的首次公開募股計畫因市場波動而面臨延期和估值壓力。Google Gemini則在影音生成與編輯功能上實現通用，並因其AI聊天機器人在青少年使用上的安全問題而面臨訴訟。Meta AI方面，其AI代理Muse獲得語音支援，並透過收購強化了編碼能力，但也面臨巴西法院對其AI訓練內容採集行為的禁令。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
