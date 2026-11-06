@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-06T10:31:52.408Z",
-  "generatedAtLocal": "2026年11月6日 星期五 下午6:31:52",
+  "generatedAt": "2026-11-06T17:40:58.552Z",
+  "generatedAtLocal": "2026年11月7日 星期六 凌晨1:40:58",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭週報：OpenAI 強化網絡安全，Anthropic IPO 估值承壓，Google Gemini 拓展多模態能力，Meta 調整數據策略",
-  "summary": "本週 AI 巨頭競相發布新進展。OpenAI 推出專注網絡安全的 GPT-6 Cyber 模型並調整資料中心策略。Anthropic IPO 面臨估值挑戰，上市日程或受影響。Google Gemini 強化影片生成能力，推出 Omni 1.2 Flash 並更新多項應用功能。Meta AI 則因法規壓力暫緩數據抓取條款，且美國資料中心擴建遇阻。",
+  "headline": "AI巨頭近期發展：OpenAI 模型與收購並行，Google Gemini 強化企業應用版圖",
+  "summary": "近期 AI 產業動態聚焦於 OpenAI 與 Google 的重要進展。OpenAI 密集發布多款新模型，包括專注網絡安全的 GPT-6 Cyber 與圖像生成模型 GPT-Image 2.6，同時透過收購與高層人事任命擴大影響力，並推出安全計畫。Google 則在 Gemini 模型系列上持續創新，推出 Gemini 4 Argon 及 Carbon，並將其企業服務與 Anthropic 及 OpenAI 模型整合，強化其在 AI 平台生態中的競爭力。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
