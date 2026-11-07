@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-07T02:13:50.733Z",
-  "generatedAtLocal": "2026年11月7日 星期六 上午10:13:50",
+  "generatedAt": "2026-11-07T08:54:14.912Z",
+  "generatedAtLocal": "2026年11月7日 星期六 下午4:54:14",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期要聞：OpenAI獲110億美元融資，ChatGPT用戶激增；Anthropic IPO估值承壓；Google Gemini功能調整與AI倫理挑戰；Meta發力人形機器人與監管審查",
-  "summary": "在過去一週，人工智慧領域的主要參與者迎來多項重要進展。OpenAI成功完成新一輪高達110億美元的融資，使其估值躍升至1.25兆美元，同時ChatGPT的週活躍用戶數突破12億，並在搜索市場展現強勁增長。Anthropic的首次公開募股(IPO)計畫則面臨市場估值壓力，並在招股書中對AI快速發展的潛在風險發出警告。Google的Gemini平台持續演進，調整了核心功能，並發布了新的多模態模型，但同時也捲入一起涉及未成年用戶的法律訴訟。Meta AI方面，則積極推動與外部夥伴合作開發人形機器人，並面臨英國監管機構對其內容使用條款的審查。",
+  "headline": "AI巨頭近期動態：OpenAI推出網路安全模型、Anthropic加速AI開發並推進IPO，Google Gemini模型持續擴展",
+  "summary": "在過去一週，人工智慧領域的主要參與者均有重要進展。OpenAI發布了專注於網路安全的GPT-6 Cyber模型，並透過收購強化其編碼代理工具Codex；同時，OpenAI的ChatGPT用戶基礎持續擴張，但其最新一輪募資目標有所下調。Anthropic在AI模型開發速度上取得了顯著提升，並正式啟動首次公開募股計畫，同時加碼算力基礎設施投資。Google則在其DeepMind實驗室發布了Gemini Omni 1.2 Flash模型卡片，並推進Gemini Spark的全球部署，顯示各方在技術創新與市場拓展上的激烈競爭。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
