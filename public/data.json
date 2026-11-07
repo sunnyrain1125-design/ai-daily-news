@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-07T08:54:14.912Z",
-  "generatedAtLocal": "2026年11月7日 星期六 下午4:54:14",
+  "generatedAt": "2026-11-07T15:22:57.163Z",
+  "generatedAtLocal": "2026年11月7日 星期六 晚上11:22:57",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭近期動態：OpenAI推出網路安全模型、Anthropic加速AI開發並推進IPO，Google Gemini模型持續擴展",
-  "summary": "在過去一週，人工智慧領域的主要參與者均有重要進展。OpenAI發布了專注於網路安全的GPT-6 Cyber模型，並透過收購強化其編碼代理工具Codex；同時，OpenAI的ChatGPT用戶基礎持續擴張，但其最新一輪募資目標有所下調。Anthropic在AI模型開發速度上取得了顯著提升，並正式啟動首次公開募股計畫，同時加碼算力基礎設施投資。Google則在其DeepMind實驗室發布了Gemini Omni 1.2 Flash模型卡片，並推進Gemini Spark的全球部署，顯示各方在技術創新與市場拓展上的激烈競爭。",
+  "headline": "OpenAI強化資安與Google Gemini視訊AI發展領跑近期AI新知",
+  "summary": "近期AI領域消息聚焦於OpenAI在網路安全研究模型GPT-6 Cyber的發布及其多項合作與產品更新，展現其在AI資安代理及實體世界工程應用方面的進展。同時，Google也推出了Gemini Omni 1.2 Flash，大幅提升了AI視訊生成與編輯的能力並降低成本，並總結了十月份的多項AI技術進展，顯示兩大巨頭在技術與應用層面的持續競爭。由於嚴格篩選符合白名單來源及直接可點擊連結的報導，本次新聞池包含八則近期重要動態。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
