@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-06T22:26:17.784Z",
-  "generatedAtLocal": "2026年11月7日 星期六 清晨6:26:17",
+  "generatedAt": "2026-11-07T02:13:50.733Z",
+  "generatedAtLocal": "2026年11月7日 星期六 上午10:13:50",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭最新動態：OpenAI 推出 GPT-6 Cyber 與收購強化編碼，Anthropic 擁抱個人理財與 IPO 挑戰，Google AI 學校政策引爭議，Meta 暫緩 AI 廣告條款",
-  "summary": "AI 產業近期發展活躍，OpenAI 發表了專業網路安全模型 GPT-6 Cyber 並收購 Pierre Computer 強化編碼能力；Anthropic 推出 Claude 個人理財服務，同時其 IPO 招股書揭露營收增長放緩，引發投資者疑慮。Google 針對 K-12 學校的 AI 工具實施預設關閉政策，但其 Search 功能仍深度整合 AI。Meta 因監管與出版商反彈，無限期暫停了具爭議的生成式 AI 廣告條款更新。",
+  "headline": "AI巨頭近期要聞：OpenAI獲110億美元融資，ChatGPT用戶激增；Anthropic IPO估值承壓；Google Gemini功能調整與AI倫理挑戰；Meta發力人形機器人與監管審查",
+  "summary": "在過去一週，人工智慧領域的主要參與者迎來多項重要進展。OpenAI成功完成新一輪高達110億美元的融資，使其估值躍升至1.25兆美元，同時ChatGPT的週活躍用戶數突破12億，並在搜索市場展現強勁增長。Anthropic的首次公開募股(IPO)計畫則面臨市場估值壓力，並在招股書中對AI快速發展的潛在風險發出警告。Google的Gemini平台持續演進，調整了核心功能，並發布了新的多模態模型，但同時也捲入一起涉及未成年用戶的法律訴訟。Meta AI方面，則積極推動與外部夥伴合作開發人形機器人，並面臨英國監管機構對其內容使用條款的審查。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
