@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-08T09:12:51.999Z",
-  "generatedAtLocal": "2026年11月8日 星期日 下午5:12:51",
+  "generatedAt": "2026-11-08T16:01:06.626Z",
+  "generatedAtLocal": "2026年11月9日 星期一 凌晨12:01:06",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭一週要聞：OpenAI完成百億融資、Anthropic上市遇冷、Google Gemini功能大更新、Meta AI持續拓展應用",
-  "summary": "在過去一週，生成式AI領域持續經歷顯著發展。OpenAI成功完成110億美元新一輪融資，儘管估值有所調整，並透露其企業業務已成為主要收入來源，預計將於2027年上市。Anthropic的首次公開募股（IPO）則面臨估值下調的挑戰，反映市場對AI投入的審慎態度。Google Gemini平台推出多項新功能，包括淘汰舊有助手Gems、新增應用程式內檔案創建與編輯、並發表專為資安設計的旗艦模型Gemini 4 Carbon。同時，Meta AI持續推進其Muse應用程式的個人化功能，並重啟AI人才培育計畫。這些動態共同塑造了AI產業在技術、商業與應用層面的最新格局。",
+  "headline": "AI巨頭最新動態：OpenAI、Anthropic融資受市場挑戰，Google、Meta發布模型與應用新進展",
+  "summary": "本週AI產業焦點集中於OpenAI與Anthropic的資金動向，兩公司估值均受市場情緒影響。同時，Google發布了更強大的AI影片生成模型及教育政策調整，而Meta則推出了Llama 4大模型及人形機器人合作計畫，各大廠在技術突破與商業化應用上持續推進。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
