@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-07T22:58:57.290Z",
-  "generatedAtLocal": "2026年11月8日 星期日 清晨6:58:57",
+  "generatedAt": "2026-11-08T02:18:03.381Z",
+  "generatedAtLocal": "2026年11月8日 星期日 上午10:18:03",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭聚焦模型升級、應用落地與監管挑戰，Anthropic IPO在即，Google與Meta加速代理功能部署",
-  "summary": "AI產業巨頭OpenAI、Anthropic、Google與Meta近期發展活躍，模型能力持續突破，應用場景日益多元。Anthropic正積極籌備IPO，同時面臨市場對其高估值及資料中心基礎設施的關注。OpenAI透過收購強化開發工具，並擴大ChatGPT的搜尋功能。Google持續推出更強大的多模態模型與API功能，而Meta則將其核心AI能力下放至消費級產品。此外，資料中心擴建引發的社區反彈以及對AI內容使用的監管審查，也成為產業近期焦點。",
+  "headline": "AI巨頭本周動態：OpenAI用戶高速增長，Anthropic推進IPO，Google與Meta AI產品能力全面提升",
+  "summary": "本周（2026年11月1日至11月8日），領先AI企業在產品、技術及市場方面均有重要進展。OpenAI宣布ChatGPT周活躍用戶突破12億，並推出Images 2.6與AI系統漏洞修復能力，同時完成新一輪110億美元融資。Anthropic則在推進首次公開募股(IPO)的同時，披露其AI將加速自身研究，並擴大算力部署。Google Gemini發布Omni 1.2 Flash視頻生成模型，提升API多模態支持。Meta AI則在墨西哥推出AI智能體Muse，並強化Muse與Meta AI的主動記憶與專注功能。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
