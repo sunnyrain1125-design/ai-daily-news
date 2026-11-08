@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-08T02:18:03.381Z",
-  "generatedAtLocal": "2026年11月8日 星期日 上午10:18:03",
+  "generatedAt": "2026-11-08T09:12:51.999Z",
+  "generatedAtLocal": "2026年11月8日 星期日 下午5:12:51",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭本周動態：OpenAI用戶高速增長，Anthropic推進IPO，Google與Meta AI產品能力全面提升",
-  "summary": "本周（2026年11月1日至11月8日），領先AI企業在產品、技術及市場方面均有重要進展。OpenAI宣布ChatGPT周活躍用戶突破12億，並推出Images 2.6與AI系統漏洞修復能力，同時完成新一輪110億美元融資。Anthropic則在推進首次公開募股(IPO)的同時，披露其AI將加速自身研究，並擴大算力部署。Google Gemini發布Omni 1.2 Flash視頻生成模型，提升API多模態支持。Meta AI則在墨西哥推出AI智能體Muse，並強化Muse與Meta AI的主動記憶與專注功能。",
+  "headline": "AI巨頭一週要聞：OpenAI完成百億融資、Anthropic上市遇冷、Google Gemini功能大更新、Meta AI持續拓展應用",
+  "summary": "在過去一週，生成式AI領域持續經歷顯著發展。OpenAI成功完成110億美元新一輪融資，儘管估值有所調整，並透露其企業業務已成為主要收入來源，預計將於2027年上市。Anthropic的首次公開募股（IPO）則面臨估值下調的挑戰，反映市場對AI投入的審慎態度。Google Gemini平台推出多項新功能，包括淘汰舊有助手Gems、新增應用程式內檔案創建與編輯、並發表專為資安設計的旗艦模型Gemini 4 Carbon。同時，Meta AI持續推進其Muse應用程式的個人化功能，並重啟AI人才培育計畫。這些動態共同塑造了AI產業在技術、商業與應用層面的最新格局。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
