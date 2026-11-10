@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-10T04:37:18.479Z",
-  "generatedAtLocal": "2026年11月10日 星期二 中午12:37:18",
+  "generatedAt": "2026-11-10T20:26:23.050Z",
+  "generatedAtLocal": "2026年11月11日 星期三 凌晨4:26:23",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭週報：OpenAI企業應用、Anthropic模型更新、Google Gemini多模態擴展、Meta AI開源進展",
-  "summary": "本週AI產業主要參與者持續推進其技術與產品線。OpenAI深化企業級解決方案，Anthropic在模型能力及安全性上發布新進展。Google Gemini擴大多模態整合應用，而Meta AI則在開源模型及實際產品落地方面有所突破，顯示生成式AI領域競爭日益激烈且應用場景多元化。各公司在技術創新、商業合作與產品應用方面均有重要進展，為產業帶來多重影響。",
+  "headline": "AI巨頭創新競速：Anthropic IPO在即、OpenAI融資持續，Google與Meta模型與應用齊發",
+  "summary": "在過去一週，人工智慧領域的主要參與者 OpenAI、Anthropic、Google 和 Meta AI 皆發布了多項關鍵進展。Anthropic 在首次公開募股前夕推出最新模型並獲得巨額投資，OpenAI 則揭示其驚人的用戶增長數據與多項安全及技術突破。同時，Google 與 Adobe 擴大合作，並針對醫療保健等垂直領域推出專用 AI 方案，Meta AI 則發布了高效能的小型模型並強化了其個人助理功能，顯示 AI 產業在模型、應用和商業化方面正全面加速。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
