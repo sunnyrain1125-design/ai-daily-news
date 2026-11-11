@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-11T00:49:13.798Z",
-  "generatedAtLocal": "2026年11月11日 星期三 上午8:49:13",
+  "generatedAt": "2026-11-11T07:16:57.823Z",
+  "generatedAtLocal": "2026年11月11日 星期三 下午3:16:57",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI推企業服務，Meta發布輕量模型，Google Gemini深化專業應用",
-  "summary": "在過去一週，全球AI領先企業持續推進其技術與商業策略。OpenAI推出了針對企業的ChatGPT服務，並透過收購強化其程式碼工具。Google Gemini系列則發布了專為複雜任務設計的Carbon模型，同時推出醫療專用AI解決方案及新一代TPU晶片。Meta AI則以高性價比的Muse Ember模型搶攻AI代理應用市場，並提升其核心AI產品的記憶與專注能力。這些發展反映了AI技術從基礎研究到垂直產業應用，以及商業化模式的多元演進。",
+  "headline": "AI巨頭最新動態：OpenAI、Anthropic、Google Gemini、Meta AI 產品與技術競速",
+  "summary": "本週科技巨頭 OpenAI、Anthropic 和 Google DeepMind 發布了一系列重要的產品更新、模型發布與策略合作，從強化企業級網路安全模型、推出整合AI的辦公套件到先進的機器人控制模型，顯示AI技術正加速深入各產業應用與提升開發者工具。同時，AI產業的投資熱潮持續，並伴隨各國對AI倫理與治理的監管討論。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
