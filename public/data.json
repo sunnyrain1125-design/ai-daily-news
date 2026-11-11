@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-11T15:27:11.299Z",
-  "generatedAtLocal": "2026年11月11日 星期三 晚上11:27:11",
+  "generatedAt": "2026-11-11T22:09:55.224Z",
+  "generatedAtLocal": "2026年11月12日 星期四 清晨6:09:55",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：Anthropic IPO波折，Google Pixel深度整合Gemini，OpenAI商業與應用多點開花，Meta暫緩爬蟲政策",
-  "summary": "過去一週，AI產業領導者OpenAI、Anthropic、Google Gemini和Meta AI皆公布了重要進展。Anthropic的首次公開募股計劃出現波折，估值預期在市場降溫中調整；Google則透過Pixel系列深度整合Gemini AI，提升用戶體驗並向開發者開放尖端模型；OpenAI在商業應用、用戶增長及特定群體服務上持續擴張；Meta則因爭議暫停了網站爬蟲政策更新，同時推出新的輕量級AI模型。",
+  "headline": "AI巨頭最新動態：OpenAI發布網路安全模型、Anthropic強化代理工具、Google Gemini功能擴展，Meta推出新AI模型",
+  "summary": "在過去一週，人工智慧領域的領頭羊 OpenAI、Anthropic、Google Gemini 和 Meta AI 都發布了重要的技術更新、產品功能擴展及策略合作。OpenAI 推出了專為網路安全設計的 GPT-6 Cyber 模型，而 Anthropic 則透過 Claude Fable 5.2 和 Mythos 5.2 提升了其代理工具的能力並更新了使用政策。Google Gemini 在 Pixel Drop 更新中帶來了多項智慧功能，並與 Adobe 深化合作。Meta AI 則有新的 Muse Ember 模型發布，並推遲了其AI服務條款的生效日期。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
