@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-11T22:09:55.224Z",
-  "generatedAtLocal": "2026年11月12日 星期四 清晨6:09:55",
+  "generatedAt": "2026-11-12T10:55:46.370Z",
+  "generatedAtLocal": "2026年11月12日 星期四 下午6:55:46",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI發布網路安全模型、Anthropic強化代理工具、Google Gemini功能擴展，Meta推出新AI模型",
-  "summary": "在過去一週，人工智慧領域的領頭羊 OpenAI、Anthropic、Google Gemini 和 Meta AI 都發布了重要的技術更新、產品功能擴展及策略合作。OpenAI 推出了專為網路安全設計的 GPT-6 Cyber 模型，而 Anthropic 則透過 Claude Fable 5.2 和 Mythos 5.2 提升了其代理工具的能力並更新了使用政策。Google Gemini 在 Pixel Drop 更新中帶來了多項智慧功能，並與 Adobe 深化合作。Meta AI 則有新的 Muse Ember 模型發布，並推遲了其AI服務條款的生效日期。",
+  "headline": "AI巨頭最新動態：Anthropic IPO、Google Gemini擴展、OpenAI融資與Meta AI戰略調整",
+  "summary": "近期AI產業巨頭動態頻繁，Anthropic啟動估值兆級的IPO路演，同時面臨算力協議變數；Google Gemini深入車載與企業應用，並加強用戶隱私控制；OpenAI獲得百億美元新融資，拓展企業服務並揭示其技術實力；Meta AI則在全球推廣年齡驗證技術，並因AI基礎設施投入面臨財務挑戰。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,

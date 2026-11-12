@@ -1,6 +1,15 @@
 {
-  "latest": "2026-11-12T06-09-55",
+  "latest": "2026-11-12T18-55-46",
   "items": [
+    {
+      "id": "2026-11-12T18-55-46",
+      "date": "2026-11-12",
+      "label": "2026年11月12日 星期四 下午6:55:46",
+      "path": "./history/2026-11-12T18-55-46.json",
+      "headline": "AI巨頭最新動態：Anthropic IPO、Google Gemini擴展、OpenAI融資與Meta AI戰略調整",
+      "generatedAt": "2026-11-12T10:55:46.370Z",
+      "generatedAtLocal": "2026年11月12日 星期四 下午6:55:46"
+    },
     {
       "id": "2026-11-12T06-09-55",
       "date": "2026-11-11",
