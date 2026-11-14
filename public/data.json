@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-14T19:26:27.416Z",
-  "generatedAtLocal": "2026年11月15日 星期日 凌晨3:26:27",
+  "generatedAt": "2026-11-14T23:17:15.245Z",
+  "generatedAtLocal": "2026年11月15日 星期日 清晨7:17:15",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：Google新模型連發、Anthropic IPO在即、Meta轉向專有模型",
-  "summary": "本週AI產業消息不斷，Google接連發布Gemini 4 Hydrogen與Carbon模型，並更新API及機器人技術。OpenAI完成新一輪鉅額私募融資。Anthropic則啟動IPO路演並面臨估值考驗，同時發布新一代Claude Fable 5.2模型。此外，Meta也推出專有多模態AI模型Muse Ember並經歷高層人事變動，顯示各AI巨頭在技術突破、商業化與市場競爭上的激烈角力。",
+  "headline": "OpenAI融資150億估值破兆，Anthropic IPO在即，Google Gemini強化財務分析與新模型發布",
+  "summary": "近期AI產業發展動態頻繁，OpenAI成功完成150億美元私募融資，公司估值達到1.25兆美元，同時其第三季營業虧損擴大至109億美元。競爭對手Anthropic正積極籌備IPO，定價區間已揭露，並發布了強大的Claude Mythos與Fable 5.2模型，同時針對部分地區實施服務限制。Google Gemini則推出個人財務分析功能，並發布了速度更快且強化AI智能體任務的Gemini 4 Hydrogen模型，持續拓展其AI應用邊界。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
