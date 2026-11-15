@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-15T17:02:52.581Z",
-  "generatedAtLocal": "2026年11月16日 星期一 凌晨1:02:52",
+  "generatedAt": "2026-11-15T21:43:04.218Z",
+  "generatedAtLocal": "2026年11月16日 星期一 清晨5:43:04",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI強化企業應用，Anthropic啟動IPO，Google與Meta模型進展",
-  "summary": "近期AI領域競爭激烈，OpenAI透過ChatGPT錢包與AWS Marketplace擴大企業服務，強化AI應用安全性；Anthropic啟動歷史性IPO路演，估值與上市時程引發市場高度關注；Google Gemini更新模型生命週期，Meta AI則在視覺智慧與青少年安全應用方面取得新進展。各大公司在技術突破、產品應用及產業布局上均有重要發展。",
+  "headline": "OpenAI、Anthropic、Google Gemini與Meta AI近期重要進展匯總：產品、技術與市場動態不斷",
+  "summary": "AI 產業巨頭在過去一週持續推出多項重要更新與合作，涵蓋產品功能擴展、模型技術突破及關鍵策略聯盟。OpenAI 推出 ChatGPT 支付錢包，並強化 Codex 開發者工具；Anthropic 發布更強大的程式碼專案協調器及為複雜工程設計的 Fable 5.2/Mythos 5.2 模型。Google 為 Pixel 裝置帶來 Gemini AI 功能，DeepMind 則發表機器人控制模型 Gemini Robotics 2.5。Meta AI 推出高效模型 Muse Ember 並擴大 AI 訊息工具應用。此外，TSMC 對 OpenAI 和 Anthropic 的投資計畫，以及 Anthropic 的 IPO 進程，皆顯示市場對 AI 發展的高度關注與資金流動。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
