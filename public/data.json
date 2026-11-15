@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-15T02:50:38.028Z",
-  "generatedAtLocal": "2026年11月15日 星期日 上午10:50:38",
+  "generatedAt": "2026-11-15T10:04:55.343Z",
+  "generatedAtLocal": "2026年11月15日 星期日 下午6:04:55",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭近期動態：OpenAI 推出 AI 錢包，Anthropic IPO 路演遇挑戰，Google Gemini 強化應用，日本研議 AI 監管新制",
-  "summary": "在過去一週，人工智慧領域的主要參與者公布了多項產品更新與商業動態。OpenAI 推出具備支付功能的 AI 錢包，並擴展企業級服務的可用性。Anthropic 啟動 IPO 路演，但面臨特定地區投資者的限制，同時更新了其 AI 產品的使用地區政策。Google 則將 Gemini 助理與其錢包服務深度整合。此外，日本政府也正研議針對 AI 產業的更嚴格監管措施，預示著全球 AI 發展在技術創新與合規性之間尋求平衡的新階段。",
+  "headline": "AI巨頭近期進展：Meta推出專有多模態模型，Anthropic IPO進程受市場矚目，Google Gemini擴展醫療應用與新模型發布，OpenAI則在融資與機器人戰略上有所調整。",
+  "summary": "在2026年11月上旬至中旬，AI產業領導者紛紛展現新動態。Meta發布了專有多模態AI模型Muse Ember，同時將其AI助理Muse推向智慧手錶。Anthropic則在全球IPO中尋求高額估值，並宣布了一項重要慈善捐贈。Google的Gemini系列AI模型在醫療領域推出專用解決方案，並發布了新的Hydrogen模型以優化代理工作流和搜尋體驗，同時也強化了其晶片開發。OpenAI完成了新一輪110億美元的融資，並調整了其機器人團隊的策略，將重心轉向通用模型驅動機器人，同時還承諾投入200萬美元於兒童AI安全研究。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
