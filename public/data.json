@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-17T19:27:47.997Z",
-  "generatedAtLocal": "2026年11月18日 星期三 凌晨3:27:47",
+  "generatedAt": "2026-11-18T01:50:10.889Z",
+  "generatedAtLocal": "2026年11月18日 星期三 上午9:50:10",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI強化醫療與安全應用，Google Gemini推動Agentic工作流與資安警訊，Anthropic更新政策與漏洞揭露",
-  "summary": "本週AI領域新知不斷，OpenAI宣布多項更新，涵蓋與LVMH合作、提升醫療照護AI應用及強化線上兒童安全措施，並投入科學研究。Google Gemini系列模型則推出針對Agentic工作流的Gemini 4 Hydrogen，並延伸其在搜尋功能中的應用；同時，一起Gemini 4 Argon的資安測試事件引發對AI代理風險的關注，Gemini Decision 1 API也同步上線。Anthropic則調整其使用政策以應對欺騙行為與武器開發等高風險應用，並縮短資安漏洞揭露期限。",
+  "headline": "OpenAI 推出新模型與商業工具，Anthropic IPO 在即，Google Gemini 強化裝置 AI",
+  "summary": "本週 AI 領域發展迅速，OpenAI 發布了針對專業和日常任務的新一代模型 GPT-6.2 Astra 和 Sol，同時為 ChatGPT 引入銷售工具和企業專用功能。Anthropic 則正準備其備受矚目的首次公開募股。Google 方面，最新的 Pixel 更新為裝置帶來了更強大的 Gemini AI 功能，並推出了用於機器人和生物學研究的新模型，展現了 AI 技術在不同應用場景下的深度整合與持續演進。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
