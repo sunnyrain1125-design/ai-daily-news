@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-18T18:16:59.047Z",
-  "generatedAtLocal": "2026年11月19日 星期四 凌晨2:16:59",
+  "generatedAt": "2026-11-19T00:32:50.775Z",
+  "generatedAtLocal": "2026年11月19日 星期四 上午8:32:50",
   "last24hWindow": "近期與最新發展",
-  "headline": "2026年11月AI新知：Anthropic IPO在即，Google OpenAI Meta發布多項重要更新",
-  "summary": "本週AI產業動態聚焦，Anthropic即將於納斯達克掛牌上市，估值上看兆元，同時OpenAI推出針對銷售及法律領域的ChatGPT新產品與GPT-6.2模型。Google Gemini則發布日常工作加速模型Hydrogen、開放前沿模型Argon，並擴大智慧家庭語音助理服務。Meta AI眼鏡也新增多語言與地區支援，顯示各巨頭持續在模型、應用及市場拓展上發力。",
+  "headline": "AI巨頭週報：OpenAI、Google新模型迭出，Anthropic IPO定價超預期，Meta AI硬體及基礎設施持續推進",
+  "summary": "過去一週，人工智慧領域巨頭動作頻頻，多個重磅消息浮出水面。OpenAI發布了強化專業任務能力的GPT-6.2 Astra及Sol模型，並推出了針對企業的Business Hub。Anthropic則迎來了里程碑式的IPO定價，並發布了Claude Sheets試算表功能。Google Gemini陣營同樣活躍，推出了Gemini 4 Neon新模型，並擴展了Gemini在Google Home及歐洲主權雲中的應用。Meta AI則在硬體出貨量及基礎設施效率上取得了顯著進展，同時產業也面臨美國對AI晶片出口管制的進一步收緊。這些發展共同塑造了AI技術、產品應用與產業格局的最新面貌。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
