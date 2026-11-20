@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-20T04:14:55.318Z",
-  "generatedAtLocal": "2026年11月20日 星期五 中午12:14:55",
+  "generatedAt": "2026-11-20T13:07:41.302Z",
+  "generatedAtLocal": "2026年11月20日 星期五 晚上9:07:41",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭最新動態：OpenAI 強化產品體驗，Google Gemini 擴展多裝置應用，Meta AI 面臨挑戰",
-  "summary": "近一週來，OpenAI 透過即時聽寫、新模型發布與行動應用程式更新，持續提升其產品的互動性與專業能力。Google Gemini 則推出中階模型 Neon，並將個人化助手功能從 Gems 轉型為 Skills，同時將其強大的「電腦使用」功能帶到 Mac 裝置。在產業應用層面，Meta AI 面臨用戶因 AI 助手引發的服務停用事件，反映 AI 部署在實際操作與法規調適上的挑戰。Anthropic 在此期間的重大公開發展則相對較少。",
+  "headline": "AI巨頭近期發展速覽：Anthropic成功IPO，OpenAI發布新模型，Google Gemini拓展功能，Meta暫停AI條款更新",
+  "summary": "近期AI產業動態頻繁，Anthropic透過大規模IPO成功募資，OpenAI推出最新語音模型與GPT-6.2系列。Google Gemini在API、智能體功能及桌面應用上均有顯著更新，而Meta則緊急暫停備受爭議的AI廣告條款，展現各巨頭在技術、商業與政策上的重要進展。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
