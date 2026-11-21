@@ -1,6 +1,15 @@
 {
-  "latest": "2026-11-21T05-03-53",
+  "latest": "2026-11-21T10-08-40",
   "items": [
+    {
+      "id": "2026-11-21T10-08-40",
+      "date": "2026-11-21",
+      "label": "2026年11月21日 星期六 上午10:08:40",
+      "path": "./history/2026-11-21T10-08-40.json",
+      "headline": "AI巨頭近期動作頻頻：OpenAI發布GPT-6.2 Astra與Cyber模型，Anthropic創史上最大IPO，Google推出Gemini 4 Neon",
+      "generatedAt": "2026-11-21T02:08:40.541Z",
+      "generatedAtLocal": "2026年11月21日 星期六 上午10:08:40"
+    },
     {
       "id": "2026-11-21T05-03-53",
       "date": "2026-11-20",
