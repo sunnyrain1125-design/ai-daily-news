@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T17:39:08.216Z",
-  "generatedAtLocal": "2026年11月23日 星期一 凌晨1:39:08",
+  "generatedAt": "2026-11-22T22:49:21.620Z",
+  "generatedAtLocal": "2026年11月23日 星期一 清晨6:49:21",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭本週動態：OpenAI發布新模型，Anthropic成功IPO，Google Gemini強化桌面與企業應用",
-  "summary": "本週AI領域精彩紛呈，OpenAI發布了新一代GPT模型Astra與Sol並強化了其在醫藥、晶片設計等領域的應用；Anthropic成功在納斯達克上市，估值達萬億美元級別，同時推出多項企業級Claude更新；Google Gemini則在桌面應用、免費任務功能及新模型推出上展現強勁勢頭，並深入探討AGI後的未來。",
+  "headline": "AI巨頭最新動態：OpenAI模型升級與安全辯論，Google Gemini功能擴展，Anthropic IPO聚焦",
+  "summary": "在過去一週，OpenAI發布了新一代GPT-6.2模型並在安全指標上提出倡議，同時擴展了ChatGPT協作功能。Google Gemini則大幅強化跨應用與桌面操作能力，並細化用戶數據隱私控制。Anthropic在IPO上市之際，面臨AI安全組織的質疑與商業策略的討論。整體產業在技術突破、產品應用及安全治理上持續快速演進，競爭與合作並存。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
