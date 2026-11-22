@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T02:15:09.945Z",
-  "generatedAtLocal": "2026年11月22日 星期日 上午10:15:09",
+  "generatedAt": "2026-11-22T17:39:08.216Z",
+  "generatedAtLocal": "2026年11月23日 星期一 凌晨1:39:08",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI發布尖端模型與晶片設計成果，Anthropic成功IPO，Google Gemini強化多模態，Meta AI聚焦穿戴裝置與用戶體驗挑戰",
-  "summary": "在過去一週，人工智慧領域四大巨頭OpenAI、Anthropic、Google及Meta均展現了關鍵發展。OpenAI推出了新一代旗艦模型GPT-6.2 Astra與Sol，並在AI輔助晶片設計上取得顯著突破；Anthropic則以近1.8兆美元估值成功上市，成為市場焦點。同時，Google Gemini增強了GIF生成與新的Neon模型，而Meta則公布了其個人AI助理Muse面臨用戶啟用挑戰，並傳出其AI代理在隱私方面引發擔憂，顯示AI產品進入大眾市場仍需克服障礙。",
+  "headline": "AI巨頭本週動態：OpenAI發布新模型，Anthropic成功IPO，Google Gemini強化桌面與企業應用",
+  "summary": "本週AI領域精彩紛呈，OpenAI發布了新一代GPT模型Astra與Sol並強化了其在醫藥、晶片設計等領域的應用；Anthropic成功在納斯達克上市，估值達萬億美元級別，同時推出多項企業級Claude更新；Google Gemini則在桌面應用、免費任務功能及新模型推出上展現強勁勢頭，並深入探討AGI後的未來。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
