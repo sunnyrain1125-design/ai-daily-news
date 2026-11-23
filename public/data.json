@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-22T22:49:21.620Z",
-  "generatedAtLocal": "2026年11月23日 星期一 清晨6:49:21",
+  "generatedAt": "2026-11-23T03:16:56.191Z",
+  "generatedAtLocal": "2026年11月23日 星期一 上午11:16:56",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI模型升級與安全辯論，Google Gemini功能擴展，Anthropic IPO聚焦",
-  "summary": "在過去一週，OpenAI發布了新一代GPT-6.2模型並在安全指標上提出倡議，同時擴展了ChatGPT協作功能。Google Gemini則大幅強化跨應用與桌面操作能力，並細化用戶數據隱私控制。Anthropic在IPO上市之際，面臨AI安全組織的質疑與商業策略的討論。整體產業在技術突破、產品應用及安全治理上持續快速演進，競爭與合作並存。",
+  "headline": "AI巨頭最新動態：OpenAI強化安全與技術標準，Anthropic IPO聚焦市場考驗，Google Gemini擴展智能助手功能，Meta AI面臨環保挑戰",
+  "summary": "本週AI產業巨頭持續創新與變革。OpenAI聚焦於技術透明化、CSAM防堵及未來模型限制，Google Gemini則在隱私控制、Mac應用及機器人領域取得進展。Anthropic完成IPO上市，估值受市場審視，同時也在基礎科學研究上展現AI能力。而Meta AI則因AI基礎設施需求激增，重新評估其碳排放目標。這些發展不僅推動AI技術邊界，也影響著產業倫理、市場動態及應用前景。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
