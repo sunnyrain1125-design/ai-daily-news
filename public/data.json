@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-24T01:02:30.485Z",
-  "generatedAtLocal": "2026年11月24日 星期二 上午9:02:30",
+  "generatedAt": "2026-11-24T10:51:42.370Z",
+  "generatedAtLocal": "2026年11月24日 星期二 下午6:51:42",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI 巨頭最新動態：OpenAI 模型與應用拓展，Anthropic 強化企業服務，Google DeepMind 創新突破",
-  "summary": "在過去一週，人工智慧領域的領軍企業紛紛公布多項最新進展。OpenAI 持續推出更強大的 GPT-6.2 模型、深化產業合作並拓展 ChatGPT 的專業應用。Anthropic 則專注於提升 Claude 平台的企業級功能，包括強化數據安全與工作流程整合。同時，Google DeepMind 在 AI 模型與量子計算領域取得顯著突破，發布了 Genie 4 世界模型並利用智能體優化量子算法。這些發展共同勾勒出 AI 技術在模型效能、應用廣度及基礎研究方面的快速演進藍圖。",
+  "headline": "AI巨頭最新動態：OpenAI 推出協作空間與新模型，Anthropic 成功上市，Google Gemini 強化搜尋與個人助理功能，Meta AI 眼鏡擴展多語言支援",
+  "summary": "近期AI巨頭動作頻頻。OpenAI推出ChatGPT Space提升協作體驗，並發布網絡安全與圖像生成新模型。Anthropic成功完成IPO，成為首家上市的大型AI模型公司。Google Gemini 4 Hydrogen升級搜尋AI模式，同時為Pixel及Mac應用帶來新功能。Meta AI則擴展智慧眼鏡的語言與地區支援，推動AI裝置普及。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
