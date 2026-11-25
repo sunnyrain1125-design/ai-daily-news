@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-24T20:56:25.901Z",
-  "generatedAtLocal": "2026年11月25日 星期三 凌晨4:56:25",
+  "generatedAt": "2026-11-25T14:10:35.041Z",
+  "generatedAtLocal": "2026年11月25日 星期三 晚上10:10:35",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI強化協作與安全，Anthropic成功上市並推程式碼助手，Google Gemini擴展Pixel生態與模型，Meta AI聚焦醫療應用及超智慧警示",
-  "summary": "2026年11月下旬，OpenAI、Anthropic、Google Gemini與Meta AI等科技巨頭競相公布多項重要進展。OpenAI持續深化ChatGPT協作功能，並與Cisco合作推出AI安全產品；Anthropic不僅成功首次公開募股，更推出了提升開發效率的AI程式碼工具。Google Gemini則透過Pixel更新與新模型發布，強化個人化體驗及搜尋能力；Meta AI致力於醫療領域的開源應用，同時其高層也對超智慧的來臨發出警示。",
+  "headline": "OpenAI、Anthropic、Google Gemini、Meta AI 近期重大發展匯總：模型突破、產品更新與隱私策略成焦點",
+  "summary": "在過去一週，OpenAI、Anthropic、Google Gemini 和 Meta AI 等領先的 AI 企業均發布了重要的技術突破、產品功能更新及策略調整。這些發展涵蓋了 AI 模型能力的顯著提升，例如 OpenAI ChatGPT 升級 GPT-6.2 Sol 強化圖片理解，Google Gemini 推出生成 GIF 及 Mac 桌面操控功能，以及 Anthropic 允許將 Claude 生成內容轉化為獨立桌面應用。同時，AI 隱私與安全議題也受到高度關注，Google Gemini 新增隱私開關讓用戶掌控數據訓練用途，OpenAI 首席科學家則呼籲業界共同設定 AI 研發上限。此外，Anthropic 的成功 IPO 也標誌著 AI 產業在資本市場的里程碑。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
