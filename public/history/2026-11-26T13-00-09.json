@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-11-26T05:00:09.490Z",
+  "generatedAtLocal": "2026年11月26日 星期四 下午1:00:09",
+  "last24hWindow": "近期與最新發展",
+  "headline": "OpenAI 推出個人 AI 代理 Dots 與 ChatGPT Work 合併額度，Anthropic 上市總募資近 1,200 億美元並強化 Claude 功能，Google Gemini 4 Neon 模型下放 Pro 訂閱，Meta AI 首席警告超級智慧時代到來",
+  "summary": "近期 AI 產業巨頭動作頻頻，OpenAI 在 DevDay 2026 推出可持續工作的 AI 代理 Dots，並將 ChatGPT 聊天與辦公額度合併，引起 Pro 用戶關注。Anthropic 成功完成 IPO 及私募，總計募資約 1,195 億美元，同時 Claude 模型功能大舉升級，包括可呼叫專業技能、桌面應用及程式碼自動審核修復。Google DeepMind 發表 Gemini 4 Neon 模型，強調其推理與程式開發能力，並開放給 Google AI Pro 訂閱者使用。Meta AI 首席則針對 AI 證明黎曼猜想事件，示警超級智慧的時代已然來臨，引發業界對 AI 安全與控制的深思。",
+  "topStories": [],
+  "focusStories": {
+    "technicalFocus": null,
+    "toolFocus": null,
+    "industryFocus": null
+  },
+  "contextBriefs": {
+    "topStory": "目前 AI 競爭主軸仍圍繞模型能力、推論成本、企業導入速度與監管調整，沒有明顯新消息時，最值得關注的是各大平台如何把既有模型更穩定地推進到產品與企業工作流程中。",
+    "technicalFocus": "近期技術競爭重點集中在更高效的推論、更長上下文、更可靠的多模態理解，以及讓模型在成本可控下維持穩定表現。",
+    "toolFocus": "工具層面的主戰場仍是代理工作流、自動化整合、企業 API 與團隊協作場景，市場正持續從展示型功能轉向可長期落地的生產工具。",
+    "industryFocus": "產業層面目前最值得追蹤的是雲端平台、模型公司與企業客戶之間的合作方式，以及資本支出、定價策略與法規走向如何影響 AI 商業化。",
+    "editorPicks": "如果今天缺少密集的新訊號，代表市場可能正處於消化前一輪發布的階段；這時更適合觀察各家公司是否把既有承諾轉成實際產品、合作或採用成果。",
+    "technicalBreakthroughs": "技術突破的近期主線仍是模型效率、推論延遲、上下文能力與多模態可靠度，這些方向會直接影響下一波產品體驗與部署成本。",
+    "toolApplications": "工具應用面仍在驗證哪些 AI 功能真的能持續留在工作流程中。從客服、內容生產到企業內部知識工具，重點已經從『能不能做』轉向『能不能穩定用』。",
+    "industryImpact": "產業影響面目前仍由平台競爭、企業採用速度與監管節奏共同推動。即使當天新聞較少，這三條線仍是判斷市場下一步的核心。"
+  },
+  "categories": {
+    "technicalBreakthroughs": [],
+    "toolApplications": [],
+    "industryImpact": []
+  },
+  "sectionUpdatedAt": {
+    "topStories": null,
+    "toolFocus": null,
+    "industryFocus": null,
+    "technicalFocus": null,
+    "technicalBreakthroughs": null,
+    "toolApplications": null,
+    "industryImpact": null
+  },
+  "stories": []
+}

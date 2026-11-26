@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-25T23:07:56.515Z",
-  "generatedAtLocal": "2026年11月26日 星期四 清晨7:07:56",
+  "generatedAt": "2026-11-26T05:00:09.490Z",
+  "generatedAtLocal": "2026年11月26日 星期四 下午1:00:09",
   "last24hWindow": "近期與最新發展",
-  "headline": "AI巨頭最新動態：OpenAI、Anthropic、Google Gemini與Meta AI近期重要發展一覽",
-  "summary": "在2026年11月19日至26日期間，AI領域四大巨頭OpenAI、Anthropic、Google Gemini及Meta AI持續推出關鍵技術更新、產品功能擴展及戰略合作。OpenAI發布了新一代模型和安全政策，Anthropic則透過IPO進入資本市場並推出企業級AI代理工具。Google Gemini擴大了跨平台應用並強化了智慧家庭整合，而Meta AI則在AI眼鏡多語言支援和基礎設施排放問題上展現新動態。這些發展不僅推動了AI技術的前沿，也對產業應用、市場競爭和社會影響產生了即時效應。",
+  "headline": "OpenAI 推出個人 AI 代理 Dots 與 ChatGPT Work 合併額度，Anthropic 上市總募資近 1,200 億美元並強化 Claude 功能，Google Gemini 4 Neon 模型下放 Pro 訂閱，Meta AI 首席警告超級智慧時代到來",
+  "summary": "近期 AI 產業巨頭動作頻頻，OpenAI 在 DevDay 2026 推出可持續工作的 AI 代理 Dots，並將 ChatGPT 聊天與辦公額度合併，引起 Pro 用戶關注。Anthropic 成功完成 IPO 及私募，總計募資約 1,195 億美元，同時 Claude 模型功能大舉升級，包括可呼叫專業技能、桌面應用及程式碼自動審核修復。Google DeepMind 發表 Gemini 4 Neon 模型，強調其推理與程式開發能力，並開放給 Google AI Pro 訂閱者使用。Meta AI 首席則針對 AI 證明黎曼猜想事件，示警超級智慧的時代已然來臨，引發業界對 AI 安全與控制的深思。",
   "topStories": [],
   "focusStories": {
     "technicalFocus": null,
